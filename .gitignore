@@ -48,3 +48,4 @@ data/frames/
 # datos crudos pesados
 /data/raw/
 /data/video/
+.vercel
