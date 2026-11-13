@@ -1,11 +1,11 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useT } from "@/lib/i18n";
 
 const T = {
   en: {
-    eyebrow: "First Spark",
+    eyebrow: "Basics",
     h1: "Fire in space, in five minutes",
     lead: "No background needed. Four ideas explain why a flame behaves so differently away from Earth, and why that matters for the Moon and Mars.",
     steps: [
@@ -16,9 +16,9 @@ const T = {
     ],
     pathH: "Where to go next",
     path: [
-      { href: "/history", t: "Chronicles", d: "Real fires that shaped the research." },
-      { href: "/simulator", t: "Fire Worlds", d: "Watch the same flame in four environments." },
-      { href: "/lab", t: "Flame Lab", d: "Change the conditions and compare with real tests." },
+      { href: "/history", t: "History", d: "Real fires that shaped the research." },
+      { href: "/simulator", t: "Simulator", d: "Watch the same flame in four environments." },
+      { href: "/lab", t: "Data Lab", d: "Change the conditions and compare with real tests." },
     ],
     glossH: "Glossary",
     gloss: [
@@ -36,7 +36,7 @@ const T = {
     ],
   },
   es: {
-    eyebrow: "Primera Chispa",
+    eyebrow: "Lo básico",
     h1: "El fuego en el espacio, en cinco minutos",
     lead: "No hace falta saber nada previo. Cuatro ideas explican por qué una llama se comporta tan distinto lejos de la Tierra y por qué importa para la Luna y Marte.",
     steps: [
@@ -47,9 +47,9 @@ const T = {
     ],
     pathH: "Siguiente paso",
     path: [
-      { href: "/history", t: "Crónicas", d: "Incendios reales que dieron forma a la investigación." },
-      { href: "/simulator", t: "Mundos de Fuego", d: "Mira la misma llama en cuatro entornos." },
-      { href: "/lab", t: "Lab de Llama", d: "Cambia las condiciones y compara con ensayos reales." },
+      { href: "/history", t: "Historia", d: "Incendios reales que dieron forma a la investigación." },
+      { href: "/simulator", t: "Simulador", d: "Mira la misma llama en cuatro entornos." },
+      { href: "/lab", t: "Laboratorio", d: "Cambia las condiciones y compara con ensayos reales." },
     ],
     glossH: "Glosario",
     gloss: [

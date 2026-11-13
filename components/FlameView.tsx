@@ -2,7 +2,11 @@
 
 import { useState } from "react";
 import FlameCanvas from "@/components/FlameCanvas";
-import Flame3D, { type ZoomPreset } from "@/components/Flame3D";
+import dynamic from "next/dynamic";
+import type { ZoomPreset } from "@/components/Flame3D";
+
+// the 3D view (and three.js behind it) is a separate chunk, loaded only when a flame is shown
+const Flame3D = dynamic(() => import("@/components/Flame3D"), { ssr: false });
 import type { EnvId, LabelText, Layers, SimParams, SimStats } from "@/lib/flameEngine";
 import { useT } from "@/lib/i18n";
 

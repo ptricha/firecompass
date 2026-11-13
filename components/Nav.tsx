@@ -9,12 +9,12 @@ import type { Lang } from "@/lib/data";
 
 const T = {
   en: {
-    ignition: "Ignition", spark: "First Spark", chronicles: "Chronicles", worlds: "Fire Worlds", lab: "Flame Lab", vault: "Vault", radar: "Radar", oracle: "Oracle", proof: "Proof",
+    ignition: "Home", spark: "Basics", chronicles: "History", worlds: "Simulator", lab: "Data Lab", vault: "Experiments", radar: "Ranking", oracle: "Ask AI", proof: "Sources",
     main: "Main", language: "Language", guide: "Guide mode", guideOn: "Guide on", menu: "Menu",
     hints: ["Start here", "New to this? Basics", "Real fires & history", "Simulate fire anywhere", "Play with the conditions", "Every NASA experiment", "Rank what matters", "Ask anything", "Sources & licences"],
   },
   es: {
-    ignition: "Ignición", spark: "Primera Chispa", chronicles: "Crónicas", worlds: "Mundos de Fuego", lab: "Lab de Llama", vault: "Bóveda", radar: "Radar", oracle: "Oráculo", proof: "Pruebas",
+    ignition: "Inicio", spark: "Lo básico", chronicles: "Historia", worlds: "Simulador", lab: "Laboratorio", vault: "Experimentos", radar: "Ranking", oracle: "Preguntar IA", proof: "Fuentes",
     main: "Principal", language: "Idioma", guide: "Modo guía", guideOn: "Guía activa", menu: "Menú",
     hints: ["Empieza aquí", "¿Nuevo? Lo básico", "Incendios reales e historia", "Simula fuego en cualquier lugar", "Juega con las condiciones", "Cada experimento NASA", "Prioriza lo importante", "Pregunta lo que quieras", "Fuentes y licencias"],
   },

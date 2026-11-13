@@ -167,8 +167,9 @@ const LABEL_SIDE: Record<LabelId, "l" | "r"> = { droplet: "l", fuelVapor: "r", z
  * Illustrative terrain, not real lunar topography.
  */
 let moonMapsCache: { albedo: import("three").DataTexture; normal: import("three").DataTexture } | null = null;
-function getMoonMaps(THREE: TH) {
+async function getMoonMaps(THREE: TH) {
   if (moonMapsCache) return moonMapsCache;
+  const tick = () => new Promise<void>((r) => setTimeout(r, 0));
   const W = 3072, H = 1536, N = W * H;
   let seed = 11;
   const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
@@ -189,6 +190,7 @@ function getMoonMaps(THREE: TH) {
   const g0 = grid(10, 5), g1 = grid(48, 24), g2 = grid(192, 96), g3 = grid(768, 384);
   const h = new Float32Array(N), fresh = new Float32Array(N), mare = new Float32Array(N);
   for (let j = 0; j < H; j++) {
+    if (j % 64 === 0) await tick();
     const v = j / H;
     for (let i = 0; i < W; i++) {
       const u = i / W, k = j * W + i;
@@ -230,6 +232,7 @@ function getMoonMaps(THREE: TH) {
   };
   const big: [number, number, number][] = [];
   for (let c = 0; c < 6500; c++) {
+    if (c % 150 === 0) await tick();
     const r = 2 + Math.pow(rnd(), 3.6) * 80;
     const cx = Math.floor(rnd() * W), cy = Math.floor(rnd() * H);
     const mk = mare[cy * W + cx];
@@ -237,11 +240,15 @@ function getMoonMaps(THREE: TH) {
     if (r > 55 && big.length < 8) big.push([cx, cy, r]);
     stamp(cx, cy, r, rnd(), false);
   }
-  for (const [cx, cy, r] of big) stamp(cx, cy, Math.max(r, 40), 1, true);
+  for (const [cx, cy, r] of big) {
+    await tick();
+    stamp(cx, cy, Math.max(r, 40), 1, true);
+  }
 
   const alb = new Uint8Array(N * 4), nrm = new Uint8Array(N * 4);
   const S = 1.25;
   for (let j = 0; j < H; j++) {
+    if (j % 64 === 0) await tick();
     const jm = Math.max(0, j - 1), jp = Math.min(H - 1, j + 1);
     for (let i = 0; i < W; i++) {
       const k = j * W + i, im = (i - 1 + W) % W, ip = (i + 1) % W;
@@ -286,7 +293,7 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
     let cancelled = false;
     let cleanup = () => {};
 
-    (async () => {
+    const init = async () => {
       const THREE: TH = await import("three");
       const { OrbitControls } = await import("three/examples/jsm/controls/OrbitControls.js");
       const { EffectComposer } = await import("three/examples/jsm/postprocessing/EffectComposer.js");
@@ -588,8 +595,17 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
           const RM = 40, yTop = BOX.yMin - 0.15, cy = yTop - RM;
           let seed = 7;
           const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
-          const maps = getMoonMaps(THREE);
-          const moon = new THREE.Mesh(new THREE.SphereGeometry(RM, 192, 128), new THREE.MeshStandardMaterial({ map: maps.albedo, normalMap: maps.normal, normalScale: new THREE.Vector2(1.15, 1.15), roughness: 0.97, metalness: 0, envMapIntensity: 0.12 }));
+          const moonMat = new THREE.MeshStandardMaterial({ color: 0x8a8781, normalScale: new THREE.Vector2(1.15, 1.15), roughness: 0.97, metalness: 0, envMapIntensity: 0.12 });
+          // the detailed terrain is generated in small slices without freezing the page, then swapped in
+          void getMoonMaps(THREE).then((maps) => {
+            if (cancelled || envGroup !== g) return;
+            moonMat.color.set(0xffffff);
+            moonMat.map = maps.albedo;
+            moonMat.normalMap = maps.normal;
+            moonMat.needsUpdate = true;
+            api.current?.dirty();
+          });
+          const moon = new THREE.Mesh(new THREE.SphereGeometry(RM, 192, 128), moonMat);
           moon.position.y = cy;
           moon.rotation.x = Math.PI / 2; // texture poles point sideways, so the chamber sits on the undistorted equator
           g.add(moon);
@@ -1152,10 +1168,23 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
         canvas.remove();
         api.current = null;
       };
-    })();
+    };
+
+    // build the scene only when the view is (nearly) on screen: pages with the flame below the fold stay light
+    const starter = new IntersectionObserver(
+      ([en]) => {
+        if (en.isIntersecting) {
+          starter.disconnect();
+          void init();
+        }
+      },
+      { rootMargin: "300px" },
+    );
+    starter.observe(host);
 
     return () => {
       cancelled = true;
+      starter.disconnect();
       cleanup();
     };
     // the scene is created once; props are read through refs and the effects below

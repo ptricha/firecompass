@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -8,7 +8,7 @@ import OracleViz from "@/components/OracleViz";
 
 const T = {
   en: {
-    eyebrow: "Flame Oracle",
+    eyebrow: "Ask AI",
     title: "Ask anything about fire in space",
     lead: "Every answer comes with its evidence: real NASA experiments, the numbers behind them, and a clear mark where no data exists yet.",
     start: "Start with a question",
@@ -42,7 +42,7 @@ const T = {
     you: "You",
   },
   es: {
-    eyebrow: "Oráculo de la Llama",
+    eyebrow: "Preguntar a la IA",
     title: "Pregunta lo que quieras sobre el fuego en el espacio",
     lead: "Cada respuesta llega con su evidencia: experimentos reales de NASA, las cifras que hay detrás y una marca clara donde todavía no hay datos.",
     start: "Empieza con una pregunta",
