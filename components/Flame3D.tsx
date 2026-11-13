@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef } from "react";
 import type { LabelText, Layers, SimStats } from "@/lib/flameEngine";
@@ -230,7 +230,8 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
       composer.addPass(new OutputPass());
 
       /* ---------------- lights ---------------- */
-      scene.add(new THREE.AmbientLight(0xffffff, 0.45));
+      const ambient = new THREE.AmbientLight(0xffffff, 0.45);
+      scene.add(ambient);
       const key = new THREE.DirectionalLight(0xdfe9ff, 0.8);
       key.position.set(-4, 7, 5);
       scene.add(key);
@@ -249,7 +250,7 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
       edges.position.y = (BOX.yMax + BOX.yMin) / 2;
       scene.add(edges);
       // glass walls (faint, reflective) and metal corner posts so the chamber reads as a real test rig
-      const glass = new THREE.Mesh(boxGeo, new THREE.MeshPhysicalMaterial({ color: 0xb8d4ff, transparent: true, opacity: 0.045, roughness: 0.04, metalness: 0, envMapIntensity: 2.2, side: THREE.BackSide, depthWrite: false }));
+      const glass = new THREE.Mesh(boxGeo, new THREE.MeshPhysicalMaterial({ color: 0xb8d4ff, transparent: true, opacity: 0.03, roughness: 0.04, metalness: 0, envMapIntensity: 0.5, side: THREE.BackSide, depthWrite: false }));
       glass.position.y = edges.position.y;
       scene.add(glass);
       const postMat = new THREE.MeshStandardMaterial({ color: 0xa9b4c4, roughness: 0.28, metalness: 0.9, envMapIntensity: 1.3 });
@@ -431,7 +432,12 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
         scene.background = new THREE.Color(bg[e]);
         scene.fog = new THREE.Fog(bg[e], 16, 46);
         key.castShadow = false;
-        key.intensity = e === "moon" ? 1.1 : e === "iss" ? 0.7 : 0.8;
+        // on the Moon there is no air to scatter light: one harsh, low sun and very dark shadows
+        ambient.intensity = e === "moon" ? 0.2 : 0.45;
+        scene.environmentIntensity = e === "moon" ? 0.28 : 0.5;
+        if (e === "moon") key.position.set(-9, 5.5, 6.5);
+        else key.position.set(-4, 7, 5);
+        key.intensity = e === "moon" ? 2.2 : e === "iss" ? 0.7 : 0.8;
         key.color.set(e === "moon" ? 0xfff4e0 : 0xdfe9ff);
         controls.maxPolarAngle = e === "earth" || e === "moon" ? Math.PI * 0.515 : Math.PI;
 
@@ -458,53 +464,135 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
           scene.fog = new THREE.Fog(bg[e], 70, 260);
           const RM = 40, yTop = BOX.yMin - 0.15, cy = yTop - RM;
           const cv = document.createElement("canvas");
-          cv.width = 2048;
-          cv.height = 1024;
+          const hc = document.createElement("canvas");
+          cv.width = hc.width = 4096;
+          cv.height = hc.height = 2048;
+          const W2 = cv.width, H2 = cv.height;
           const cx2 = cv.getContext("2d")!;
+          const hx = hc.getContext("2d")!;
           let seed = 7;
           const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
-          cx2.fillStyle = "#8c8a86";
-          cx2.fillRect(0, 0, cv.width, cv.height);
-          for (let i = 0; i < 9000; i++) {
-            const v = 110 + Math.floor(rnd() * 70);
-            cx2.fillStyle = `rgba(${v},${v - 2},${v - 6},0.16)`;
-            cx2.fillRect(rnd() * cv.width, rnd() * cv.height, 2 + rnd() * 10, 2 + rnd() * 10);
-          }
-          // maria: large dark basalt plains
-          for (let i = 0; i < 9; i++) {
-            const x = rnd() * cv.width, y = cv.height * (0.25 + rnd() * 0.5), r = 90 + rnd() * 170;
+          cx2.fillStyle = "#8a8781";
+          cx2.fillRect(0, 0, W2, H2);
+          hx.fillStyle = "#808080";
+          hx.fillRect(0, 0, W2, H2);
+          // large-scale mottling: lighter highlands and slightly tinted soils
+          for (let i = 0; i < 3200; i++) {
+            const x = rnd() * W2, y = rnd() * H2, r = 25 + rnd() * 170;
+            const warm = rnd() < 0.5;
             const gr = cx2.createRadialGradient(x, y, 0, x, y, r);
-            gr.addColorStop(0, "rgba(58,58,62,0.7)");
-            gr.addColorStop(1, "rgba(58,58,62,0)");
+            gr.addColorStop(0, warm ? "rgba(168,158,140,0.10)" : "rgba(96,98,106,0.10)");
+            gr.addColorStop(1, "rgba(128,128,128,0)");
             cx2.fillStyle = gr;
             cx2.fillRect(x - r, y - r, r * 2, r * 2);
           }
-          // craters: dark floor, bright rim
-          for (let i = 0; i < 1500; i++) {
-            const x = rnd() * cv.width, y = rnd() * cv.height, r = 3 + Math.pow(rnd(), 3) * 46;
-            const gr = cx2.createRadialGradient(x, y, r * 0.15, x, y, r * 1.25);
-            gr.addColorStop(0, "rgba(40,40,42,0.5)");
-            gr.addColorStop(0.7, "rgba(60,60,62,0.35)");
-            gr.addColorStop(0.88, "rgba(210,208,200,0.5)");
-            gr.addColorStop(1, "rgba(210,208,200,0)");
-            cx2.fillStyle = gr;
-            cx2.beginPath();
-            cx2.arc(x, y, r * 1.25, 0, Math.PI * 2);
-            cx2.fill();
+          // maria: dark basaltic plains made of overlapping irregular blobs, slightly lower than the highlands
+          for (let m = 0; m < 12; m++) {
+            const mx = rnd() * W2, my = H2 * (0.22 + rnd() * 0.56), mr = 160 + rnd() * 260;
+            for (let k = 0; k < 7; k++) {
+              const x = mx + (rnd() - 0.5) * mr * 1.3, y = my + (rnd() - 0.5) * mr * 0.8, r = mr * (0.35 + rnd() * 0.5);
+              const gr = cx2.createRadialGradient(x, y, r * 0.2, x, y, r);
+              gr.addColorStop(0, "rgba(54,56,64,0.62)");
+              gr.addColorStop(1, "rgba(54,56,64,0)");
+              cx2.fillStyle = gr;
+              cx2.fillRect(x - r, y - r, r * 2, r * 2);
+              const gh = hx.createRadialGradient(x, y, r * 0.2, x, y, r);
+              gh.addColorStop(0, "rgba(104,104,104,0.5)");
+              gh.addColorStop(1, "rgba(104,104,104,0)");
+              hx.fillStyle = gh;
+              hx.fillRect(x - r, y - r, r * 2, r * 2);
+            }
           }
-          // fine regolith grain
-          for (let i = 0; i < 90000; i++) {
-            const v = 70 + Math.floor(rnd() * 130);
-            cx2.fillStyle = `rgba(${v},${v},${v},0.22)`;
-            cx2.fillRect(rnd() * cv.width, rnd() * cv.height, 1, 1);
+          // craters: bowl floor, raised bright rim, central peak on the big ones (power-law sizes)
+          const craterList: [number, number, number][] = [];
+          for (let i = 0; i < 5200; i++) {
+            const x = rnd() * W2, y = rnd() * H2, r = 2.5 + Math.pow(rnd(), 3.4) * 95;
+            craterList.push([x, y, r]);
+            const age = rnd();
+            const ga = cx2.createRadialGradient(x, y, r * 0.1, x, y, r * 1.4);
+            ga.addColorStop(0, `rgba(48,48,50,${0.28 + 0.2 * age})`);
+            ga.addColorStop(0.62, "rgba(70,70,72,0.22)");
+            ga.addColorStop(0.86, `rgba(214,212,204,${0.18 + 0.38 * (1 - age)})`);
+            ga.addColorStop(1, "rgba(214,212,204,0)");
+            cx2.fillStyle = ga;
+            cx2.fillRect(x - r * 1.4, y - r * 1.4, r * 2.8, r * 2.8);
+            const gh = hx.createRadialGradient(x, y, 0, x, y, r * 1.4);
+            gh.addColorStop(0, "rgba(54,54,54,0.95)");
+            gh.addColorStop(0.55, "rgba(82,82,82,0.85)");
+            gh.addColorStop(0.8, "rgba(150,150,150,0.8)");
+            gh.addColorStop(0.9, "rgba(226,226,226,0.9)");
+            gh.addColorStop(1, "rgba(128,128,128,0)");
+            hx.fillStyle = gh;
+            hx.fillRect(x - r * 1.4, y - r * 1.4, r * 2.8, r * 2.8);
+            if (r > 30) {
+              const gp = hx.createRadialGradient(x, y, 0, x, y, r * 0.16);
+              gp.addColorStop(0, "rgba(220,220,220,0.9)");
+              gp.addColorStop(1, "rgba(128,128,128,0)");
+              hx.fillStyle = gp;
+              hx.fillRect(x - r * 0.2, y - r * 0.2, r * 0.4, r * 0.4);
+            }
+          }
+          // ray systems from a few young craters (Tycho-like bright streaks)
+          for (const [x, y, r] of craterList.filter((c) => c[2] > 60).slice(0, 7)) {
+            cx2.fillStyle = "rgba(236,234,226,0.5)";
+            cx2.beginPath();
+            cx2.arc(x, y, r * 0.55, 0, Math.PI * 2);
+            cx2.fill();
+            for (let k = 0; k < 46; k++) {
+              const a = rnd() * Math.PI * 2, len = 130 + rnd() * 520;
+              cx2.strokeStyle = `rgba(232,230,222,${0.05 + rnd() * 0.1})`;
+              cx2.lineWidth = 1.5 + rnd() * 5;
+              cx2.beginPath();
+              cx2.moveTo(x + Math.cos(a) * r, y + Math.sin(a) * r);
+              cx2.lineTo(x + Math.cos(a) * (r + len), y + Math.sin(a) * (r + len));
+              cx2.stroke();
+            }
+          }
+          // fine regolith grain in both colour and relief
+          for (let i = 0; i < 260000; i++) {
+            const v = 60 + Math.floor(rnd() * 150), x = rnd() * W2, y = rnd() * H2;
+            cx2.fillStyle = `rgba(${v},${v},${v - 4},0.2)`;
+            cx2.fillRect(x, y, 1, 1);
+            if (i % 2 === 0) {
+              const hv = 90 + Math.floor(rnd() * 90);
+              hx.fillStyle = `rgba(${hv},${hv},${hv},0.35)`;
+              hx.fillRect(x, y, 1 + (i % 3 === 0 ? 1 : 0), 1);
+            }
           }
           const moonTex = new THREE.CanvasTexture(cv);
           moonTex.colorSpace = THREE.SRGBColorSpace;
           moonTex.anisotropy = 8;
-          const moon = new THREE.Mesh(new THREE.SphereGeometry(RM, 128, 96), new THREE.MeshStandardMaterial({ map: moonTex, bumpMap: moonTex, bumpScale: 2.2, roughness: 1, metalness: 0, envMapIntensity: 0.15 }));
+          const heightTex = new THREE.CanvasTexture(hc);
+          heightTex.anisotropy = 8;
+          const moon = new THREE.Mesh(new THREE.SphereGeometry(RM, 192, 128), new THREE.MeshStandardMaterial({ map: moonTex, bumpMap: heightTex, bumpScale: 4.2, roughness: 0.96, metalness: 0, envMapIntensity: 0.12 }));
           moon.position.y = cy;
           moon.rotation.x = Math.PI / 2; // texture poles point sideways, so the chamber sits on the undistorted equator
           g.add(moon);
+
+          // near-field regolith: a tiled micro-relief cap (planar UVs) so the ground stays detailed up close
+          const gc = document.createElement("canvas");
+          gc.width = gc.height = 512;
+          const g2 = gc.getContext("2d")!;
+          g2.fillStyle = "#808080";
+          g2.fillRect(0, 0, 512, 512);
+          for (let i = 0; i < 34000; i++) {
+            const v = 40 + Math.floor(rnd() * 190), s = rnd() < 0.15 ? 3 : rnd() < 0.5 ? 2 : 1;
+            g2.fillStyle = `rgb(${v},${v},${v})`;
+            g2.beginPath();
+            g2.arc(rnd() * 512, rnd() * 512, s * 0.7, 0, Math.PI * 2);
+            g2.fill();
+          }
+          const grain = new THREE.CanvasTexture(gc);
+          grain.wrapS = grain.wrapT = THREE.RepeatWrapping;
+          grain.anisotropy = 8;
+          const capGeo = new THREE.SphereGeometry(RM + 0.003, 160, 48, 0, Math.PI * 2, 0, 0.5);
+          const cuv = capGeo.attributes.uv as InstanceType<TH["BufferAttribute"]>;
+          const cpos = capGeo.attributes.position as InstanceType<TH["BufferAttribute"]>;
+          for (let i = 0; i < cuv.count; i++) cuv.setXY(i, cpos.getX(i) * 0.5, cpos.getZ(i) * 0.5);
+          const cap = new THREE.Mesh(capGeo, new THREE.MeshStandardMaterial({ color: 0x9a9791, map: grain, bumpMap: grain, bumpScale: 1.6, roughness: 1, metalness: 0, transparent: true, opacity: 0.22, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -1, polygonOffsetUnits: -1, envMapIntensity: 0 }));
+          cap.position.y = cy;
+          cap.receiveShadow = true;
+          g.add(cap);
 
           // United States flag planted beside the chamber (Apollo style: pole with a horizontal bar holding the flag out)
           const fc = document.createElement("canvas");
