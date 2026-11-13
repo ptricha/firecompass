@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import FlameCanvas from "@/components/FlameCanvas";
+import FlameView from "@/components/FlameView";
 import { ALL_LAYERS, type EnvId, type Fuel, type LabelText, type Layers, type SimParams, type SimStats } from "@/lib/flameEngine";
 import { flexVerdict } from "@/lib/flexVerdict";
 import { useData, useLang, useT } from "@/lib/i18n";
@@ -252,7 +252,7 @@ export default function FlameLab() {
           </div>
 
           <div className="relative mt-3">
-            <FlameCanvas params={params} layers={layers} env={envBg} running={running} speed={speed} aspect={0.62} labelText={t.labels} ariaLabel={t.aria} reigniteKey={rk} onStats={setStats} />
+            <FlameView params={params} layers={layers} env={envBg} running={running} speed={speed} aspect={0.62} labelText={t.labels} ariaLabel={t.aria} reigniteKey={rk} onStats={setStats} />
             {stats && (
               <div className="pointer-events-none absolute left-3 top-3 rounded-lg border border-line bg-bg/75 px-3 py-2 text-xs backdrop-blur">
                 <p className="font-semibold">{t.status[stats.status]}</p>

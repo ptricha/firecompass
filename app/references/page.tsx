@@ -8,6 +8,7 @@ const LIBS: [string, string][] = [
   ["React 19 (MIT)", "https://react.dev"],
   ["Tailwind CSS 4 (MIT)", "https://tailwindcss.com"],
   ["TypeScript (Apache-2.0)", "https://www.typescriptlang.org"],
+  ["three.js 0.187 (MIT), WebGL 3D rendering of the flame lab and simulator; its OrbitControls and post-processing add-ons are part of the same package", "https://threejs.org"],
   ["Anthropic TypeScript SDK (MIT)", "https://github.com/anthropics/anthropic-sdk-typescript"],
   ["Geist and Geist Mono fonts (SIL Open Font License) via Google Fonts", "https://vercel.com/font"],
 ];

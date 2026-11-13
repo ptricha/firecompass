@@ -10,7 +10,7 @@ Built for the **NASA Space Apps Challenge 2026**, challenge *Flame in Freefall: 
 |---|---|
 | **Home** | The story: three findings that change how we think about fire in space, a coverage map, historical incidents and Earth spinoffs. |
 | **Explorer** | 19 NASA PSI investigations with test conditions, findings, sensors, sources and DOIs. Filter, search and compare up to three side by side. |
-| **Simulator** | Pick an environment (Earth, ISS, lunar base, spacesuit): oxygen versus Earth, which experiments covered it, and a plain statement of where there is no data. |
+| **Simulator** (3D) | Pick an environment (Earth, ISS, lunar base, spacesuit): oxygen versus Earth, which experiments covered it, and a plain statement of where there is no data. |
 | **Ranking** | Explainable lunar-habitat relevance score with adjustable weights, plus a coverage matrix by environment. |
 | **History** | A vertical timeline of 31 verified milestones: incidents, experiments, hardware, spinoffs and open-data releases, with filters. |
 | **Oracle** | Flame Oracle: visual answers (headline, key numbers, a chart of real data, cited evidence, data gaps, confidence). Numbers come from computed data; Claude narrates when an API key is set and unsupported figures are removed. |
@@ -44,6 +44,6 @@ See [DEPLOY.md](DEPLOY.md) to publish on Vercel.
 
 ## Stack
 
-Next.js 16 (App Router, TypeScript), Tailwind CSS 4, hand-written SVG charts, Anthropic SDK (optional). Full list in the in-app **References** page.
+Next.js 16 (App Router, TypeScript), Tailwind CSS 4, three.js (WebGL 3D flame lab and simulator, with an automatic 2D fallback), hand-written SVG charts, Anthropic SDK (optional). Full list in the in-app **References** page.
 
 JaPax is an independent project and is not affiliated with or endorsed by NASA.

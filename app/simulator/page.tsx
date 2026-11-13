@@ -7,7 +7,7 @@ import { coversEnvironment, scoreInvestigation } from "@/lib/scoring";
 import { ALL_LAYERS, type EnvId, type Fuel, type LabelText, type Layers, type SimParams, type SimStats } from "@/lib/flameEngine";
 import { flexVerdict } from "@/lib/flexVerdict";
 import CoverageMap from "@/components/CoverageMap";
-import FlameCanvas from "@/components/FlameCanvas";
+import FlameView from "@/components/FlameView";
 import { Pending, SourceTag } from "@/components/ui";
 
 const T = {
@@ -298,12 +298,12 @@ export default function Simulator() {
         <div className={`mt-3 grid gap-3 ${compare && envId !== "earth" ? "md:grid-cols-2" : ""}`}>
           {compare && envId !== "earth" && (
             <figure className="relative">
-              <FlameCanvas params={ear.params} layers={layers} env="earth" running={running} speed={speed} aspect={0.68} labelText={t.labels} ariaLabel={t.stageAria(t.envNames.earth)} />
+              <FlameView toolbar={false} params={ear.params} layers={layers} env="earth" running={running} speed={speed} aspect={0.68} labelText={t.labels} ariaLabel={t.stageAria(t.envNames.earth)} />
               <figcaption className="pointer-events-none absolute left-3 top-3 rounded-md border border-line bg-bg/75 px-2.5 py-1 text-xs font-semibold backdrop-blur">{t.envNames.earth}</figcaption>
             </figure>
           )}
           <figure className="relative">
-            <FlameCanvas params={sel.params} layers={layers} env={ENGINE_ENV[envId]} running={running} speed={speed} aspect={compare && envId !== "earth" ? 0.68 : 0.5} labelText={t.labels} ariaLabel={t.stageAria(name)} onStats={setStats} />
+            <FlameView params={sel.params} layers={layers} env={ENGINE_ENV[envId]} running={running} speed={speed} aspect={compare && envId !== "earth" ? 0.68 : 0.5} labelText={t.labels} ariaLabel={t.stageAria(name)} onStats={setStats} />
             <figcaption className="pointer-events-none absolute left-3 top-3 flex items-center gap-2 rounded-md border border-line bg-bg/75 px-2.5 py-1 text-xs backdrop-blur">
               <span className="font-semibold">{name}</span>
               {stats && <span className="text-ink-2">· {t.status[stats.status]} · {t.regime[stats.regime]}</span>}
@@ -313,7 +313,7 @@ export default function Simulator() {
         {showMol && (
           <ul className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-ink-2" aria-label={t.legend}>
             {[["#e34948", "O₂"], ["#3987e5", "N₂"], ["#9a988f", "CO₂"], ["#f0efec", "H₂O"], ["#eda100", t.fuelVap], ["#6b6a66", t.soot]].map(([c, n]) => (
-              <li key={n} className="inline-flex items-center gap-1.5">
+              <li key={c} className="inline-flex items-center gap-1.5">
                 <span className="h-2.5 w-2.5 rounded-full" style={{ background: c }} aria-hidden="true" />
                 {n}
               </li>
