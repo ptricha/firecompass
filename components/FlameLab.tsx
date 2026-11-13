@@ -251,14 +251,21 @@ export default function FlameLab() {
             </div>
           </div>
 
-          <div className="relative mt-3">
-            <FlameView params={params} layers={layers} env={envBg} running={running} speed={speed} aspect={0.62} labelText={t.labels} ariaLabel={t.aria} reigniteKey={rk} onStats={setStats} />
-            {stats && (
-              <div className="pointer-events-none absolute left-3 top-3 rounded-lg border border-line bg-bg/75 px-3 py-2 text-xs backdrop-blur">
-                <p className="font-semibold">{t.status[stats.status]}</p>
-                <p className="text-ink-2">{stats.rate.toFixed(0)} {t.rate}</p>
-              </div>
-            )}
+          <div className="mt-3">
+            <FlameView
+              params={params}
+              layers={layers}
+              env={envBg}
+              running={running}
+              speed={speed}
+              aspect={0.62}
+              labelText={t.labels}
+              ariaLabel={t.aria}
+              reigniteKey={rk}
+              onStats={setStats}
+              title={stats ? t.status[stats.status] : undefined}
+              footer={stats ? <span className="font-semibold text-ink">{stats.rate.toFixed(0)} {t.rate}</span> : undefined}
+            />
           </div>
 
           <p className="mt-3 rounded-lg border border-line bg-surface-2 p-3 text-sm" aria-live="polite">

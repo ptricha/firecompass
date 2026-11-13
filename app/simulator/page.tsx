@@ -297,17 +297,23 @@ export default function Simulator() {
 
         <div className={`mt-3 grid gap-3 ${compare && envId !== "earth" ? "md:grid-cols-2" : ""}`}>
           {compare && envId !== "earth" && (
-            <figure className="relative">
-              <FlameView toolbar={false} params={ear.params} layers={layers} env="earth" running={running} speed={speed} aspect={0.68} labelText={t.labels} ariaLabel={t.stageAria(t.envNames.earth)} />
-              <figcaption className="pointer-events-none absolute left-3 top-3 rounded-md border border-line bg-bg/75 px-2.5 py-1 text-xs font-semibold backdrop-blur">{t.envNames.earth}</figcaption>
+            <figure>
+              <FlameView toolbar={false} title={t.envNames.earth} params={ear.params} layers={layers} env="earth" running={running} speed={speed} aspect={0.68} labelText={t.labels} ariaLabel={t.stageAria(t.envNames.earth)} />
             </figure>
           )}
-          <figure className="relative">
-            <FlameView params={sel.params} layers={layers} env={ENGINE_ENV[envId]} running={running} speed={speed} aspect={compare && envId !== "earth" ? 0.68 : 0.5} labelText={t.labels} ariaLabel={t.stageAria(name)} onStats={setStats} />
-            <figcaption className="pointer-events-none absolute left-3 top-3 flex items-center gap-2 rounded-md border border-line bg-bg/75 px-2.5 py-1 text-xs backdrop-blur">
-              <span className="font-semibold">{name}</span>
-              {stats && <span className="text-ink-2">· {t.status[stats.status]} · {t.regime[stats.regime]}</span>}
-            </figcaption>
+          <figure>
+            <FlameView
+              title={stats ? `${name} · ${t.status[stats.status]} · ${t.regime[stats.regime]}` : name}
+              params={sel.params}
+              layers={layers}
+              env={ENGINE_ENV[envId]}
+              running={running}
+              speed={speed}
+              aspect={compare && envId !== "earth" ? 0.68 : 0.5}
+              labelText={t.labels}
+              ariaLabel={t.stageAria(name)}
+              onStats={setStats}
+            />
           </figure>
         </div>
         {showMol && (

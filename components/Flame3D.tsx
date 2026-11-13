@@ -5,6 +5,7 @@ import type { LabelText, Layers, SimStats } from "@/lib/flameEngine";
 import { BOX, FlameEngine3D, T3, type Env3, type Params3 } from "@/lib/flameEngine3D";
 
 type TH = typeof import("three");
+export type ZoomPreset = "chamber" | "flame" | "molecules";
 
 interface Props {
   params: Params3;
@@ -19,6 +20,8 @@ interface Props {
   autoRotate: boolean;
   resetKey: number;
   cursorAir: boolean;
+  zoomReq: { preset: ZoomPreset; n: number };
+  onZoom?: (x: number) => void;
   onStats?: (s: SimStats) => void;
   onUnsupported?: () => void;
   className?: string;
@@ -32,7 +35,7 @@ float noise(vec3 x){
   return mix(mix(mix(hash(i+vec3(0,0,0)),hash(i+vec3(1,0,0)),f.x), mix(hash(i+vec3(0,1,0)),hash(i+vec3(1,1,0)),f.x), f.y),
              mix(mix(hash(i+vec3(0,0,1)),hash(i+vec3(1,0,1)),f.x), mix(hash(i+vec3(0,1,1)),hash(i+vec3(1,1,1)),f.x), f.y), f.z);
 }
-float fbm(vec3 p){ float a=.5, s=0.; for(int i=0;i<4;i++){ s+=a*noise(p); p*=2.02; a*=.5; } return s; }
+float fbm(vec3 p){ float a=.5, s=0.; for(int i=0;i<5;i++){ s+=a*noise(p); p*=2.03; a*=.5; } return s; }
 `;
 
 const FLAME_VERT = /* glsl */ `
@@ -45,7 +48,7 @@ void main(){
 
 // Volumetric flame: ray-marched emission through a noisy shell around the droplet.
 // 0 g -> a blue sphere (diffusion flame); with gravity the shell stretches, tapers and flickers into a teardrop whose
-// soot turns it yellow. Everything below is qualitative: only the radius, intensity, gravity and airflow come from the simulation.
+// soot turns it yellow. Only radius, intensity, gravity and airflow come from the simulation; the look is qualitative.
 const FLAME_FRAG = /* glsl */ `
 precision highp float;
 varying vec3 vWorld;
@@ -63,18 +66,18 @@ vec4 flame(vec3 p){
   float taper = mix(1.0, 1.0 - 0.60 * smoothstep(-0.3, 1.9, h), g);
   q.xz /= max(taper, 0.28);
   q.y /= (1.0 + 1.05 * g);
-  // forced flow drags the flame downstream
   q -= uWind * (clamp(uFlow, 0.0, 60.0) * 0.011) * uRf * 0.7;
   float flicker = 0.4 + 1.9 * g;
   vec3 np = q * 2.3 + vec3(0.0, -uTime * flicker, 0.0) + uWind * (-uTime * 0.15);
   float n = fbm(np);
-  float r = length(q) + (n - 0.5) * uRf * (0.20 + 0.60 * g);
+  float n2 = noise(np * 4.1 + vec3(uTime * 0.6));          // fine flame licks
+  float r = length(q) + (n - 0.5) * uRf * (0.20 + 0.60 * g) + (n2 - 0.5) * uRf * 0.06;
   float x = (r - uRf) / (0.15 * uRf + 1e-3);
   float sheet = exp(-x * x);
   float core = 0.12 * exp(-pow(r / (0.60 * uRf), 2.0));
   float halo = 0.10 * exp(-pow((r - 1.20 * uRf) / (0.40 * uRf), 2.0));
   float tip = 1.0 - g * 0.55 * smoothstep(0.9, 2.1, h);
-  float d = (sheet * 0.9 + core + halo) * uI * tip;
+  float d = (sheet * (0.82 + 0.28 * n2) + core + halo) * uI * tip;
 
   vec3 blue = vec3(0.10, 0.36, 1.00);
   vec3 cyan = vec3(0.35, 0.82, 1.00);
@@ -86,7 +89,6 @@ vec4 flame(vec3 p){
   vec3 col = mix(blue, warm, smoothstep(0.12, 0.72, soot) * (0.82 + 0.18 * inner));
   col = mix(col, cyan, 0.22 * sheet * (1.0 - soot));
   col = mix(col, vec3(1.0, 0.92, 0.78), 0.22 * core * soot * 4.0);
-  // a real flame has a blue base near the fuel
   col = mix(col, blue, 0.75 * g * (1.0 - smoothstep(-0.65, 0.05, h)) * (0.3 + 0.7 * sheet));
   return vec4(col, d);
 }
@@ -148,26 +150,21 @@ precision highp float; varying vec3 vP; uniform vec3 uTop; uniform vec3 uBottom;
 void main(){ float k = smoothstep(-0.25, 0.65, normalize(vP).y); gl_FragColor = vec4(mix(uBottom, uTop, k), 1.0); }`;
 const SKY_VERT = /* glsl */ `varying vec3 vP; void main(){ vP = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`;
 
-const ATOM = {
-  O: { color: 0xe34948, r: 0.052 },
-  N: { color: 0x3987e5, r: 0.05 },
-  C: { color: 0x9a988f, r: 0.062 },
-  H: { color: 0xf0efec, r: 0.036 },
-  He: { color: 0x8ee8e0, r: 0.05 },
-  F: { color: 0xeda100, r: 0.06 },
-  S: { color: 0x5a5854, r: 0.075 },
-} as const;
-const ATOM_KEYS = ["O", "N", "C", "H", "He", "F", "S"] as const;
-const ATOM_CAP = 3600;
+const ATOM_HEX = { O: 0xe34948, N: 0x3987e5, C: 0x6f6e68, H: 0xf4f2ec, He: 0x8ee8e0, F: 0xeda100, S: 0x2b2a28 } as const;
+const AR = { O: 0.044, N: 0.042, C: 0.048, H: 0.029, He: 0.043, F: 0.05, S: 0.042 } as const;
+const LO_CAP = 6400;
+const HI_CAP = 2600;
+const BOND_CAP = 2600;
 
 const LABEL_IDS = ["droplet", "fuelVapor", "zone", "oxygenIn", "products", "plume", "sphere"] as const;
 type LabelId = (typeof LABEL_IDS)[number];
+const LABEL_SIDE: Record<LabelId, "l" | "r"> = { droplet: "l", fuelVapor: "r", zone: "r", oxygenIn: "l", products: "r", plume: "r", sphere: "l" };
 
-export default function Flame3D({ params, layers, env, running, speed, aspect, labelText, ariaLabel, reigniteKey, autoRotate, resetKey, cursorAir, onStats, onUnsupported, className }: Props) {
+export default function Flame3D({ params, layers, env, running, speed, aspect, labelText, ariaLabel, reigniteKey, autoRotate, resetKey, cursorAir, zoomReq, onZoom, onStats, onUnsupported, className }: Props) {
   const wrap = useRef<HTMLDivElement>(null);
-  const live = useRef({ params, layers, env, running, speed, autoRotate, cursorAir, onStats });
-  live.current = { params, layers, env, running, speed, autoRotate, cursorAir, onStats };
-  const api = useRef<{ reignite: () => void; reset: () => void; setEnv: (e: Env3) => void; dirty: () => void } | null>(null);
+  const live = useRef({ params, layers, env, running, speed, autoRotate, cursorAir, onStats, onZoom });
+  live.current = { params, layers, env, running, speed, autoRotate, cursorAir, onStats, onZoom };
+  const api = useRef<{ reignite: () => void; reset: () => void; setEnv: (e: Env3) => void; dirty: () => void; zoomTo: (p: ZoomPreset) => void } | null>(null);
   const labelEls = useRef<Partial<Record<LabelId, HTMLDivElement | null>>>({});
 
   useEffect(() => {
@@ -183,6 +180,7 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
       const { RenderPass } = await import("three/examples/jsm/postprocessing/RenderPass.js");
       const { UnrealBloomPass } = await import("three/examples/jsm/postprocessing/UnrealBloomPass.js");
       const { OutputPass } = await import("three/examples/jsm/postprocessing/OutputPass.js");
+      const { RoomEnvironment } = await import("three/examples/jsm/environments/RoomEnvironment.js");
       if (cancelled) return;
 
       let renderer: InstanceType<TH["WebGLRenderer"]>;
@@ -193,7 +191,6 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
         return;
       }
       renderer.toneMapping = THREE.NoToneMapping;
-      renderer.toneMappingExposure = 0.95;
       const canvas = renderer.domElement;
       canvas.setAttribute("role", "img");
       canvas.setAttribute("aria-label", ariaLabel);
@@ -201,19 +198,30 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
       host.prepend(canvas);
 
       const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(45, 1.6, 0.1, 200);
+      const camera = new THREE.PerspectiveCamera(45, 1.6, 0.02, 140);
       const HOME = new THREE.Vector3(1.4, 1.0, 8.8);
       const HOME_T = new THREE.Vector3(0, 0.55, 0);
+      const HOME_DIST = HOME.distanceTo(HOME_T);
       camera.position.copy(HOME);
       const controls = new OrbitControls(camera, canvas);
       controls.target.copy(HOME_T);
-      controls.enablePan = false;
+      controls.enablePan = true;
+      controls.screenSpacePanning = true;
+      controls.panSpeed = 0.8;
+      controls.zoomToCursor = true; // zoom toward whatever the pointer is over: dive in to a single molecule
+      controls.zoomSpeed = 1.25;
       controls.enableDamping = true;
       controls.dampingFactor = 0.08;
-      controls.minDistance = 3.4;
-      controls.maxDistance = 17;
+      controls.minDistance = 0.2;
+      controls.maxDistance = 18;
       controls.autoRotateSpeed = 1.1;
       controls.update();
+
+      /* realistic reflections on atoms and droplet */
+      const pmrem = new THREE.PMREMGenerator(renderer);
+      const envTex = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+      scene.environment = envTex;
+      scene.environmentIntensity = 0.5;
 
       const composer = new EffectComposer(renderer);
       composer.addPass(new RenderPass(scene, camera));
@@ -222,7 +230,7 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
       composer.addPass(new OutputPass());
 
       /* ---------------- lights ---------------- */
-      scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+      scene.add(new THREE.AmbientLight(0xffffff, 0.45));
       const key = new THREE.DirectionalLight(0xdfe9ff, 0.8);
       key.position.set(-4, 7, 5);
       scene.add(key);
@@ -235,8 +243,8 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
       edges.position.y = (BOX.yMax + BOX.yMin) / 2;
       scene.add(edges);
 
-      const dropMat = new THREE.MeshPhysicalMaterial({ color: 0xdfe6f2, roughness: 0.08, metalness: 0, clearcoat: 1, emissive: 0x222a38, emissiveIntensity: 0.3 });
-      const droplet = new THREE.Mesh(new THREE.SphereGeometry(0.11, 40, 28), dropMat);
+      const dropMat = new THREE.MeshPhysicalMaterial({ color: 0xdfe6f2, roughness: 0.04, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.03, envMapIntensity: 1.6, emissive: 0x222a38, emissiveIntensity: 0.3 });
+      const droplet = new THREE.Mesh(new THREE.SphereGeometry(0.11, 48, 32), dropMat);
       scene.add(droplet);
       const fiber = new THREE.Mesh(new THREE.CylinderGeometry(0.005, 0.005, 2.6, 6), new THREE.MeshBasicMaterial({ color: 0xc8c6be, transparent: true, opacity: 0.55 }));
       fiber.rotation.z = Math.PI / 2 - 0.4;
@@ -269,27 +277,85 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
       flameMesh.renderOrder = 10;
       scene.add(flameMesh);
 
-      /* ---------------- molecules: one instanced mesh per atom colour ---------------- */
-      const sphereGeo = new THREE.SphereGeometry(1, 14, 10);
-      const atomMeshes = ATOM_KEYS.map((k) => {
-        const mat = new THREE.MeshStandardMaterial({ color: ATOM[k].color, roughness: 0.38, metalness: 0.05, emissive: ATOM[k].color, emissiveIntensity: 0.14 });
-        const m = new THREE.InstancedMesh(sphereGeo, mat, ATOM_CAP);
+      /* ---------------- atoms (two levels of detail, per-instance colour) and bonds ---------------- */
+      const atomMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.27, metalness: 0.02, envMapIntensity: 1.1 });
+      const mkAtoms = (seg: [number, number], cap: number) => {
+        const m = new THREE.InstancedMesh(new THREE.SphereGeometry(1, seg[0], seg[1]), atomMat, cap);
         m.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+        m.setColorAt(0, new THREE.Color(1, 1, 1));
+        (m.instanceColor as InstanceType<TH["InstancedBufferAttribute"]>).setUsage(THREE.DynamicDrawUsage);
         m.count = 0;
         m.frustumCulled = false;
         scene.add(m);
         return m;
-      });
-      const mats = atomMeshes.map((m) => m.instanceMatrix.array as Float32Array);
-      const cnt = new Int32Array(ATOM_KEYS.length);
-      const IDX = { O: 0, N: 1, C: 2, H: 3, He: 4, F: 5, S: 6 } as const;
-      const put = (k: number, x: number, y: number, z: number, s: number) => {
-        const c = cnt[k];
-        if (c >= ATOM_CAP) return;
-        const m = mats[k];
-        const o = c * 16;
-        m[o] = s; m[o + 5] = s; m[o + 10] = s; m[o + 12] = x; m[o + 13] = y; m[o + 14] = z; m[o + 15] = 1;
-        cnt[k] = c + 1;
+      };
+      const atomsLo = mkAtoms([10, 8], LO_CAP);
+      const atomsHi = mkAtoms([26, 18], HI_CAP);
+      const loM = atomsLo.instanceMatrix.array as Float32Array;
+      const loC = (atomsLo.instanceColor as InstanceType<TH["InstancedBufferAttribute"]>).array as Float32Array;
+      const hiM = atomsHi.instanceMatrix.array as Float32Array;
+      const hiC = (atomsHi.instanceColor as InstanceType<TH["InstancedBufferAttribute"]>).array as Float32Array;
+      let nLo = 0, nHi = 0;
+
+      const bondMat = new THREE.MeshStandardMaterial({ color: 0xd9d7d0, roughness: 0.35, metalness: 0.2, envMapIntensity: 1 });
+      const bonds = new THREE.InstancedMesh(new THREE.CylinderGeometry(1, 1, 1, 9, 1, true), bondMat, BOND_CAP);
+      bonds.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+      bonds.count = 0;
+      bonds.frustumCulled = false;
+      scene.add(bonds);
+      const bondM = bonds.instanceMatrix.array as Float32Array;
+      let nBond = 0;
+
+      const lin = (hex: number) => {
+        const c = new THREE.Color(hex);
+        return [c.r, c.g, c.b] as const;
+      };
+      const COL = { O: lin(ATOM_HEX.O), N: lin(ATOM_HEX.N), C: lin(ATOM_HEX.C), H: lin(ATOM_HEX.H), He: lin(ATOM_HEX.He), F: lin(ATOM_HEX.F), S: lin(ATOM_HEX.S) };
+
+      const camP = camera.position;
+      let boost = 1;
+      const putAtom = (x: number, y: number, z: number, s: number, c: readonly [number, number, number], heat = 0) => {
+        const dx = x - camP.x, dy = y - camP.y, dz = z - camP.z;
+        const near = dx * dx + dy * dy + dz * dz < 9;
+        const rs = s * boost;
+        let r = c[0], g = c[1], b = c[2];
+        if (heat > 0.01) {
+          // hot products glow orange and cool down: over-bright values feed the bloom
+          r = r * (1 - 0.8 * heat) + 2.6 * heat;
+          g = g * (1 - 0.8 * heat) + 0.55 * heat;
+          b = b * (1 - 0.8 * heat) + 0.08 * heat;
+        }
+        if (near) {
+          if (nHi >= HI_CAP) return;
+          const o = nHi * 16, k = nHi * 3;
+          hiM[o] = rs; hiM[o + 5] = rs; hiM[o + 10] = rs; hiM[o + 12] = x; hiM[o + 13] = y; hiM[o + 14] = z; hiM[o + 15] = 1;
+          hiC[k] = r; hiC[k + 1] = g; hiC[k + 2] = b;
+          nHi++;
+        } else {
+          if (nLo >= LO_CAP) return;
+          const o = nLo * 16, k = nLo * 3;
+          loM[o] = rs; loM[o + 5] = rs; loM[o + 10] = rs; loM[o + 12] = x; loM[o + 13] = y; loM[o + 14] = z; loM[o + 15] = 1;
+          loC[k] = r; loC[k + 1] = g; loC[k + 2] = b;
+          nLo++;
+        }
+      };
+      const putBond = (x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, rad: number) => {
+        if (nBond >= BOND_CAP) return;
+        let dx = x2 - x1, dy = y2 - y1, dz = z2 - z1;
+        const len = Math.hypot(dx, dy, dz);
+        if (len < 1e-5) return;
+        dx /= len; dy /= len; dz /= len;
+        let ux: number, uy: number, uz: number;
+        if (Math.abs(dy) < 0.9) { ux = -dz; uy = 0; uz = dx; } else { ux = 0; uy = dz; uz = -dy; }
+        const ul = Math.hypot(ux, uy, uz) || 1;
+        ux /= ul; uy /= ul; uz /= ul;
+        const vx = dy * uz - dz * uy, vy = dz * ux - dx * uz, vz = dx * uy - dy * ux;
+        const o = nBond * 16;
+        bondM[o] = ux * rad; bondM[o + 1] = uy * rad; bondM[o + 2] = uz * rad;
+        bondM[o + 4] = dx * len; bondM[o + 5] = dy * len; bondM[o + 6] = dz * len;
+        bondM[o + 8] = vx * rad; bondM[o + 9] = vy * rad; bondM[o + 10] = vz * rad;
+        bondM[o + 12] = (x1 + x2) / 2; bondM[o + 13] = (y1 + y2) / 2; bondM[o + 14] = (z1 + z2) / 2; bondM[o + 15] = 1;
+        nBond++;
       };
 
       /* ---------------- airflow arrows ---------------- */
@@ -327,8 +393,7 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
         }
         const g = new THREE.BufferGeometry();
         g.setAttribute("position", new THREE.BufferAttribute(pos, 3));
-        const p = new THREE.Points(g, new THREE.PointsMaterial({ color: 0xffffff, size: 1.7, sizeAttenuation: false, transparent: true, opacity: 0.85, depthWrite: false, fog: false }));
-        return p;
+        return new THREE.Points(g, new THREE.PointsMaterial({ color: 0xffffff, size: 1.7, sizeAttenuation: false, transparent: true, opacity: 0.85, depthWrite: false, fog: false }));
       };
       const earthMat = (sun: [number, number, number]) =>
         new THREE.ShaderMaterial({ vertexShader: EARTH_VERT, fragmentShader: EARTH_FRAG, uniforms: { uTime: { value: 0 }, uSun: { value: new THREE.Vector3(...sun) }, uR: { value: 1 } } });
@@ -350,8 +415,7 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
         controls.maxPolarAngle = e === "earth" || e === "moon" ? Math.PI * 0.515 : Math.PI;
 
         if (e === "earth") {
-          const sky = new THREE.Mesh(new THREE.SphereGeometry(60, 24, 16), new THREE.ShaderMaterial({ vertexShader: SKY_VERT, fragmentShader: SKY_FRAG, side: THREE.BackSide, depthWrite: false, fog: false, uniforms: { uTop: { value: new THREE.Color(0x1a3f66) }, uBottom: { value: new THREE.Color(0x0a1420) } } }));
-          g.add(sky);
+          g.add(new THREE.Mesh(new THREE.SphereGeometry(60, 24, 16), new THREE.ShaderMaterial({ vertexShader: SKY_VERT, fragmentShader: SKY_FRAG, side: THREE.BackSide, depthWrite: false, fog: false, uniforms: { uTop: { value: new THREE.Color(0x1a3f66) }, uBottom: { value: new THREE.Color(0x0a1420) } } })));
           const floor = new THREE.Mesh(new THREE.PlaneGeometry(60, 60), new THREE.MeshStandardMaterial({ color: 0x101b28, roughness: 0.5, metalness: 0.15 }));
           floor.rotation.x = -Math.PI / 2;
           floor.position.y = BOX.yMin - 0.02;
@@ -384,7 +448,7 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
             pa.setY(i, h);
           }
           geo.computeVertexNormals();
-          const terrain = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: 0x6a6965, roughness: 1, metalness: 0, flatShading: false }));
+          const terrain = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: 0x6a6965, roughness: 1, metalness: 0 }));
           terrain.position.y = BOX.yMin - 0.15;
           g.add(terrain);
           const earth = new THREE.Mesh(new THREE.SphereGeometry(2.3, 48, 32), earthMat([-0.4, 0.4, 0.8]));
@@ -397,22 +461,52 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
       };
       buildEnv(live.current.env);
 
-      /* ---------------- labels (DOM, projected each frame) ---------------- */
+      /* ---------------- labels: DOM chips projected every frame, de-overlapped ---------------- */
       const proj = new THREE.Vector3();
-      const placeLabel = (id: LabelId, x: number, y: number, z: number, show: boolean, w: number, h: number) => {
-        const el = labelEls.current[id];
-        if (!el) return;
-        if (!show) {
-          el.style.display = "none";
-          return;
+      type LItem = { id: LabelId; x: number; y: number; w: number; h: number };
+      const sizeCache = new Map<LabelId, { w: number; h: number }>();
+      const measure = (id: LabelId, el: HTMLDivElement) => {
+        let s = sizeCache.get(id);
+        if (!s || s.w === 0) {
+          s = { w: el.offsetWidth || 100, h: el.offsetHeight || 22 };
+          sizeCache.set(id, s);
         }
-        proj.set(x, y, z).project(camera);
-        if (proj.z > 1) {
-          el.style.display = "none";
-          return;
+        return s;
+      };
+      const layoutLabels = (items: { id: LabelId; wx: number; wy: number; wz: number; show: boolean }[], W: number, H: number) => {
+        const placed: LItem[] = [];
+        for (const it of items) {
+          const el = labelEls.current[it.id];
+          if (!el) continue;
+          if (!it.show) { el.style.display = "none"; continue; }
+          proj.set(it.wx, it.wy, it.wz).project(camera);
+          if (proj.z > 1) { el.style.display = "none"; continue; }
+          el.style.display = "flex";
+          const { w, h } = measure(it.id, el);
+          placed.push({ id: it.id, x: ((proj.x + 1) / 2) * W, y: ((1 - proj.y) / 2) * H, w, h });
         }
-        el.style.display = "flex";
-        el.style.transform = `translate(${((proj.x + 1) / 2) * w}px, ${((1 - proj.y) / 2) * h}px)`;
+        // push labels apart vertically when their text boxes collide
+        placed.sort((a, b) => a.y - b.y);
+        const boxes: { x0: number; x1: number; y: number; h: number }[] = [];
+        for (const p of placed) {
+          const left = LABEL_SIDE[p.id] === "l";
+          const x0 = left ? p.x - p.w - 14 : p.x + 4;
+          const x1 = x0 + p.w;
+          let y = p.y;
+          for (let pass = 0; pass < 6; pass++) {
+            let moved = false;
+            for (const b of boxes) {
+              if (x0 < b.x1 + 4 && x1 > b.x0 - 4 && Math.abs(y - b.y) < (p.h + b.h) / 2 + 2) {
+                y = b.y + (p.h + b.h) / 2 + 3;
+                moved = true;
+              }
+            }
+            if (!moved) break;
+          }
+          boxes.push({ x0, x1, y, h: p.h });
+          const el = labelEls.current[p.id]!;
+          el.style.transform = `translate(${p.x}px, ${y}px)`;
+        }
       };
 
       /* ---------------- engine ---------------- */
@@ -420,9 +514,24 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
       eng.setParams(live.current.params);
       eng.warmup(2.5);
       let dirty = true;
+
+      /* camera tween between zoom presets */
+      let tween: { t0: number; dur: number; p0: InstanceType<TH["Vector3"]>; p1: InstanceType<TH["Vector3"]>; q0: InstanceType<TH["Vector3"]>; q1: InstanceType<TH["Vector3"]> } | null = null;
+      const zoomTo = (preset: ZoomPreset) => {
+        const dir = camera.position.clone().sub(controls.target);
+        if (dir.length() < 1e-3) dir.set(0.15, 0.1, 1);
+        dir.normalize();
+        const R = eng.rf, zy = eng.zoneY;
+        const tgt = preset === "chamber" ? new THREE.Vector3(0, 0.55, 0) : preset === "flame" ? new THREE.Vector3(0, zy + 0.05, 0) : new THREE.Vector3(R * 0.95, zy, 0.25);
+        const dist = preset === "chamber" ? HOME_DIST : preset === "flame" ? 3.6 : 0.85;
+        tween = { t0: performance.now(), dur: 950, p0: camera.position.clone(), p1: tgt.clone().add(dir.multiplyScalar(dist)), q0: controls.target.clone(), q1: tgt };
+        dirty = true;
+      };
+
       api.current = {
         reignite: () => eng.reignite(),
         reset: () => {
+          tween = null;
           camera.position.copy(HOME);
           controls.target.copy(HOME_T);
           controls.update();
@@ -435,8 +544,10 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
         dirty: () => {
           dirty = true;
         },
+        zoomTo,
       };
       controls.addEventListener("change", () => (dirty = true));
+      controls.addEventListener("start", () => (tween = null));
 
       /* ---------------- sizing ---------------- */
       let quality = window.matchMedia("(pointer: coarse)").matches ? 1 : 2;
@@ -447,6 +558,7 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
         bloom.enabled = quality > 0;
       };
       let W = 800, H = 500;
+      const aspectRef = { current: aspect };
       const fit = () => {
         W = Math.max(280, Math.floor(host.clientWidth));
         H = Math.floor(W * aspectRef.current);
@@ -460,7 +572,6 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
         camera.updateProjectionMatrix();
         dirty = true;
       };
-      const aspectRef = { current: aspect };
       fit();
       const ro = new ResizeObserver(fit);
       ro.observe(host);
@@ -474,9 +585,11 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
       const hit = new THREE.Vector3();
       const ndc = new THREE.Vector2();
       const fwd = new THREE.Vector3();
-      let cursorWind: { dir: [number, number, number]; cmS: number; from: InstanceType<TH["Vector3"]> } | null = null;
       const onMove = (ev: PointerEvent) => {
-        if (!live.current.cursorAir || ev.buttons !== 0) { if (cursorWind) { cursorWind = null; eng.windOverride = null; cursorArrow.visible = false; } return; }
+        if (!live.current.cursorAir || ev.buttons !== 0) {
+          if (eng.windOverride) { eng.windOverride = null; cursorArrow.visible = false; }
+          return;
+        }
         const r = canvas.getBoundingClientRect();
         ndc.set(((ev.clientX - r.left) / r.width) * 2 - 1, -((ev.clientY - r.top) / r.height) * 2 + 1);
         ray.setFromCamera(ndc, camera);
@@ -487,8 +600,7 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
         const len = d.length();
         if (len < 0.5) return;
         d.normalize();
-        cursorWind = { dir: [d.x, d.y, d.z], cmS: Math.max(live.current.params.flowCmS, 28), from: hit.clone() };
-        eng.windOverride = { dir: cursorWind.dir, cmS: cursorWind.cmS };
+        eng.windOverride = { dir: [d.x, d.y, d.z], cmS: Math.max(live.current.params.flowCmS, 28) };
         cursorArrow.visible = true;
         cursorArrow.position.copy(hit);
         cursorArrow.setDirection(d);
@@ -496,7 +608,6 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
         dirty = true;
       };
       const onLeave = () => {
-        cursorWind = null;
         eng.windOverride = null;
         cursorArrow.visible = false;
         dirty = true;
@@ -526,6 +637,19 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
           dirty = true;
         } else eng.params = L.params;
         if (L.autoRotate) dirty = true;
+
+        if (tween) {
+          const k = Math.min(1, (now - tween.t0) / tween.dur);
+          const e = k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
+          camera.position.lerpVectors(tween.p0, tween.p1, e);
+          controls.target.lerpVectors(tween.q0, tween.q1, e);
+          if (k >= 1) tween = null;
+          dirty = true;
+        }
+        // keep the orbit target inside the chamber so panning cannot lose the scene
+        controls.target.x = Math.max(-BOX.x, Math.min(BOX.x, controls.target.x));
+        controls.target.y = Math.max(BOX.yMin, Math.min(BOX.yMax, controls.target.y));
+        controls.target.z = Math.max(-BOX.z, Math.min(BOX.z, controls.target.z));
         controls.update();
         if (!dirty) return;
         dirty = false;
@@ -535,6 +659,8 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
         const Ly = L.layers;
         const wdir = eng.windOverride?.dir ?? P.wind ?? [1, 0, 0];
         const wflow = eng.windOverride?.cmS ?? P.flowCmS;
+        const camDist = camera.position.distanceTo(controls.target);
+        boost = Math.max(1, Math.min(1.9, camDist / 5.5));
 
         // flame
         const U = flameMat.uniforms;
@@ -553,69 +679,87 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
         dropMat.color.set(P.fuel === "heptane" ? 0xe0b84a : 0xdfe6f2);
 
         // molecules
-        cnt.fill(0);
+        nLo = 0; nHi = 0; nBond = 0;
         const n = eng.n;
-        const ex = eng.x, ey = eng.y, ez = eng.z, eax = eng.ax, eay = eng.ay, eaz = eng.az, et = eng.type, ep = eng.prod;
+        const ex = eng.x, ey = eng.y, ez = eng.z, eax = eng.ax, eay = eng.ay, eaz = eng.az, et = eng.type, ep = eng.prod, elf = eng.life;
         const heptane = P.fuel === "heptane";
         for (let i = 0; i < n; i++) {
           const ty = et[i];
           const x = ex[i], y = ey[i], z = ez[i];
           const ax = eax[i], ay = eay[i], az = eaz[i];
           switch (ty) {
-            case T3.O2:
+            case T3.O2: {
               if (!Ly.o2) break;
-              put(IDX.O, x + ax * 0.052, y + ay * 0.052, z + az * 0.052, ATOM.O.r);
-              put(IDX.O, x - ax * 0.052, y - ay * 0.052, z - az * 0.052, ATOM.O.r);
+              const x1 = x + ax * 0.05, y1 = y + ay * 0.05, z1 = z + az * 0.05, x2 = x - ax * 0.05, y2 = y - ay * 0.05, z2 = z - az * 0.05;
+              putAtom(x1, y1, z1, AR.O, COL.O); putAtom(x2, y2, z2, AR.O, COL.O);
+              putBond(x1, y1, z1, x2, y2, z2, 0.014);
               break;
-            case T3.N2:
+            }
+            case T3.N2: {
               if (!Ly.n2) break;
-              put(IDX.N, x + ax * 0.05, y + ay * 0.05, z + az * 0.05, ATOM.N.r);
-              put(IDX.N, x - ax * 0.05, y - ay * 0.05, z - az * 0.05, ATOM.N.r);
+              const x1 = x + ax * 0.05, y1 = y + ay * 0.05, z1 = z + az * 0.05, x2 = x - ax * 0.05, y2 = y - ay * 0.05, z2 = z - az * 0.05;
+              putAtom(x1, y1, z1, AR.N, COL.N); putAtom(x2, y2, z2, AR.N, COL.N);
+              putBond(x1, y1, z1, x2, y2, z2, 0.017);
               break;
-            case T3.CO2:
-              if (ep[i] ? !Ly.products : !Ly.co2) break;
-              put(IDX.C, x, y, z, ATOM.C.r);
-              put(IDX.O, x + ax * 0.12, y + ay * 0.12, z + az * 0.12, 0.052);
-              put(IDX.O, x - ax * 0.12, y - ay * 0.12, z - az * 0.12, 0.052);
+            }
+            case T3.CO2: {
+              const isProd = ep[i] === 1;
+              if (isProd ? !Ly.products : !Ly.co2) break;
+              const heat = isProd ? Math.exp(-(9 - Math.max(0, elf[i])) / 1.3) : 0;
+              const x1 = x + ax * 0.115, y1 = y + ay * 0.115, z1 = z + az * 0.115, x2 = x - ax * 0.115, y2 = y - ay * 0.115, z2 = z - az * 0.115;
+              putAtom(x, y, z, AR.C, COL.C, heat);
+              putAtom(x1, y1, z1, 0.042, COL.O, heat); putAtom(x2, y2, z2, 0.042, COL.O, heat);
+              putBond(x, y, z, x1, y1, z1, 0.013); putBond(x, y, z, x2, y2, z2, 0.013);
               break;
+            }
             case T3.HE:
               if (!Ly.he) break;
-              put(IDX.He, x, y, z, ATOM.He.r);
+              putAtom(x, y, z, AR.He, COL.He);
               break;
             case T3.H2O: {
               if (!Ly.products) break;
+              const heat = Math.exp(-(9 - Math.max(0, elf[i])) / 1.3);
               // bent molecule: build a perpendicular to the axis
-              let px = ay * 0 - az * 1, py = az * 0 - ax * 0, pz = ax * 1 - ay * 0; // axis x (0,1,0)
+              let px = -az, py = 0, pz = ax;
               let pl = Math.hypot(px, py, pz);
               if (pl < 0.2) { px = 0; py = az; pz = -ay; pl = Math.hypot(px, py, pz) || 1; }
               px /= pl; py /= pl; pz /= pl;
-              const c = 0.616 * 0.085, s = 0.788 * 0.085;
-              put(IDX.O, x, y, z, 0.056);
-              put(IDX.H, x + ax * c + px * s, y + ay * c + py * s, z + az * c + pz * s, ATOM.H.r);
-              put(IDX.H, x + ax * c - px * s, y + ay * c - py * s, z + az * c - pz * s, ATOM.H.r);
+              const c = 0.616 * 0.082, s = 0.788 * 0.082;
+              const h1x = x + ax * c + px * s, h1y = y + ay * c + py * s, h1z = z + az * c + pz * s;
+              const h2x = x + ax * c - px * s, h2y = y + ay * c - py * s, h2z = z + az * c - pz * s;
+              putAtom(x, y, z, 0.044, COL.O, heat);
+              putAtom(h1x, h1y, h1z, AR.H, COL.H, heat); putAtom(h2x, h2y, h2z, AR.H, COL.H, heat);
+              putBond(x, y, z, h1x, h1y, h1z, 0.01); putBond(x, y, z, h2x, h2y, h2z, 0.01);
               break;
             }
             case T3.FUEL:
               if (!Ly.fuel) break;
               if (heptane) {
-                put(IDX.F, x - ax * 0.1, y - ay * 0.1, z - az * 0.1, 0.05);
-                put(IDX.F, x, y, z, 0.055);
-                put(IDX.F, x + ax * 0.1, y + ay * 0.1, z + az * 0.1, 0.05);
+                const x1 = x - ax * 0.1, y1 = y - ay * 0.1, z1 = z - az * 0.1, x2 = x + ax * 0.1, y2 = y + ay * 0.1, z2 = z + az * 0.1;
+                putAtom(x1, y1, z1, 0.046, COL.F); putAtom(x, y, z, 0.05, COL.F); putAtom(x2, y2, z2, 0.046, COL.F);
+                putBond(x1, y1, z1, x, y, z, 0.013); putBond(x, y, z, x2, y2, z2, 0.013);
               } else {
-                put(IDX.F, x - ax * 0.05, y - ay * 0.05, z - az * 0.05, ATOM.F.r);
-                put(IDX.F, x + ax * 0.05, y + ay * 0.05, z + az * 0.05, ATOM.F.r);
+                const x1 = x - ax * 0.05, y1 = y - ay * 0.05, z1 = z - az * 0.05, x2 = x + ax * 0.05, y2 = y + ay * 0.05, z2 = z + az * 0.05;
+                putAtom(x1, y1, z1, AR.F, COL.F); putAtom(x2, y2, z2, AR.F, COL.F);
+                putBond(x1, y1, z1, x2, y2, z2, 0.014);
               }
               break;
-            case T3.SOOT:
+            case T3.SOOT: {
               if (!Ly.soot) break;
-              put(IDX.S, x, y, z, ATOM.S.r);
+              // soot is a small aggregate of carbon spheres, glowing while it is hot
+              const heat = Math.exp(-(11 - Math.max(0, elf[i])) / 1.8);
+              putAtom(x, y, z, 0.045, COL.S, heat);
+              putAtom(x + ay * 0.06, y - ax * 0.05, z + az * 0.03, 0.038, COL.S, heat);
+              putAtom(x - az * 0.05, y + az * 0.04, z + ax * 0.05, 0.034, COL.S, heat);
               break;
+            }
           }
         }
-        for (let k = 0; k < atomMeshes.length; k++) {
-          atomMeshes[k].count = cnt[k];
-          atomMeshes[k].instanceMatrix.needsUpdate = true;
-        }
+        atomsLo.count = nLo; atomsHi.count = nHi; bonds.count = nBond;
+        atomsLo.instanceMatrix.needsUpdate = true; atomsHi.instanceMatrix.needsUpdate = true; bonds.instanceMatrix.needsUpdate = true;
+        (atomsLo.instanceColor as InstanceType<TH["InstancedBufferAttribute"]>).needsUpdate = true;
+        (atomsHi.instanceColor as InstanceType<TH["InstancedBufferAttribute"]>).needsUpdate = true;
+        bonds.visible = camDist < 6.5;
 
         // arrows: forced airflow (blue) and buoyant convection (blue, rising)
         let ai = 0;
@@ -647,18 +791,22 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
         // labels
         const burning = eng.intensity > 0.15;
         const R = eng.rf, zy = eng.zoneY;
-        const sL = Ly.labels;
-        placeLabel("droplet", -0.12, -0.3, 0, sL, W, H);
-        placeLabel("fuelVapor", 0.34, -0.3, 0.15, sL && burning && Ly.fuel, W, H);
-        placeLabel("zone", R * 0.72, zy + R * 0.55, 0, sL && burning && Ly.flame, W, H);
-        placeLabel("oxygenIn", -R * 1.3, zy + R * 0.55, 0, sL && burning && Ly.o2, W, H);
-        placeLabel("products", g > 0.3 ? R * 0.5 : R * 1.1, g > 0.3 ? zy + R * 1.7 : zy - R * 0.6, g > 0.3 ? 0 : R * 0.4, sL && burning && Ly.products, W, H);
-        placeLabel("plume", 0, zy + R * 2.3, 0, sL && burning && g > 0.3, W, H);
-        placeLabel("sphere", -R * 0.7, zy + R * 0.95, 0, sL && burning && g < 0.03, W, H);
+        const sL = Ly.labels && camDist > 1.6;
+        layoutLabels(
+          [
+            { id: "droplet", wx: -0.12, wy: -0.3, wz: 0, show: sL },
+            { id: "fuelVapor", wx: 0.34, wy: -0.3, wz: 0.15, show: sL && burning && Ly.fuel },
+            { id: "zone", wx: R * 0.72, wy: zy + R * 0.55, wz: 0, show: sL && burning && Ly.flame },
+            { id: "oxygenIn", wx: -R * 1.3, wy: zy + R * 0.55, wz: 0, show: sL && burning && Ly.o2 },
+            { id: "products", wx: g > 0.3 ? R * 0.5 : R * 1.1, wy: g > 0.3 ? zy + R * 1.7 : zy - R * 0.6, wz: g > 0.3 ? 0 : R * 0.4, show: sL && burning && Ly.products },
+            { id: "plume", wx: 0, wy: zy + R * 2.3, wz: 0, show: sL && burning && g > 0.3 },
+            { id: "sphere", wx: -R * 0.7, wy: zy + R * 0.95, wz: 0, show: sL && burning && g < 0.03 },
+          ],
+          W,
+          H,
+        );
 
-        // animated planets
         for (const u of uniformsToAnimate) u.value += dt;
-
         composer.render();
 
         // adaptive quality: drop detail if the machine struggles
@@ -675,9 +823,10 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
         }
 
         statAcc += dt;
-        if (statAcc > 0.25 && L.onStats) {
+        if (statAcc > 0.25) {
           statAcc = 0;
-          L.onStats(eng.stats());
+          L.onStats?.(eng.stats());
+          L.onZoom?.(HOME_DIST / Math.max(0.05, camDist));
         }
       };
       raf = requestAnimationFrame(loop);
@@ -696,6 +845,8 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
           if (Array.isArray(mat)) mat.forEach((x) => x.dispose());
           else mat?.dispose?.();
         });
+        envTex.dispose();
+        pmrem.dispose();
         composer.dispose();
         renderer.dispose();
         canvas.remove();
@@ -719,8 +870,11 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
   useEffect(() => {
     if (resetKey) api.current?.reset();
   }, [resetKey]);
+  useEffect(() => {
+    if (zoomReq.n) api.current?.zoomTo(zoomReq.preset);
+  }, [zoomReq]);
 
-  const tag = (id: LabelId, text: string, color: string, side: "r" | "l") => (
+  const tag = (id: LabelId, text: string, color: string) => (
     <div
       key={id}
       ref={(el) => {
@@ -731,7 +885,7 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
     >
       <span className="h-1.5 w-1.5 shrink-0 -translate-x-1/2 rounded-full" style={{ background: color, boxShadow: `0 0 8px ${color}` }} />
       <span
-        className={`whitespace-nowrap rounded-md border border-line bg-bg/75 px-1.5 py-0.5 text-[11px] font-semibold backdrop-blur ${side === "l" ? "-translate-x-[calc(100%+10px)]" : "translate-x-1.5"}`}
+        className={`whitespace-nowrap rounded-md border border-line bg-bg/75 px-1.5 py-0.5 text-[11px] font-semibold backdrop-blur ${LABEL_SIDE[id] === "l" ? "-translate-x-[calc(100%+10px)]" : "translate-x-1.5"}`}
         style={{ color }}
       >
         {text}
@@ -742,13 +896,13 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
   return (
     <div ref={wrap} className={`relative ${className ?? ""}`}>
       <div className="pointer-events-none absolute inset-0 z-10 overflow-hidden rounded-xl">
-        {tag("droplet", labelText.droplet, "#eceae4", "l")}
-        {tag("fuelVapor", labelText.fuelVapor, "#ffd36b", "r")}
-        {tag("zone", labelText.zone, "#ffb98a", "r")}
-        {tag("oxygenIn", labelText.oxygenIn, "#ff9d9c", "l")}
-        {tag("products", labelText.products, "#e9e7e0", "r")}
-        {tag("plume", labelText.plume, "#8ac8ff", "r")}
-        {tag("sphere", labelText.sphere, "#8ac8ff", "l")}
+        {tag("droplet", labelText.droplet, "#eceae4")}
+        {tag("fuelVapor", labelText.fuelVapor, "#ffd36b")}
+        {tag("zone", labelText.zone, "#ffb98a")}
+        {tag("oxygenIn", labelText.oxygenIn, "#ff9d9c")}
+        {tag("products", labelText.products, "#e9e7e0")}
+        {tag("plume", labelText.plume, "#8ac8ff")}
+        {tag("sphere", labelText.sphere, "#8ac8ff")}
         {env === "suit" && (
           <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, rgba(0,0,0,0) 52%, rgba(0,0,0,0.78) 100%)", boxShadow: "inset 0 0 0 10px rgba(8,10,15,0.9), inset 0 0 0 11px rgba(138,200,255,0.18)" }} />
         )}
