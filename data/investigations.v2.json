@@ -1,28 +1,28 @@
 {
-  "generatedAt": "2026-11-13T19:22:12.364Z",
+  "generatedAt": "2026-11-13T19:28:04.116Z",
   "sources": {
     "GUIDE": {
       "label": "A Researcher's Guide to Combustion Science (NASA, 2015)",
       "url": "https://www.nasa.gov/wp-content/uploads/2016/05/np-2015-10-034-jsc_combustion_in_reduced_gravity-iss-mini-book-011116-508.pdf"
     },
     "FS-BASS": {
-      "label": "Ficha NASA: BASS",
+      "label": "NASA fact sheet: BASS",
       "url": "https://www.nasa.gov/wp-content/uploads/2025/07/burning-and-suppression-of-solids-bass.pdf"
     },
     "FS-FLEX": {
-      "label": "Ficha NASA: FLEX / FLEX-2",
+      "label": "NASA fact sheet: FLEX / FLEX-2",
       "url": "https://www.nasa.gov/wp-content/uploads/2025/07/flame-extinguishment-experiment-flex.pdf"
     },
     "FS-SAME": {
-      "label": "Ficha NASA: SAME",
+      "label": "NASA fact sheet: SAME",
       "url": "https://www.nasa.gov/wp-content/uploads/2025/07/smoke-aerosol-measurement-experiment-same.pdf"
     },
     "PSI": {
-      "label": "NASA Physical Sciences Informatics (metadatos)",
-      "url": "https://psi.nasa.gov/physci/repo/search?q=combustion"
+      "label": "NASA Physical Sciences Informatics (investigation metadata)",
+      "url": "https://psi.nasa.gov"
     },
     "CHALLENGE": {
-      "label": "Enunciado oficial Flame in Freefall (Space Apps 2026)",
+      "label": "Official challenge statement: Flame in Freefall (NASA Space Apps 2026)",
       "url": "https://www.spaceappschallenge.org"
     },
     "GLENN": {
@@ -42,10 +42,10 @@
       "areas": [
         "prevention"
       ],
-      "fuelPhase": "gas (emula sólidos)",
+      "fuelPhase": "gas (emulates solids)",
       "fuels": [
         "CH4/N2",
-        "C2H4/N2 en quemadores porosos de 25 y 50 mm"
+        "C2H4/N2 on 25 mm and 50 mm porous burners"
       ],
       "conditions": {
         "o2": [
@@ -62,23 +62,23 @@
           "10.2 psia / 26.5% O2",
           "8.2 psia / 34% O2"
         ],
-        "note": "Atmósferas de hábitat consideradas por NASA, citadas en el objetivo de PSI."
+        "note": "Habitat atmospheres considered by NASA, as stated in the PSI objectives."
       },
       "sensors": [],
-      "summary": "Quemador de gas que emula la combustión de materiales sólidos en atmósfera en reposo, ensayado en las atmósferas previstas para naves y bases.",
+      "summary": "A gas burner that emulates how solid materials burn in a still atmosphere, tested in the atmospheres planned for spacecraft and bases.",
       "findings": [
         {
-          "text": "Se observó combustión cuasi-estacionaria de materiales equivalentes a PMMA y nailon en microgravedad SIN flujo de aire, algo notable en las atmósferas enriquecidas en oxígeno previstas para futuras naves; a 21% de O2 esas llamas se autoextinguían en poco tiempo.",
+          "text": "Quasi-steady burning of condensed-phase materials such as PMMA and Nylon was observed in microgravity with NO air flow, notably in the oxygen-enriched atmospheres being considered for future spacecraft; at 21% O2 such flames self-extinguished in a short time.",
           "src": "PSI",
           "kind": "reported"
         },
         {
-          "text": "Apagar la ventilación es un paso establecido para extinguir incendios en naves; estos resultados sugieren que podría no bastar en atmósferas ricas en O2.",
+          "text": "Cutting ventilation is an established step to put out spacecraft fires; these results suggest it may not be enough in oxygen-rich atmospheres.",
           "src": "PSI",
           "kind": "reported"
         },
         {
-          "text": "Los autores sugieren aumentar el uso del Test 2 de NASA (calorímetro de cono), que mide propiedades de material correspondientes a estas llamas.",
+          "text": "The authors suggest NASA may want to make more use of its alternative flammability Test 2 (cone calorimeter), which can measure material properties matching the microgravity flames seen with BRE.",
           "src": "PSI",
           "kind": "reported"
         }
@@ -93,9 +93,9 @@
         "modeling": 1,
         "data": 0.2
       },
-      "spaceApplication": "Selección de materiales y protocolos de respuesta a incendios en atmósferas de hábitat lunar.",
+      "spaceApplication": "Material selection and fire-response protocols for lunar habitat atmospheres.",
       "earthApplication": null,
-      "status": "preliminar",
+      "status": "preliminary results",
       "hardware": "Combustion Integrated Rack (CIR), ACME",
       "program": "International Space Station (ISS)",
       "files": {
@@ -151,14 +151,14 @@
         "prevention",
         "suppression"
       ],
-      "fuelPhase": "sólido",
+      "fuelPhase": "solid",
       "fuels": [
-        "SIBAL (algodón-fibra de vidrio)",
+        "SIBAL (cotton-fiberglass)",
         "Nomex",
         "Ultem",
-        "PMMA (planos y esferas de 1 y 2 cm)",
-        "fibra de vidrio con cera",
-        "velas de parafina y cera japonesa"
+        "PMMA (flat samples and 1 cm and 2 cm spheres)",
+        "wax-saturated fiberglass",
+        "paraffin and Japan-wax candles"
       ],
       "conditions": {
         "o2": null,
@@ -171,27 +171,27 @@
           0,
           500
         ],
-        "note": "41 muestras y 89 puntos de ensayo. El rango de O2 no figura en la ficha."
+        "note": "41 samples and 89 test points. The O2 range is not given in the fact sheet."
       },
       "sensors": [
-        "radiómetro (salida de la llama)",
-        "anemómetro (flujo real)",
-        "vídeo y fotografía"
+        "radiometer (flame output)",
+        "anemometer (actual flow)",
+        "video and still cameras"
       ],
-      "summary": "Quema muestras sólidas en un conducto con flujo controlado dentro del Microgravity Science Glovebox y apaga la llama aumentando un flujo de nitrógeno.",
+      "summary": "Burns solid samples in a controlled-flow duct inside the Microgravity Science Glovebox and extinguishes the flame by ramping up a nitrogen flow.",
       "findings": [
         {
-          "text": "Resultados recientes indican que NASA-STD-6001 Test 1 NO es conservadora: los materiales pueden arder a menos oxígeno en microgravedad que en la Tierra.",
+          "text": "Recent BASS results indicate that NASA-STD-6001 Test 1 is NOT conservative: materials can burn at lower oxygen levels in microgravity than on Earth.",
           "src": "GUIDE p.31",
           "kind": "reported"
         },
         {
-          "text": "La aplicación local de supresor no basta para extinguir: el chorro arrastra aire y sostiene la llama aunque se apague el flujo ambiente.",
+          "text": "Local application of suppressant is not adequate for extinguishment: the local jet entrains air and sustains the flame even when the ambient airflow is turned off.",
           "src": "GUIDE p.31",
           "kind": "reported"
         },
         {
-          "text": "Hipótesis: con ventilación adecuada, los materiales arden igual o mejor en microgravedad que en gravedad normal con idénticas condiciones.",
+          "text": "Hypothesis: with adequate ventilation, materials in microgravity burn as well if not better than in normal gravity under otherwise identical conditions.",
           "src": "FS-BASS",
           "kind": "reported"
         }
@@ -206,9 +206,9 @@
         "modeling": 1,
         "data": 0.7
       },
-      "spaceApplication": "La selección de materiales de NASA se basa en un test de 1 g (NASA-STD-6001 Test 1) sin considerar efectos de baja gravedad.",
-      "earthApplication": "Valida modelos de combustión usados en problemas terrestres.",
-      "status": "completado",
+      "spaceApplication": "NASA's spacecraft materials selection relies on a 1-g standard test (NASA-STD-6001 Test 1) that ignores low-gravity effects.",
+      "earthApplication": "Validates combustion models used for terrestrial problems.",
+      "status": "completed",
       "hardware": "Microgravity Science Glovebox",
       "program": "International Space Station (ISS)",
       "files": {
@@ -270,28 +270,28 @@
         "prevention",
         "suppression"
       ],
-      "fuelPhase": "sólido",
+      "fuelPhase": "solid",
       "fuels": [
-        "varillas, secciones esféricas, planchas, películas y telas (geometrías realistas más gruesas)"
+        "rods, spherical sections, slabs, films and fabric sheets (thicker, more realistic geometries)"
       ],
       "conditions": {
         "o2": null,
         "pressureAtm": null,
         "flowCmS": null,
-        "note": "Variables primarias según PSI: velocidad y dirección del flujo, O2 ambiente (por dilución con N2) y geometría de muestra. Valores numéricos pendientes de la tabla experimental."
+        "note": "Primary variables per PSI: flow velocity and direction, ambient oxygen (via nitrogen dilution) and sample geometry. Numerical values pending the experimental table."
       },
       "sensors": [
-        "vídeo (296 vídeos en PSI)"
+        "video (296 videos in PSI)"
       ],
-      "summary": "Continuación de BASS con combustibles más gruesos y realistas; busca tender un puente entre el Test 1 de 1 g, las pruebas en tierra y la inflamabilidad real en microgravedad.",
+      "summary": "Follow-up to BASS with thicker, more realistic fuels; it bridges the 1-g Test 1 method, ground-based microgravity tests and actual material flammability in microgravity.",
       "findings": [
         {
-          "text": "Objetivo: estudiar ignición, crecimiento, propagación y límites de extinción de sólidos en flujos forzados lentos, y aportar datos preliminares a los investigadores de SoFIE.",
+          "text": "Objective: study ignition, flame growth, flame spread and extinction limits of solid fuels in low-velocity forced flows, and give SoFIE investigators preliminary data.",
           "src": "PSI",
           "kind": "reported"
         },
         {
-          "text": "Ayuda a los ingenieros a seleccionar los materiales más seguros y a mejorar los métodos de extinción en misiones futuras.",
+          "text": "Helps engineers select the safest materials and improve firefighting methods on future missions.",
           "src": "PSI",
           "kind": "reported"
         }
@@ -306,9 +306,9 @@
         "modeling": 1,
         "data": 1
       },
-      "spaceApplication": "Selección de materiales y métodos de extinción para misiones lejos de la Tierra.",
-      "earthApplication": "Modelos aplicables a incendios forestales y de edificios.",
-      "status": "completado",
+      "spaceApplication": "Material selection and extinguishment methods for missions far from Earth.",
+      "earthApplication": "Models applicable to wildfires and building fires.",
+      "status": "completed",
       "hardware": "Microgravity Science Glovebox (MSG)",
       "program": "International Space Station (ISS)",
       "files": {
@@ -370,10 +370,10 @@
       "areas": [
         "suppression"
       ],
-      "fuelPhase": "líquido (gotas)",
+      "fuelPhase": "liquid (droplets)",
       "fuels": [
-        "heptano",
-        "metanol"
+        "heptane",
+        "methanol"
       ],
       "conditions": {
         "o2": [
@@ -397,27 +397,27 @@
           2,
           5
         ],
-        "note": "Rangos planificados según la ficha; el diluyente principal es N2, con pocos ensayos con He."
+        "note": "Planned ranges per the fact sheet; the main diluent is N2, with a few tests using He."
       },
       "sensors": [
-        "medida resuelta de velocidad de quemado de gota",
-        "radiación de llama",
-        "concentración y temperatura de hollín"
+        "resolved droplet burning-rate measurements",
+        "flame radiation",
+        "soot concentration and temperature"
       ],
-      "summary": "Quema gotas de combustible líquido en mezclas de O2 y diluyentes para mapear límites de inflamabilidad y la eficacia de supresores inertes (CO2, He).",
+      "summary": "Burns fuel droplets in mixtures of oxygen and diluents to map flammability limits and the effectiveness of inert suppressants (CO2, He).",
       "findings": [
         {
-          "text": "El límite de inflamabilidad es menor en gravedad reducida; los estándares terrestres de supresores inertes no ofrecen el mismo margen de seguridad en baja gravedad.",
+          "text": "The flammability limit is lower in reduced gravity; terrestrial standards for inert-gas suppressants do not offer the same margin of safety in low gravity.",
           "src": "GUIDE p.12",
           "kind": "reported"
         },
         {
-          "text": "Demostró extinción radiativa y difusiva, inestabilidades de combustión, límites de inflamabilidad más bajos y explicó el fenómeno de llama fría tras la extinción de la llama visible.",
+          "text": "Demonstrated radiative and diffusive extinction, combustion instabilities, lower flammability limits and explained the cool-flame phenomenon after visible flame extinction.",
           "src": "GUIDE p.13",
           "kind": "reported"
         },
         {
-          "text": "Un motivo para ensayar presiones de 0.5 a 1.0 atm: una estrategia de extinción es aislar el hábitat y ventear la cabina al espacio.",
+          "text": "Pressures of 0.5 to 1.0 atm are tested because one extinguishing strategy is to isolate the habitat and vent the cabin to space.",
           "src": "FS-FLEX",
           "kind": "reported"
         }
@@ -432,9 +432,9 @@
         "modeling": 1,
         "data": 0.2
       },
-      "spaceApplication": "Estima el índice límite de oxígeno (LOI) más conservador para combustión estacionaria.",
-      "earthApplication": "Los modelos de heptano y metanol son base de modelos de combustibles prácticos como el diésel y el queroseno.",
-      "status": "completado",
+      "spaceApplication": "Provides the most conservative estimate of the limiting oxygen index (LOI) for steady combustion.",
+      "earthApplication": "Heptane and methanol models are building blocks for practical fuels such as diesel and jet fuel.",
+      "status": "completed",
       "hardware": "Combustion Integrated Rack (CIR)-Fluids and Combustion Facility (FCF), Multi-user Droplet Combustion Appartatus (MDCA)",
       "program": "International Space Station (ISS)",
       "files": {
@@ -489,12 +489,12 @@
       "areas": [
         "suppression"
       ],
-      "fuelPhase": "líquido (gotas)",
+      "fuelPhase": "liquid (droplets)",
       "fuels": [
-        "combustibles puros",
-        "mezclas de combustibles",
-        "sustitutos de combustibles reales",
-        "gotas en pareja"
+        "pure fuels",
+        "fuel mixtures",
+        "real-fuel surrogates",
+        "droplet pairs"
       ],
       "conditions": {
         "o2": null,
@@ -504,18 +504,18 @@
           2,
           4
         ],
-        "note": "30 a 60 ensayos por grupo (puros, mezclas, flujo convectivo, pares de gotas). La guía muestra etanol al 30% de O2 y 2.4 atm en un ejemplo de hollín."
+        "note": "30 to 60 tests per group (pure, mixtures, convective flow, droplet pairs). The guide shows ethanol at 30% O2 and 2.4 atm in a soot example."
       },
       "sensors": [],
-      "summary": "Sucesor de FLEX: estudia flujos convectivos lentos, interacción entre gotas y combustibles más complejos.",
+      "summary": "Successor to FLEX: studies slow convective flows, droplet-droplet interactions and more complex fuels.",
       "findings": [
         {
-          "text": "Cuatro grupos de experimentos: combustibles puros, mezclas, flujo convectivo y pares de gotas, con 30 a 60 ensayos cada uno.",
+          "text": "Four experiment groups: pure fuels, fuel mixtures, convective flow and binary droplet arrays, with 30 to 60 tests each.",
           "src": "FS-FLEX",
           "kind": "reported"
         },
         {
-          "text": "Incluye variantes internacionales: FLEX-2J (JAXA, propagación en filas de gotas) y FLEX-ICE-GA (biocombustibles, CNR de Italia).",
+          "text": "Includes international variants: FLEX-2J (JAXA, flame spread along droplet arrays) and FLEX-ICE-GA (biofuels, Italian CNR).",
           "src": "FS-FLEX",
           "kind": "reported"
         }
@@ -531,8 +531,8 @@
         "data": 0.2
       },
       "spaceApplication": null,
-      "earthApplication": "Verifica modelos de combustibles reales de transporte e industria.",
-      "status": "completado",
+      "earthApplication": "Verifies models of real transportation and industrial fuels.",
+      "status": "completed",
       "hardware": "Combustion Integrated Rack (CIR), Multi-user Droplet Combustion Appartatus (MDCA)",
       "program": "International Space Station (ISS)",
       "files": {
@@ -587,10 +587,10 @@
       "areas": [
         "fundamental"
       ],
-      "fuelPhase": "líquido (gotas)",
+      "fuelPhase": "liquid (droplets)",
       "fuels": [
-        "n-dodecano",
-        "mezclas n-dodecano / iso-dodecano"
+        "n-dodecane",
+        "n-dodecane / iso-dodecane mixtures"
       ],
       "conditions": {
         "o2": null,
@@ -599,18 +599,18 @@
           5
         ],
         "flowCmS": null,
-        "note": "Incluye efecto de la dilución con helio sobre las llamas frías."
+        "note": "Includes the effect of helium dilution on cool flames."
       },
       "sensors": [],
-      "summary": "Estudia llamas frías (combustión a baja temperatura) en gotas de combustible, en función de presión, tamaño de gota y dilución con helio.",
+      "summary": "Studies cool flames (low-temperature combustion) in fuel droplets as a function of pressure, droplet size and helium dilution.",
       "findings": [
         {
-          "text": "Las llamas frías son importantes para entender la ignición de combustibles prácticos y aditivos, y para el diseño de motores avanzados.",
+          "text": "A basic understanding of cool flames is important for understanding ignition of practical fuels and fuel additives, and for designing advanced engines.",
           "src": "PSI",
           "kind": "reported"
         },
         {
-          "text": "Investiga la relación entre tamaño de gota, presión y extinción, y la consecuencia de la formación de hollín en combustión de llama fría.",
+          "text": "Investigates the relationship between droplet size, pressure and flame extinction, and the consequences of soot formation during cool-flame combustion.",
           "src": "PSI",
           "kind": "reported"
         }
@@ -625,9 +625,9 @@
         "modeling": 1,
         "data": 1
       },
-      "spaceApplication": "Fenómeno candidato a preocupación de seguridad (persistencia tras extinguirse la llama visible); su impacto en detección NO está verificado en las fuentes.",
-      "earthApplication": "Diseño de combustibles y motores más limpios.",
-      "status": "completado",
+      "spaceApplication": "Cool flames are a candidate safety concern (persistence after the visible flame goes out); their effect on detection is NOT verified in the sources.",
+      "earthApplication": "Design of cleaner fuels and engines.",
+      "status": "completed",
       "hardware": "Multi-User Droplet Combustion Apparatus (MDCA), Combustion Integrated Rack (CIR)",
       "program": "International Space Station (ISS)",
       "files": {
@@ -696,9 +696,9 @@
       ],
       "fuelPhase": "gas",
       "fuels": [
-        "propano",
-        "n-butano",
-        "n-pentano"
+        "propane",
+        "n-butane",
+        "n-pentane"
       ],
       "conditions": {
         "o2": [
@@ -707,18 +707,18 @@
         ],
         "pressureAtm": null,
         "flowCmS": null,
-        "note": "El enunciado del reto indica que de un quemador esférico fluía una mezcla O2-N2 de hasta 85% de O2 formando una llama de dentro hacia fuera."
+        "note": "The challenge statement says an O2-N2 mixture of up to 85% O2 flowed from a spherical burner, creating an inside-out flame."
       },
       "sensors": [],
-      "summary": "Determina las condiciones en que existen llamas de difusión frías en quemadores esféricos porosos; los ensayos de microgravedad con mayor concentración de oxígeno.",
+      "summary": "Determines the conditions under which cool diffusion flames exist on spherical porous burners; the microgravity tests with the highest oxygen concentration.",
       "findings": [
         {
-          "text": "Hipótesis: demostrar por primera vez llamas de difusión frías estacionarias en quemadores esféricos porosos con propano, n-butano y n-pentano.",
+          "text": "Hypothesis: testing aboard the ISS can demonstrate, for the first time, steady-state cool diffusion flames on spherical porous burners with propane, n-butane and n-pentane.",
           "src": "PSI",
           "kind": "reported"
         },
         {
-          "text": "Contiene los ensayos de microgravedad con mayor concentración de oxígeno (hasta 85%).",
+          "text": "Contains the microgravity tests with the highest oxygen concentrations (up to 85%).",
           "src": "CHALLENGE",
           "kind": "reported"
         }
@@ -733,9 +733,9 @@
         "modeling": 1,
         "data": 1
       },
-      "spaceApplication": "Datos en condiciones extremas de O2, relevantes para atmósferas de hábitat y traje.",
-      "earthApplication": "Mejora de la eficiencia de motores de combustión interna.",
-      "status": "completado",
+      "spaceApplication": "Data at extreme O2 conditions, relevant to habitat and spacesuit atmospheres.",
+      "earthApplication": "Improves the efficiency of internal combustion engines.",
+      "status": "completed",
       "hardware": "ACME, Combustion Integrated Rack (CIR)",
       "program": "International Space Station (ISS)",
       "files": {
@@ -784,8 +784,8 @@
       ],
       "fuelPhase": "gas",
       "fuels": [
-        "etileno (C2H4)",
-        "metano (CH4)"
+        "ethylene (C2H4)",
+        "methane (CH4)"
       ],
       "conditions": {
         "o2": null,
@@ -795,13 +795,13 @@
           "N2",
           "CO2"
         ],
-        "note": "Límites de inicio de hollín en función del caudal, Zst, cantidad de inerte y presión."
+        "note": "Soot-inception limits as a function of flow rate, Zst, amount of inert and pressure."
       },
       "sensors": [],
-      "summary": "Mide el inicio de hollín y la estructura de llamas de difusión esféricas en microgravedad.",
+      "summary": "Measures soot inception and structure of spherical diffusion flames in microgravity.",
       "findings": [
         {
-          "text": "Hipótesis: las llamas de difusión esféricas de microgravedad se extinguen cuando la temperatura máxima desciende por debajo de unos 1130 K.",
+          "text": "Hypothesis: microgravity spherical diffusion flames extinguish when the peak temperature first drops below about 1130 K.",
           "src": "PSI",
           "kind": "reported"
         }
@@ -817,8 +817,8 @@
         "data": 1
       },
       "spaceApplication": null,
-      "earthApplication": "Contribuye a mejorar la eficiencia y reducir emisiones en combustores terrestres.",
-      "status": "completado",
+      "earthApplication": "Helps improve efficiency and reduce emissions in terrestrial combustors.",
+      "status": "completed",
       "hardware": "Advanced Combustion via Microgravity Experiments (ACME), Combustion Integrated Rack (CIR), Reconfiguration of Combustion Integrated Rack (CIR)",
       "program": "International Space Station (ISS)",
       "files": {
@@ -886,20 +886,20 @@
       ],
       "fuelPhase": "gas",
       "fuels": [
-        "metano",
-        "etileno"
+        "methane",
+        "ethylene"
       ],
       "conditions": {
         "o2": null,
         "pressureAtm": null,
         "flowCmS": null,
-        "note": "Llamas de difusión en coflujo débil, en función de velocidad y dilución del combustible."
+        "note": "Weak coflow diffusion flames as a function of velocity and fuel dilution."
       },
       "sensors": [],
-      "summary": "Datos de referencia de llamas de difusión en coflujo para validar modelos computacionales en los extremos de dilución.",
+      "summary": "Benchmark data on coflow diffusion flames to test computational models at the extremes of fuel dilution.",
       "findings": [
         {
-          "text": "Caracteriza forma de llama, altura de despegue, temperaturas y límites de extinción, y la tendencia a formar hollín con tiempos de residencia largos.",
+          "text": "Characterizes flame shape, lift-off height, temperatures and extinction limits, and the sooting tendency with long residence times.",
           "src": "PSI",
           "kind": "reported"
         }
@@ -915,8 +915,8 @@
         "data": 0.2
       },
       "spaceApplication": null,
-      "earthApplication": "Las llamas de difusión son el tipo de llama de la mayoría de dispositivos de combustión prácticos.",
-      "status": "completado",
+      "earthApplication": "Diffusion flames are the flame type in most practical combustion devices.",
+      "status": "completed",
       "hardware": "Combustion Integrated Rack (CIR), ACME",
       "program": "International Space Station (ISS)",
       "files": {
@@ -977,18 +977,18 @@
         "o2": null,
         "pressureAtm": null,
         "flowCmS": null,
-        "note": "El enunciado del reto indica que el campo eléctrico imita gravedad parcial a través de su efecto sobre los iones de la llama."
+        "note": "The challenge statement says the electric field mimics partial gravity through its effect on the ions in the flame."
       },
       "sensors": [],
-      "summary": "Estudia cómo un campo eléctrico modifica llamas de difusión laminares; el enunciado lo cita como forma de imitar gravedad parcial.",
+      "summary": "Studies how an electric field changes laminar diffusion flames; the challenge statement cites it as a way to mimic partial gravity.",
       "findings": [
         {
-          "text": "Según el enunciado del reto, el campo eléctrico actúa sobre los iones de la llama y permite imitar gravedad parcial.",
+          "text": "Per the challenge statement, the electric field acts on the ions naturally present in flames and mimics partial gravity.",
           "src": "CHALLENGE",
           "kind": "reported"
         },
         {
-          "text": "PSI aclara que no se realiza para aplicaciones espaciales, aunque podría servir a futuros dispositivos de combustión (p. ej. procesado de residuos).",
+          "text": "PSI clarifies it is not conducted for space applications, although findings could aid future space combustion devices (e.g., solid waste processing).",
           "src": "PSI",
           "kind": "reported"
         }
@@ -1005,7 +1005,7 @@
       },
       "spaceApplication": null,
       "earthApplication": null,
-      "status": "completado",
+      "status": "completed",
       "hardware": "Combustion Integrated Rack (CIR), ACME",
       "program": "International Space Station (ISS)",
       "files": {
@@ -1060,31 +1060,31 @@
       "areas": [
         "prevention"
       ],
-      "fuelPhase": "sólido (material de nave)",
+      "fuelPhase": "solid (spacecraft material)",
       "fuels": [],
       "conditions": {
         "o2": null,
         "pressureAtm": null,
         "flowCmS": null,
-        "note": "Experimento no tripulado en la nave de carga Cygnus."
+        "note": "Uncrewed experiment aboard the Cygnus cargo vehicle."
       },
       "sensors": [
-        "oxígeno",
-        "dióxido de carbono",
-        "calor",
-        "presión",
-        "crecimiento de llama",
-        "dos cámaras de vídeo"
+        "oxygen",
+        "carbon dioxide",
+        "heat",
+        "pressure",
+        "flame growth",
+        "two video cameras"
       ],
-      "summary": "Incendio a gran escala provocado en una nave de carga no tripulada para estudiar cómo crece un fuego realista en baja gravedad.",
+      "summary": "A large-scale fire deliberately set aboard an uncrewed cargo vehicle to study how a realistic fire grows in low gravity.",
       "findings": [
         {
-          "text": "Determina límites de inflamabilidad en microgravedad de varios materiales de nave y ayuda a validar los criterios de selección de materiales de NASA.",
+          "text": "Determines microgravity flammability limits of several spacecraft materials and helps validate NASA's material selection criteria.",
           "src": "PSI",
           "kind": "reported"
         },
         {
-          "text": "Hipótesis: usar incendios y normas terrestres para diseñar la seguridad de naves supone un riesgo inherente por la incertidumbre.",
+          "text": "Hypothesis: using terrestrial fires and standards to design spacecraft fire safety carries an inherent risk because of the uncertainty.",
           "src": "PSI",
           "kind": "reported"
         }
@@ -1099,9 +1099,9 @@
         "modeling": 1,
         "data": 0.4
       },
-      "spaceApplication": "Un fuego realista en una nave exploratoria sin riesgo para tripulación.",
-      "earthApplication": "Beneficia la seguridad en minas, aviones o submarinos.",
-      "status": "completado",
+      "spaceApplication": "A realistic fire on an exploration vehicle with no risk to a crew.",
+      "earthApplication": "Benefits fire safety in mines, aircraft and submarines.",
+      "status": "completed",
       "hardware": "Saffire 1 enclosure in Cygnus",
       "program": "International Space Station (ISS)",
       "files": {
@@ -1160,19 +1160,19 @@
       "areas": [
         "prevention"
       ],
-      "fuelPhase": "sólido (material de nave)",
+      "fuelPhase": "solid (spacecraft material)",
       "fuels": [],
       "conditions": {
         "o2": null,
         "pressureAtm": null,
         "flowCmS": null,
-        "note": "Mismos objetivos que Saffire-I."
+        "note": "Same objectives as Saffire-I."
       },
       "sensors": [],
-      "summary": "Segundo vuelo Saffire en el módulo presurizado de Cygnus.",
+      "summary": "Second Saffire flight, in the Cygnus pressurized cargo module.",
       "findings": [
         {
-          "text": "Mismos objetivos: rapidez de crecimiento de un fuego a gran escala y límites de inflamabilidad en baja gravedad frente al test de selección en gravedad normal.",
+          "text": "Same objectives: how fast a large-scale fire grows in low gravity and low-g flammability limits compared with NASA's normal-gravity screening test.",
           "src": "PSI",
           "kind": "reported"
         }
@@ -1189,7 +1189,7 @@
       },
       "spaceApplication": null,
       "earthApplication": null,
-      "status": "completado",
+      "status": "completed",
       "hardware": "Cygnus Pressurized Cargo Module, SAFFIRE",
       "program": "Cygnus Spacecraft",
       "files": {
@@ -1244,19 +1244,19 @@
       "areas": [
         "prevention"
       ],
-      "fuelPhase": "sólido (material de nave)",
+      "fuelPhase": "solid (spacecraft material)",
       "fuels": [],
       "conditions": {
         "o2": null,
         "pressureAtm": null,
         "flowCmS": null,
-        "note": "Mismos objetivos que Saffire-I."
+        "note": "Same objectives as Saffire-I."
       },
       "sensors": [],
-      "summary": "Tercer vuelo Saffire, con instrumentación y datos abundantes en PSI.",
+      "summary": "Third Saffire flight, with extensive instrumentation and data in PSI.",
       "findings": [
         {
-          "text": "Mismos objetivos que Saffire-I: crecimiento de fuego a gran escala y límites de inflamabilidad.",
+          "text": "Same objectives as Saffire-I: large-scale fire growth and flammability limits.",
           "src": "PSI",
           "kind": "reported"
         }
@@ -1273,7 +1273,7 @@
       },
       "spaceApplication": null,
       "earthApplication": null,
-      "status": "completado",
+      "status": "completed",
       "hardware": "Saffire III enclosure in Cygnus",
       "program": "International Space Station (ISS)",
       "files": {
@@ -1317,39 +1317,39 @@
       "areas": [
         "detection"
       ],
-      "fuelPhase": "aerosol (humo)",
+      "fuelPhase": "aerosol (smoke)",
       "fuels": [
-        "Teflón",
+        "Teflon",
         "Kapton",
-        "caucho de silicona",
-        "celulosa",
-        "ftalato de dibutilo en mecha porosa"
+        "silicone rubber",
+        "cellulose",
+        "dibutyl phthalate on a porous wick"
       ],
       "conditions": {
         "o2": null,
         "pressureAtm": null,
         "flowCmS": null,
-        "note": "30 muestras (6 por material) con distintos caudales de aire, temperaturas de calentamiento y tiempos de envejecimiento del humo. Expedición 15 de la ISS."
+        "note": "30 samples (6 per material) at different airflow rates, heating temperatures and smoke aging times. ISS Expedition 15."
       },
       "sensors": [
-        "contadores de partículas de distintos tamaños",
-        "dispersión de luz",
-        "detectores de ionización y fotoeléctricos evaluados"
+        "particle counters across size ranges",
+        "light scattering",
+        "ionization and photoelectric detectors evaluated"
       ],
-      "summary": "Mide el tamaño y la distribución de partículas del humo de materiales de nave y evalúa los detectores de ionización (transbordador) y fotoeléctricos (ISS).",
+      "summary": "Measures the size and distribution of smoke particles from spacecraft materials and evaluates ionization (Shuttle) and photoelectric (ISS) smoke detectors.",
       "findings": [
         {
-          "text": "Todas las muestras produjeron cantidades significativas de partículas submicrónicas, mejor detectadas por ionización; un detector de dispersión de luz funcionaría muy bien en la mayoría de los casos.",
+          "text": "All samples produced significant numbers of sub-micron particles, better detected by an ionization detector; a light-scattering detector would perform very well for most cases.",
           "src": "FS-SAME",
           "kind": "reported"
         },
         {
-          "text": "Diámetro medio aritmético de 100 a 200 nm; en la silicona (227 nm) casi la mitad de la masa son partículas mayores de 1000 nm.",
+          "text": "Arithmetic mean diameters are 100 to 200 nm; for silicone rubber (227 nm) almost half the particle mass is in particles larger than 1000 nm.",
           "src": "FS-SAME",
           "kind": "reported"
         },
         {
-          "text": "El objetivo de detección es la fase temprana (productos de pre-incendio), no el hollín; detectores de espectro más amplio pueden ser más fiables.",
+          "text": "The detection target is the early phase (pre-fire heating products), not soot; detectors that measure a wider size spectrum may be more reliable.",
           "src": "FS-SAME",
           "kind": "reported"
         }
@@ -1364,9 +1364,9 @@
         "modeling": 1,
         "data": 0.7
       },
-      "spaceApplication": "Línea base de humo en baja gravedad para evaluar futuras tecnologías de detección.",
-      "earthApplication": "Detectores útiles en submarinos y laboratorios submarinos.",
-      "status": "completado",
+      "spaceApplication": "A low-gravity smoke baseline against which future detection technology can be evaluated.",
+      "earthApplication": "Smoke detectors useful in submarines and underwater laboratories.",
+      "status": "completed",
       "hardware": "Comparitive Soot Diagnostic Hardware",
       "program": "International Space Station (ISS)",
       "files": {
@@ -1430,26 +1430,26 @@
       "areas": [
         "detection"
       ],
-      "fuelPhase": "aerosol (humo)",
+      "fuelPhase": "aerosol (smoke)",
       "fuels": [],
       "conditions": {
         "o2": null,
         "pressureAtm": null,
         "flowCmS": null,
-        "note": "Reenvío de SAME."
+        "note": "Reflight of SAME."
       },
       "sensors": [
-        "equipo de diagnóstico de hollín comparativo"
+        "comparative soot diagnostic hardware"
       ],
-      "summary": "Repite SAME corrigiendo un problema: las rejillas TEM volvieron contaminadas y quedaron inutilizables.",
+      "summary": "Repeats SAME and fixes a problem: the TEM grids came back contaminated and unusable.",
       "findings": [
         {
-          "text": "Cuantifica el tamaño que alcanzan las gotas de humo líquido en baja gravedad y lo relaciona con las condiciones de generación y transporte.",
+          "text": "Quantifies the size liquid smoke droplets reach in low gravity and relates it to smoke generation and transport conditions.",
           "src": "PSI",
           "kind": "reported"
         },
         {
-          "text": "Hipótesis: sin flujos de flotabilidad, el crecimiento por nucleación, condensación y coagulación produce partículas mayores que en 1 g.",
+          "text": "Hypothesis: without buoyancy-driven flows, particle growth by nucleation, condensation and coagulation yields larger particles than in 1 g.",
           "src": "PSI",
           "kind": "reported"
         }
@@ -1464,9 +1464,9 @@
         "modeling": 1,
         "data": 0.7
       },
-      "spaceApplication": "Tecnología para un detector avanzado en misiones de larga duración.",
+      "spaceApplication": "Technology for an advanced fire detector on long-duration missions.",
       "earthApplication": null,
-      "status": "completado",
+      "status": "completed",
       "hardware": "Comparitive Soot Diagnostic Hardware; Refer to final report",
       "program": "International Space Station (ISS)",
       "files": {
@@ -1531,28 +1531,28 @@
       "areas": [
         "detection"
       ],
-      "fuelPhase": "aerosol (polvo)",
+      "fuelPhase": "aerosol (dust)",
       "fuels": [
-        "polvo y aerosoles"
+        "dust and aerosols"
       ],
       "conditions": {
         "o2": null,
         "pressureAtm": null,
         "flowCmS": null,
-        "note": "Reduce el riesgo de SAME comprobando un contador de partículas P-Trak modificado."
+        "note": "Mitigates the risk of SAME by checking a modified P-Trak particle counter."
       },
       "sensors": [
-        "TSI P-Trak modificado (condensación de isopropanol y conteo láser)"
+        "modified TSI P-Trak (isopropanol condensation and laser counting)"
       ],
-      "summary": "Comprueba que un contador de partículas P-Trak modificado funciona en microgravedad; el mismo instrumento de SAME se usó para detectar polvo.",
+      "summary": "Checks that a modified P-Trak particle counter works in microgravity; the same instrument used in SAME was used to detect dust.",
       "findings": [
         {
-          "text": "Se temía que el P-Trak fallase en microgravedad (obstrucción por isopropanol o dinámica de flujo de la cámara óptica).",
+          "text": "There were concerns the P-Trak would fail in microgravity (isopropanol clogging, or the optics-chamber airflow dynamics).",
           "src": "PSI",
           "kind": "reported"
         },
         {
-          "text": "Contribuye a sistemas de detección con mayor fiabilidad y sensibilidad para misiones largas.",
+          "text": "Contributes to detection systems with higher reliability and sensitivity for extended missions.",
           "src": "PSI",
           "kind": "reported"
         }
@@ -1567,9 +1567,9 @@
         "modeling": 0.5,
         "data": 0.4
       },
-      "spaceApplication": "Distinguir humo de polvo reduce falsas alarmas.",
-      "earthApplication": "Un detector derivado del transbordador (Brunswick Incipient Fire Detector, 1978) ya distinguía humo de polvo en minas.",
-      "status": "completado",
+      "spaceApplication": "Telling smoke from dust reduces false alarms.",
+      "earthApplication": "A Shuttle-derived detector (Brunswick Incipient Fire Detector, 1978) already separated smoke from dust in mines.",
+      "status": "completed",
       "hardware": "TSI P-Trak",
       "program": "International Space Station (ISS)",
       "files": {
@@ -1613,24 +1613,24 @@
       ],
       "fuelPhase": "gas",
       "fuels": [
-        "etileno",
-        "propano",
-        "propileno (mezclas)"
+        "ethylene",
+        "propane",
+        "propylene (mixtures)"
       ],
       "conditions": {
         "o2": null,
         "pressureAtm": null,
         "flowCmS": null,
-        "note": "Su conducto con ventilador se reutiliza en BASS, BASS-II y SLICE."
+        "note": "Its fan-driven flow duct is reused in BASS, BASS-II and SLICE."
       },
       "sensors": [
-        "imágenes de cámara",
-        "vídeo (18 vídeos en PSI)"
+        "camera images",
+        "video (18 videos in PSI)"
       ],
-      "summary": "Estudia el punto de humo y la longitud de llamas de chorro en coflujo, con el conducto que usan BASS y SLICE.",
+      "summary": "Studies the smoke point and luminous length of jet flames in coflow, using the duct that BASS and SLICE reuse.",
       "findings": [
         {
-          "text": "Cuantifica la tendencia a formar hollín de distintos combustibles y el efecto del diámetro del quemador y la velocidad de coflujo.",
+          "text": "Quantifies the sooting propensity of different fuels and the effect of burner diameter and coflow velocity.",
           "src": "PSI",
           "kind": "reported"
         }
@@ -1645,9 +1645,9 @@
         "modeling": 1,
         "data": 0.7
       },
-      "spaceApplication": "Ayuda a diseñar entornos de nave más seguros.",
+      "spaceApplication": "Helps design safer spacecraft environments.",
       "earthApplication": null,
-      "status": "completado",
+      "status": "completed",
       "hardware": "Microgravity Science Glovebox (MSG)",
       "program": "International Space Station (ISS)",
       "files": {
@@ -1720,13 +1720,13 @@
         "o2": null,
         "pressureAtm": null,
         "flowCmS": null,
-        "note": "Usa el hardware de SPICE. Operó en 2012 según la guía."
+        "note": "Uses SPICE hardware. Operated in 2012 per the guide."
       },
       "sensors": [],
-      "summary": "Estructura y despegue (liftoff) de llamas de difusión laminares en microgravedad.",
+      "summary": "Structure and lift-off of laminar diffusion flames in microgravity.",
       "findings": [
         {
-          "text": "Determina los límites de velocidad de despegue para distintos combustibles y diámetros de quemador, y el efecto de la dilución con nitrógeno.",
+          "text": "Determines lift-off velocity limits for different fuels and burner diameters, and the effect of nitrogen dilution.",
           "src": "PSI",
           "kind": "reported"
         }
@@ -1742,8 +1742,8 @@
         "data": 0.2
       },
       "spaceApplication": null,
-      "earthApplication": "Modelos numéricos que mejoran la eficiencia y reducen emisiones.",
-      "status": "completado",
+      "earthApplication": "Numerical models that improve efficiency and cut emissions.",
+      "status": "completed",
       "hardware": "",
       "program": "International Space Station (ISS)",
       "files": {
@@ -1783,9 +1783,9 @@
       ]
     },
     {
-      "id": "an-lisis-datos-spice",
+      "id": "spice-data-analysis",
       "psiId": "PSI-60",
-      "acronym": "Análisis datos SPICE",
+      "acronym": "SPICE data analysis",
       "title": "Computational and Experimental Analysis of SPICE Data Sets",
       "doi": "10.60555/mzjm-yv57",
       "doiUrl": "https://doi.org/10.60555/mzjm-yv57",
@@ -1799,15 +1799,15 @@
         "o2": null,
         "pressureAtm": null,
         "flowCmS": null,
-        "note": "Investigación en tierra sobre datos de SPICE; más de 1600 imágenes DSLR."
+        "note": "Ground investigation on SPICE data; more than 1600 DSLR images."
       },
       "sensors": [
-        "más de 1600 imágenes DSLR analizadas"
+        "more than 1600 DSLR images analyzed"
       ],
-      "summary": "Análisis computacional y experimental de los datos de SPICE para explicar la gran diferencia de formación de hollín entre 1 g y 0 g.",
+      "summary": "Computational and experimental analysis of SPICE data to explain the large discrepancy in soot formation between 1 g and 0 g.",
       "findings": [
         {
-          "text": "Hipótesis: en microgravedad las llamas son más largas y difusas, con menor temperatura y mayor concentración de hollín que en gravedad normal.",
+          "text": "Hypothesis: in microgravity flames are longer and more diffuse, with lower temperatures and higher soot concentration than in normal gravity.",
           "src": "PSI",
           "kind": "reported"
         }
@@ -1824,7 +1824,7 @@
       },
       "spaceApplication": null,
       "earthApplication": null,
-      "status": "análisis en tierra",
+      "status": "ground analysis",
       "hardware": "",
       "program": "",
       "files": {
@@ -1848,36 +1848,36 @@
     {
       "acronym": "FM2",
       "name": "Flammability of Materials on the Moon",
-      "gravity": "1/6 g (Luna)",
-      "note": "Primer experimento de combustión en otro cuerpo planetario; quema materiales como SIBAL en aire.",
+      "gravity": "1/6 g (Moon)",
+      "note": "The first combustion experiment on another planetary body; burns materials such as SIBAL in air.",
       "src": "GLENN"
     },
     {
       "acronym": "LUCI",
       "name": "Lunar-g Combustion Investigation",
-      "gravity": "gravedad parcial lunar",
-      "note": "Medirá combustión en gravedad parcial. No hay datos aún.",
+      "gravity": "lunar partial gravity",
+      "note": "Will measure combustion in partial gravity. No data yet.",
       "src": "CHALLENGE"
     },
     {
       "acronym": "SoFIE",
       "name": "Solid Fuel Ignition and Extinction",
-      "gravity": "microgravedad (ISS)",
-      "note": "Estudiará si el test de llama de 1 g de NASA-STD-6001 es conservador en baja gravedad.",
+      "gravity": "microgravity (ISS)",
+      "note": "Will test whether NASA-STD-6001's 1-g flame test is conservative in low gravity.",
       "src": "GLENN"
     },
     {
       "acronym": "FLARE",
       "name": "Flammability Limits at Reduced-g Experiment",
-      "gravity": "gravedad normal y microgravedad",
-      "note": "Método para estimar límites de inflamabilidad en microgravedad a partir de datos de tierra; proyecto con JAXA, ESA, CNES y DLR.",
+      "gravity": "normal gravity and microgravity",
+      "note": "A method to estimate microgravity flammability limits from ground data; a project with JAXA, ESA, CNES and DLR.",
       "src": "GLENN"
     }
   ],
   "environments": [
     {
       "id": "earth",
-      "name": "Tierra",
+      "name": "Earth",
       "o2": 0.21,
       "pressureAtm": 1,
       "pressurePsi": 14.7,
@@ -1892,21 +1892,21 @@
       "pressurePsi": 14.7,
       "gravityG": 0,
       "src": "CHALLENGE",
-      "note": "Condiciones de cabina estándar; microgravedad."
+      "note": "Standard cabin conditions; microgravity."
     },
     {
       "id": "moon-habitat",
-      "name": "Base lunar (hábitat)",
+      "name": "Lunar base (habitat)",
       "o2": 0.3,
       "pressureAtm": 0.694,
       "pressurePsi": 10.2,
       "gravityG": 0.166,
       "src": "CHALLENGE",
-      "note": "O2 de 30% o más con presión de 10.2 psi o menos. Gravedad lunar: sin datos experimentales."
+      "note": "30% O2 or more at 10.2 psi or less (challenge statement). Lunar gravity: no experimental data."
     },
     {
       "id": "suit",
-      "name": "Traje espacial",
+      "name": "Spacesuit",
       "o2": 1,
       "pressureAtm": 0.293,
       "pressurePsi": 4.3,
@@ -1918,49 +1918,49 @@
     {
       "year": 1967,
       "name": "Apollo 1",
-      "text": "Incendio en la cápsula durante una prueba en tierra, con cabina de 100% de oxígeno. Murieron Grissom, White y Chaffee. La escotilla tardaba unos 90 s en abrirse.",
-      "lesson": "Escotilla unificada que se abre en 3 s, materiales combustibles restringidos y trajes ignífugos.",
+      "text": "A flash fire swept the Command Module during a pre-launch test in a 100% oxygen cabin. Grissom, White and Chaffee died. The three-piece hatch took about 90 seconds to open.",
+      "lesson": "A unified hatch that opens in 3 seconds, tightly restricted combustible materials and fire-resistant spacesuits.",
       "src": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1"
     },
     {
       "year": 1970,
       "name": "Apollo 13",
-      "text": "Explosión del tanque de oxígeno nº 2 en tránsito lunar, tras sobrecalentarse sus calentadores y degradarse el aislante de teflón. El voltaje de los calentadores se había subido de 28 a 65 V sin cambiar los termostatos.",
-      "lesson": "Se rediseñó el sistema de oxígeno: tercer tanque, termostatos mejorados, sin ventiladores de agitación y cableado en acero inoxidable.",
+      "text": "Oxygen tank no. 2 exploded en route to the Moon after its heaters overheated and degraded the Teflon insulation; heater voltage had been raised from 28 to 65 V DC without upgrading the thermostats.",
+      "lesson": "Oxygen system redesign: a third tank, upgraded thermostats, no stirring fans and stainless-steel-sheathed wiring.",
       "src": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-13"
     },
     {
       "year": 1997,
       "name": "Mir",
-      "text": "El 24 de febrero ardió un cartucho de generador de oxígeno de combustible sólido en Kvant-1. La llama duró varios minutos y la tripulación usó extintores de espuma.",
-      "lesson": "Cambios en la preparación de los cartuchos y en el entrenamiento de emergencias; la ISS usa generación de oxígeno redundante y disímil.",
+      "text": "On 24 February a solid-fuel oxygen generator canister caught fire in the Kvant-1 module. The flame burned for several minutes and the crew fought it with foam extinguishers.",
+      "lesson": "Changes to canister preparation and emergency training; the ISS uses dissimilar, redundant oxygen generation.",
       "src": "https://www.nasa.gov/history/25-years-ago-fire-aboard-space-station-mir/"
     },
     {
-      "year": "reciente",
+      "year": "Recent",
       "name": "Artemis II",
-      "text": "Una alarma de humo sonó a unas 80.000 millas de la Tierra, según el comandante citado en el enunciado del reto.",
-      "lesson": "Recuerda por qué detección y respuesta rápidas importan lejos de casa.",
+      "text": "A smoke alarm sounded about 80,000 miles from Earth, as recounted by the commander in the challenge statement.",
+      "lesson": "A reminder of why fast detection and response matter far from home.",
       "src": "https://www.spaceappschallenge.org"
     }
   ],
   "spinoffs": [
     {
-      "name": "Depósito de aire para bomberos",
+      "name": "Firefighter air tank",
       "year": 1976,
-      "text": "Mochila de 20 lb con 30 minutos de aire a 4500 psi (13 lb más ligera que los tanques convencionales), con revestimiento de aluminio reforzado con fibra de vidrio.",
+      "text": "A 20 lb backpack with a 30-minute air supply at 4,500 psi (13 lb lighter than conventional tanks), with an aluminum liner wrapped in glass fibers.",
       "src": "https://spinoff.nasa.gov/node/9582"
     },
     {
-      "name": "Proyecto FIRES: ropa de protección",
+      "name": "Project FIRES: protective clothing",
       "year": 1982,
-      "text": "Equipo de protección para bomberos con tejidos ignífugos derivados de trajes espaciales, evaluado en 14 cuerpos de bomberos municipales.",
+      "text": "Firefighter protective gear using fire-resistant fabrics derived from spacesuit materials, field-tested in 14 municipal fire departments.",
       "src": "https://spinoff.nasa.gov/node/9918"
     },
     {
-      "name": "Detector de incendios Brunswick",
+      "name": "Brunswick Incipient Fire Detector",
       "year": 1978,
-      "text": "Detector del transbordador que distingue partículas de combustión de polvo (menos falsas alarmas) y detecta el fuego antes de llama y humo; se puede conectar en red para minas.",
+      "text": "A Space Shuttle detector that tells combustion particles from dust (fewer false alarms) and senses fire before flame and smoke; sensors can be networked for mines.",
       "src": "http://hdl.handle.net/hdl:2060/20070018916"
     }
   ]

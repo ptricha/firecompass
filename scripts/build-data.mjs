@@ -7,7 +7,7 @@ const read = async p => JSON.parse(await readFile(new URL(p, import.meta.url), '
 const curated = await read('../data/curated.json')
 
 const dataFactor = n => (n >= 500 ? 1 : n >= 100 ? 0.7 : n >= 10 ? 0.4 : 0.2)
-const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+const slug = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
 
 const investigations = []
 for (const c of curated.investigations) {
@@ -26,7 +26,7 @@ for (const c of curated.investigations) {
     fuels: (c.fuels ?? []).filter(Boolean),
     conditions: c.conditions,
     sensors: c.sensors ?? [],
-    summary: c.summaryEs,
+    summary: c.summary,
     findings: c.findings,
     habitat: c.habitat,
     factors: { realism: c.factors.realism, safety: c.factors.safety, modeling: c.factors.modeling, data: dataFactor(totalFiles) },

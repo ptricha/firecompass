@@ -48,9 +48,9 @@ Mención clave: hoy NO existen datos experimentales de gravedad parcial — LUCI
 
 ## Stack
 - Next.js 16 + TypeScript + Tailwind CSS 4 + App Router (sin src/)
-- Claude API: `claude-sonnet-4-6` para análisis, `claude-haiku-4-5-20251001` para tareas simples
+- Claude API: `claude-sonnet-5-5` (chat `/ask`, con recuperación local `lib/retrieval.ts` como respaldo sin API key)
 - Anthropic SDK: `@anthropic-ai/sdk`
-- Recharts para gráficas
+- Gráficas en SVG propio (sin Recharts). Datos: `data/curated.json` + `data/psi/` -> `node scripts/build-data.mjs` -> `data/investigations.v2.json`
 - Deploy: Vercel (URL pública requerida para el jurado)
 
 ## Estructura
@@ -160,7 +160,13 @@ npx ts-node scripts/analyze-frames.ts  # analizar frames con Claude Vision
 - Creativity: Claude Vision sobre vídeos NASA + diseño profesional
 - Validity: datos citados con PSI ID + DOI + número de filas
 - Relevance: usa exactamente los datasets del challenge
-- Presentation: URL Vercel funcional + demo video 2 min
+- Presentation: URL Vercel funcional + demo (OFICIAL: máx. 7 slides o vídeo de 30 SEGUNDOS; TODO en inglés, subtítulos en inglés si el vídeo no lo está)
+
+## Reglas oficiales de entrega (Judging & Awards Guide, 13-nov-2026)
+- Criterios 1-5 (mismo peso): Impact, Creativity, Validity (científicamente sólido + usable), Relevance (datos NASA como núcleo), Presentation.
+- Todo en INGLÉS (web y materiales enlazados). Campo References obligatorio: listar todo recurso externo (ver `/references`). Sin material con copyright.
+- Entrega antes del domingo 15-nov-2026 23:59 hora local. Finalistas 17-dic, ganadores 26-ene-2027.
+- Premios objetivo: Best Use of Data, Best Use of Science, Most Inspirational.
 
 ## Setup en portátil (hackathon)
 ```bash
