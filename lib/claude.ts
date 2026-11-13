@@ -1,7 +1,14 @@
 import Anthropic from '@anthropic-ai/sdk'
 import investigations from '@/data/investigations.json'
 
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
+const MODEL_MAIN = 'claude-sonnet-5-5'
+const MODEL_FAST = 'claude-haiku-5-5'
+
+let _client: Anthropic | null = null
+function getClient(): Anthropic {
+  if (!process.env.ANTHROPIC_API_KEY) throw new Error('ANTHROPIC_API_KEY no configurada')
+  return (_client ??= new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY }))
+}
 
 const SYSTEM_PROMPT = `You are FireCompass AI, a fire safety expert specializing in NASA microgravity combustion research.
 Your knowledge comes exclusively from NASA's Physical Sciences Informatics (PSI) database experiments.
@@ -24,8 +31,8 @@ AVAILABLE INVESTIGATIONS:
 ${investigations.map(i => `- ${i.acronym} (${i.psiId}): ${i.keyFinding}`).join('\n')}`
 
 export async function askFireCompass(question: string): Promise<string> {
-  const message = await client.messages.create({
-    model: 'claude-sonnet-4-6',
+  const message = await getClient().messages.create({
+    model: MODEL_MAIN,
     max_tokens: 1024,
     system: SYSTEM_PROMPT,
     messages: [{ role: 'user', content: question }]
@@ -38,8 +45,8 @@ export async function analyzeInvestigation(psiId: string): Promise<string> {
   const inv = investigations.find(i => i.psiId === psiId)
   if (!inv) return 'Investigation not found'
 
-  const message = await client.messages.create({
-    model: 'claude-haiku-4-5-20251001',
+  const message = await getClient().messages.create({
+    model: MODEL_FAST,
     max_tokens: 512,
     system: SYSTEM_PROMPT,
     messages: [{
@@ -64,8 +71,8 @@ export async function getEnvironmentRisk(
     spacesuit: { o2: '100%', pressure: '4.3 psi', gravity: '0g' }
   }
 
-  const message = await client.messages.create({
-    model: 'claude-haiku-4-5-20251001',
+  const message = await getClient().messages.create({
+    model: MODEL_FAST,
     max_tokens: 400,
     system: SYSTEM_PROMPT,
     messages: [{
@@ -87,8 +94,8 @@ export async function analyzeVideoFrame(base64Image: string, frameContext: strin
   hasExtinction: boolean
   notes: string
 }> {
-  const message = await client.messages.create({
-    model: 'claude-sonnet-4-6',
+  const message = await getClient().messages.create({
+    model: MODEL_MAIN,
     max_tokens: 512,
     system: 'You are a combustion scientist analyzing NASA experiment video frames. Extract precise measurements.',
     messages: [{
