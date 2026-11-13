@@ -35,6 +35,37 @@ export const FACTOR_INFO: Record<FactorKey, { label: string; help: string }> = {
   },
 }
 
+export const FACTOR_INFO_ES: Record<FactorKey, { label: string; help: string }> = {
+  habitat: {
+    label: 'Atmósfera de hábitat',
+    help: 'Si el rango de O2 ensayado llega a ≥26.5% y las presiones ensayadas llegan a ≈0.69 atm (10.2 psi, con un 3% de margen), las condiciones previstas para bases lunares.',
+  },
+  realism: {
+    label: 'Realismo del combustible',
+    help: 'Los materiales sólidos de nave y los incendios a gran escala puntúan alto; las gotas y los gases modelo puntúan bajo.',
+  },
+  safety: {
+    label: 'Enfoque en seguridad contra incendios',
+    help: 'Si el objetivo de PSI trata directamente de prevención, detección o supresión (1.0) o de ciencia básica con relevancia indirecta (0.25–0.5).',
+  },
+  data: {
+    label: 'Riqueza de datos',
+    help: 'Número de archivos públicos en PSI (≥500, ≥100, ≥10 o menos).',
+  },
+  modeling: {
+    label: 'Valor para modelado',
+    help: 'Si la investigación declara objetivos de validación de modelos y tiene tabla experimental.',
+  },
+}
+
+export const factorInfo = (lang: 'en' | 'es') => (lang === 'es' ? FACTOR_INFO_ES : FACTOR_INFO)
+
+export const levelLabel = (total: number, lang: 'en' | 'es') => {
+  const l = level(total)
+  if (lang === 'en') return l
+  return l === 'High' ? 'Alta' : l === 'Medium' ? 'Media' : 'Baja'
+}
+
 const tri = (v: boolean | null) => (v === true ? 1 : v === false ? 0 : 0.5)
 
 export interface ScoreResult {

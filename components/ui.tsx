@@ -1,28 +1,38 @@
+"use client";
+
 import type { ReactNode } from "react";
-import { AREA_COLOR, AREA_LABEL, sourceFor, type Area } from "@/lib/data";
+import { AREA_COLOR, areaLabel, sourceFor, type Area } from "@/lib/data";
+import { useLang } from "@/lib/i18n";
 
 export function AreaBadge({ area }: { area: Area }) {
+  const { lang } = useLang();
   return (
     <span className="inline-flex items-center gap-1.5 rounded-full border border-line-2 px-2 py-0.5 text-xs text-ink-2">
       <span className="h-2 w-2 rounded-full" style={{ background: AREA_COLOR[area] }} aria-hidden="true" />
-      {AREA_LABEL[area]}
+      {areaLabel(area, lang)}
     </span>
   );
 }
 
-export function Pending({ children = "Not verified" }: { children?: ReactNode }) {
+export function Pending({ children }: { children?: ReactNode }) {
+  const { lang } = useLang();
   return (
     <span className="inline-flex items-center gap-1 rounded-md border border-dashed border-line-2 px-1.5 py-0.5 text-xs text-muted">
       <span aria-hidden="true">◌</span>
-      {children}
+      {children ?? (lang === "es" ? "No verificado" : "Not verified")}
     </span>
   );
 }
 
+const SRC_EN: [string, string][] = [["GUIDE", "NASA Guide 2015"], ["FS-", "Fact sheet "], ["CHALLENGE", "Challenge statement"], ["PSI-TABLES", "PSI data table"]];
+const SRC_ES: [string, string][] = [["GUIDE", "Guía NASA 2015"], ["FS-", "Ficha "], ["CHALLENGE", "Enunciado del reto"], ["PSI-TABLES", "Tabla de datos PSI"]];
+
 export function SourceTag({ src }: { src: string }) {
+  const { lang } = useLang();
   const s = sourceFor(src);
-  const label = src.replace("GUIDE", "NASA Guide 2015").replace("FS-", "Fact sheet ").replace("CHALLENGE", "Challenge statement").replace("PSI-TABLES", "PSI data table");
-  const text = src === "PSI" ? "PSI" : label;
+  let text = src;
+  for (const [k, v] of lang === "es" ? SRC_ES : SRC_EN) text = text.replace(k, v);
+  if (src === "PSI") text = "PSI";
   if (!s) return <span className="text-xs text-muted">{text}</span>;
   return (
     <a
