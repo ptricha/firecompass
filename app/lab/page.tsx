@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import lab from "@/data/lab.json";
 import { useLang, useT } from "@/lib/i18n";
 import { Pending, SourceTag } from "@/components/ui";
+import FlameLab from "@/components/FlameLab";
 
 type FlexRow = (typeof lab.flex.rows)[number];
 const ROWS: FlexRow[] = lab.flex.rows;
@@ -429,8 +430,12 @@ export default function Lab() {
         {intro[0]}<strong className="text-ink">{intro[1]}</strong>{intro[2]}<strong className="text-ink">{intro[3]}</strong>{intro[4]}
       </p>
 
+      <div className="mt-10">
+        <FlameLab />
+      </div>
+
       {/* headline facts */}
-      <div className="mt-6 grid gap-3 md:grid-cols-3">
+      <div className="mt-12 grid gap-3 md:grid-cols-3">
         <div className="card p-4">
           <p className="text-3xl font-semibold" style={{ color: "var(--accent)" }}>{lunar.length}</p>
           <p className="mt-1 text-sm text-ink-2">{t.h1}</p>
