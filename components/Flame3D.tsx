@@ -234,6 +234,12 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
       const key = new THREE.DirectionalLight(0xdfe9ff, 0.8);
       key.position.set(-4, 7, 5);
       scene.add(key);
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      key.shadow.mapSize.set(2048, 2048);
+      Object.assign(key.shadow.camera, { left: -12, right: 12, top: 12, bottom: -12, near: 1, far: 40 });
+      key.shadow.bias = -0.0004;
+      key.shadow.normalBias = 0.03;
       const fireLight = new THREE.PointLight(0xff9a4c, 0, 14, 1.6);
       scene.add(fireLight);
 
@@ -242,6 +248,16 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
       const edges = new THREE.LineSegments(new THREE.EdgesGeometry(boxGeo), new THREE.LineBasicMaterial({ color: 0x5aa3ff, transparent: true, opacity: 0.22 }));
       edges.position.y = (BOX.yMax + BOX.yMin) / 2;
       scene.add(edges);
+      // glass walls (faint, reflective) and metal corner posts so the chamber reads as a real test rig
+      const glass = new THREE.Mesh(boxGeo, new THREE.MeshPhysicalMaterial({ color: 0xb8d4ff, transparent: true, opacity: 0.045, roughness: 0.04, metalness: 0, envMapIntensity: 2.2, side: THREE.BackSide, depthWrite: false }));
+      glass.position.y = edges.position.y;
+      scene.add(glass);
+      const postMat = new THREE.MeshStandardMaterial({ color: 0xa9b4c4, roughness: 0.28, metalness: 0.9, envMapIntensity: 1.3 });
+      for (const sx of [-1, 1]) for (const sz of [-1, 1]) {
+        const post = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, BOX.yMax - BOX.yMin, 10), postMat);
+        post.position.set(sx * BOX.x, edges.position.y, sz * BOX.z);
+        scene.add(post);
+      }
 
       const dropMat = new THREE.MeshPhysicalMaterial({ color: 0xdfe6f2, roughness: 0.04, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.03, envMapIntensity: 1.6, emissive: 0x222a38, emissiveIntensity: 0.3 });
       const droplet = new THREE.Mesh(new THREE.SphereGeometry(0.11, 48, 32), dropMat);
@@ -414,6 +430,7 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
         const bg: Record<Env3, number> = { earth: 0x0b1626, iss: 0x03050a, moon: 0x020306, suit: 0x07090e, none: 0x0d1017 };
         scene.background = new THREE.Color(bg[e]);
         scene.fog = new THREE.Fog(bg[e], 16, 46);
+        key.castShadow = false;
         key.intensity = e === "moon" ? 1.1 : e === "iss" ? 0.7 : 0.8;
         key.color.set(e === "moon" ? 0xfff4e0 : 0xdfe9ff);
         controls.maxPolarAngle = e === "earth" || e === "moon" ? Math.PI * 0.515 : Math.PI;
@@ -475,6 +492,12 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
             cx2.arc(x, y, r * 1.25, 0, Math.PI * 2);
             cx2.fill();
           }
+          // fine regolith grain
+          for (let i = 0; i < 90000; i++) {
+            const v = 70 + Math.floor(rnd() * 130);
+            cx2.fillStyle = `rgba(${v},${v},${v},0.22)`;
+            cx2.fillRect(rnd() * cv.width, rnd() * cv.height, 1, 1);
+          }
           const moonTex = new THREE.CanvasTexture(cv);
           moonTex.colorSpace = THREE.SRGBColorSpace;
           moonTex.anisotropy = 8;
@@ -534,6 +557,87 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
           foot.position.y = 0.02;
           flagG.add(pole, bar, flag, foot);
           g.add(flagG);
+
+          // fabric weave (bump) so the cloth catches the light like real nylon
+          const wv = document.createElement("canvas");
+          wv.width = 256;
+          wv.height = 128;
+          const w2 = wv.getContext("2d")!;
+          w2.fillStyle = "#808080";
+          w2.fillRect(0, 0, 256, 128);
+          for (let i = 0; i < 256; i += 2) {
+            w2.fillStyle = "#b4b4b4";
+            w2.fillRect(i, 0, 1, 128);
+          }
+          for (let j = 0; j < 128; j += 2) {
+            w2.fillStyle = "#5c5c5c";
+            w2.fillRect(0, j, 256, 1);
+          }
+          const weave = new THREE.CanvasTexture(wv);
+          weave.wrapS = weave.wrapT = THREE.RepeatWrapping;
+          weave.repeat.set(5, 3);
+          (flag.material as InstanceType<TH["MeshStandardMaterial"]>).bumpMap = weave;
+          (flag.material as InstanceType<TH["MeshStandardMaterial"]>).bumpScale = 0.5;
+          for (const m of [pole, bar, flag, foot]) m.castShadow = true;
+          moon.receiveShadow = true;
+
+          // surface surface placement helper: point on the sphere top, plus its up-normal
+          const onMoon = (x: number, z: number) => {
+            const y = cy + Math.sqrt(RM * RM - x * x - z * z);
+            const n = new THREE.Vector3(x, y - cy, z).normalize();
+            return { p: new THREE.Vector3(x, y, z), n };
+          };
+          const up = new THREE.Vector3(0, 1, 0);
+
+          // scattered boulders and pebbles (instanced), kept out of the chamber footprint
+          const rockMat = new THREE.MeshStandardMaterial({ color: 0x7a7873, roughness: 1, metalness: 0, flatShading: true });
+          const rockGeo = new THREE.DodecahedronGeometry(1, 1);
+          const rg = rockGeo.attributes.position as InstanceType<TH["BufferAttribute"]>;
+          for (let i = 0; i < rg.count; i++) {
+            const k = 0.82 + 0.3 * Math.sin(rg.getX(i) * 7.3 + rg.getY(i) * 3.1 + rg.getZ(i) * 5.7);
+            rg.setXYZ(i, rg.getX(i) * k, rg.getY(i) * k * 0.7, rg.getZ(i) * k);
+          }
+          rockGeo.computeVertexNormals();
+          const NR = 170;
+          const rocks = new THREE.InstancedMesh(rockGeo, rockMat, NR);
+          const dm = new THREE.Object3D();
+          let placed = 0;
+          while (placed < NR) {
+            const a = rnd() * Math.PI * 2, d = 4.6 + Math.pow(rnd(), 0.7) * 22;
+            const x = Math.cos(a) * d, z = Math.sin(a) * d * 0.9;
+            if (Math.abs(x) < BOX.x + 0.6 && Math.abs(z) < BOX.z + 0.6) continue;
+            const s = 0.025 + Math.pow(rnd(), 4) * 0.34;
+            const { p, n } = onMoon(x, z);
+            dm.position.copy(p).addScaledVector(n, -s * 0.2);
+            dm.quaternion.setFromUnitVectors(up, n);
+            dm.rotateY(rnd() * 6.28);
+            dm.scale.set(s * (0.8 + rnd() * 0.6), s, s * (0.8 + rnd() * 0.6));
+            dm.updateMatrix();
+            rocks.setMatrixAt(placed++, dm.matrix);
+          }
+          rocks.castShadow = true;
+          rocks.receiveShadow = true;
+          g.add(rocks);
+
+          // boot prints and a rover track leading from the flag
+          const printGeo = new THREE.CircleGeometry(1, 14);
+          const printMat = new THREE.MeshBasicMaterial({ color: 0x2c2b2a, transparent: true, opacity: 0.38, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
+          const prints = new THREE.InstancedMesh(printGeo, printMat, 40);
+          let pi = 0;
+          for (let k = 0; k < 18 && pi < 36; k++) {
+            const t = k / 17, side = k % 2 === 0 ? -0.09 : 0.09;
+            const x = -5.1 + t * 1.2 + side, z = -1.6 + t * 7.6;
+            const { p, n } = onMoon(x, z);
+            dm.position.copy(p).addScaledVector(n, 0.004);
+            dm.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), n);
+            dm.rotateZ(0.12 * Math.sin(k));
+            dm.scale.set(0.045, 0.11, 1);
+            dm.updateMatrix();
+            prints.setMatrixAt(pi++, dm.matrix);
+          }
+          prints.count = pi;
+          g.add(prints);
+          key.castShadow = true;
           const earth = new THREE.Mesh(new THREE.SphereGeometry(2.3, 48, 32), earthMat([-0.4, 0.4, 0.8]));
           earth.position.set(16, 9, -34);
           g.add(earth);
