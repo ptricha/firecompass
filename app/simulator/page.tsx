@@ -298,7 +298,7 @@ export default function Simulator() {
         <div className={`mt-3 grid gap-3 ${compare && envId !== "earth" ? "md:grid-cols-2" : ""}`}>
           {compare && envId !== "earth" && (
             <figure>
-              <FlameView toolbar={false} title={t.envNames.earth} params={ear.params} layers={layers} env="earth" running={running} speed={speed} aspect={0.68} labelText={t.labels} ariaLabel={t.stageAria(t.envNames.earth)} />
+              <FlameView title={t.envNames.earth} params={ear.params} layers={layers} env="earth" running={running} speed={speed} aspect={0.68} labelText={t.labels} ariaLabel={t.stageAria(t.envNames.earth)} />
             </figure>
           )}
           <figure>

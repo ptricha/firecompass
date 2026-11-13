@@ -80,8 +80,8 @@ export default function FlameView({ params, layers, env = "none", running = true
   return (
     <div className={`flex flex-col gap-2 ${className ?? ""}`}>
       {(title || toolbar) && (
-        <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
-          {title ? <h3 className="min-w-0 text-sm font-semibold text-ink">{title}</h3> : <span />}
+        <div className="flex flex-col gap-2">
+          {title && <h3 className="truncate text-sm font-semibold text-ink" title={title}>{title}</h3>}
           {toolbar && (
             <div className="flex flex-wrap items-center gap-1.5">
               <div className="flex shrink-0 overflow-hidden rounded-md border border-line-2 bg-bg/70" role="group" aria-label={t.view}>
@@ -155,7 +155,7 @@ export default function FlameView({ params, layers, env = "none", running = true
       </div>
 
       {(mode === "3d" || footer || noWebgl) && (
-        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-[11px] text-ink-2">
+        <div className="flex min-h-11 flex-wrap items-start justify-between gap-x-4 gap-y-1 text-[11px] text-ink-2">
           {mode === "3d" ? (
             <div className="flex items-center gap-2 font-semibold" aria-hidden="true">
               {g > 0.02 && (
