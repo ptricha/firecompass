@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T20:07:28.000Z",
+  "generatedAt": "2026-11-13T22:26:31.584Z",
   "sources": {
     "GUIDE": {
       "label": "A Researcher's Guide to Combustion Science (NASA, 2015)",
@@ -22,7 +22,7 @@
       "url": "https://psi.nasa.gov"
     },
     "PSI-TABLES": {
-      "label": "NASA PSI experimental tables (CC0): PSI-69 FLEX and PSI-25 BASS-II. Values computed by FireCompass from the recorded rows.",
+      "label": "NASA PSI experimental tables (CC0): PSI-69 FLEX and PSI-25 BASS-II. Values computed by JaPax from the recorded rows.",
       "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69"
     },
     "CHALLENGE": {

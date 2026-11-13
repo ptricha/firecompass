@@ -12,7 +12,7 @@ const OUT = fileURLToPath(new URL('../data/raw/psi/', import.meta.url))
 const args = Object.fromEntries(process.argv.slice(2).map(a => a.replace(/^--/, '').split('=')))
 const only = args.only ? args.only.split(',') : null
 
-const headers = { 'User-Agent': 'firecompass-spaceapps-2026/1.0' }
+const headers = { 'User-Agent': 'japax-spaceapps-2026/1.0' }
 
 async function getText(url, tries = 4) {
   for (let i = 1; i <= tries; i++) {

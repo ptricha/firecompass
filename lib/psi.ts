@@ -23,7 +23,7 @@ export interface PSIInvestigation {
 
 export async function getPSIInvestigation(accession: string): Promise<PSIInvestigation> {
   const res = await fetch(`${PSI_BASE}/repo/investigations/${accession}`, {
-    headers: { 'User-Agent': 'firecompass-spaceapps-2026/1.0' },
+    headers: { 'User-Agent': 'japax-spaceapps-2026/1.0' },
     next: { revalidate: 3600 }
   })
   if (!res.ok) throw new Error(`PSI fetch failed: ${res.status}`)
@@ -33,7 +33,7 @@ export async function getPSIInvestigation(accession: string): Promise<PSIInvesti
 export async function searchPSICombustion(): Promise<PSIInvestigation[]> {
   const res = await fetch(
     `${PSI_BASE}/repo/search?source=psi&type=investigation&size=50&from=0`,
-    { headers: { 'User-Agent': 'firecompass-spaceapps-2026/1.0' }, next: { revalidate: 3600 } }
+    { headers: { 'User-Agent': 'japax-spaceapps-2026/1.0' }, next: { revalidate: 3600 } }
   )
   const data = await res.json()
   const hits = data?.hits?.hits ?? []

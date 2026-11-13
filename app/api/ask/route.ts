@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { gapNote, mentionsPartialGravity, retrieve } from "@/lib/retrieval";
-import { askClaude, hasApiKey } from "@/lib/claude";
+import { buildAnswer } from "@/lib/oracle";
+import { hasApiKey, narrateWithClaude } from "@/lib/claude";
 import type { Lang } from "@/lib/data";
 
 export async function POST(req: Request) {
@@ -15,28 +15,29 @@ export async function POST(req: Request) {
   }
   if (!question) return NextResponse.json({ error: "Missing question" }, { status: 400 });
 
-  const ctx = retrieve(question, 6, lang);
-  const citations = ctx.slice(0, 5).map((c) => ({ label: c.cite, url: c.url }));
-  const gap = mentionsPartialGravity(question) ? gapNote(lang) : null;
+  // Everything factual (numbers, evidence, gaps, links) is built from verified data.
+  const { answer, context } = buildAnswer(question, lang);
 
+  // With an API key, Claude rewrites the narrative; numbers it cannot support are removed.
   if (hasApiKey()) {
     try {
-      const answer = await askClaude(question, ctx, lang);
-      return NextResponse.json({ mode: "ai", answer, citations, gap });
+      const n = await narrateWithClaude(question, context, answer.keyFacts, lang);
+      if (n) {
+        const order: Record<string, number> = { high: 3, medium: 2, low: 1 };
+        return NextResponse.json({
+          ...answer,
+          mode: "ai",
+          headline: n.headline,
+          body: n.body,
+          viz: n.viz !== "none" ? n.viz : answer.viz,
+          followUps: n.followUps.length === 3 ? n.followUps : answer.followUps,
+          // never more confident than the evidence allows
+          confidence: order[n.confidence] < order[answer.confidence] ? n.confidence : answer.confidence,
+        });
+      }
     } catch {
-      /* fall back to retrieval so the demo never breaks */
+      /* fall back to the evidence answer so the demo never breaks */
     }
   }
-
-  const none =
-    lang === "es"
-      ? "No hay datos verificados para esa pregunta. Prueba con una investigación concreta (BASS, FLEX, SAME, BRE…), un entorno (Luna, ISS) o un tema (detección de humo, supresión, ventilación)."
-      : "No verified data available for that question. Try asking about a specific investigation (BASS, FLEX, SAME, BRE…), an environment (Moon, ISS) or a topic (smoke detection, suppression, ventilation).";
-  const answer = ctx.length
-    ? ctx
-        .slice(0, 3)
-        .map((c) => `• ${c.text.length > 360 ? c.text.slice(0, 357) + "…" : c.text}`)
-        .join("\n")
-    : none;
-  return NextResponse.json({ mode: "retrieval", answer, citations, gap });
+  return NextResponse.json(answer);
 }

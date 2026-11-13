@@ -6,7 +6,7 @@
     "FS-FLEX": { "label": "NASA fact sheet: FLEX / FLEX-2", "url": "https://www.nasa.gov/wp-content/uploads/2025/07/flame-extinguishment-experiment-flex.pdf" },
     "FS-SAME": { "label": "NASA fact sheet: SAME", "url": "https://www.nasa.gov/wp-content/uploads/2025/07/smoke-aerosol-measurement-experiment-same.pdf" },
     "PSI": { "label": "NASA Physical Sciences Informatics (investigation metadata)", "url": "https://psi.nasa.gov" },
-    "PSI-TABLES": { "label": "NASA PSI experimental tables (CC0): PSI-69 FLEX and PSI-25 BASS-II. Values computed by FireCompass from the recorded rows.", "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69" },
+    "PSI-TABLES": { "label": "NASA PSI experimental tables (CC0): PSI-69 FLEX and PSI-25 BASS-II. Values computed by JaPax from the recorded rows.", "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69" },
     "CHALLENGE": { "label": "Official challenge statement: Flame in Freefall (NASA Space Apps 2026)", "url": "https://www.spaceappschallenge.org" },
     "GLENN": { "label": "NASA Glenn: Combustion Science", "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/" }
   },

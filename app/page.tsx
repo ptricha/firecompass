@@ -13,11 +13,12 @@ const T = {
     eyebrow: "NASA Space Apps 2026 · Flame in Freefall",
     h1a: "What will burn first in a",
     h1b: "lunar base",
-    lead: "FireCompass turns decades of NASA combustion experiments into clear answers: what has been measured, under what conditions, which investigations matter most for the Moon and Mars, and where there is still no data.",
+    lead: "JaPax turns decades of NASA combustion experiments into clear answers: what has been measured, under what conditions, which investigations matter most for the Moon and Mars, and where there is still no data.",
     ctaSim: "Open the simulator",
     ctaLab: "Explore the real data",
     ctaExp: "Explore investigations",
-    ctaAsk: "Ask the data",
+    ctaAsk: "Ask the Oracle",
+    ctaHist: "Explore the history",
     s1: "investigations analyzed",
     s1n: (n: number) => `${n} with a verified PSI DOI`,
     s2: "public files in PSI",
@@ -54,17 +55,18 @@ const T = {
     eTitle: "Space fire research already protects lives here",
     nEyebrow: "What comes next",
     nTitle: "The data that does not exist yet",
-    nNote: "FireCompass is built to ingest these data sets as soon as they are published in PSI.",
+    nNote: "JaPax is built to ingest these data sets as soon as they are published in PSI.",
   },
   es: {
     eyebrow: "NASA Space Apps 2026 · Flame in Freefall",
     h1a: "¿Qué arderá primero en una",
     h1b: "base lunar",
-    lead: "FireCompass convierte décadas de experimentos de combustión de NASA en respuestas claras: qué se ha medido, en qué condiciones, qué investigaciones importan más para la Luna y Marte, y dónde todavía no hay datos.",
+    lead: "JaPax convierte décadas de experimentos de combustión de NASA en respuestas claras: qué se ha medido, en qué condiciones, qué investigaciones importan más para la Luna y Marte, y dónde todavía no hay datos.",
     ctaSim: "Abrir el simulador",
     ctaLab: "Explorar los datos reales",
     ctaExp: "Explorar investigaciones",
-    ctaAsk: "Preguntar a los datos",
+    ctaAsk: "Pregunta al Oráculo",
+    ctaHist: "Explorar la historia",
     s1: "investigaciones analizadas",
     s1n: (n: number) => `${n} con DOI de PSI verificado`,
     s2: "archivos públicos en PSI",
@@ -101,7 +103,7 @@ const T = {
     eTitle: "La investigación espacial sobre el fuego ya protege vidas aquí",
     nEyebrow: "Lo que viene",
     nTitle: "Los datos que aún no existen",
-    nNote: "FireCompass está preparado para incorporar estos conjuntos de datos en cuanto se publiquen en PSI.",
+    nNote: "JaPax está preparado para incorporar estos conjuntos de datos en cuanto se publiquen en PSI.",
   },
 };
 
@@ -141,6 +143,9 @@ export default function Home() {
           </Link>
           <Link href="/ask" className="rounded-lg border border-line-2 px-5 py-2.5 text-ink hover:bg-surface-2">
             {t.ctaAsk}
+          </Link>
+          <Link href="/history" className="rounded-lg border border-line-2 px-5 py-2.5 text-ink hover:bg-surface-2">
+            {t.ctaHist}
           </Link>
         </div>
 

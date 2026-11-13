@@ -1,6 +1,6 @@
-# FireCompass
+# JaPax
 
-**What will burn first in a lunar base?** FireCompass turns decades of NASA microgravity combustion experiments into clear, cited answers for fire safety on the Moon and Mars.
+**What will burn first in a lunar base?** JaPax turns decades of NASA microgravity combustion experiments into clear, cited answers for fire safety on the Moon and Mars.
 
 Built for the **NASA Space Apps Challenge 2026**, challenge *Flame in Freefall: SI-Powered Fire Safety Insights from Microgravity Combustion Data*.
 
@@ -12,7 +12,8 @@ Built for the **NASA Space Apps Challenge 2026**, challenge *Flame in Freefall: 
 | **Explorer** | 19 NASA PSI investigations with test conditions, findings, sensors, sources and DOIs. Filter, search and compare up to three side by side. |
 | **Simulator** | Pick an environment (Earth, ISS, lunar base, spacesuit): oxygen versus Earth, which experiments covered it, and a plain statement of where there is no data. |
 | **Ranking** | Explainable lunar-habitat relevance score with adjustable weights, plus a coverage matrix by environment. |
-| **Ask** | Question answering grounded only in the verified data, always citing investigation, PSI ID and DOI (Claude-assisted when an API key is set). |
+| **History** | A vertical timeline of 31 verified milestones: incidents, experiments, hardware, spinoffs and open-data releases, with filters. |
+| **Oracle** | Flame Oracle: visual answers (headline, key numbers, a chart of real data, cited evidence, data gaps, confidence). Numbers come from computed data; Claude narrates when an API key is set and unsupported figures are removed. |
 | **References** | Every source, library and limitation. |
 
 ## Principles
@@ -45,4 +46,4 @@ See [DEPLOY.md](DEPLOY.md) to publish on Vercel.
 
 Next.js 16 (App Router, TypeScript), Tailwind CSS 4, hand-written SVG charts, Anthropic SDK (optional). Full list in the in-app **References** page.
 
-FireCompass is an independent project and is not affiliated with or endorsed by NASA.
+JaPax is an independent project and is not affiliated with or endorsed by NASA.

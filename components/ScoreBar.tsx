@@ -1,16 +1,10 @@
 "use client";
 
-import { FACTORS, factorInfo, type ScoreResult } from "@/lib/scoring";
+import { FACTORS, FACTOR_COLOR, factorInfo, type ScoreResult } from "@/lib/scoring";
 import { useLang } from "@/lib/i18n";
 
 /** Stacked bar: each segment is what one factor contributes to the total. Accessible with text. */
-const COLORS: Record<string, string> = {
-  habitat: "var(--accent)",
-  realism: "var(--a-prevention)",
-  safety: "var(--a-suppression)",
-  data: "var(--a-fundamental)",
-  modeling: "#8f8d86",
-};
+const COLORS: Record<string, string> = FACTOR_COLOR;
 
 export default function ScoreBar({ score, compact = false }: { score: ScoreResult; compact?: boolean }) {
   const { lang } = useLang();

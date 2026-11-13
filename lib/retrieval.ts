@@ -1,7 +1,7 @@
 import { getData, fmtRange, type Lang } from './data'
 
 /**
- * Tiny dependency-free retrieval over the verified FireCompass data set, per language.
+ * Tiny dependency-free retrieval over the verified JaPax data set, per language.
  * It powers (a) the offline "Ask" mode and (b) the grounding context sent to Claude.
  */
 export interface Chunk {
@@ -10,6 +10,7 @@ export interface Chunk {
   text: string
   cite: string
   url: string | null
+  kind?: 'measured' | 'reported' | 'context'
 }
 
 const STOP_EN =
@@ -92,7 +93,7 @@ function buildChunks(lang: Lang): Chunk[] {
       url: inv.doiUrl,
     })
     inv.findings.forEach((f, i) =>
-      out.push({ id: `${inv.id}:f${i}`, title: inv.acronym, text: `${inv.acronym}: ${f.text}`, cite, url: inv.doiUrl }),
+      out.push({ id: `${inv.id}:f${i}`, title: inv.acronym, text: `${inv.acronym}: ${f.text}`, cite, url: inv.doiUrl, kind: f.kind }),
     )
     if (inv.spaceApplication) out.push({ id: `${inv.id}:space`, title: inv.acronym, text: `${inv.acronym} ${l.space}: ${inv.spaceApplication}`, cite, url: inv.doiUrl })
     if (inv.earthApplication) out.push({ id: `${inv.id}:earth`, title: inv.acronym, text: `${inv.acronym} ${l.earth}: ${inv.earthApplication}`, cite, url: inv.doiUrl })

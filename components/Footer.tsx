@@ -5,15 +5,15 @@ import { useT } from "@/lib/i18n";
 
 const T = {
   en: {
-    a: "FireCompass · NASA Space Apps Challenge 2026 · challenge",
+    a: "JaPax · NASA Space Apps Challenge 2026 · challenge",
     b: "Data from NASA's public",
-    c: "repository. See the",
+    c: " repository. See the",
     d: "page for every source and library used.",
     e: "An independent project, not affiliated with or endorsed by NASA. Every data point shows its source; anything unverified is marked as pending and never invented.",
     refs: "References",
   },
   es: {
-    a: "FireCompass · NASA Space Apps Challenge 2026 · reto",
+    a: "JaPax · NASA Space Apps Challenge 2026 · reto",
     b: "Datos del repositorio público de NASA",
     c: ". Consulta la página de",
     d: "para ver todas las fuentes y bibliotecas utilizadas.",

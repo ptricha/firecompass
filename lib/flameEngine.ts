@@ -1,5 +1,5 @@
 /**
- * FireCompass flame engine: a small particle simulation drawn on a 2D canvas.
+ * JaPax flame engine: a small particle simulation drawn on a 2D canvas.
  *
  * WHAT IS DATA-DRIVEN
  *  - Gas composition (O2, N2, CO2, He mole fractions) sets how many molecules of each kind exist.

@@ -45,7 +45,7 @@ export function LangProvider({ children }: { children: ReactNode }) {
 
 export const useLang = () => useContext(LangContext);
 
-/** Localized FireCompass dataset for the current language. */
+/** Localized JaPax dataset for the current language. */
 export function useData(): DataSet {
   const { lang } = useLang();
   return getData(lang);

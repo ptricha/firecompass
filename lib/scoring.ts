@@ -1,7 +1,7 @@
 import type { Investigation } from './data'
 
 /**
- * Explainable lunar-habitat relevance engine (FireCompass editorial method).
+ * Explainable lunar-habitat relevance engine (JaPax editorial method).
  * Each factor is a 0-1 value derived from facts cited in data/curated.json; users can
  * change the weights. An unknown value counts as 0.5 and is flagged as pending
  * (never hidden).
@@ -11,6 +11,15 @@ export type FactorKey = (typeof FACTORS)[number]
 export type Weights = Record<FactorKey, number>
 
 export const DEFAULT_WEIGHTS: Weights = { habitat: 35, realism: 25, safety: 20, data: 10, modeling: 10 }
+
+/** One color per criterion, shared by the score bars and their legends. */
+export const FACTOR_COLOR: Record<FactorKey, string> = {
+  habitat: 'var(--accent)',
+  realism: 'var(--a-prevention)',
+  safety: 'var(--a-suppression)',
+  data: 'var(--a-fundamental)',
+  modeling: '#8f8d86',
+}
 
 export const FACTOR_INFO: Record<FactorKey, { label: string; help: string }> = {
   habitat: {

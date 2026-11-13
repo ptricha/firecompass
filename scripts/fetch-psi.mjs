@@ -10,7 +10,7 @@ async function get(id, tries = 6) {
   for (let i = 1; i <= tries; i++) {
     try {
       const res = await fetch(`${BASE}/PSI-${id}`, {
-        headers: { 'User-Agent': 'firecompass-spaceapps-2026/1.0' },
+        headers: { 'User-Agent': 'japax-spaceapps-2026/1.0' },
         signal: AbortSignal.timeout(90_000),
       })
       if (res.status === 404) return null

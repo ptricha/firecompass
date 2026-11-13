@@ -1,4 +1,4 @@
-# FireCompass — NASA Space Apps Challenge 2026
+# JaPax — NASA Space Apps Challenge 2026
 
 ## Proyecto
 Dashboard web con IA para seguridad contra incendios en exploración espacial.
@@ -41,10 +41,10 @@ Para cada investigación mostrar: objetivos experimentales, tipos de combustible
 ## Misiones futuras relevantes
 - **LUCI** (Lunar-g Combustion Investigation) — medirá combustión en gravedad parcial lunar por primera vez
 - **FM2** (Flammability of Materials on the Moon) — inflamabilidad de materiales en la Luna
-Mención clave: hoy NO existen datos experimentales de gravedad parcial — LUCI y FM2 son el futuro que FireCompass está preparando.
+Mención clave: hoy NO existen datos experimentales de gravedad parcial — LUCI y FM2 son el futuro que JaPax está preparando.
 
 ## Frase del jurado (1 línea)
-"FireCompass transforma 30 años de experimentos de combustión de la NASA en respuestas claras sobre qué arderá primero en una base lunar."
+"JaPax transforma 30 años de experimentos de combustión de la NASA en respuestas claras sobre qué arderá primero en una base lunar."
 
 ## Stack
 - Next.js 16 + TypeScript + Tailwind CSS 4 + App Router (sin src/)

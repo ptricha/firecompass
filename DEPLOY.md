@@ -1,4 +1,4 @@
-# Deploy FireCompass on Vercel (about 5 minutes)
+# Deploy JaPax on Vercel (about 5 minutes)
 
 The app builds and runs with **no environment variables**. The Anthropic key only adds AI-written answers to `/ask`.
 

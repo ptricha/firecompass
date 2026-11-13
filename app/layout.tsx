@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FireCompass — Fire in space, explained with NASA data",
+  title: "JaPax — Fire in space, explained with NASA data",
   description:
     "An AI-assisted dashboard that summarizes, ranks and interprets NASA's microgravity combustion experiments (PSI) to deliver fire-safety insights for the Moon and Mars.",
 };
