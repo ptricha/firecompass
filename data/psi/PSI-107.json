@@ -1,0 +1,277 @@
+{
+  "accession": "PSI-107",
+  "acronym": "SPICE",
+  "title": "Smoke Point In Co-flow Experiment",
+  "doi": "10.60555/9kbh-e962",
+  "objective": "The objective of SPICE is to better understand the complex process of combustion by observing flames in a microgravity environment aboard the International Space Station (ISS) and analogous ground experiments.\n\nSpecific objectives were:\n(1) Identify the laminar smoke-point properties of non-buoyant jet diffusion flames under various co-flow conditions in microgravity.\n(2) Determine the effects of burner diameter and co-flow velocity on the luminous flame lengths and smoke points.\n(3) Quantify the sooting propensity of different fuels, such as ethylene, propane, and propylene mixtures.\n(4) Validate the correlation between luminous flame shape and residence time under microgravity conditions.\n(5) Investigate the impact of air and fuel flow rate variations on smoke point phenomena in space.",
+  "hypothesis": "The research hypothesizes that by minimizing gravity-driven transport phenomena scientists can study the laminar smoke-point properties of non-buoyant jet diffusion flames. Flame properties are expected to differ significantly from those observed under normal gravity.",
+  "hardware": "Microgravity Science Glovebox (MSG)",
+  "flightProgram": "International Space Station (ISS)",
+  "mission": "",
+  "missionStart": "",
+  "researchArea": "Combustion Science",
+  "researchImpacts": "(1) Will improve our understanding of soot formation mechanisms and help design safer spacecraft environments.\n(2) Will contribute to refining our computational models for predicting flame behaviors under non-buoyant conditions.\n(3) Will enhance our knowledge of soot generation\n(4) Could possibly provide insights to better fuel formulations and combustion processes.",
+  "publications": [
+    {
+      "authorList": "Dotson Keenan, Sunderland Peter, Yuan Zeng-Guang, Urban David",
+      "comments": [],
+      "doi": "10.2514/6.2010-1105",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Laminar Smoke Points in Coflow Measured Aboard the International Space Station"
+    },
+    {
+      "authorList": "Sunderland Peter B., Urban David L., Nayagam Vedha",
+      "comments": [],
+      "doi": "10.1007/978-1-4020-8682-3_22",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Scaling of Gas-Jet Flame Lengths in Elevated Gravity"
+    },
+    {
+      "authorList": "RA Spivey, LB Jeter, C Vonk",
+      "comments": [],
+      "doi": "",
+      "pubMedID": "",
+      "status": {
+        "@id": "l87xqHQEQuC4rNfO31zRSVlRomoXfQjaWFyzxZZZ",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": ""
+      },
+      "title": "The Microgravity Science Glovebox (MSG), a Resource for Gravity-Dependent Phenomena Research on the International Space Station (ISS)"
+    },
+    {
+      "authorList": "Spivey Reggie, Luz Paul",
+      "comments": [],
+      "doi": "10.2514/6.2006-941",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "The Microgravity Science Glovebox as a Platform for Exploration Research on the International Space Station"
+    },
+    {
+      "authorList": "Dobbins Richard R., Tinjero Jesse, Squeo Joseph, Zhao Xinyu, Hall Robert J., Colket Meredith B., Long Marshall B., Smooke Mitchell D.",
+      "comments": [],
+      "doi": "10.1080/00102202.2022.2041621",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "A Combined Experimental and Computational Study of Soot Formation in Normal and Microgravity Conditions"
+    },
+    {
+      "authorList": "Aalburg C., Diez F.J., Faeth G.M., Sunderland P.B., Urban D.L., Yuan Z.-G.",
+      "comments": [],
+      "doi": "10.1016/j.combustflame.2004.12.009",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Shapes of nonbuoyant round hydrocarbon-fueled laminar-jet diffusion flames in still air"
+    },
+    {
+      "authorList": "LIN K, FAETH G, SUNDERLAND P, URBAN D, YUAN Z",
+      "comments": [],
+      "doi": "10.1016/S0010-2180(98)00100-X",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Shapes of nonbuoyant round luminous hydrocarbon/air laminar jet diffusion flames"
+    },
+    {
+      "authorList": "KT Dotson",
+      "comments": [],
+      "doi": "",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Smoke Points of Microgravity and Normal Gravity Coflow Diffusion"
+    },
+    {
+      "authorList": "Dotson K.T., Sunderland P.B., Yuan Z.-G., Urban D.L.",
+      "comments": [],
+      "doi": "10.1016/j.firesaf.2011.08.002",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Laminar smoke points of coflowing flames in microgravity"
+    }
+  ],
+  "fileCountByType": {
+    "pdf": 18,
+    "doc": 1,
+    "ppt": 9,
+    "pptx": 2,
+    "xls": 27,
+    "txt": 2,
+    "xlsx": 6,
+    "mp4": 18,
+    "zip": 100,
+    "docx": 1,
+    "nef": 1,
+    "avi": 1,
+    "csv": 1
+  },
+  "totalFiles": 187,
+  "experimentalTable": [
+    {
+      "name": "PSI-107_Experimental table_Spice.csv",
+      "bytes": 31205,
+      "path": "psi-data/PSI-107/Experimental table/PSI-107_Experimental table_Spice.csv"
+    }
+  ],
+  "videos": [
+    {
+      "name": "PSI-107_Raw Data_SPICE_GMT136_Ign7.mp4",
+      "bytes": 306843442,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/466642/?inline=1&log=1",
+      "group": "Reduced Gravity/SPICE Day 136"
+    },
+    {
+      "name": "PSI-107_Raw Data_SPICE_GMT136_Ign8a.mp4",
+      "bytes": 37797434,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/466643/?inline=1&log=1",
+      "group": "Reduced Gravity/SPICE Day 136"
+    },
+    {
+      "name": "PSI-107_Raw Data_SPICE_GMT136_Ign6.mp4",
+      "bytes": 332386414,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/466644/?inline=1&log=1",
+      "group": "Reduced Gravity/SPICE Day 136"
+    },
+    {
+      "name": "PSI-107_Raw Data_SPICE_GMT136_Ign8.mp4",
+      "bytes": 80001109,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/466645/?inline=1&log=1",
+      "group": "Reduced Gravity/SPICE Day 136"
+    },
+    {
+      "name": "PSI-107_Raw Data_SPICE_GMT136_Ign8b.mp4",
+      "bytes": 197793111,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/466646/?inline=1&log=1",
+      "group": "Reduced Gravity/SPICE Day 136"
+    },
+    {
+      "name": "PSI-107_Raw Data_GMT62_11.16.mp4",
+      "bytes": 16674759,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/3068511/?inline=1&log=1",
+      "group": "Reduced Gravity/SPICE Day 062"
+    },
+    {
+      "name": "PSI-107_Raw Data_GMT62_11.20.mp4",
+      "bytes": 13961465,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/3068512/?inline=1&log=1",
+      "group": "Reduced Gravity/SPICE Day 062"
+    },
+    {
+      "name": "PSI-107_Raw Data_GMT62_11.25.mp4",
+      "bytes": 9916669,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/3068513/?inline=1&log=1",
+      "group": "Reduced Gravity/SPICE Day 062"
+    },
+    {
+      "name": "PSI-107_Raw Data_GMT62_11.27.mp4",
+      "bytes": 8305779,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/3068514/?inline=1&log=1",
+      "group": "Reduced Gravity/SPICE Day 062"
+    },
+    {
+      "name": "PSI-107_Raw Data_GMT62_11.32.mp4",
+      "bytes": 8503851,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/3068515/?inline=1&log=1",
+      "group": "Reduced Gravity/SPICE Day 062"
+    },
+    {
+      "name": "PSI-107_Raw Data_GMT62_11.41.mp4",
+      "bytes": 6824167,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/3068516/?inline=1&log=1",
+      "group": "Reduced Gravity/SPICE Day 062"
+    },
+    {
+      "name": "PSI-107_Raw Data_GMT62_11.45.mp4",
+      "bytes": 4818935,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/3068517/?inline=1&log=1",
+      "group": "Reduced Gravity/SPICE Day 062"
+    },
+    {
+      "name": "PSI-107_Raw Data_GMT62_11.39.mp4",
+      "bytes": 7136093,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/3068518/?inline=1&log=1",
+      "group": "Reduced Gravity/SPICE Day 062"
+    },
+    {
+      "name": "PSI-107_Raw Data_GMT62_11.55.mp4",
+      "bytes": 19250645,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/3068519/?inline=1&log=1",
+      "group": "Reduced Gravity/SPICE Day 062"
+    },
+    {
+      "name": "PSI-107_Raw Data_GMT62_12.06.mp4",
+      "bytes": 3786122,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/3068520/?inline=1&log=1",
+      "group": "Reduced Gravity/SPICE Day 062"
+    },
+    {
+      "name": "PSI-107_Raw Data_GMT62_12.03.mp4",
+      "bytes": 12452117,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/3068521/?inline=1&log=1",
+      "group": "Reduced Gravity/SPICE Day 062"
+    },
+    {
+      "name": "PSI-107_Raw Data_GMT62_12.12.mp4",
+      "bytes": 15552259,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/3068522/?inline=1&log=1",
+      "group": "Reduced Gravity/SPICE Day 062"
+    },
+    {
+      "name": "PSI-107_Raw Data_SPICE_GMT2009_119_video.mp4",
+      "bytes": 82939533,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/3070802/?inline=1&log=1",
+      "group": "Reduced Gravity/SPICE Day 119"
+    }
+  ],
+  "license": "Creative Commons Zero v1.0 Universal",
+  "releaseDate": "18-Sep-2024"
+}

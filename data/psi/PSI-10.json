@@ -1,0 +1,214 @@
+{
+  "accession": "PSI-10",
+  "acronym": "ACME/Flame Design",
+  "title": "Advanced Combustion via Microgravity Experiments / Flame Design",
+  "doi": "10.60555/w4zy-bt45",
+  "objective": "The primary objectives of this flight experiment are:\nA. Obtain soot-inception limits of quasi-steady normal and inverse spherical diffusion flames as functions of flow rate, Zst, amount of inert (N2 or CO2), and pressure for C2H4 and CH4 flames. Identify the corresponding temperatures in hot regions. Obtain similar limits and temperatures for inverse and normal coflow flames.\nB. Obtain detailed measurements in quasi-steady normal and inverse spherical diffusion flames for C2H4 and CH4. Determine the effects of flow rate, Zst, amount of N2, and pressure on flame temperature, size, color, and soot volume fraction. Evaluate the possible existence of steady flames.\nC. Obtain extinction limits as functions of Zst, amount of N2, and pressure for normal and inverse spherical C2H4 and CH4 flames. Identify the corresponding temperatures in hot regions. Identify the presence of radiative or kinetic extinction. Evaluate whether pseudo-flammability limits can be obtained for these flames.",
+  "hypothesis": "1. Soot formation requires a region where local C/O ratio and T exceed their critical values, and where strain rate is sufficiently low.\n2. Microgravity spherical diffusion flames extinguish when the peak temperature first decreases below 1130 K.\n3. Steady-state spherical diffusion flames are possible.",
+  "hardware": "Advanced Combustion via Microgravity Experiments (ACME), Combustion Integrated Rack (CIR), Reconfiguration of Combustion Integrated Rack (CIR)",
+  "flightProgram": "International Space Station (ISS)",
+  "mission": "",
+  "missionStart": "",
+  "researchArea": "Combustion Science",
+  "researchImpacts": "This project has the potential for improving efficiency and reducing pollutant emissions in terrestrial combustors. For example, it is contributing to novel designs of future coal power plants.",
+  "publications": [
+    {
+      "authorList": "Waddell Kendyl A., Irace Phillip H., Yablonsky Gregory, Constales Denis, Sunderland Peter B., Axelbaum Richard L.",
+      "comments": [],
+      "doi": "10.1080/13647830.2024.2326830",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "The kinetics and warm flame chemistry associated with radiative extinction of spherical diffusion flames"
+    },
+    {
+      "authorList": "Frolov Sergey M., Ivanov Vladislav S., Frolov Fedor S., Vlasov Pavel A., Axelbaum Richard, Irace Phillip H., Yablonsky Grigoriy, Waddell Kendyl",
+      "comments": [],
+      "doi": "10.3390/math11020261",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Soot Formation in Spherical Diffusion Flames"
+    },
+    {
+      "authorList": "Irace Phillip H., Waddell Kendyl A., Constales Denis, Kim Minhyeng, Yablonsky Gregory, Sunderland Peter B., Axelbaum Richard L.",
+      "comments": [],
+      "doi": "10.1016/j.proci.2022.07.049",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "On the existence of steady-state gaseous microgravity spherical diffusion flames in the presence of radiation heat loss"
+    },
+    {
+      "authorList": "Irace Phillip H., Waddell Kendyl A., Constales Denis, Sunderland Peter B., Axelbaum Richard L.",
+      "comments": [],
+      "doi": "10.1016/j.proci.2022.07.043",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Critical temperature and reactant mass flux for radiative extinction of ethylene microgravity spherical diffusion flames at 1 bar"
+    },
+    {
+      "authorList": "Irace P.H., Gopan A., Axelbaum R.L.",
+      "comments": [],
+      "doi": "10.1016/j.combustflame.2022.112158",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "An investigation of thermal radiation from laminar diffusion flames in a tri-coflow burner with central oxygen"
+    },
+    {
+      "authorList": "undefined undefined, FROLOV S. M.",
+      "comments": [],
+      "doi": "10.30826/NEPCAP9B-13",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "SPHERICAL DIFFUSION FLAME IN MICROGRAVITY CONDITIONS: FIRST RESULTS OF JOINT RUSSIAN-AMERICAN SPACE EXPERIMENT FLAME DESIGN - ADAMANT"
+    },
+    {
+      "authorList": "Irace Phillip H., Lee Han Ju, Waddell Kendyl, Tan Logan, Stocker Dennis P., Sunderland Peter B., Axelbaum Richard L.",
+      "comments": [],
+      "doi": "10.1016/j.combustflame.2021.02.019",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Observations of long duration microgravity spherical diffusion flames aboard the International Space Station"
+    },
+    {
+      "authorList": "Wang Zhengyang, Sunderland Peter B., Axelbaum Richard L.",
+      "comments": [],
+      "doi": "10.1016/j.combustflame.2019.09.014",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Double blue zones in inverse and normal laminar jet diffusion flames"
+    },
+    {
+      "authorList": "Wang Zhengyang, Sunderland Peter B., Axelbaum Richard L.",
+      "comments": [],
+      "doi": "10.1016/j.proci.2018.06.085",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Dilution effects on laminar jet diffusion flame lengths"
+    },
+    {
+      "authorList": "Wu Wendong, Adeosun Adewale, Axelbaum Richard L.",
+      "comments": [],
+      "doi": "10.1016/j.proci.2018.07.096",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "A new method of flame temperature measurement utilizing the acoustic emissions from laser-induced plasmas"
+    },
+    {
+      "authorList": "Rodenhurst Melvin K., Chao Beei-Huan, Sunderland Peter B., Axelbaum Richard L.",
+      "comments": [],
+      "doi": "10.1016/j.combustflame.2017.08.024",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Structure and extinction of spherical burner-stabilized diffusion flames that are attached to the burner surface"
+    },
+    {
+      "authorList": "Gopan Akshay, Yang Zhiwei, Kumfer Benjamin M., Axelbaum Richard L.",
+      "comments": [],
+      "doi": "10.1021/acs.energyfuels.7b01092",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Effects of Inert Placement (Z st) on Soot and Radiative Heat Flux in Turbulent Diffusion Flames"
+    }
+  ],
+  "fileCountByType": {
+    "zip": 1184,
+    "pdf": 76,
+    "csv": 638,
+    "txt": 993,
+    "log": 35,
+    "ts": 317,
+    "mdipsug": 490,
+    "xlsx": 2,
+    "asc": 66,
+    "jpg": 5,
+    "png": 2,
+    "errors": 1
+  },
+  "totalFiles": 3809,
+  "experimentalTable": [
+    {
+      "name": "PSI-10_Experimental table_Flame Design_Normal Flame.csv",
+      "bytes": 26933,
+      "path": "psi-data/PSI-10/Experimental table/PSI-10_Experimental table_Flame Design_Normal Flame.csv"
+    },
+    {
+      "name": "PSI-10_Experimental table_Flame Design_Inverse Flame.csv",
+      "bytes": 17314,
+      "path": "psi-data/PSI-10/Experimental table/PSI-10_Experimental table_Flame Design_Inverse Flame.csv"
+    }
+  ],
+  "videos": [],
+  "license": "",
+  "releaseDate": "20-Nov-2025"
+}

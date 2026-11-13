@@ -1,0 +1,76 @@
+{
+  "accession": "PSI-100",
+  "acronym": "SAFFIRE-III",
+  "title": "Spacecraft Fire Experiment-III",
+  "doi": "10.60555/040q-4h36",
+  "objective": "The objectives of this investigation were to:\n(1) determine how rapidly a large scale fire grows in low-gravity and (2) investigate the low-g flammability limits compared to those obtained in NASA’s normal gravity material flammability screening test.",
+  "hypothesis": "This investigation hypothesizes that due to large differences between fire behavior in normal and reduced gravity, the use of terrestrial fires and fire standards to design spacecraft fire safety systems presents an inherent risk to the vehicle because of the significant level of uncertainty. While this approach has been successful thus far, the uncertainty and risk will increase as exploration missions venture further from earth with considerably longer transit times for a safe return. There is a significant lack of microgravity data available for spacecraft designers on which to base their fire safety designs and procedures. To address this knowledge gap, this investigation proposed to conduct large-scale fire safety experiments in an expendable spacecraft without risk to a crew.",
+  "hardware": "Saffire III enclosure in Cygnus",
+  "flightProgram": "International Space Station (ISS)",
+  "mission": "",
+  "missionStart": "",
+  "researchArea": "Combustion Science",
+  "researchImpacts": "The Saffire-I experiment provides a new way to study a realistic fire on an exploration vehicle, which has not been possible in the past because the risks are too high. Instruments on an unmanned cargo vessel measure oxygen, carbon dioxide, heat, pressure and flame growth, and two video cameras provide views of the flame. Results determine microgravity flammability limits for several spacecraft materials, help to validate NASA’s material selection criteria, and how microgravity and limited oxygen affect flame size. The investigation is crucial for the safety of current and future space missions. Studying fire in small, sealed environments such as the Cygnus cargo supply vehicle benefits fire safety and prevention efforts on Earth, including inside mines, airplanes, or submarines.",
+  "publications": [
+    {
+      "authorList": "JE Niehaus, PV Ferkul, SA Gokoglu, GA Ruff",
+      "comments": [],
+      "doi": "",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Buoyant Effects on the Flammability of Silicone Samples Planned for the Spacecraft Fire Experiment (Saffire), 45th International Conference on Environmental Systems ICES-2015-[293] 12-16 July 2015, Bellevue, Washington"
+    },
+    {
+      "authorList": "W Schoren, GA Ruff, DL Urban",
+      "comments": [],
+      "doi": "",
+      "pubMedID": "",
+      "status": {
+        "@id": "l87xqHQEQuC4rNfO31zRSVlRomoXfQjaWFyzxZZZ",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": ""
+      },
+      "title": "The Spacecraft Fire Experiment (Saffire) - Objectives, Development and Status"
+    },
+    {
+      "authorList": "https://ntrs.nasa.gov/citations/20170000230",
+      "comments": [],
+      "doi": "",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Operation and Development Status of the Spacecraft Fire Experiments (Saffire), 46th International Conference on Environmental Systems (ICES), July 2016"
+    }
+  ],
+  "fileCountByType": {
+    "pdf": 7,
+    "zip": 67,
+    "csv": 3,
+    "xlsx": 6,
+    "docx": 3
+  },
+  "totalFiles": 86,
+  "experimentalTable": [
+    {
+      "name": "PSI-100_Experimental table_SAFFIRE-3.csv",
+      "bytes": 239,
+      "path": "psi-data/PSI-100/Experimental table/PSI-100_Experimental table_SAFFIRE-3.csv"
+    }
+  ],
+  "videos": [],
+  "license": "Creative Commons Zero v1.0 Universal",
+  "releaseDate": "18-Sep-2024"
+}

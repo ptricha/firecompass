@@ -1,0 +1,198 @@
+{
+  "accession": "PSI-22",
+  "acronym": "ACME E-FIELD Flames",
+  "title": "Advanced Combustion via Microgravity Experiments Electric-Field Effects on Laminar Diffusion Flames",
+  "doi": "10.60555/se5a-8c73",
+  "objective": "The objective of this investigation is to better understand the relationship between electric field voltage and chemi-ion current, analyze the dynamic response of flames to electric field changes, evaluate soot formation, and characterize stabilized near-limit lifted flames.",
+  "hypothesis": "The application of electric fields in microgravity environments will significantly influence laminar diffusion flames by enabling precise manipulation of flame stability, soot behavior, and combustion dynamics through ion-driven convection and chemi-ionization processes.",
+  "hardware": "Combustion Integrated Rack (CIR), ACME",
+  "flightProgram": "International Space Station (ISS)",
+  "mission": "",
+  "missionStart": "",
+  "researchArea": "Combustion Science",
+  "researchImpacts": "The E-FIELD Flames research is not being conducted to serve any space applications, but it is possible that its findings could aid the development of future space-based combustion devices (e.g., for solid waste processing). The use of electric fields to control flames can reduce the production of harmful pollutants in practical terrestrial combustion. The combustion of fossil fuel is the primary human source of greenhouse gas and acid rain and furthermore creates soot, which can be beneficial but is also a health hazard. Combustion using electrical fields may also allow for more efficient combustion, reducing fuel consumption in addition to unwanted emissions.",
+  "publications": [
+    {
+      "authorList": "YC Chien, J Tinajero, D Stocker, U Hegde, D Dunn-Rankin",
+      "comments": [],
+      "doi": "",
+      "pubMedID": "",
+      "status": {
+        "@id": "l87xqHQEQuC4rNfO31zRSVlRomoXfQjaWFyzxZZZ",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": ""
+      },
+      "title": "Ion Current and Flame Changes with Electric Fields in Microgravity"
+    },
+    {
+      "authorList": "Chien Yu-Chien, Dunn-Rankin Derek",
+      "comments": [],
+      "doi": "10.3390/en11051235",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Electric Field Induced Changes of a Diffusion Flame and Heat Transfer near an Impinging Surface"
+    },
+    {
+      "authorList": "Y-C Chien",
+      "comments": [],
+      "doi": "",
+      "pubMedID": "",
+      "status": {
+        "@id": "l87xqHQEQuC4rNfO31zRSVlRomoXfQjaWFyzxZZZ",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": ""
+      },
+      "title": "Electrical Aspects of Impinging Flames"
+    },
+    {
+      "authorList": "K Yamashita, Y-C Chien, S Karnani, D Dunn-Rankin",
+      "comments": [],
+      "doi": "",
+      "pubMedID": "",
+      "status": {
+        "@id": "l87xqHQEQuC4rNfO31zRSVlRomoXfQjaWFyzxZZZ",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": ""
+      },
+      "title": "The Influence of Electric Field Power Systems on Flame Behavior"
+    },
+    {
+      "authorList": "Weinberg Felix, Carleton Fred",
+      "comments": [],
+      "doi": "10.1016/j.combustflame.2009.08.008",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Ionization and chemiluminescence during the progressive aeration of methane flames"
+    },
+    {
+      "authorList": "Papac M. J., Dunn-Rankin D.",
+      "comments": [],
+      "doi": "10.1080/13647830701383814",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Modelling electric field driven convection in small combustion plasmas and surrounding gases"
+    },
+    {
+      "authorList": "Papac MJ, Dunn-Rankin D.",
+      "comments": [],
+      "doi": "10.1196/annals.1362.038",
+      "pubMedID": "17124146",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Canceling buoyancy of gaseous fuel flames in a gravitational environment using an ion-driven wind."
+    },
+    {
+      "authorList": "Karnani Sunny, Dunn-Rankin Derek",
+      "comments": [],
+      "doi": "10.1016/j.combustflame.2015.03.019",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Detailed characterization of DC electric field effects on small non-premixed flames"
+    },
+    {
+      "authorList": "Tse Stephen D, Zhu Delin, Sung Chih-Jen, Ju Yiguang, Law Chung K",
+      "comments": [],
+      "doi": "10.1016/S0010-2180(01)00247-4",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Microgravity burner-generated spherical diffusion flames: experiment and computation. Currently at Department of Mechanical and Aerospace Engineering, Case Western Reserve University, Cleveland, OH 44106."
+    },
+    {
+      "authorList": "Escofet-Martin David, Chien Yu-Chien, Dunn-Rankin Derek",
+      "comments": [],
+      "doi": "10.1016/j.combustflame.2022.112067",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "PLIF and chemiluminescence in a small laminar coflow methane-air diffusion flame at elevated pressures"
+    },
+    {
+      "authorList": "Chien Yu-Chien, Escofet-Martin David, Dunn-Rankin Derek",
+      "comments": [],
+      "doi": "10.1016/j.combustflame.2019.03.022",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Ion current and carbon monoxide release from an impinging methane/air coflow flame in an electric field"
+    },
+    {
+      "authorList": "Tinajero Jesse, Dunn-Rankin Derek",
+      "comments": [],
+      "doi": "10.1016/j.combustflame.2018.10.036",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Non-premixed axisymmetric flames driven by ion currents"
+    }
+  ],
+  "fileCountByType": {
+    "csv": 1
+  },
+  "totalFiles": 1,
+  "experimentalTable": [
+    {
+      "name": "PSI-22_Experimental table_ACME E-FIELD Flames.csv",
+      "bytes": 2475,
+      "path": "psi-data/PSI-22/Experimental table/PSI-22_Experimental table_ACME E-FIELD Flames.csv"
+    }
+  ],
+  "videos": [],
+  "license": "Creative Commons Zero v1.0 Universal",
+  "releaseDate": "15-Apr-2019"
+}

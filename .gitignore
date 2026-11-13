@@ -44,3 +44,7 @@ next-env.d.ts
 # Vídeos NASA (pesados, descargar localmente)
 data/videos/
 data/frames/
+
+# datos crudos pesados
+/data/raw/
+/data/video/

@@ -1,0 +1,100 @@
+{
+  "accession": "PSI-106",
+  "acronym": "SLICE",
+  "title": "Structure and Liftoff In Combustion Experiment",
+  "doi": "10.60555/pm12-rg61",
+  "objective": "Objective: The objective of this investigation is to better understand the structure and stability of laminar diffusion flames in microgravity.\n\nSpecific objectives of this investigation were:\n1. To investigate the structure of laminar diffusion flames in microgravity to understand the stabilizing mechanisms at the flames base.\n2. Determine the liftoff velocity limits for different fuels and burner diameters.\n3. Evaluate the impact of fuel dilution with nitrogen on soot formation and flame stability.\n4. Quantify the effects of microgravity on flame length and radiative heat loss compared to normal gravity conditions.\n5. Validate numerical models for flame dynamics, soot production, and thermal radiation in non-premixed flames.",
+  "hypothesis": "The hypothesis is that the structure and stability of laminar diffusion flames in microgravity are significantly influenced by burner diameter, coflow velocity, and fuel composition and are fundamentally different than flames observed on Earth.",
+  "hardware": "",
+  "flightProgram": "International Space Station (ISS)",
+  "mission": "",
+  "missionStart": "",
+  "researchArea": "Combustion Science",
+  "researchImpacts": "1. Improved numerical models for flame behavior lead to more efficient combustion technologies on Earth.\n2. Understanding soot formation aids in designing combustion systems with minimum emissions.\n3. Insights into flame stability and behavior to enhance fire safety.\n4. Findings will inform the development of cleaner, more efficient engines and industrial burners.",
+  "publications": [
+    {
+      "authorList": "Cao S., Ma B., Bennett B.A.V., Giassi D., Stocker D.P., Takahashi F., Long M.B., Smooke M.D.",
+      "comments": [],
+      "doi": "10.1016/j.proci.2014.05.138",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "A computational and experimental study of coflow laminar methane/air diffusion flames: Effects of fuel dilution, inlet velocity, and gravity"
+    },
+    {
+      "authorList": "Dobbins Richard R., Tinjero Jesse, Squeo Joseph, Zhao Xinyu, Hall Robert J., Colket Meredith B., Long Marshall B., Smooke Mitchell D.",
+      "comments": [],
+      "doi": "10.1080/00102202.2022.2041621",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "A Combined Experimental and Computational Study of Soot Formation in Normal and Microgravity Conditions"
+    },
+    {
+      "authorList": "S Cao, BAV Bennett, B Ma, D Giassi, DP Stocker, F Takahashi, MB Long, MD Smooke",
+      "comments": [],
+      "doi": "",
+      "pubMedID": "",
+      "status": {
+        "@id": "l87xqHQEQuC4rNfO31zRSVlRomoXfQjaWFyzxZZZ",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": ""
+      },
+      "title": "Effects of Fuel Dilution and Gravity on Laminar Coflow Methane-Air Diffusion Flames: A Computational and Experimental Investigation"
+    },
+    {
+      "authorList": "Ma Bin, Cao Su, Giassi Davide, Stocker Dennis P., Takahashi Fumiaki, Bennett Beth Anne V., Smooke Mitchell D., Long Marshall B.",
+      "comments": [],
+      "doi": "10.1016/j.proci.2014.05.064",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "An experimental and computational study of soot formation in a coflow jet flame under microgravity and normal gravity"
+    },
+    {
+      "authorList": "Giassi Davide, Cao Su, Bennett Beth Anne V., Stocker Dennis P., Takahashi Fumiaki, Smooke Mitchell D., Long Marshall B.",
+      "comments": [],
+      "doi": "10.1016/j.combustflame.2016.02.012",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Analysis of CH* concentration and flame heat release rate in laminar coflow diffusion flames under microgravity and normal gravity"
+    }
+  ],
+  "fileCountByType": {
+    "csv": 2
+  },
+  "totalFiles": 2,
+  "experimentalTable": [
+    {
+      "name": "PSI-106_Experimental table_Slice.csv",
+      "bytes": 734,
+      "path": "psi-data/PSI-106/Experimental table/PSI-106_Experimental table_Slice.csv"
+    }
+  ],
+  "videos": [],
+  "license": "Creative Commons Zero v1.0 Universal",
+  "releaseDate": "18-Sep-2024"
+}

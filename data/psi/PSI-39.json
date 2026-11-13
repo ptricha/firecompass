@@ -1,0 +1,896 @@
+{
+  "accession": "PSI-39",
+  "acronym": "CFI",
+  "title": "Cool Flames Investigation",
+  "doi": "10.60555/m6pj-a914",
+  "objective": "The objectives of this investigation are to:\n    1) Examine the combustion behavior of n-dodecane and mixtures of n-dodecane/iso-dodecane at pressures ranging from 0.25 atm to 5 atm.\n    2) Analyze the effects of helium dilution on cool flame behavior.\n    3) Examine the behavior of combustion characteristics.\n    4) Investigate the relationship between droplet size, pressure, and flame extinction, and (5) understand the consequence of soot formation during cool flame combustion.",
+  "hypothesis": "Flame combustion of liquid hydrocarbon fuels such as n-dodecane, n-dodecane/iso-dodecane mixtures, and faresane in microgravity can provide insights into low-temperature chemical kinetics, revealing critical parameters like droplet extinction diameters and flame dynamics that are not observable on Earth.",
+  "hardware": "Multi-User Droplet Combustion Apparatus (MDCA), Combustion Integrated Rack (CIR)",
+  "flightProgram": "International Space Station (ISS)",
+  "mission": "",
+  "missionStart": "",
+  "researchArea": "Combustion Science",
+  "researchImpacts": "A basic understanding of cool flames is important for understanding ignition phenomena of practical fuels and fuel additives. Cool flames play a key role in the development and selection of new fuels and the design of advanced engines such as clean, high-efficiency Homogeneous Charge Compression Ignition (HCCI) engines. The research will also help combustion chemists to develop new computational models to compute combustion performance in for many practical applications on earth, including an understanding of how cool flame reactivity determines octane and cetane number for fuels in spark ignition and diesel engines.\nCool Flames Investigation (CFI) will provide critical validation for complex chemical kinetic mechanisms, advance the understanding of flame dynamics and instabilities in low-temperature combustion, and support the design of safer spacecraft systems by refining knowledge of combustion in microgravity environments.",
+  "publications": [
+    {
+      "authorList": "V Nayagam, DL Dietrich, PV Ferkul, MC Hicks, FA Williams",
+      "comments": [],
+      "doi": "10.1016/j.combustflame.2012.07.012",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Can cool flames support quasi-steady alkane droplet burning?"
+    },
+    {
+      "authorList": "V Nayagam, DL Dietrich, MC Hicks, FA Williams",
+      "comments": [],
+      "doi": "10.1016/j.combustflame.2015.01.012",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Cool-flame extinction during n-alkane droplet combustion in microgravity"
+    },
+    {
+      "authorList": "Nayagam Vedha, Dietrich Daniel L., Williams Forman A.",
+      "comments": [],
+      "doi": "10.2514/1.J054437",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Partial-Burning Regime for Quasi-Steady Droplet Combustion Supported by Cool Flames"
+    },
+    {
+      "authorList": "Paczko Guenter, Peters Norbert, Seshadri Kalyanasundaram, Williams Forman Arthur",
+      "comments": [],
+      "doi": "10.1080/13647830.2014.934296",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "The role of cool-flame chemistry in quasi-steady combustion and extinction of n-heptane droplets"
+    },
+    {
+      "authorList": "Seshadri Kalyanasundaram, Peters Norbert, Williams Forman A., Nayagam Vedha, Paczko Guenter",
+      "comments": [],
+      "doi": "10.1080/13647830.2016.1248494",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Asymptotic analysis of quasi-steady n-heptane droplet combustion supported by cool-flame chemistry"
+    },
+    {
+      "authorList": "Rachel Barry",
+      "comments": [],
+      "doi": "",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Science in Short: Cool Flames"
+    },
+    {
+      "authorList": "Dietrich Daniel, Krause Timmothy, Nayagam Vedha, Farouk Tanvir, Dryer Frederick, Williams Forman",
+      "comments": [],
+      "doi": "10.1007/s12217-024-10115-x",
+      "pubMedID": "",
+      "status": {
+        "@id": "Rd2oZxVKYUnMCRj3tbHg0eGQhfrFmtiEFnMOyDHF",
+        "annotationValue": "published",
+        "comments": [],
+        "termAccession": "http://www.ebi.ac.uk/efo/EFO_0001796",
+        "termSource": "EFO"
+      },
+      "title": "Low Temperature n-Dodecane Droplet Combustion Experiments Aboard the International Space Station"
+    }
+  ],
+  "fileCountByType": {
+    "zip": 338,
+    "txt": 1793,
+    "metadata": 117,
+    "meta": 236,
+    "mp4": 126,
+    "ts": 120,
+    "pdf": 48,
+    "rtf": 22,
+    "pxp": 29,
+    "pptx": 1,
+    "xlsx": 1,
+    "csv": 1
+  },
+  "totalFiles": 2832,
+  "experimentalTable": [
+    {
+      "name": "PSI-39_Experimental table_CFI.csv",
+      "bytes": 7792,
+      "path": "psi-data/PSI-39/Experimental table/PSI-39_Experimental table_CFI.csv"
+    }
+  ],
+  "videos": [
+    {
+      "name": "PSI-39_Raw Data_FLEX-1285_2017-06-22-15h11m57s_F173E01.mp4",
+      "bytes": 109496316,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7935316/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (75) ISODODECANE (25)/FLEX-1285 - F173E01"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-06-22-15h01m56s-udp_F173E01.mp4",
+      "bytes": 104004456,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7935317/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (75) ISODODECANE (25)/FLEX-1285 - F173E01"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-06-22-15h18m19s-udp_F173E02.mp4",
+      "bytes": 114689302,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7935322/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (75) ISODODECANE (25)/FLEX-1286 - F173E02"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1286_2017-06-22-15h29m07s_F173E02.mp4",
+      "bytes": 121061744,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7935323/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (75) ISODODECANE (25)/FLEX-1286 - F173E02"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-06-22-15h37m19s-udp_F173E03.mp4",
+      "bytes": 110926882,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7935394/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (75) ISODODECANE (25)/FLEX-1287 - F173E03"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1287_2017-06-22-15h48m10s_F173E03.mp4",
+      "bytes": 161809052,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7935395/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (75) ISODODECANE (25)/FLEX-1287 - F173E03"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-06-22-16h31m26s-udp_F173E05.mp4",
+      "bytes": 102381758,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7959632/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (75) ISODODECANE (25)/FLEX-1288 - F173E05"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1288_2017-06-22-16h42m18s_F173E05.mp4",
+      "bytes": 110870821,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7959647/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (75) ISODODECANE (25)/FLEX-1288 - F173E05"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-06-22-16h44m14s-udp_F173E06.mp4",
+      "bytes": 86663756,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7972124/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (75) ISODODECANE (25)/FLEX-1289 - F173E06"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1289_2017-06-22-16h57m35s_F173E06.mp4",
+      "bytes": 57888058,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7972125/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (75) ISODODECANE (25)/FLEX-1289 - F173E06"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1295_2017-06-28-13h24m35s_F179E01.mp4",
+      "bytes": 170940505,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7972632/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (75) ISODODECANE (25)/FLEX-1295 - F179E01"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1296_2017-06-28-13h43m08s_F179E02.mp4",
+      "bytes": 130249905,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7973138/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (75) ISODODECANE (25)/FLEX-1296 - F179E02"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1297_2017-06-28-15h51m50s_F179E05.mp4",
+      "bytes": 141413402,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7973144/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (75) ISODODECANE (25)/FLEX-1297 - F179E05"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1290_20176-06-26-13h34m29s_F177D01.mp4",
+      "bytes": 201704624,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7974152/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1290 - F177D01"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1303_2017-06-29-15h53m44s_F180D04.mp4",
+      "bytes": 306909406,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7974153/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1290 - F177D01"
+    },
+    {
+      "name": "PSI-39_Raw Data_DOWNLINK-VIDEO-SCIENCE-STATION.mp4",
+      "bytes": 152670353,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7974744/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1291 - F177D02"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-06-26-14h23m38s-udp_F177D03.mp4",
+      "bytes": 157619518,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7992857/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1292 - F177D03"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-06-26-14h37m20s-udp_F177D04.mp4",
+      "bytes": 150950164,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7992863/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1293 - F177D04"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-06-26-15h04m21s-udp_F177D05.mp4",
+      "bytes": 137094674,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7993869/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1294 - F177D05"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-06-29-14h35m31s-udp_F180D01.mp4",
+      "bytes": 142653112,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7993875/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1300 - F180D01"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-06-29-14h59m25s-udp_F180D02.mp4",
+      "bytes": 172747950,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7994407/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1301 - F180D02"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-05-13h25m30s-udp_F186D01.mp4",
+      "bytes": 104086107,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7994887/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1310 - F186D01"
+    },
+    {
+      "name": "PSI-39_Raw Data_DOWNLINK VIDEO-SCIENCE STATION.mp4",
+      "bytes": 112621576,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7995393/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1311 - F186D02"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-05-14h31m45s-udp_F186D04.mp4",
+      "bytes": 73139745,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7995482/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1312 - F186D04"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1313_2017-07-05-15h05m35s_F186D05.mp4",
+      "bytes": 102237794,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7995488/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1313 - F186d05"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-05-15h23m14s-udp_F186D06.mp4",
+      "bytes": 100194039,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7995494/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1314 - F186D06"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-10-14h39m46s-udp_F191D02.mp4",
+      "bytes": 121925363,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7995501/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1320 - F191D02"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-10-15h30m11s-udp_F191D03.mp4",
+      "bytes": 85153049,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7995507/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1321 - F191D03"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-10-16h00m16s-udp_F191D04.mp4",
+      "bytes": 93296186,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7996013/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1322 - F191D04"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-10-16h15m31s-udp_F191D05.mp4",
+      "bytes": 887942082,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/7997519/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1328 - F195D01"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-14-14h16m14s-udp_F195D01.mp4",
+      "bytes": 141844347,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8021266/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1328 - F195D01"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1329_2017-07-14-14h53m22s_F195D02.mp4",
+      "bytes": 181499841,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8067974/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1329 - F195D02"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-14-16h50m43s-udp_F195D07.mp4",
+      "bytes": 80513816,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8078910/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1330 - F195D07"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-06-12-16h09m58s-udp____F163A04.mp4",
+      "bytes": 103289731,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8175871/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1284 - F163A04"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-14-17h40m43s-udp_F195D10.mp4",
+      "bytes": 77835542,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8186480/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1331 - F195D10"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-14-18h19m27s-udp_F195D11.mp4",
+      "bytes": 120449304,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8198166/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1332 - F195D11"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-19-12h57m44s-udp_F200D01.mp4",
+      "bytes": 644189278,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8218330/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1335 - F200D01"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-19-15h13m18s-udp_F200D03b.mp4",
+      "bytes": 39939387,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8228178/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1336 - F200D03"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-19-14h39m31s-udp_F200D03a.mp4",
+      "bytes": 304999410,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8228179/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1336 - F200D03"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-19-15h23m18s-udp_F200D04.mp4",
+      "bytes": 275007742,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8250087/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1337 - F200D04"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1338_2017-07-19-15h59m47s_F200D05.mp4",
+      "bytes": 328046272,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8252672/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1338 - F200D05"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-27-16h11m15s-udp_F208D05.mp4",
+      "bytes": 80232062,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8264189/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1340 - F200D05"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-24-13h58m54s-udp_F205D01.mp4",
+      "bytes": 257952768,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8275706/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1341 - F205D01"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-27-15h54m34s-udp_F208D04.mp4",
+      "bytes": 158506433,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8283461/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1349 - F208D04"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-24-15h01m44s-udp_F205D02.mp4",
+      "bytes": 170578703,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8297553/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1342 - F205D02"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-27-13h58m14s-udp_F208D01.mp4",
+      "bytes": 288570456,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8309051/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1346 - F208D01"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-27-14h59m42s-udp_F208D02.mp4",
+      "bytes": 115091216,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8316811/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1347 - F208D02"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-07-27-15h28m13s-udp_F208D03.mp4",
+      "bytes": 264581373,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8325487/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1348 - F208D03"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1355_2017-08-01-12h59m43s_F213D01.mp4",
+      "bytes": 384130630,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8339767/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1355 - F213D01"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-08-01-13h25m38s-udp_F213D02.mp4",
+      "bytes": 185077585,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8350087/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1356 - F213D02"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-08-01-14h06m34s-udp_F213D03.mp4",
+      "bytes": 40753215,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8361616/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1357 - F213D03"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-08-01-14h32m55s-udp_F213D04.mp4",
+      "bytes": 559741523,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8369246/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1358 - F213D04"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-08-10-15h00m17s-udp_F222D01.mp4",
+      "bytes": 152213879,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8380755/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1362 - F222D01"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-08-10-15h15m09s-udp_F222D02.mp4",
+      "bytes": 154728431,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8391183/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1363 - F222D02"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-08-10-15h47m02s-udp_F222D03.mp4",
+      "bytes": 249922456,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8402342/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1364 - F222D03"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-08-10-16h25m47s-udp_F222D04.mp4",
+      "bytes": 301867455,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8409957/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1365 - F222D04"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-08-14-16h28m11s-udp_F226D01.mp4",
+      "bytes": 187382624,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8420210/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1367 - F226D01"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-08-14-17h36m29s-udp_F226D02.mp4",
+      "bytes": 212921912,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8428101/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1368 - F226D02"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-08-14-18h17m27s-udp_F226D04.mp4",
+      "bytes": 177423700,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8436264/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1368 - F226D02"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-08-16-19h53m57s-udp_F288D01.mp4",
+      "bytes": 162650362,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8442202/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1373 - F228D01"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-08-16-20h45m37s-udp_F228D02 DROPLET LOSS.mp4",
+      "bytes": 12731073,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8452512/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1374 - F228D02"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-08-21-15h11m10s-udp_F233D01.mp4",
+      "bytes": 116173034,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8464045/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1383 - F233D01"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-08-21-16h06m40s-udp_F233D03.mp4",
+      "bytes": 185920519,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8484677/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1385 - F233D03"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1385_2017-08-21-16h18m06s_F233D03.mp4",
+      "bytes": 197354930,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8484678/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1385 - F233D03"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-08-21-16h23m58s-udp_F233D04.mp4",
+      "bytes": 31760258,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8494992/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1386 - F233D04"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-08-21-16h34m10s-udp_F233D05.mp4",
+      "bytes": 258074617,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8502905/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI - DODECANE (60) ISODODECANE (40)/FLEX-1387 - F233D05"
+    },
+    {
+      "name": "PSI-39_Raw Data_DOWNLINK VIDEO-PD STATION.mp4",
+      "bytes": 108393932,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8517616/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1261 - F135A05"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1263_2017-05-19-17h44m36s_F139A01.mp4",
+      "bytes": 174937233,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8533610/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1263 - F139A01"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-05-19-17h33m25s-udp____F139A01.mp4",
+      "bytes": 188540073,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8533611/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1263 - F139A01"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1262_2017-05-15-13h54m22s_F135A06.mp4",
+      "bytes": 74560328,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8535751/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1262 - F135A06"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-05-15-13h43m53s-udp____F135A06.mp4",
+      "bytes": 72379805,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8535752/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1262 - F135A06"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1265_2017-05-19-18h29m56s_F139A03.mp4",
+      "bytes": 94412771,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8551044/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1265 - F139A03"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-05-19-18h18m45s-udp____F139A03.mp4",
+      "bytes": 108141328,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8551045/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1265 - F139A03"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-05-10-15h30m47s-udp____F130A01.mp4",
+      "bytes": 153275267,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8571052/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1254 - F130A01"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1254_2017-05-10-15h41m31s_F130A01.mp4",
+      "bytes": 151525123,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8571053/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1254 - F130A01"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-05-10-16h46m59s-udp____F130A04.mp4",
+      "bytes": 47973416,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8581290/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1255 - F130A04"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1255_2017-05-10-16h58m45s_F130A04.mp4",
+      "bytes": 96310480,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8581291/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1255 - F130A04"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1267_2017-05-26-15h41m43s_F146A02.mp4",
+      "bytes": 104348752,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8600014/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1267 - F146A02"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-05-26-15h28m21s-udp____F146A02.mp4",
+      "bytes": 190536903,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8600015/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1267 - F146A02"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-05-10-16h57m57s-udp____F130A05.mp4",
+      "bytes": 68975231,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8602124/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1256 - F130A05"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1256_2017-05-10-17h10m55s_F130A05.mp4",
+      "bytes": 155421790,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8602125/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1256 - F130A05"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1257_2017-05-10-18h20m24s_F130A07.mp4",
+      "bytes": 233877614,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8610338/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1257 - F130A07"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-05-10-18h18m29s-udp____F130A07.mp4",
+      "bytes": 35198824,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8610339/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1257 - F130A07"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1258_2017-05-10-18h48m30s_F130A08.mp4",
+      "bytes": 112381958,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8616397/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1258 - F130A08"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-05-10-18h38m03s-udp____F130A08.mp4",
+      "bytes": 107550119,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8616398/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1258 - F130A08"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1259_2017-05-15-11h51m41s_F135A01.mp4",
+      "bytes": 121935035,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8626712/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1259 - F135A01"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-05-15-11h41m26s-udp____F135A01.mp4",
+      "bytes": 112144289,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8626713/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1259 - F135A01"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1260_2017-05-15-12h18m26s_F135A02.mp4",
+      "bytes": 64993414,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8632893/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1260 - F135A02"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-05-15-12h07m57s-udp____F135A02.mp4",
+      "bytes": 62270465,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8632894/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1260 - F135A02"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1270_2017-05-26-16h52m57s_F146A05.mp4",
+      "bytes": 23955,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8645533/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1269 - F146A05"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1269_2017-05-26-16h32m39s_F146A05.mp4",
+      "bytes": 148362433,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8645534/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1269 - F146A05"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-05-26-16h28m57s-udp____F146A05.mp4",
+      "bytes": 38279067,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8645535/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1269 - F146A05"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-05-26-16h42m59s-udp____F146A06.mp4",
+      "bytes": 46018835,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8653268/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1270 - F146A06"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1271_2017-05-31-16h40m03s_F151A01.mp4",
+      "bytes": 111876651,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8663621/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1271 - F151A01"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-05-31-16h27m42s-udp____F151A01.mp4",
+      "bytes": 150499209,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8663622/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1271 - F151A01"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1272_2017-05-31-17h51m39s_F151A02.mp4",
+      "bytes": 106540430,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8671319/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1272 - F151A02"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-05-31-17h39m29s-udp____F151A02.mp4",
+      "bytes": 148396476,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8671320/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1272 - F151A02"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1273_2017-05-31-18h30m12s_F151A04.mp4",
+      "bytes": 48970393,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8677518/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1273 - F151A04"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-05-31-18h21m37s-udp____F151A04.mp4",
+      "bytes": 11526199,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8677519/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1273 - F151A04"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1274_2017-05-31-19h12m06s_F151A05.mp4",
+      "bytes": 172831925,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8683608/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1225 - F090A10"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-05-31-19h09m15s-udp____F151A05.mp4",
+      "bytes": 21340469,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8683609/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1274 - F151A05"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1275_2017-06-07-16h46m09s_F158A02.mp4",
+      "bytes": 68519132,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8696127/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1275A - F158A02"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-06-07-16h38m42s-udp____F158A02.mp4",
+      "bytes": 14793547,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8696128/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1275A - F158A02"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1276_2017-06-07-17h08m59s_F158A03.mp4",
+      "bytes": 100479039,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8699979/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1276 - F158A03"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1277_2017-06-07-17h24m40s_F158A04.mp4",
+      "bytes": 249648057,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8706054/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1277 - F158A04"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-06-07-17h26m04s-udp____F158A04.mp4",
+      "bytes": 13780119,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8706055/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1277 - F158A04"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX1278-2017-06-10-00h33m39s-F160A01.mp4",
+      "bytes": 41058529,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8708114/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1278 - F160A01"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-06-10-00h16m40s-udp____F160A01.mp4",
+      "bytes": 150826306,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8708115/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1278 - F160A01"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1279-2017-06-10-00h49m02s-F160A02.mp4",
+      "bytes": 66871183,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8716389/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1279 - F160A02"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-06-10-00h34m36s-udp____F160A02.mp4",
+      "bytes": 114335768,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8716390/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1279 - F160A02"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1281_2017-06-12-00h20m59s_F163A01.mp4",
+      "bytes": 103933127,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8723867/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1281 - F163A01"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-06-12-14h22m17s-udp____F163A01.mp4",
+      "bytes": 103933127,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8723868/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1281 - F163A01"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1283_2017-06-12-15h53m34s_F163A03.mp4",
+      "bytes": 81246485,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8746713/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1283 - F160A03"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-06-10-01h16m32s-udp____F160A03.mp4",
+      "bytes": 98884375,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8746714/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1283 - F160A03"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-06-12-15h43m02s-udp____F163A03.mp4",
+      "bytes": 173800358,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8752886/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1283A - F163A03"
+    },
+    {
+      "name": "PSI-39_Raw Data_DOWNLINK VIDEO -SCIENCE STATION.mp4",
+      "bytes": 79742716,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8804329/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1217 - F086A06"
+    },
+    {
+      "name": "PSI-39_Raw Data_DOWNNLINK VIDEO-SCIENCE STATION.mp4",
+      "bytes": 444223568,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8892949/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1233 - F095A10"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-05-05-15h29m20s-udp____F125A03.mp4",
+      "bytes": 126920213,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8962340/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1250 - F125A03"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1251_2017-05-05-16h23m23s_F125A04.mp4",
+      "bytes": 133757507,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8966213/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1251 - F125A04"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-05-05-16h12m47s-udp____F125A04.mp4",
+      "bytes": 120086659,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8966214/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1251 - F125A04"
+    },
+    {
+      "name": "PSI-39_Raw Data_FLEX-1252_2017-05-05-16h45m30s_F125A06.mp4",
+      "bytes": 127174489,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8984285/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1252 - F125A06"
+    },
+    {
+      "name": "PSI-39_Raw Data_vlc-record-2017-05-05-16h34m41s-udp____F125A06.mp4",
+      "bytes": 139237212,
+      "url": "https://psi.ndc.nasa.gov/mpglobal/api/athena/file/8984286/?inline=1&log=1",
+      "group": "Reduced Gravity/CFI – DODECANE/FLEX-1252 - F125A06"
+    },
+    {
+      "name": "PSI-39_Raw Data_MDCA_View_Movie.mp4",
+      "bytes": 7282174,
+      "url": "/datamanager/file/Home/psi-data/PSI-39/Raw Data/PSI-39_Raw Data_MDCA_View_Movie.mp4",
+      "group": "Reduced Gravity/CFI - FARNESANE/FLEX-1393 - F240B02"
+    },
+    {
+      "name": "PSI-39_Raw Data_Flame_View_Movie.mp4",
+      "bytes": 28927338,
+      "url": "/datamanager/file/Home/psi-data/PSI-39/Raw Data/PSI-39_Raw Data_Flame_View_Movie.mp4",
+      "group": "Reduced Gravity/CFI - FARNESANE/FLEX-1393 - F240B02"
+    },
+    {
+      "name": "PSI-39_Raw Data_Droplet_View_Movie.mp4",
+      "bytes": 12720689,
+      "url": "/datamanager/file/Home/psi-data/PSI-39/Raw Data/PSI-39_Raw Data_Droplet_View_Movie.mp4",
+      "group": "Reduced Gravity/CFI - FARNESANE/FLEX-1393 - F240B02"
+    },
+    {
+      "name": "PSI-39_Raw Data_ProcessedFlame_Movie.mp4",
+      "bytes": 801659850,
+      "url": "/datamanager/file/Home/psi-data/PSI-39/Raw Data/PSI-39_Raw Data_ProcessedFlame_Movie.mp4",
+      "group": "Reduced Gravity/CFI - FARNESANE/FLEX-1393 - F240B02"
+    }
+  ],
+  "license": "Creative Commons Zero v1.0 Universal",
+  "releaseDate": "18-Sep-2024"
+}

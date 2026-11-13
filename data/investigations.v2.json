@@ -1,0 +1,1967 @@
+{
+  "generatedAt": "2026-11-13T19:22:12.364Z",
+  "sources": {
+    "GUIDE": {
+      "label": "A Researcher's Guide to Combustion Science (NASA, 2015)",
+      "url": "https://www.nasa.gov/wp-content/uploads/2016/05/np-2015-10-034-jsc_combustion_in_reduced_gravity-iss-mini-book-011116-508.pdf"
+    },
+    "FS-BASS": {
+      "label": "Ficha NASA: BASS",
+      "url": "https://www.nasa.gov/wp-content/uploads/2025/07/burning-and-suppression-of-solids-bass.pdf"
+    },
+    "FS-FLEX": {
+      "label": "Ficha NASA: FLEX / FLEX-2",
+      "url": "https://www.nasa.gov/wp-content/uploads/2025/07/flame-extinguishment-experiment-flex.pdf"
+    },
+    "FS-SAME": {
+      "label": "Ficha NASA: SAME",
+      "url": "https://www.nasa.gov/wp-content/uploads/2025/07/smoke-aerosol-measurement-experiment-same.pdf"
+    },
+    "PSI": {
+      "label": "NASA Physical Sciences Informatics (metadatos)",
+      "url": "https://psi.nasa.gov/physci/repo/search?q=combustion"
+    },
+    "CHALLENGE": {
+      "label": "Enunciado oficial Flame in Freefall (Space Apps 2026)",
+      "url": "https://www.spaceappschallenge.org"
+    },
+    "GLENN": {
+      "label": "NASA Glenn: Combustion Science",
+      "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+    }
+  },
+  "investigations": [
+    {
+      "id": "acme-bre",
+      "psiId": "PSI-20",
+      "acronym": "ACME BRE",
+      "title": "Advanced Combustion via Microgravity Experiments - Burning Rate Emulator",
+      "doi": "10.60555/vb93-3y72",
+      "doiUrl": "https://doi.org/10.60555/vb93-3y72",
+      "psiUrl": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-20",
+      "areas": [
+        "prevention"
+      ],
+      "fuelPhase": "gas (emula sólidos)",
+      "fuels": [
+        "CH4/N2",
+        "C2H4/N2 en quemadores porosos de 25 y 50 mm"
+      ],
+      "conditions": {
+        "o2": [
+          0.21,
+          0.34
+        ],
+        "pressureAtm": [
+          0.558,
+          1
+        ],
+        "flowCmS": null,
+        "atmospheres": [
+          "14.7 psia / 21% O2",
+          "10.2 psia / 26.5% O2",
+          "8.2 psia / 34% O2"
+        ],
+        "note": "Atmósferas de hábitat consideradas por NASA, citadas en el objetivo de PSI."
+      },
+      "sensors": [],
+      "summary": "Quemador de gas que emula la combustión de materiales sólidos en atmósfera en reposo, ensayado en las atmósferas previstas para naves y bases.",
+      "findings": [
+        {
+          "text": "Se observó combustión cuasi-estacionaria de materiales equivalentes a PMMA y nailon en microgravedad SIN flujo de aire, algo notable en las atmósferas enriquecidas en oxígeno previstas para futuras naves; a 21% de O2 esas llamas se autoextinguían en poco tiempo.",
+          "src": "PSI",
+          "kind": "reported"
+        },
+        {
+          "text": "Apagar la ventilación es un paso establecido para extinguir incendios en naves; estos resultados sugieren que podría no bastar en atmósferas ricas en O2.",
+          "src": "PSI",
+          "kind": "reported"
+        },
+        {
+          "text": "Los autores sugieren aumentar el uso del Test 2 de NASA (calorímetro de cono), que mide propiedades de material correspondientes a estas llamas.",
+          "src": "PSI",
+          "kind": "reported"
+        }
+      ],
+      "habitat": {
+        "o2": true,
+        "pressure": true
+      },
+      "factors": {
+        "realism": 0.6,
+        "safety": 1,
+        "modeling": 1,
+        "data": 0.2
+      },
+      "spaceApplication": "Selección de materiales y protocolos de respuesta a incendios en atmósferas de hábitat lunar.",
+      "earthApplication": null,
+      "status": "preliminar",
+      "hardware": "Combustion Integrated Rack (CIR), ACME",
+      "program": "International Space Station (ISS)",
+      "files": {
+        "total": 2,
+        "byType": {
+          "csv": 2
+        },
+        "videos": 0,
+        "experimentalTable": true
+      },
+      "publications": [
+        {
+          "title": "Burning on flat wicks at various orientations",
+          "authors": "Zhang Yi, Bustamante Michael J, Gollner Michael J, Sunderland Peter B, Quintiere James G",
+          "doi": "10.1177/0734904113495650"
+        },
+        {
+          "title": "A Gas Burner to Emulate Condensed-Phase Burning",
+          "authors": "Zhang Y., Bustamante M. J., Dotson K. T., Sunderland P. B., Quintiere J. G.",
+          "doi": "10.3850/978-981-07-5936-0_03-01"
+        },
+        {
+          "title": "Experimental Investigation of Liquid and Gas Fueled Flames Towards the Development of a Burning Rate Emulator (BRE) for Microgravity Applications",
+          "authors": "MJ Bustamante",
+          "doi": null
+        },
+        {
+          "title": "Burning in microgravity: Experimental results and analysis",
+          "authors": "P Dehghani, PB Sunderland, JG Quintiere, JL deRis",
+          "doi": "10.1016/j.combustflame.2021.01.035"
+        },
+        {
+          "title": "Transient dynamics of radiative extinction in low-momentum microgravity diffusion flames",
+          "authors": "Snegirev Alexander, Kuznetsov Egor, Markus Ekaterina, Dehghani Parham, Sunderland Peter",
+          "doi": "10.1016/j.proci.2020.06.110"
+        },
+        {
+          "title": "Emulation of condensed fuel flames with gaseous fuels supplied through a porous copper calorimeter",
+          "authors": "Auth Eric, Quintiere James G., Sunderland Peter B.",
+          "doi": "10.1002/fam.2896"
+        }
+      ]
+    },
+    {
+      "id": "bass",
+      "psiId": "PSI-26",
+      "acronym": "BASS",
+      "title": "Burning and Suppression of Solids",
+      "doi": "10.60555/58h4-dy80",
+      "doiUrl": "https://doi.org/10.60555/58h4-dy80",
+      "psiUrl": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+      "areas": [
+        "prevention",
+        "suppression"
+      ],
+      "fuelPhase": "sólido",
+      "fuels": [
+        "SIBAL (algodón-fibra de vidrio)",
+        "Nomex",
+        "Ultem",
+        "PMMA (planos y esferas de 1 y 2 cm)",
+        "fibra de vidrio con cera",
+        "velas de parafina y cera japonesa"
+      ],
+      "conditions": {
+        "o2": null,
+        "pressureAtm": null,
+        "flowCmS": [
+          5,
+          50
+        ],
+        "n2SuppressantCcMin": [
+          0,
+          500
+        ],
+        "note": "41 muestras y 89 puntos de ensayo. El rango de O2 no figura en la ficha."
+      },
+      "sensors": [
+        "radiómetro (salida de la llama)",
+        "anemómetro (flujo real)",
+        "vídeo y fotografía"
+      ],
+      "summary": "Quema muestras sólidas en un conducto con flujo controlado dentro del Microgravity Science Glovebox y apaga la llama aumentando un flujo de nitrógeno.",
+      "findings": [
+        {
+          "text": "Resultados recientes indican que NASA-STD-6001 Test 1 NO es conservadora: los materiales pueden arder a menos oxígeno en microgravedad que en la Tierra.",
+          "src": "GUIDE p.31",
+          "kind": "reported"
+        },
+        {
+          "text": "La aplicación local de supresor no basta para extinguir: el chorro arrastra aire y sostiene la llama aunque se apague el flujo ambiente.",
+          "src": "GUIDE p.31",
+          "kind": "reported"
+        },
+        {
+          "text": "Hipótesis: con ventilación adecuada, los materiales arden igual o mejor en microgravedad que en gravedad normal con idénticas condiciones.",
+          "src": "FS-BASS",
+          "kind": "reported"
+        }
+      ],
+      "habitat": {
+        "o2": null,
+        "pressure": null
+      },
+      "factors": {
+        "realism": 1,
+        "safety": 1,
+        "modeling": 1,
+        "data": 0.7
+      },
+      "spaceApplication": "La selección de materiales de NASA se basa en un test de 1 g (NASA-STD-6001 Test 1) sin considerar efectos de baja gravedad.",
+      "earthApplication": "Valida modelos de combustión usados en problemas terrestres.",
+      "status": "completado",
+      "hardware": "Microgravity Science Glovebox",
+      "program": "International Space Station (ISS)",
+      "files": {
+        "total": 212,
+        "byType": {
+          "zip": 60,
+          "pdf": 32,
+          "docx": 1,
+          "mp4": 114,
+          "xlsx": 2,
+          "pptx": 2,
+          "csv": 1
+        },
+        "videos": 114,
+        "experimentalTable": true
+      },
+      "publications": [
+        {
+          "title": "The Microgravity Science Glovebox as a Platform for Exploration Research on the International Space Station",
+          "authors": "Spivey Reggie, Luz Paul",
+          "doi": "10.2514/6.2006-941"
+        },
+        {
+          "title": "Opposed-flow flame spread: A comparison of microgravity and normal gravity experiments to establish the thermal regime",
+          "authors": "Bhattacharjee Subrata, Laue Matthew, Carmignani Luca, Ferkul Paul, Olson Sandra",
+          "doi": "10.1016/j.firesaf.2015.11.011"
+        },
+        {
+          "title": "Simplified model for predicting difference between flammability limits of a thin material in normal gravity and microgravity environments",
+          "authors": "Takahashi Shuhei, Ebisawa Tomoya, Bhattacharjee Subrata, Ihara Tadayoshi",
+          "doi": "10.1016/j.proci.2014.07.017"
+        },
+        {
+          "title": "A Correlation for an Effective Flow Velocity for Capturing the Boundary Layer Effect in Opposed-Flow Flame Spread over Thin Fuels",
+          "authors": "S Bhattacharjee, R Nagarkar, Y Nakamura",
+          "doi": "10.1080/00102202.2014.900056"
+        },
+        {
+          "title": "Radiation signature in opposed-flow flame spread",
+          "authors": "Bhattacharjee Subrata, Paolini Christopher P., Miller Fletcher, Nagarkar Rohit",
+          "doi": "10.1504/PCFD.2012.048249"
+        },
+        {
+          "title": "OS24-1 The Effect of Boundary Layer on Blow-Off Extinction in Opposed-Flow Flame Spread: Results of Experiments and Simplified Analysis(invited,Scale modeling on solid combustion,OS24 Scale modeling,FLUID AND THERMODYNAMICS)",
+          "authors": "Bhattacharjee Subrata, Cartnignani Luca",
+          "doi": "10.1299/jsmeatem.2015.14.289"
+        }
+      ]
+    },
+    {
+      "id": "bass-ii",
+      "psiId": "PSI-25",
+      "acronym": "BASS-II",
+      "title": "Burning and Suppression of Solids - II",
+      "doi": "10.60555/4qc4-de67",
+      "doiUrl": "https://doi.org/10.60555/4qc4-de67",
+      "psiUrl": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+      "areas": [
+        "prevention",
+        "suppression"
+      ],
+      "fuelPhase": "sólido",
+      "fuels": [
+        "varillas, secciones esféricas, planchas, películas y telas (geometrías realistas más gruesas)"
+      ],
+      "conditions": {
+        "o2": null,
+        "pressureAtm": null,
+        "flowCmS": null,
+        "note": "Variables primarias según PSI: velocidad y dirección del flujo, O2 ambiente (por dilución con N2) y geometría de muestra. Valores numéricos pendientes de la tabla experimental."
+      },
+      "sensors": [
+        "vídeo (296 vídeos en PSI)"
+      ],
+      "summary": "Continuación de BASS con combustibles más gruesos y realistas; busca tender un puente entre el Test 1 de 1 g, las pruebas en tierra y la inflamabilidad real en microgravedad.",
+      "findings": [
+        {
+          "text": "Objetivo: estudiar ignición, crecimiento, propagación y límites de extinción de sólidos en flujos forzados lentos, y aportar datos preliminares a los investigadores de SoFIE.",
+          "src": "PSI",
+          "kind": "reported"
+        },
+        {
+          "text": "Ayuda a los ingenieros a seleccionar los materiales más seguros y a mejorar los métodos de extinción en misiones futuras.",
+          "src": "PSI",
+          "kind": "reported"
+        }
+      ],
+      "habitat": {
+        "o2": null,
+        "pressure": null
+      },
+      "factors": {
+        "realism": 1,
+        "safety": 1,
+        "modeling": 1,
+        "data": 1
+      },
+      "spaceApplication": "Selección de materiales y métodos de extinción para misiones lejos de la Tierra.",
+      "earthApplication": "Modelos aplicables a incendios forestales y de edificios.",
+      "status": "completado",
+      "hardware": "Microgravity Science Glovebox (MSG)",
+      "program": "International Space Station (ISS)",
+      "files": {
+        "total": 695,
+        "byType": {
+          "zip": 265,
+          "pptx": 1,
+          "mp4": 296,
+          "pdf": 127,
+          "xlsx": 2,
+          "docx": 2,
+          "jpg": 1,
+          "csv": 1
+        },
+        "videos": 296,
+        "experimentalTable": true
+      },
+      "publications": [
+        {
+          "title": "Microgravity flammability boundary for PMMA rods in axial stagnation flow: Experimental results and energy balance analyses",
+          "authors": "Olson Sandra L., Ferkul Paul V.",
+          "doi": "10.1016/j.combustflame.2017.03.001"
+        },
+        {
+          "title": "Temperature and CO2 fields of a downward spreading flame over thin cellulose: A comparison of experimental and computational results",
+          "authors": "Bhattacharjee Subrata, Paolini Christopher, Tran Wynn, Villaraza Jeanie Ray, Takahashi Shuhei",
+          "doi": "10.1016/j.proci.2014.05.093"
+        },
+        {
+          "title": "Opposed-flow flame spread: A comparison of microgravity and normal gravity experiments to establish the thermal regime",
+          "authors": "Bhattacharjee Subrata, Laue Matthew, Carmignani Luca, Ferkul Paul, Olson Sandra",
+          "doi": "10.1016/j.firesaf.2015.11.011"
+        },
+        {
+          "title": "The critical flow velocity for radiative extinction in opposed-flow flame spread in a microgravity environment: A comparison of experimental, computational, and theoretical results",
+          "authors": "Bhattacharjee Subrata, Simsek Aslihan, Olson Sandra, Ferkul Paul",
+          "doi": "10.1016/j.combustflame.2015.10.023"
+        },
+        {
+          "title": "Experimental validation of a correlation capturing the boundary layer effect on spread rate in the kinetic regime of opposed-flow flame spread",
+          "authors": "Bhattacharjee Subrata, Tran Wynn, Laue Matthew, Paolini Christopher, Nakamura Yuji",
+          "doi": "10.1016/j.proci.2014.06.125"
+        },
+        {
+          "title": "Results from on-board CSA-CP and CDM Sensor Readings during the Burning and Suppression of Solids - II (BASS-II) Experiment in the Microgravity Science Glovebox (MSG)",
+          "authors": "SL Olson, PV Ferkul, S Bhattacharjee, FJ Miller, C Fernandez-Pello, S Link, JS Tien, I Wichman",
+          "doi": null
+        }
+      ]
+    },
+    {
+      "id": "flex",
+      "psiId": "PSI-69",
+      "acronym": "FLEX",
+      "title": "Flame Extinguishment Experiment",
+      "doi": "10.60555/mbq8-0451",
+      "doiUrl": "https://doi.org/10.60555/mbq8-0451",
+      "psiUrl": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+      "areas": [
+        "suppression"
+      ],
+      "fuelPhase": "líquido (gotas)",
+      "fuels": [
+        "heptano",
+        "metanol"
+      ],
+      "conditions": {
+        "o2": [
+          0.1,
+          0.5
+        ],
+        "pressureAtm": [
+          0.5,
+          1
+        ],
+        "flowCmS": null,
+        "suppressants": [
+          "CO2",
+          "He"
+        ],
+        "suppressantMoleFraction": [
+          0,
+          0.7
+        ],
+        "dropletMm": [
+          2,
+          5
+        ],
+        "note": "Rangos planificados según la ficha; el diluyente principal es N2, con pocos ensayos con He."
+      },
+      "sensors": [
+        "medida resuelta de velocidad de quemado de gota",
+        "radiación de llama",
+        "concentración y temperatura de hollín"
+      ],
+      "summary": "Quema gotas de combustible líquido en mezclas de O2 y diluyentes para mapear límites de inflamabilidad y la eficacia de supresores inertes (CO2, He).",
+      "findings": [
+        {
+          "text": "El límite de inflamabilidad es menor en gravedad reducida; los estándares terrestres de supresores inertes no ofrecen el mismo margen de seguridad en baja gravedad.",
+          "src": "GUIDE p.12",
+          "kind": "reported"
+        },
+        {
+          "text": "Demostró extinción radiativa y difusiva, inestabilidades de combustión, límites de inflamabilidad más bajos y explicó el fenómeno de llama fría tras la extinción de la llama visible.",
+          "src": "GUIDE p.13",
+          "kind": "reported"
+        },
+        {
+          "text": "Un motivo para ensayar presiones de 0.5 a 1.0 atm: una estrategia de extinción es aislar el hábitat y ventear la cabina al espacio.",
+          "src": "FS-FLEX",
+          "kind": "reported"
+        }
+      ],
+      "habitat": {
+        "o2": true,
+        "pressure": true
+      },
+      "factors": {
+        "realism": 0.4,
+        "safety": 1,
+        "modeling": 1,
+        "data": 0.2
+      },
+      "spaceApplication": "Estima el índice límite de oxígeno (LOI) más conservador para combustión estacionaria.",
+      "earthApplication": "Los modelos de heptano y metanol son base de modelos de combustibles prácticos como el diésel y el queroseno.",
+      "status": "completado",
+      "hardware": "Combustion Integrated Rack (CIR)-Fluids and Combustion Facility (FCF), Multi-user Droplet Combustion Appartatus (MDCA)",
+      "program": "International Space Station (ISS)",
+      "files": {
+        "total": 1,
+        "byType": {
+          "csv": 1
+        },
+        "videos": 0,
+        "experimentalTable": true
+      },
+      "publications": [
+        {
+          "title": "Methanol Droplet Combustion in Oxygen-Inert Environments in Microgravity",
+          "authors": "V Nayagam, DL Dietrich, MC Hicks, FA Williams",
+          "doi": null
+        },
+        {
+          "title": "Methanol Droplet Extinction in Oxygen/Carbon-dioxide/Nitrogen Mixtures in Microgravity: Results from the International Space Station Experiments",
+          "authors": "V. Nayagam",
+          "doi": null
+        },
+        {
+          "title": "A Numerical Study On The Extinction Characteristics Of Droplet Combustion Under Microgravity Conditions",
+          "authors": "Farouk Tanvir, Dryer Frederick",
+          "doi": "10.2514/6.2012-1252"
+        },
+        {
+          "title": "Tethered methanol droplet combustion in carbon-dioxide enriched environment under microgravity conditions",
+          "authors": "Farouk Tanvir, Dryer Frederick L.",
+          "doi": "10.1016/j.combustflame.2011.06.014"
+        },
+        {
+          "title": "FLEX: A Decisive Step Forward in NASA's Combustion Research Program",
+          "authors": "JM Hickman, DL Dietrich, MC Hicks, V Nayagam, D Stocker",
+          "doi": null
+        },
+        {
+          "title": "Dynamics of Water Absorption and Evaporation During Methanol Droplet Combustion in Microgravity",
+          "authors": "MC Hicks, DL Dietrich, V Nayagam, FA Williams",
+          "doi": null
+        }
+      ]
+    },
+    {
+      "id": "flex-2",
+      "psiId": "PSI-68",
+      "acronym": "FLEX-2",
+      "title": "Flame Extinguishment Experiment - 2",
+      "doi": "10.60555/byp8-h018",
+      "doiUrl": "https://doi.org/10.60555/byp8-h018",
+      "psiUrl": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-68",
+      "areas": [
+        "suppression"
+      ],
+      "fuelPhase": "líquido (gotas)",
+      "fuels": [
+        "combustibles puros",
+        "mezclas de combustibles",
+        "sustitutos de combustibles reales",
+        "gotas en pareja"
+      ],
+      "conditions": {
+        "o2": null,
+        "pressureAtm": null,
+        "flowCmS": null,
+        "dropletMm": [
+          2,
+          4
+        ],
+        "note": "30 a 60 ensayos por grupo (puros, mezclas, flujo convectivo, pares de gotas). La guía muestra etanol al 30% de O2 y 2.4 atm en un ejemplo de hollín."
+      },
+      "sensors": [],
+      "summary": "Sucesor de FLEX: estudia flujos convectivos lentos, interacción entre gotas y combustibles más complejos.",
+      "findings": [
+        {
+          "text": "Cuatro grupos de experimentos: combustibles puros, mezclas, flujo convectivo y pares de gotas, con 30 a 60 ensayos cada uno.",
+          "src": "FS-FLEX",
+          "kind": "reported"
+        },
+        {
+          "text": "Incluye variantes internacionales: FLEX-2J (JAXA, propagación en filas de gotas) y FLEX-ICE-GA (biocombustibles, CNR de Italia).",
+          "src": "FS-FLEX",
+          "kind": "reported"
+        }
+      ],
+      "habitat": {
+        "o2": null,
+        "pressure": null
+      },
+      "factors": {
+        "realism": 0.4,
+        "safety": 0.5,
+        "modeling": 1,
+        "data": 0.2
+      },
+      "spaceApplication": null,
+      "earthApplication": "Verifica modelos de combustibles reales de transporte e industria.",
+      "status": "completado",
+      "hardware": "Combustion Integrated Rack (CIR), Multi-user Droplet Combustion Appartatus (MDCA)",
+      "program": "International Space Station (ISS)",
+      "files": {
+        "total": 1,
+        "byType": {
+          "csv": 1
+        },
+        "videos": 0,
+        "experimentalTable": true
+      },
+      "publications": [
+        {
+          "title": "Experimental Study of Initial Diameter Effects on Convection-free Droplet Combustion in the Standard Atmosphere for n-Heptane, n-Octane, and n-Decane: International Space Station and Ground-based Experiments",
+          "authors": "YC Liu, CT Avedisian, KN Trenou, JK Rah, MC Hicks",
+          "doi": "10.2514/6.2014-1019"
+        },
+        {
+          "title": "n-Butanol droplet combustion: Numerical modeling and reduced gravity experiments",
+          "authors": "FE Alam, YC Liu, CT Avedisian, FL Dryer, TI Farouk",
+          "doi": null
+        },
+        {
+          "title": "Droplet Combustion Experiments Aboard the International Space Station",
+          "authors": "Dietrich Daniel L., Nayagam Vedha, Hicks Michael C., Ferkul Paul V., Dryer Frederick L., Farouk Tanvir, Shaw Benjamin D., Suh Hyun Kyu, Choi Mun Y., Liu Yu Cheng, Avedisian C. Thomas, Williams Forman A.",
+          "doi": "10.1007/s12217-014-9372-2"
+        },
+        {
+          "title": "Multistage oscillatory “Cool Flame” behavior for isolated alkane droplet combustion in elevated pressure microgravity condition",
+          "authors": "TI Farouk, MC Hicks, FL Dryer",
+          "doi": null
+        },
+        {
+          "title": "Computational modeling of the effects of support fibers on evaporation of fiber-supported droplets in reduced gravity",
+          "authors": "N Ghata, BD Shaw",
+          "doi": null
+        },
+        {
+          "title": "Oxygen Lewis Number Effects on Reduced Gravity Combustion of Methanol and Heptane Droplets",
+          "authors": "Shaw Benjamin D., Vang Chang L.",
+          "doi": "10.1080/00102202.2015.1072176"
+        }
+      ]
+    },
+    {
+      "id": "cfi",
+      "psiId": "PSI-39",
+      "acronym": "CFI",
+      "title": "Cool Flames Investigation",
+      "doi": "10.60555/m6pj-a914",
+      "doiUrl": "https://doi.org/10.60555/m6pj-a914",
+      "psiUrl": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-39",
+      "areas": [
+        "fundamental"
+      ],
+      "fuelPhase": "líquido (gotas)",
+      "fuels": [
+        "n-dodecano",
+        "mezclas n-dodecano / iso-dodecano"
+      ],
+      "conditions": {
+        "o2": null,
+        "pressureAtm": [
+          0.25,
+          5
+        ],
+        "flowCmS": null,
+        "note": "Incluye efecto de la dilución con helio sobre las llamas frías."
+      },
+      "sensors": [],
+      "summary": "Estudia llamas frías (combustión a baja temperatura) en gotas de combustible, en función de presión, tamaño de gota y dilución con helio.",
+      "findings": [
+        {
+          "text": "Las llamas frías son importantes para entender la ignición de combustibles prácticos y aditivos, y para el diseño de motores avanzados.",
+          "src": "PSI",
+          "kind": "reported"
+        },
+        {
+          "text": "Investiga la relación entre tamaño de gota, presión y extinción, y la consecuencia de la formación de hollín en combustión de llama fría.",
+          "src": "PSI",
+          "kind": "reported"
+        }
+      ],
+      "habitat": {
+        "o2": null,
+        "pressure": true
+      },
+      "factors": {
+        "realism": 0.2,
+        "safety": 0.5,
+        "modeling": 1,
+        "data": 1
+      },
+      "spaceApplication": "Fenómeno candidato a preocupación de seguridad (persistencia tras extinguirse la llama visible); su impacto en detección NO está verificado en las fuentes.",
+      "earthApplication": "Diseño de combustibles y motores más limpios.",
+      "status": "completado",
+      "hardware": "Multi-User Droplet Combustion Apparatus (MDCA), Combustion Integrated Rack (CIR)",
+      "program": "International Space Station (ISS)",
+      "files": {
+        "total": 2832,
+        "byType": {
+          "zip": 338,
+          "txt": 1793,
+          "metadata": 117,
+          "meta": 236,
+          "mp4": 126,
+          "ts": 120,
+          "pdf": 48,
+          "rtf": 22,
+          "pxp": 29,
+          "pptx": 1,
+          "xlsx": 1,
+          "csv": 1
+        },
+        "videos": 126,
+        "experimentalTable": true
+      },
+      "publications": [
+        {
+          "title": "Can cool flames support quasi-steady alkane droplet burning?",
+          "authors": "V Nayagam, DL Dietrich, PV Ferkul, MC Hicks, FA Williams",
+          "doi": "10.1016/j.combustflame.2012.07.012"
+        },
+        {
+          "title": "Cool-flame extinction during n-alkane droplet combustion in microgravity",
+          "authors": "V Nayagam, DL Dietrich, MC Hicks, FA Williams",
+          "doi": "10.1016/j.combustflame.2015.01.012"
+        },
+        {
+          "title": "Partial-Burning Regime for Quasi-Steady Droplet Combustion Supported by Cool Flames",
+          "authors": "Nayagam Vedha, Dietrich Daniel L., Williams Forman A.",
+          "doi": "10.2514/1.J054437"
+        },
+        {
+          "title": "The role of cool-flame chemistry in quasi-steady combustion and extinction of n-heptane droplets",
+          "authors": "Paczko Guenter, Peters Norbert, Seshadri Kalyanasundaram, Williams Forman Arthur",
+          "doi": "10.1080/13647830.2014.934296"
+        },
+        {
+          "title": "Asymptotic analysis of quasi-steady n-heptane droplet combustion supported by cool-flame chemistry",
+          "authors": "Seshadri Kalyanasundaram, Peters Norbert, Williams Forman A., Nayagam Vedha, Paczko Guenter",
+          "doi": "10.1080/13647830.2016.1248494"
+        },
+        {
+          "title": "Science in Short: Cool Flames",
+          "authors": "Rachel Barry",
+          "doi": null
+        }
+      ]
+    },
+    {
+      "id": "acme-cfi-g",
+      "psiId": "PSI-159",
+      "acronym": "ACME CFI-G",
+      "title": "Advanced Combustion via Microgravity Experiments / Cool Flames Investigation with Gases",
+      "doi": "10.60555/cyt1-kh64",
+      "doiUrl": "https://doi.org/10.60555/cyt1-kh64",
+      "psiUrl": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159",
+      "areas": [
+        "fundamental",
+        "prevention"
+      ],
+      "fuelPhase": "gas",
+      "fuels": [
+        "propano",
+        "n-butano",
+        "n-pentano"
+      ],
+      "conditions": {
+        "o2": [
+          null,
+          0.85
+        ],
+        "pressureAtm": null,
+        "flowCmS": null,
+        "note": "El enunciado del reto indica que de un quemador esférico fluía una mezcla O2-N2 de hasta 85% de O2 formando una llama de dentro hacia fuera."
+      },
+      "sensors": [],
+      "summary": "Determina las condiciones en que existen llamas de difusión frías en quemadores esféricos porosos; los ensayos de microgravedad con mayor concentración de oxígeno.",
+      "findings": [
+        {
+          "text": "Hipótesis: demostrar por primera vez llamas de difusión frías estacionarias en quemadores esféricos porosos con propano, n-butano y n-pentano.",
+          "src": "PSI",
+          "kind": "reported"
+        },
+        {
+          "text": "Contiene los ensayos de microgravedad con mayor concentración de oxígeno (hasta 85%).",
+          "src": "CHALLENGE",
+          "kind": "reported"
+        }
+      ],
+      "habitat": {
+        "o2": true,
+        "pressure": null
+      },
+      "factors": {
+        "realism": 0.2,
+        "safety": 0.5,
+        "modeling": 1,
+        "data": 1
+      },
+      "spaceApplication": "Datos en condiciones extremas de O2, relevantes para atmósferas de hábitat y traje.",
+      "earthApplication": "Mejora de la eficiencia de motores de combustión interna.",
+      "status": "completado",
+      "hardware": "ACME, Combustion Integrated Rack (CIR)",
+      "program": "International Space Station (ISS)",
+      "files": {
+        "total": 3758,
+        "byType": {
+          "zip": 987,
+          "pdf": 93,
+          "csv": 682,
+          "xlsx": 1,
+          "txt": 1022,
+          "ts": 336,
+          "mdipsug": 610,
+          "log": 22,
+          "errors": 1,
+          "mp4": 1,
+          "next": 1,
+          "png": 1,
+          "jpg": 1
+        },
+        "videos": 1,
+        "experimentalTable": true
+      },
+      "publications": [
+        {
+          "title": "Spherical gas-fueled cool diffusion flames",
+          "authors": "Kim Minhyeng, Waddell Kendyl A., Sunderland Peter B., Nayagam Vedha, Stocker Dennis P., Dietrich Daniel L., Ju Yiguang, Williams Forman A., Irace Phillip, Axelbaum Richard L.",
+          "doi": "10.1016/j.proci.2022.07.015"
+        },
+        {
+          "title": "Cool diffusion flames in a stably stratified stagnation flow",
+          "authors": "Waddell Kendyl A., Lee Han Ju, Nayagam Vedha, Axelbaum Richard L., Sunderland Peter B.",
+          "doi": "10.1016/j.combustflame.2023.112852"
+        }
+      ]
+    },
+    {
+      "id": "acme-flame-design",
+      "psiId": "PSI-10",
+      "acronym": "ACME Flame Design",
+      "title": "Advanced Combustion via Microgravity Experiments / Flame Design",
+      "doi": "10.60555/w4zy-bt45",
+      "doiUrl": "https://doi.org/10.60555/w4zy-bt45",
+      "psiUrl": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-10",
+      "areas": [
+        "fundamental"
+      ],
+      "fuelPhase": "gas",
+      "fuels": [
+        "etileno (C2H4)",
+        "metano (CH4)"
+      ],
+      "conditions": {
+        "o2": null,
+        "pressureAtm": null,
+        "flowCmS": null,
+        "inerts": [
+          "N2",
+          "CO2"
+        ],
+        "note": "Límites de inicio de hollín en función del caudal, Zst, cantidad de inerte y presión."
+      },
+      "sensors": [],
+      "summary": "Mide el inicio de hollín y la estructura de llamas de difusión esféricas en microgravedad.",
+      "findings": [
+        {
+          "text": "Hipótesis: las llamas de difusión esféricas de microgravedad se extinguen cuando la temperatura máxima desciende por debajo de unos 1130 K.",
+          "src": "PSI",
+          "kind": "reported"
+        }
+      ],
+      "habitat": {
+        "o2": null,
+        "pressure": null
+      },
+      "factors": {
+        "realism": 0.1,
+        "safety": 0.25,
+        "modeling": 1,
+        "data": 1
+      },
+      "spaceApplication": null,
+      "earthApplication": "Contribuye a mejorar la eficiencia y reducir emisiones en combustores terrestres.",
+      "status": "completado",
+      "hardware": "Advanced Combustion via Microgravity Experiments (ACME), Combustion Integrated Rack (CIR), Reconfiguration of Combustion Integrated Rack (CIR)",
+      "program": "International Space Station (ISS)",
+      "files": {
+        "total": 3809,
+        "byType": {
+          "zip": 1184,
+          "pdf": 76,
+          "csv": 638,
+          "txt": 993,
+          "log": 35,
+          "ts": 317,
+          "mdipsug": 490,
+          "xlsx": 2,
+          "asc": 66,
+          "jpg": 5,
+          "png": 2,
+          "errors": 1
+        },
+        "videos": 0,
+        "experimentalTable": true
+      },
+      "publications": [
+        {
+          "title": "The kinetics and warm flame chemistry associated with radiative extinction of spherical diffusion flames",
+          "authors": "Waddell Kendyl A., Irace Phillip H., Yablonsky Gregory, Constales Denis, Sunderland Peter B., Axelbaum Richard L.",
+          "doi": "10.1080/13647830.2024.2326830"
+        },
+        {
+          "title": "Soot Formation in Spherical Diffusion Flames",
+          "authors": "Frolov Sergey M., Ivanov Vladislav S., Frolov Fedor S., Vlasov Pavel A., Axelbaum Richard, Irace Phillip H., Yablonsky Grigoriy, Waddell Kendyl",
+          "doi": "10.3390/math11020261"
+        },
+        {
+          "title": "On the existence of steady-state gaseous microgravity spherical diffusion flames in the presence of radiation heat loss",
+          "authors": "Irace Phillip H., Waddell Kendyl A., Constales Denis, Kim Minhyeng, Yablonsky Gregory, Sunderland Peter B., Axelbaum Richard L.",
+          "doi": "10.1016/j.proci.2022.07.049"
+        },
+        {
+          "title": "Critical temperature and reactant mass flux for radiative extinction of ethylene microgravity spherical diffusion flames at 1 bar",
+          "authors": "Irace Phillip H., Waddell Kendyl A., Constales Denis, Sunderland Peter B., Axelbaum Richard L.",
+          "doi": "10.1016/j.proci.2022.07.043"
+        },
+        {
+          "title": "An investigation of thermal radiation from laminar diffusion flames in a tri-coflow burner with central oxygen",
+          "authors": "Irace P.H., Gopan A., Axelbaum R.L.",
+          "doi": "10.1016/j.combustflame.2022.112158"
+        },
+        {
+          "title": "SPHERICAL DIFFUSION FLAME IN MICROGRAVITY CONDITIONS: FIRST RESULTS OF JOINT RUSSIAN-AMERICAN SPACE EXPERIMENT FLAME DESIGN - ADAMANT",
+          "authors": "undefined undefined, FROLOV S. M.",
+          "doi": "10.30826/NEPCAP9B-13"
+        }
+      ]
+    },
+    {
+      "id": "acme-cld-flame",
+      "psiId": "PSI-21",
+      "acronym": "ACME CLD Flame",
+      "title": "Advanced Combustion via Microgravity Experiments / Coflow Laminar Diffusion Flame",
+      "doi": "10.60555/23e1-9950",
+      "doiUrl": "https://doi.org/10.60555/23e1-9950",
+      "psiUrl": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-21",
+      "areas": [
+        "fundamental"
+      ],
+      "fuelPhase": "gas",
+      "fuels": [
+        "metano",
+        "etileno"
+      ],
+      "conditions": {
+        "o2": null,
+        "pressureAtm": null,
+        "flowCmS": null,
+        "note": "Llamas de difusión en coflujo débil, en función de velocidad y dilución del combustible."
+      },
+      "sensors": [],
+      "summary": "Datos de referencia de llamas de difusión en coflujo para validar modelos computacionales en los extremos de dilución.",
+      "findings": [
+        {
+          "text": "Caracteriza forma de llama, altura de despegue, temperaturas y límites de extinción, y la tendencia a formar hollín con tiempos de residencia largos.",
+          "src": "PSI",
+          "kind": "reported"
+        }
+      ],
+      "habitat": {
+        "o2": null,
+        "pressure": null
+      },
+      "factors": {
+        "realism": 0.1,
+        "safety": 0.25,
+        "modeling": 1,
+        "data": 0.2
+      },
+      "spaceApplication": null,
+      "earthApplication": "Las llamas de difusión son el tipo de llama de la mayoría de dispositivos de combustión prácticos.",
+      "status": "completado",
+      "hardware": "Combustion Integrated Rack (CIR), ACME",
+      "program": "International Space Station (ISS)",
+      "files": {
+        "total": 2,
+        "byType": {
+          "csv": 2
+        },
+        "videos": 0,
+        "experimentalTable": true
+      },
+      "publications": [
+        {
+          "title": "Analysis of CH* concentration and flame heat release rate in laminar coflow diffusion flames under microgravity and normal gravity",
+          "authors": "D Giassi, S Cao, BA Bennett, DP Stocker, F Takahashi, MD Smooke, MB Long",
+          "doi": "10.1016/j.combustflame.2016.02.012"
+        },
+        {
+          "title": "Signal-to-noise ratio improvements in laser flow diagnostics using time-resolved image averaging and high dynamic range imaging",
+          "authors": "Giassi Davide, Long Marshall B.",
+          "doi": "10.1007/s00348-016-2218-5"
+        },
+        {
+          "title": "A computational and experimental study of coflow laminar methane/air diffusion flames: Effects of fuel dilution, inlet velocity, and gravity",
+          "authors": "Cao S., Ma B., Bennett B.A.V., Giassi D., Stocker D.P., Takahashi F., Long M.B., Smooke M.D.",
+          "doi": "10.1016/j.proci.2014.05.138"
+        },
+        {
+          "title": "A Combined Experimental and Computational Study of Soot Formation in Normal and Microgravity Conditions",
+          "authors": "Dobbins Richard R., Tinjero Jesse, Squeo Joseph, Zhao Xinyu, Hall Robert J., Colket Meredith B., Long Marshall B., Smooke Mitchell D.",
+          "doi": "10.1080/00102202.2022.2041621"
+        },
+        {
+          "title": "Constrained-temperature solutions of coflow laminar diffusion flames",
+          "authors": "Kempema Nathan J., Dobbins Richard R., Long Marshall B., Smooke Mitchell D.",
+          "doi": "10.1016/j.proci.2020.06.034"
+        },
+        {
+          "title": "Effects of pressure and fuel dilution on coflow laminar methane–air diffusion flames: A computational and experimental study",
+          "authors": "Cao Su, Ma Bin, Giassi Davide, Bennett Beth Anne V., Long Marshall B., Smooke Mitchell D.",
+          "doi": "10.1080/13647830.2017.1403051"
+        }
+      ]
+    },
+    {
+      "id": "acme-e-field",
+      "psiId": "PSI-22",
+      "acronym": "ACME E-FIELD",
+      "title": "Advanced Combustion via Microgravity Experiments Electric-Field Effects on Laminar Diffusion Flames",
+      "doi": "10.60555/se5a-8c73",
+      "doiUrl": "https://doi.org/10.60555/se5a-8c73",
+      "psiUrl": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-22",
+      "areas": [
+        "fundamental"
+      ],
+      "fuelPhase": "gas",
+      "fuels": [],
+      "conditions": {
+        "o2": null,
+        "pressureAtm": null,
+        "flowCmS": null,
+        "note": "El enunciado del reto indica que el campo eléctrico imita gravedad parcial a través de su efecto sobre los iones de la llama."
+      },
+      "sensors": [],
+      "summary": "Estudia cómo un campo eléctrico modifica llamas de difusión laminares; el enunciado lo cita como forma de imitar gravedad parcial.",
+      "findings": [
+        {
+          "text": "Según el enunciado del reto, el campo eléctrico actúa sobre los iones de la llama y permite imitar gravedad parcial.",
+          "src": "CHALLENGE",
+          "kind": "reported"
+        },
+        {
+          "text": "PSI aclara que no se realiza para aplicaciones espaciales, aunque podría servir a futuros dispositivos de combustión (p. ej. procesado de residuos).",
+          "src": "PSI",
+          "kind": "reported"
+        }
+      ],
+      "habitat": {
+        "o2": null,
+        "pressure": null
+      },
+      "factors": {
+        "realism": 0.1,
+        "safety": 0.25,
+        "modeling": 0.5,
+        "data": 0.2
+      },
+      "spaceApplication": null,
+      "earthApplication": null,
+      "status": "completado",
+      "hardware": "Combustion Integrated Rack (CIR), ACME",
+      "program": "International Space Station (ISS)",
+      "files": {
+        "total": 1,
+        "byType": {
+          "csv": 1
+        },
+        "videos": 0,
+        "experimentalTable": true
+      },
+      "publications": [
+        {
+          "title": "Ion Current and Flame Changes with Electric Fields in Microgravity",
+          "authors": "YC Chien, J Tinajero, D Stocker, U Hegde, D Dunn-Rankin",
+          "doi": null
+        },
+        {
+          "title": "Electric Field Induced Changes of a Diffusion Flame and Heat Transfer near an Impinging Surface",
+          "authors": "Chien Yu-Chien, Dunn-Rankin Derek",
+          "doi": "10.3390/en11051235"
+        },
+        {
+          "title": "Electrical Aspects of Impinging Flames",
+          "authors": "Y-C Chien",
+          "doi": null
+        },
+        {
+          "title": "The Influence of Electric Field Power Systems on Flame Behavior",
+          "authors": "K Yamashita, Y-C Chien, S Karnani, D Dunn-Rankin",
+          "doi": null
+        },
+        {
+          "title": "Ionization and chemiluminescence during the progressive aeration of methane flames",
+          "authors": "Weinberg Felix, Carleton Fred",
+          "doi": "10.1016/j.combustflame.2009.08.008"
+        },
+        {
+          "title": "Modelling electric field driven convection in small combustion plasmas and surrounding gases",
+          "authors": "Papac M. J., Dunn-Rankin D.",
+          "doi": "10.1080/13647830701383814"
+        }
+      ]
+    },
+    {
+      "id": "saffire-i",
+      "psiId": "PSI-98",
+      "acronym": "Saffire-I",
+      "title": "Spacecraft Fire Safety Experiment-I",
+      "doi": "10.60555/0t15-1z43",
+      "doiUrl": "https://doi.org/10.60555/0t15-1z43",
+      "psiUrl": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+      "areas": [
+        "prevention"
+      ],
+      "fuelPhase": "sólido (material de nave)",
+      "fuels": [],
+      "conditions": {
+        "o2": null,
+        "pressureAtm": null,
+        "flowCmS": null,
+        "note": "Experimento no tripulado en la nave de carga Cygnus."
+      },
+      "sensors": [
+        "oxígeno",
+        "dióxido de carbono",
+        "calor",
+        "presión",
+        "crecimiento de llama",
+        "dos cámaras de vídeo"
+      ],
+      "summary": "Incendio a gran escala provocado en una nave de carga no tripulada para estudiar cómo crece un fuego realista en baja gravedad.",
+      "findings": [
+        {
+          "text": "Determina límites de inflamabilidad en microgravedad de varios materiales de nave y ayuda a validar los criterios de selección de materiales de NASA.",
+          "src": "PSI",
+          "kind": "reported"
+        },
+        {
+          "text": "Hipótesis: usar incendios y normas terrestres para diseñar la seguridad de naves supone un riesgo inherente por la incertidumbre.",
+          "src": "PSI",
+          "kind": "reported"
+        }
+      ],
+      "habitat": {
+        "o2": null,
+        "pressure": null
+      },
+      "factors": {
+        "realism": 1,
+        "safety": 1,
+        "modeling": 1,
+        "data": 0.4
+      },
+      "spaceApplication": "Un fuego realista en una nave exploratoria sin riesgo para tripulación.",
+      "earthApplication": "Beneficia la seguridad en minas, aviones o submarinos.",
+      "status": "completado",
+      "hardware": "Saffire 1 enclosure in Cygnus",
+      "program": "International Space Station (ISS)",
+      "files": {
+        "total": 75,
+        "byType": {
+          "pdf": 6,
+          "zip": 61,
+          "xlsx": 4,
+          "docx": 3,
+          "csv": 1
+        },
+        "videos": 0,
+        "experimentalTable": true
+      },
+      "publications": [
+        {
+          "title": "The Spacecraft Fire Experiment (Saffire) - Objectives, Development and Status",
+          "authors": "W Schoren, GA Ruff, DL Urban",
+          "doi": null
+        },
+        {
+          "title": "Buoyant Effects on the Flammability of Silicone Samples Planned for the Spacecraft Fire Experiment (Saffire)",
+          "authors": "JE Niehaus, PV Ferkul, SA Gokoglu, GA Ruff",
+          "doi": null
+        },
+        {
+          "title": "Flame spread: Effects of microgravity and scale",
+          "authors": "Urban David L., Ferkul Paul, Olson Sandra, Ruff Gary A., Easton John, T'ien James S., Liao Ya-Ting T., Li Chengyao, Fernandez-Pello Carlos, Torero Jose L., Legros Guillaume, Eigenbrod Christian, Smirnov Nickolay, Fujita Osamu, Rouvreau Sébastien, Toth Balazs, Jomaas Grunde",
+          "doi": "10.1016/j.combustflame.2018.10.012"
+        },
+        {
+          "title": "Transient flame growth and spread processes over a large solid fabric in concurrent low-speed flows in microgravity – Model versus experiment",
+          "authors": "Li Chengyao, Liao Ya-Ting T., T'ien James S., Urban David L., Ferkul Paul, Olson Sandra, Ruff Gary A., Easton John",
+          "doi": "10.1016/j.proci.2018.05.168"
+        },
+        {
+          "title": "Fire safety in space – beyond flammability testing of small samples",
+          "authors": "Jomaas Grunde, Torero Jose L., Eigenbrod Christian, Niehaus Justin, Olson Sandra L., Ferkul Paul V., Legros Guillaume, Fernandez-Pello A. Carlos, Cowlard Adam J., Rouvreau Sebastien, Smirnov Nickolay, Fujita Osamu, T׳ien James S., Ruff Gary A., Urban David L.",
+          "doi": "10.1016/j.actaastro.2014.11.025"
+        },
+        {
+          "title": "Operation and Development Status of the Spacecraft Fire Experiments (Saffire)",
+          "authors": "Gary A. Ruff and David L. Urban.",
+          "doi": null
+        }
+      ]
+    },
+    {
+      "id": "saffire-ii",
+      "psiId": "PSI-99",
+      "acronym": "Saffire-II",
+      "title": "Spacecraft Fire Experiment-II",
+      "doi": "10.60555/2chp-m469",
+      "doiUrl": "https://doi.org/10.60555/2chp-m469",
+      "psiUrl": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-99",
+      "areas": [
+        "prevention"
+      ],
+      "fuelPhase": "sólido (material de nave)",
+      "fuels": [],
+      "conditions": {
+        "o2": null,
+        "pressureAtm": null,
+        "flowCmS": null,
+        "note": "Mismos objetivos que Saffire-I."
+      },
+      "sensors": [],
+      "summary": "Segundo vuelo Saffire en el módulo presurizado de Cygnus.",
+      "findings": [
+        {
+          "text": "Mismos objetivos: rapidez de crecimiento de un fuego a gran escala y límites de inflamabilidad en baja gravedad frente al test de selección en gravedad normal.",
+          "src": "PSI",
+          "kind": "reported"
+        }
+      ],
+      "habitat": {
+        "o2": null,
+        "pressure": null
+      },
+      "factors": {
+        "realism": 1,
+        "safety": 1,
+        "modeling": 1,
+        "data": 0.2
+      },
+      "spaceApplication": null,
+      "earthApplication": null,
+      "status": "completado",
+      "hardware": "Cygnus Pressurized Cargo Module, SAFFIRE",
+      "program": "Cygnus Spacecraft",
+      "files": {
+        "total": 1,
+        "byType": {
+          "csv": 1
+        },
+        "videos": 0,
+        "experimentalTable": true
+      },
+      "publications": [
+        {
+          "title": "Buoyant Effects on the Flammability of Silicone Samples Planned for the Spacecraft Fire Experiment (Saffire), Conference: 45th International Conference on Environmental Systems ICES-2015-[293] 12-16 July 2015, Bellevue, Washington",
+          "authors": "JE Niehaus, PV Ferkul, SA Gokoglu, GA Ruff",
+          "doi": null
+        },
+        {
+          "title": "The Spacecraft Fire Experiment (Saffire) - Objectives, Development and Status",
+          "authors": "W Schoren, GA Ruff, DL Urban",
+          "doi": null
+        },
+        {
+          "title": "Flame spread: Effects of microgravity and scale",
+          "authors": "Urban David L., Ferkul Paul, Olson Sandra, Ruff Gary A., Easton John, T'ien James S., Liao Ya-Ting T., Li Chengyao, Fernandez-Pello Carlos, Torero Jose L., Legros Guillaume, Eigenbrod Christian, Smirnov Nickolay, Fujita Osamu, Rouvreau Sébastien, Toth Balazs, Jomaas Grunde",
+          "doi": "10.1016/j.combustflame.2018.10.012"
+        },
+        {
+          "title": "Buoyancy effects on concurrent flame spread over thick PMMA",
+          "authors": "Thomsen Maria, Fernandez-Pello Carlos, Ruff Gary A., Urban David L.",
+          "doi": "10.1016/j.combustflame.2018.10.016"
+        },
+        {
+          "title": "Concurrent Flame Spread Over Two-Sided Thick PMMA Slabs in Microgravity",
+          "authors": "Olson Sandra L., Urban David L., Ruff Gary A., Ferkul Paul V., Toth Balazs, Eigenbrod Christian, Meyer Florian, Jomaas Grunde",
+          "doi": "10.1007/s10694-019-00863-3"
+        },
+        {
+          "title": "Transient flame growth and spread processes over a large solid fabric in concurrent low-speed flows in microgravity – Model versus experiment",
+          "authors": "Li Chengyao, Liao Ya-Ting T., T'ien James S., Urban David L., Ferkul Paul, Olson Sandra, Ruff Gary A., Easton John",
+          "doi": "10.1016/j.proci.2018.05.168"
+        }
+      ]
+    },
+    {
+      "id": "saffire-iii",
+      "psiId": "PSI-100",
+      "acronym": "Saffire-III",
+      "title": "Spacecraft Fire Experiment-III",
+      "doi": "10.60555/040q-4h36",
+      "doiUrl": "https://doi.org/10.60555/040q-4h36",
+      "psiUrl": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-100",
+      "areas": [
+        "prevention"
+      ],
+      "fuelPhase": "sólido (material de nave)",
+      "fuels": [],
+      "conditions": {
+        "o2": null,
+        "pressureAtm": null,
+        "flowCmS": null,
+        "note": "Mismos objetivos que Saffire-I."
+      },
+      "sensors": [],
+      "summary": "Tercer vuelo Saffire, con instrumentación y datos abundantes en PSI.",
+      "findings": [
+        {
+          "text": "Mismos objetivos que Saffire-I: crecimiento de fuego a gran escala y límites de inflamabilidad.",
+          "src": "PSI",
+          "kind": "reported"
+        }
+      ],
+      "habitat": {
+        "o2": null,
+        "pressure": null
+      },
+      "factors": {
+        "realism": 1,
+        "safety": 1,
+        "modeling": 1,
+        "data": 0.4
+      },
+      "spaceApplication": null,
+      "earthApplication": null,
+      "status": "completado",
+      "hardware": "Saffire III enclosure in Cygnus",
+      "program": "International Space Station (ISS)",
+      "files": {
+        "total": 86,
+        "byType": {
+          "pdf": 7,
+          "zip": 67,
+          "csv": 3,
+          "xlsx": 6,
+          "docx": 3
+        },
+        "videos": 0,
+        "experimentalTable": true
+      },
+      "publications": [
+        {
+          "title": "Buoyant Effects on the Flammability of Silicone Samples Planned for the Spacecraft Fire Experiment (Saffire), 45th International Conference on Environmental Systems ICES-2015-[293] 12-16 July 2015, Bellevue, Washington",
+          "authors": "JE Niehaus, PV Ferkul, SA Gokoglu, GA Ruff",
+          "doi": null
+        },
+        {
+          "title": "The Spacecraft Fire Experiment (Saffire) - Objectives, Development and Status",
+          "authors": "W Schoren, GA Ruff, DL Urban",
+          "doi": null
+        },
+        {
+          "title": "Operation and Development Status of the Spacecraft Fire Experiments (Saffire), 46th International Conference on Environmental Systems (ICES), July 2016",
+          "authors": "https://ntrs.nasa.gov/citations/20170000230",
+          "doi": null
+        }
+      ]
+    },
+    {
+      "id": "same",
+      "psiId": "PSI-102",
+      "acronym": "SAME",
+      "title": "Smoke and Aerosol Measurement Experiment",
+      "doi": "10.60555/gd4k-8h62",
+      "doiUrl": "https://doi.org/10.60555/gd4k-8h62",
+      "psiUrl": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-102",
+      "areas": [
+        "detection"
+      ],
+      "fuelPhase": "aerosol (humo)",
+      "fuels": [
+        "Teflón",
+        "Kapton",
+        "caucho de silicona",
+        "celulosa",
+        "ftalato de dibutilo en mecha porosa"
+      ],
+      "conditions": {
+        "o2": null,
+        "pressureAtm": null,
+        "flowCmS": null,
+        "note": "30 muestras (6 por material) con distintos caudales de aire, temperaturas de calentamiento y tiempos de envejecimiento del humo. Expedición 15 de la ISS."
+      },
+      "sensors": [
+        "contadores de partículas de distintos tamaños",
+        "dispersión de luz",
+        "detectores de ionización y fotoeléctricos evaluados"
+      ],
+      "summary": "Mide el tamaño y la distribución de partículas del humo de materiales de nave y evalúa los detectores de ionización (transbordador) y fotoeléctricos (ISS).",
+      "findings": [
+        {
+          "text": "Todas las muestras produjeron cantidades significativas de partículas submicrónicas, mejor detectadas por ionización; un detector de dispersión de luz funcionaría muy bien en la mayoría de los casos.",
+          "src": "FS-SAME",
+          "kind": "reported"
+        },
+        {
+          "text": "Diámetro medio aritmético de 100 a 200 nm; en la silicona (227 nm) casi la mitad de la masa son partículas mayores de 1000 nm.",
+          "src": "FS-SAME",
+          "kind": "reported"
+        },
+        {
+          "text": "El objetivo de detección es la fase temprana (productos de pre-incendio), no el hollín; detectores de espectro más amplio pueden ser más fiables.",
+          "src": "FS-SAME",
+          "kind": "reported"
+        }
+      ],
+      "habitat": {
+        "o2": null,
+        "pressure": null
+      },
+      "factors": {
+        "realism": 0.6,
+        "safety": 1,
+        "modeling": 1,
+        "data": 0.7
+      },
+      "spaceApplication": "Línea base de humo en baja gravedad para evaluar futuras tecnologías de detección.",
+      "earthApplication": "Detectores útiles en submarinos y laboratorios submarinos.",
+      "status": "completado",
+      "hardware": "Comparitive Soot Diagnostic Hardware",
+      "program": "International Space Station (ISS)",
+      "files": {
+        "total": 105,
+        "byType": {
+          "zip": 4,
+          "pdf": 27,
+          "mp4": 2,
+          "xls": 55,
+          "xlsx": 6,
+          "xml": 4,
+          "doc": 1,
+          "pptx": 2,
+          "ppt": 3,
+          "csv": 1
+        },
+        "videos": 2,
+        "experimentalTable": true
+      },
+      "publications": [
+        {
+          "title": "Measurement of Smoke Particle Size under Low-Gravity Conditions",
+          "authors": "Urban David L., Ruff Gary A., Mulholland George W., Cleary Thomas G., Yang Jiann C., Yuan Zengguang",
+          "doi": "10.4271/2008-01-2089"
+        },
+        {
+          "title": "Properties of Smoke from Overheated Spacecraft Materials in Low-Gravity",
+          "authors": "DL Urban, GA Ruff, W Sheredy, T Cleary, J Yang, G Mulholland, Z Yuan",
+          "doi": null
+        },
+        {
+          "title": "Smoke Particle Sizes in Low-Gravity and Implications for Spacecraft Smoke Detector Design",
+          "authors": "Urban David L., Ruff Gary A., Mulholland George W., Cleary Thomas G., Yang Jiann C., Yuan Zengguang, Bryg Victoria",
+          "doi": "10.4271/2009-01-2468"
+        },
+        {
+          "title": "Spacecraft Fire Detection: Smoke Properties and Transport in Low-Gravity",
+          "authors": "Urban David, Ruff Gary, Brooker John, Cleary Thomas, Yang Jiann, Mulholland George, Yuan Zeng-Guang",
+          "doi": "10.2514/6.2008-806"
+        },
+        {
+          "title": "ISS Destiny Laboratory Smoke Detection Model",
+          "authors": "Brooker John E., Urban David L., Ruff Gary A.",
+          "doi": "10.4271/2007-01-3076"
+        },
+        {
+          "title": "Smoke: Characterization of Smoke Particulate for Spacecraft Fire Detection, Seventh International Microgravity Combustion Workshop",
+          "authors": "DL Urban, GW Mulholland, J Yang, TG Cleary, and ZG Yuan",
+          "doi": null
+        }
+      ]
+    },
+    {
+      "id": "same-r",
+      "psiId": "PSI-101",
+      "acronym": "SAME-R",
+      "title": "Smoke Aerosol Measurement Experiment-Reflight",
+      "doi": "10.60555/2np7-jv14",
+      "doiUrl": "https://doi.org/10.60555/2np7-jv14",
+      "psiUrl": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-101",
+      "areas": [
+        "detection"
+      ],
+      "fuelPhase": "aerosol (humo)",
+      "fuels": [],
+      "conditions": {
+        "o2": null,
+        "pressureAtm": null,
+        "flowCmS": null,
+        "note": "Reenvío de SAME."
+      },
+      "sensors": [
+        "equipo de diagnóstico de hollín comparativo"
+      ],
+      "summary": "Repite SAME corrigiendo un problema: las rejillas TEM volvieron contaminadas y quedaron inutilizables.",
+      "findings": [
+        {
+          "text": "Cuantifica el tamaño que alcanzan las gotas de humo líquido en baja gravedad y lo relaciona con las condiciones de generación y transporte.",
+          "src": "PSI",
+          "kind": "reported"
+        },
+        {
+          "text": "Hipótesis: sin flujos de flotabilidad, el crecimiento por nucleación, condensación y coagulación produce partículas mayores que en 1 g.",
+          "src": "PSI",
+          "kind": "reported"
+        }
+      ],
+      "habitat": {
+        "o2": null,
+        "pressure": null
+      },
+      "factors": {
+        "realism": 0.6,
+        "safety": 1,
+        "modeling": 1,
+        "data": 0.7
+      },
+      "spaceApplication": "Tecnología para un detector avanzado en misiones de larga duración.",
+      "earthApplication": null,
+      "status": "completado",
+      "hardware": "Comparitive Soot Diagnostic Hardware; Refer to final report",
+      "program": "International Space Station (ISS)",
+      "files": {
+        "total": 343,
+        "byType": {
+          "pdf": 36,
+          "pptx": 76,
+          "ppt": 2,
+          "xls": 77,
+          "xlsx": 15,
+          "docx": 1,
+          "doc": 1,
+          "tif": 3,
+          "mp4": 8,
+          "csv": 45,
+          "zip": 79
+        },
+        "videos": 8,
+        "experimentalTable": true
+      },
+      "publications": [
+        {
+          "title": "Smoke Aerosol Measurement Experiment-2: Comparison of Flight Experiment Results with Ground Test Results",
+          "authors": "Meyer Marit E., Urban David L., Ruff Gary A., Mulholland George, Yuan Zeng-guang, Bryg Victoria, Cleary Thomas, Yang Jiann",
+          "doi": "10.2514/6.2013-3433"
+        },
+        {
+          "title": "Evaluation of Low-Gravity Smoke Particulate for Spacecraft Fire Detection",
+          "authors": "D Urban, G Ruff, G Mulholland, M Meyer, ZG Yuan, T Cleary, J Yang, P Greenberg, V Bryg",
+          "doi": null
+        },
+        {
+          "title": "Particle Morphology and Size Results from the Smoke Aerosol Measurement Experiment-2",
+          "authors": "Urban David, Ruff Gary, Greenberg Paul, Fischer David, Meyer Marit, Mulholland George, Yuan Zeng-guang, Bryg Victoria, Cleary Thomas, Yang Jiann",
+          "doi": "10.2514/6.2012-3536"
+        },
+        {
+          "title": "Preliminary Results from the Smoke Aerosol Measurement Experiment - Reflight",
+          "authors": "D Urban, G Ruff, M Meyer, T Cleary, J Yang, G Mulholland, ZG Yuan, V Bryg",
+          "doi": null
+        },
+        {
+          "title": "Detection of Smoke from Microgravity Fires",
+          "authors": "DL Urban, D Griffin, G Ruff, T Cleary, J Yang, G Mulholland, ZG Yuan",
+          "doi": null
+        },
+        {
+          "title": "Evaluation of spacecraft smoke detector performance in the low-gravity environment",
+          "authors": "Meyer Marit E., Urban David L., Mulholland George W., Bryg Victoria, Yuan Zeng-Guang, Ruff Gary A., Cleary Thomas, Yang Jiann",
+          "doi": "10.1016/j.firesaf.2018.04.004"
+        }
+      ]
+    },
+    {
+      "id": "daft-daft-2",
+      "psiId": "PSI-47",
+      "acronym": "DAFT / DAFT-2",
+      "title": "Dust and Aerosol Measurement Feasibility Test / Dust and Aerosol Measurement Feasibility Test-2",
+      "doi": "10.60555/ztgj-d202",
+      "doiUrl": "https://doi.org/10.60555/ztgj-d202",
+      "psiUrl": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-47",
+      "areas": [
+        "detection"
+      ],
+      "fuelPhase": "aerosol (polvo)",
+      "fuels": [
+        "polvo y aerosoles"
+      ],
+      "conditions": {
+        "o2": null,
+        "pressureAtm": null,
+        "flowCmS": null,
+        "note": "Reduce el riesgo de SAME comprobando un contador de partículas P-Trak modificado."
+      },
+      "sensors": [
+        "TSI P-Trak modificado (condensación de isopropanol y conteo láser)"
+      ],
+      "summary": "Comprueba que un contador de partículas P-Trak modificado funciona en microgravedad; el mismo instrumento de SAME se usó para detectar polvo.",
+      "findings": [
+        {
+          "text": "Se temía que el P-Trak fallase en microgravedad (obstrucción por isopropanol o dinámica de flujo de la cámara óptica).",
+          "src": "PSI",
+          "kind": "reported"
+        },
+        {
+          "text": "Contribuye a sistemas de detección con mayor fiabilidad y sensibilidad para misiones largas.",
+          "src": "PSI",
+          "kind": "reported"
+        }
+      ],
+      "habitat": {
+        "o2": null,
+        "pressure": null
+      },
+      "factors": {
+        "realism": 0.3,
+        "safety": 0.5,
+        "modeling": 0.5,
+        "data": 0.4
+      },
+      "spaceApplication": "Distinguir humo de polvo reduce falsas alarmas.",
+      "earthApplication": "Un detector derivado del transbordador (Brunswick Incipient Fire Detector, 1978) ya distinguía humo de polvo en minas.",
+      "status": "completado",
+      "hardware": "TSI P-Trak",
+      "program": "International Space Station (ISS)",
+      "files": {
+        "total": 33,
+        "byType": {
+          "zip": 1,
+          "doc": 2,
+          "pdf": 7,
+          "ppt": 3,
+          "xls": 12,
+          "txt": 6,
+          "jpg": 1,
+          "csv": 1
+        },
+        "videos": 0,
+        "experimentalTable": true
+      },
+      "publications": [
+        {
+          "title": "A Research Plan for Fire Prevention, Detection and Suppression in Crewed Exploration Systems",
+          "authors": "Ruff Gary, Urban David, King Merrill",
+          "doi": "10.2514/6.2005-341"
+        },
+        {
+          "title": "Detection of Smoke from Microgravity Fires",
+          "authors": "Urban David, Griffin DeVon, Ruff Gary, Cleary Thomas, Yang Jiann, Mulholland George, Yuan Zeng-guang",
+          "doi": "10.4271/2005-01-2930"
+        }
+      ]
+    },
+    {
+      "id": "spice",
+      "psiId": "PSI-107",
+      "acronym": "SPICE",
+      "title": "Smoke Point In Co-flow Experiment",
+      "doi": "10.60555/9kbh-e962",
+      "doiUrl": "https://doi.org/10.60555/9kbh-e962",
+      "psiUrl": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-107",
+      "areas": [
+        "fundamental"
+      ],
+      "fuelPhase": "gas",
+      "fuels": [
+        "etileno",
+        "propano",
+        "propileno (mezclas)"
+      ],
+      "conditions": {
+        "o2": null,
+        "pressureAtm": null,
+        "flowCmS": null,
+        "note": "Su conducto con ventilador se reutiliza en BASS, BASS-II y SLICE."
+      },
+      "sensors": [
+        "imágenes de cámara",
+        "vídeo (18 vídeos en PSI)"
+      ],
+      "summary": "Estudia el punto de humo y la longitud de llamas de chorro en coflujo, con el conducto que usan BASS y SLICE.",
+      "findings": [
+        {
+          "text": "Cuantifica la tendencia a formar hollín de distintos combustibles y el efecto del diámetro del quemador y la velocidad de coflujo.",
+          "src": "PSI",
+          "kind": "reported"
+        }
+      ],
+      "habitat": {
+        "o2": null,
+        "pressure": null
+      },
+      "factors": {
+        "realism": 0.1,
+        "safety": 0.5,
+        "modeling": 1,
+        "data": 0.7
+      },
+      "spaceApplication": "Ayuda a diseñar entornos de nave más seguros.",
+      "earthApplication": null,
+      "status": "completado",
+      "hardware": "Microgravity Science Glovebox (MSG)",
+      "program": "International Space Station (ISS)",
+      "files": {
+        "total": 187,
+        "byType": {
+          "pdf": 18,
+          "doc": 1,
+          "ppt": 9,
+          "pptx": 2,
+          "xls": 27,
+          "txt": 2,
+          "xlsx": 6,
+          "mp4": 18,
+          "zip": 100,
+          "docx": 1,
+          "nef": 1,
+          "avi": 1,
+          "csv": 1
+        },
+        "videos": 18,
+        "experimentalTable": true
+      },
+      "publications": [
+        {
+          "title": "Laminar Smoke Points in Coflow Measured Aboard the International Space Station",
+          "authors": "Dotson Keenan, Sunderland Peter, Yuan Zeng-Guang, Urban David",
+          "doi": "10.2514/6.2010-1105"
+        },
+        {
+          "title": "Scaling of Gas-Jet Flame Lengths in Elevated Gravity",
+          "authors": "Sunderland Peter B., Urban David L., Nayagam Vedha",
+          "doi": "10.1007/978-1-4020-8682-3_22"
+        },
+        {
+          "title": "The Microgravity Science Glovebox (MSG), a Resource for Gravity-Dependent Phenomena Research on the International Space Station (ISS)",
+          "authors": "RA Spivey, LB Jeter, C Vonk",
+          "doi": null
+        },
+        {
+          "title": "The Microgravity Science Glovebox as a Platform for Exploration Research on the International Space Station",
+          "authors": "Spivey Reggie, Luz Paul",
+          "doi": "10.2514/6.2006-941"
+        },
+        {
+          "title": "A Combined Experimental and Computational Study of Soot Formation in Normal and Microgravity Conditions",
+          "authors": "Dobbins Richard R., Tinjero Jesse, Squeo Joseph, Zhao Xinyu, Hall Robert J., Colket Meredith B., Long Marshall B., Smooke Mitchell D.",
+          "doi": "10.1080/00102202.2022.2041621"
+        },
+        {
+          "title": "Shapes of nonbuoyant round hydrocarbon-fueled laminar-jet diffusion flames in still air",
+          "authors": "Aalburg C., Diez F.J., Faeth G.M., Sunderland P.B., Urban D.L., Yuan Z.-G.",
+          "doi": "10.1016/j.combustflame.2004.12.009"
+        }
+      ]
+    },
+    {
+      "id": "slice",
+      "psiId": "PSI-106",
+      "acronym": "SLICE",
+      "title": "Structure and Liftoff In Combustion Experiment",
+      "doi": "10.60555/pm12-rg61",
+      "doiUrl": "https://doi.org/10.60555/pm12-rg61",
+      "psiUrl": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-106",
+      "areas": [
+        "fundamental"
+      ],
+      "fuelPhase": "gas",
+      "fuels": [],
+      "conditions": {
+        "o2": null,
+        "pressureAtm": null,
+        "flowCmS": null,
+        "note": "Usa el hardware de SPICE. Operó en 2012 según la guía."
+      },
+      "sensors": [],
+      "summary": "Estructura y despegue (liftoff) de llamas de difusión laminares en microgravedad.",
+      "findings": [
+        {
+          "text": "Determina los límites de velocidad de despegue para distintos combustibles y diámetros de quemador, y el efecto de la dilución con nitrógeno.",
+          "src": "PSI",
+          "kind": "reported"
+        }
+      ],
+      "habitat": {
+        "o2": null,
+        "pressure": null
+      },
+      "factors": {
+        "realism": 0.1,
+        "safety": 0.25,
+        "modeling": 1,
+        "data": 0.2
+      },
+      "spaceApplication": null,
+      "earthApplication": "Modelos numéricos que mejoran la eficiencia y reducen emisiones.",
+      "status": "completado",
+      "hardware": "",
+      "program": "International Space Station (ISS)",
+      "files": {
+        "total": 2,
+        "byType": {
+          "csv": 2
+        },
+        "videos": 0,
+        "experimentalTable": true
+      },
+      "publications": [
+        {
+          "title": "A computational and experimental study of coflow laminar methane/air diffusion flames: Effects of fuel dilution, inlet velocity, and gravity",
+          "authors": "Cao S., Ma B., Bennett B.A.V., Giassi D., Stocker D.P., Takahashi F., Long M.B., Smooke M.D.",
+          "doi": "10.1016/j.proci.2014.05.138"
+        },
+        {
+          "title": "A Combined Experimental and Computational Study of Soot Formation in Normal and Microgravity Conditions",
+          "authors": "Dobbins Richard R., Tinjero Jesse, Squeo Joseph, Zhao Xinyu, Hall Robert J., Colket Meredith B., Long Marshall B., Smooke Mitchell D.",
+          "doi": "10.1080/00102202.2022.2041621"
+        },
+        {
+          "title": "Effects of Fuel Dilution and Gravity on Laminar Coflow Methane-Air Diffusion Flames: A Computational and Experimental Investigation",
+          "authors": "S Cao, BAV Bennett, B Ma, D Giassi, DP Stocker, F Takahashi, MB Long, MD Smooke",
+          "doi": null
+        },
+        {
+          "title": "An experimental and computational study of soot formation in a coflow jet flame under microgravity and normal gravity",
+          "authors": "Ma Bin, Cao Su, Giassi Davide, Stocker Dennis P., Takahashi Fumiaki, Bennett Beth Anne V., Smooke Mitchell D., Long Marshall B.",
+          "doi": "10.1016/j.proci.2014.05.064"
+        },
+        {
+          "title": "Analysis of CH* concentration and flame heat release rate in laminar coflow diffusion flames under microgravity and normal gravity",
+          "authors": "Giassi Davide, Cao Su, Bennett Beth Anne V., Stocker Dennis P., Takahashi Fumiaki, Smooke Mitchell D., Long Marshall B.",
+          "doi": "10.1016/j.combustflame.2016.02.012"
+        }
+      ]
+    },
+    {
+      "id": "an-lisis-datos-spice",
+      "psiId": "PSI-60",
+      "acronym": "Análisis datos SPICE",
+      "title": "Computational and Experimental Analysis of SPICE Data Sets",
+      "doi": "10.60555/mzjm-yv57",
+      "doiUrl": "https://doi.org/10.60555/mzjm-yv57",
+      "psiUrl": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-60",
+      "areas": [
+        "fundamental"
+      ],
+      "fuelPhase": "gas",
+      "fuels": [],
+      "conditions": {
+        "o2": null,
+        "pressureAtm": null,
+        "flowCmS": null,
+        "note": "Investigación en tierra sobre datos de SPICE; más de 1600 imágenes DSLR."
+      },
+      "sensors": [
+        "más de 1600 imágenes DSLR analizadas"
+      ],
+      "summary": "Análisis computacional y experimental de los datos de SPICE para explicar la gran diferencia de formación de hollín entre 1 g y 0 g.",
+      "findings": [
+        {
+          "text": "Hipótesis: en microgravedad las llamas son más largas y difusas, con menor temperatura y mayor concentración de hollín que en gravedad normal.",
+          "src": "PSI",
+          "kind": "reported"
+        }
+      ],
+      "habitat": {
+        "o2": null,
+        "pressure": null
+      },
+      "factors": {
+        "realism": 0.1,
+        "safety": 0.25,
+        "modeling": 1,
+        "data": 0.2
+      },
+      "spaceApplication": null,
+      "earthApplication": null,
+      "status": "análisis en tierra",
+      "hardware": "",
+      "program": "",
+      "files": {
+        "total": 1,
+        "byType": {
+          "zip": 1
+        },
+        "videos": 0,
+        "experimentalTable": false
+      },
+      "publications": [
+        {
+          "title": "A Combined Experimental and Computational Study of Soot Formation in Normal and Microgravity Conditions (2022)",
+          "authors": "Dobbins Richard R., Tinjero Jesse, Squeo Joseph, Zhao Xinyu, Hall Robert J., Colket Meredith B., Long Marshall B., Smooke Mitchell D.",
+          "doi": "10.1080/00102202.2022.2041621"
+        }
+      ]
+    }
+  ],
+  "upcoming": [
+    {
+      "acronym": "FM2",
+      "name": "Flammability of Materials on the Moon",
+      "gravity": "1/6 g (Luna)",
+      "note": "Primer experimento de combustión en otro cuerpo planetario; quema materiales como SIBAL en aire.",
+      "src": "GLENN"
+    },
+    {
+      "acronym": "LUCI",
+      "name": "Lunar-g Combustion Investigation",
+      "gravity": "gravedad parcial lunar",
+      "note": "Medirá combustión en gravedad parcial. No hay datos aún.",
+      "src": "CHALLENGE"
+    },
+    {
+      "acronym": "SoFIE",
+      "name": "Solid Fuel Ignition and Extinction",
+      "gravity": "microgravedad (ISS)",
+      "note": "Estudiará si el test de llama de 1 g de NASA-STD-6001 es conservador en baja gravedad.",
+      "src": "GLENN"
+    },
+    {
+      "acronym": "FLARE",
+      "name": "Flammability Limits at Reduced-g Experiment",
+      "gravity": "gravedad normal y microgravedad",
+      "note": "Método para estimar límites de inflamabilidad en microgravedad a partir de datos de tierra; proyecto con JAXA, ESA, CNES y DLR.",
+      "src": "GLENN"
+    }
+  ],
+  "environments": [
+    {
+      "id": "earth",
+      "name": "Tierra",
+      "o2": 0.21,
+      "pressureAtm": 1,
+      "pressurePsi": 14.7,
+      "gravityG": 1,
+      "src": "CHALLENGE"
+    },
+    {
+      "id": "iss",
+      "name": "ISS",
+      "o2": 0.21,
+      "pressureAtm": 1,
+      "pressurePsi": 14.7,
+      "gravityG": 0,
+      "src": "CHALLENGE",
+      "note": "Condiciones de cabina estándar; microgravedad."
+    },
+    {
+      "id": "moon-habitat",
+      "name": "Base lunar (hábitat)",
+      "o2": 0.3,
+      "pressureAtm": 0.694,
+      "pressurePsi": 10.2,
+      "gravityG": 0.166,
+      "src": "CHALLENGE",
+      "note": "O2 de 30% o más con presión de 10.2 psi o menos. Gravedad lunar: sin datos experimentales."
+    },
+    {
+      "id": "suit",
+      "name": "Traje espacial",
+      "o2": 1,
+      "pressureAtm": 0.293,
+      "pressurePsi": 4.3,
+      "gravityG": null,
+      "src": "CHALLENGE"
+    }
+  ],
+  "incidents": [
+    {
+      "year": 1967,
+      "name": "Apollo 1",
+      "text": "Incendio en la cápsula durante una prueba en tierra, con cabina de 100% de oxígeno. Murieron Grissom, White y Chaffee. La escotilla tardaba unos 90 s en abrirse.",
+      "lesson": "Escotilla unificada que se abre en 3 s, materiales combustibles restringidos y trajes ignífugos.",
+      "src": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1"
+    },
+    {
+      "year": 1970,
+      "name": "Apollo 13",
+      "text": "Explosión del tanque de oxígeno nº 2 en tránsito lunar, tras sobrecalentarse sus calentadores y degradarse el aislante de teflón. El voltaje de los calentadores se había subido de 28 a 65 V sin cambiar los termostatos.",
+      "lesson": "Se rediseñó el sistema de oxígeno: tercer tanque, termostatos mejorados, sin ventiladores de agitación y cableado en acero inoxidable.",
+      "src": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-13"
+    },
+    {
+      "year": 1997,
+      "name": "Mir",
+      "text": "El 24 de febrero ardió un cartucho de generador de oxígeno de combustible sólido en Kvant-1. La llama duró varios minutos y la tripulación usó extintores de espuma.",
+      "lesson": "Cambios en la preparación de los cartuchos y en el entrenamiento de emergencias; la ISS usa generación de oxígeno redundante y disímil.",
+      "src": "https://www.nasa.gov/history/25-years-ago-fire-aboard-space-station-mir/"
+    },
+    {
+      "year": "reciente",
+      "name": "Artemis II",
+      "text": "Una alarma de humo sonó a unas 80.000 millas de la Tierra, según el comandante citado en el enunciado del reto.",
+      "lesson": "Recuerda por qué detección y respuesta rápidas importan lejos de casa.",
+      "src": "https://www.spaceappschallenge.org"
+    }
+  ],
+  "spinoffs": [
+    {
+      "name": "Depósito de aire para bomberos",
+      "year": 1976,
+      "text": "Mochila de 20 lb con 30 minutos de aire a 4500 psi (13 lb más ligera que los tanques convencionales), con revestimiento de aluminio reforzado con fibra de vidrio.",
+      "src": "https://spinoff.nasa.gov/node/9582"
+    },
+    {
+      "name": "Proyecto FIRES: ropa de protección",
+      "year": 1982,
+      "text": "Equipo de protección para bomberos con tejidos ignífugos derivados de trajes espaciales, evaluado en 14 cuerpos de bomberos municipales.",
+      "src": "https://spinoff.nasa.gov/node/9918"
+    },
+    {
+      "name": "Detector de incendios Brunswick",
+      "year": 1978,
+      "text": "Detector del transbordador que distingue partículas de combustión de polvo (menos falsas alarmas) y detecta el fuego antes de llama y humo; se puede conectar en red para minas.",
+      "src": "http://hdl.handle.net/hdl:2060/20070018916"
+    }
+  ]
+}
