@@ -21,7 +21,7 @@ export function Pending({ children = "Not verified" }: { children?: ReactNode })
 
 export function SourceTag({ src }: { src: string }) {
   const s = sourceFor(src);
-  const label = src.replace("GUIDE", "NASA Guide 2015").replace("FS-", "Fact sheet ").replace("CHALLENGE", "Challenge statement");
+  const label = src.replace("GUIDE", "NASA Guide 2015").replace("FS-", "Fact sheet ").replace("CHALLENGE", "Challenge statement").replace("PSI-TABLES", "PSI data table");
   const text = src === "PSI" ? "PSI" : label;
   if (!s) return <span className="text-xs text-muted">{text}</span>;
   return (

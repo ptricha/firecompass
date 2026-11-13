@@ -15,7 +15,7 @@ export const DEFAULT_WEIGHTS: Weights = { habitat: 35, realism: 25, safety: 20, 
 export const FACTOR_INFO: Record<FactorKey, { label: string; help: string }> = {
   habitat: {
     label: 'Habitat atmosphere',
-    help: 'Whether the tested O2 range covers ≥26.5% and the pressure range covers ≤0.69 atm (10.2 psi), the conditions planned for lunar bases.',
+    help: 'Whether the tested O2 range reaches ≥26.5% and the tested pressures reach ≈0.69 atm (10.2 psi, within 3%), the conditions planned for lunar bases.',
   },
   realism: {
     label: 'Fuel realism',
@@ -76,7 +76,8 @@ export function coversEnvironment(
   const o2 = inv.conditions.o2
   const p = inv.conditions.pressureAtm
   const inO2 = o2 && o2[1] != null ? env.o2 <= o2[1] + 1e-9 && (o2[0] == null || env.o2 >= o2[0] - 1e-9) : null
-  const inP = p ? env.pressureAtm >= p[0] - 1e-9 && env.pressureAtm <= p[1] + 1e-9 : null
+  // 3% tolerance: e.g. FLEX's 0.703 atm (10.3 psi) counts as the 10.2 psi habitat pressure
+  const inP = p ? env.pressureAtm >= p[0] * 0.97 && env.pressureAtm <= p[1] * 1.03 : null
   if (inO2 && inP) return 'full'
   if (inO2 || inP) return 'partial'
   return 'none'

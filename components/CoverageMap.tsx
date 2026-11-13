@@ -1,7 +1,24 @@
 "use client";
 
 import { useState } from "react";
-import { data, fmtPct } from "@/lib/data";
+import lab from "@/data/lab.json";
+
+// FLEX (PSI-69): group the measured tests by identical O2 and (rounded) pressure
+interface Pt { o2: number; p: number; n: number; ext: number }
+const FLEX_PTS: Pt[] = (() => {
+  const m = new Map<string, Pt>();
+  for (const r of lab.flex.rows) {
+    if (r.o2 == null || !r.pAtm) continue; // pressure 0 = invalid code in PSI-69 test 114
+    const p = Math.round(r.pAtm * 20) / 20;
+    const k = `${r.o2}|${p}`;
+    const e = m.get(k) ?? { o2: r.o2, p, n: 0, ext: 0 };
+    e.n++;
+    if (r.end === "Extinction") e.ext++;
+    m.set(k, e);
+  }
+  return [...m.values()];
+})();
+const FLEX_N = FLEX_PTS.reduce((s, p) => s + p.n, 0);
 
 /**
  * Coverage map: in which atmospheres has fire been measured in microgravity?
@@ -26,9 +43,6 @@ interface Item {
 }
 
 export default function CoverageMap() {
-  const flex = data.investigations.find((i) => i.id === "flex")!;
-  const [fo, fo2] = flex.conditions.o2 as [number, number];
-  const [fp0, fp1] = flex.conditions.pressureAtm as [number, number];
   const [active, setActive] = useState<string | null>(null);
 
   // PSI-20 objectives: 14.7 psia/21%, 10.2 psia/26.5%, 8.2 psia/34% (psia -> atm)
@@ -52,8 +66,13 @@ export default function CoverageMap() {
     },
     flex: {
       id: "flex",
-      title: "FLEX (PSI-69): planned range",
-      detail: `O₂ ${fmtPct(fo)}–${fmtPct(fo2)} and pressure ${fp0}–${fp1} atm. Heptane and methanol droplets with CO₂ and He suppressants. Covers part of the lunar habitat region.`,
+      title: `FLEX (PSI-69): ${FLEX_N} measured tests`,
+      detail: `Each circle is a group of tests at the same O₂ and pressure (bigger = more tests). Measured O₂ 12–34% and pressures from 0.70 to 3.05 atm, with heptane and methanol droplets and CO₂/He suppressants. The 0.70 atm column sits right at the lunar habitat pressure.`,
+    },
+    bass2: {
+      id: "bass2",
+      title: "BASS-II (PSI-25): initial O₂ 13.6–22.2%",
+      detail: "Measured initial oxygen across its 129 tests. None reached the 26.5% habitat threshold, so solid materials are not yet tested at lunar-habitat oxygen. Pressure is not recorded in the table, so only the O₂ span is marked.",
     },
     bre: {
       id: "bre",
@@ -140,9 +159,22 @@ export default function CoverageMap() {
 
         {/* FLEX */}
         <g {...act("flex")} opacity={dim("flex")}>
-          <rect x={x(fo)} y={y(fp1)} width={x(fo2) - x(fo)} height={y(fp0) - y(fp1)} fill="var(--a-suppression)" fillOpacity="0.28" stroke="var(--a-suppression)" strokeWidth="1.5" rx="3" />
-          <text x={x(fo) + 8} y={y(fp1) + 16} fontSize="12" fontWeight="600" fill="var(--ink)">
+          {FLEX_PTS.map((p) => (
+            <g key={`${p.o2}|${p.p}`}>
+              <circle cx={x(p.o2)} cy={y(p.p)} r={4 + Math.sqrt(p.n) * 1.1} fill="var(--a-suppression)" fillOpacity="0.45" stroke="var(--a-suppression)" strokeWidth="1.2" />
+              <title>{`FLEX · ${p.n} tests · ${Math.round(p.o2 * 100)}% O₂ · ${p.p} atm · ${p.ext} ended in extinction`}</title>
+            </g>
+          ))}
+          <text x={x(0.36)} y={y(1.0) + 4} fontSize="12" fontWeight="600" fill="var(--ink)">
             FLEX
+          </text>
+        </g>
+
+        {/* BASS-II: measured O2 span on the top edge (pressure not recorded) */}
+        <g {...act("bass2")} opacity={dim("bass2")}>
+          <rect x={x(0.136)} y={M.t + 2} width={x(0.222) - x(0.136)} height="7" rx="3.5" fill="var(--a-prevention)" />
+          <text x={x(0.222) + 8} y={M.t + 10} fontSize="11" fill="var(--a-prevention)">
+            BASS-II (p n/v)
           </text>
         </g>
 

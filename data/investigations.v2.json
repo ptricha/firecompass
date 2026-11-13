@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T19:28:04.116Z",
+  "generatedAt": "2026-11-13T20:07:28.000Z",
   "sources": {
     "GUIDE": {
       "label": "A Researcher's Guide to Combustion Science (NASA, 2015)",
@@ -20,6 +20,10 @@
     "PSI": {
       "label": "NASA Physical Sciences Informatics (investigation metadata)",
       "url": "https://psi.nasa.gov"
+    },
+    "PSI-TABLES": {
+      "label": "NASA PSI experimental tables (CC0): PSI-69 FLEX and PSI-25 BASS-II. Values computed by FireCompass from the recorded rows.",
+      "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69"
     },
     "CHALLENGE": {
       "label": "Official challenge statement: Flame in Freefall (NASA Space Apps 2026)",
@@ -275,10 +279,13 @@
         "rods, spherical sections, slabs, films and fabric sheets (thicker, more realistic geometries)"
       ],
       "conditions": {
-        "o2": null,
+        "o2": [
+          0.136,
+          0.222
+        ],
         "pressureAtm": null,
         "flowCmS": null,
-        "note": "Primary variables per PSI: flow velocity and direction, ambient oxygen (via nitrogen dilution) and sample geometry. Numerical values pending the experimental table."
+        "note": "O2 is the MEASURED initial O2 range (13.6–22.2 % by volume) across the 129 tests in the PSI-25 table. Primary variables per PSI: flow velocity and direction, ambient oxygen (via nitrogen dilution) and sample geometry. Airflow units are not stated in the table."
       },
       "sensors": [
         "video (296 videos in PSI)"
@@ -294,10 +301,15 @@
           "text": "Helps engineers select the safest materials and improve firefighting methods on future missions.",
           "src": "PSI",
           "kind": "reported"
+        },
+        {
+          "text": "None of the 129 recorded tests started at 26.5% O2 or more (initial O2 ranged from 13.6% to 22.2%): there is no BASS-II solid-material data at lunar-habitat oxygen levels.",
+          "src": "PSI-TABLES",
+          "kind": "measured"
         }
       ],
       "habitat": {
-        "o2": null,
+        "o2": false,
         "pressure": null
       },
       "factors": {
@@ -377,12 +389,12 @@
       ],
       "conditions": {
         "o2": [
-          0.1,
-          0.5
+          0.12,
+          0.34
         ],
         "pressureAtm": [
-          0.5,
-          1
+          0.703,
+          3.053
         ],
         "flowCmS": null,
         "suppressants": [
@@ -397,7 +409,7 @@
           2,
           5
         ],
-        "note": "Planned ranges per the fact sheet; the main diluent is N2, with a few tests using He."
+        "note": "O2 and pressure are MEASURED ranges across the 274 tests in the PSI-69 table (pressures cluster at 0.70, 1.0, 2.0, 2.7 and 3.05 atm). The fact sheet planned O2 0.10–0.50 and 0.5–1.0 atm. The main diluent is N2, with a few tests using He."
       },
       "sensors": [
         "resolved droplet burning-rate measurements",
@@ -417,9 +429,14 @@
           "kind": "reported"
         },
         {
-          "text": "Pressures of 0.5 to 1.0 atm are tested because one extinguishing strategy is to isolate the habitat and vent the cabin to space.",
+          "text": "Low pressures are tested because one extinguishing strategy is to isolate the habitat and vent the cabin to space.",
           "src": "FS-FLEX",
           "kind": "reported"
+        },
+        {
+          "text": "Of the 274 recorded tests, 186 ended in extinction, 61 in disruption and 27 in completion. At lunar-habitat-like conditions (0.6–0.8 atm and O2 ≥ 26.5%) there are 17 tests and none ended in extinction (15 disruption, 2 completion).",
+          "src": "PSI-TABLES",
+          "kind": "measured"
         }
       ],
       "habitat": {

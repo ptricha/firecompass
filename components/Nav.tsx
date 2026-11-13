@@ -7,6 +7,7 @@ const LINKS = [
   { href: "/", label: "Home" },
   { href: "/explorer", label: "Explorer" },
   { href: "/simulator", label: "Simulator" },
+  { href: "/lab", label: "Data Lab" },
   { href: "/dashboard", label: "Ranking" },
   { href: "/ask", label: "Ask" },
   { href: "/references", label: "References" },

@@ -6,6 +6,7 @@
     "FS-FLEX": { "label": "NASA fact sheet: FLEX / FLEX-2", "url": "https://www.nasa.gov/wp-content/uploads/2025/07/flame-extinguishment-experiment-flex.pdf" },
     "FS-SAME": { "label": "NASA fact sheet: SAME", "url": "https://www.nasa.gov/wp-content/uploads/2025/07/smoke-aerosol-measurement-experiment-same.pdf" },
     "PSI": { "label": "NASA Physical Sciences Informatics (investigation metadata)", "url": "https://psi.nasa.gov" },
+    "PSI-TABLES": { "label": "NASA PSI experimental tables (CC0): PSI-69 FLEX and PSI-25 BASS-II. Values computed by FireCompass from the recorded rows.", "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69" },
     "CHALLENGE": { "label": "Official challenge statement: Flame in Freefall (NASA Space Apps 2026)", "url": "https://www.spaceappschallenge.org" },
     "GLENN": { "label": "NASA Glenn: Combustion Science", "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/" }
   },
@@ -47,14 +48,15 @@
     {
       "psiId": "PSI-25", "acronym": "BASS-II", "areas": ["prevention", "suppression"], "fuelPhase": "solid",
       "fuels": ["rods, spherical sections, slabs, films and fabric sheets (thicker, more realistic geometries)"],
-      "conditions": { "o2": null, "pressureAtm": null, "flowCmS": null, "note": "Primary variables per PSI: flow velocity and direction, ambient oxygen (via nitrogen dilution) and sample geometry. Numerical values pending the experimental table." },
+      "conditions": { "o2": [0.136, 0.222], "pressureAtm": null, "flowCmS": null, "note": "O2 is the MEASURED initial O2 range (13.6–22.2 % by volume) across the 129 tests in the PSI-25 table. Primary variables per PSI: flow velocity and direction, ambient oxygen (via nitrogen dilution) and sample geometry. Airflow units are not stated in the table." },
       "sensors": ["video (296 videos in PSI)"],
       "summary": "Follow-up to BASS with thicker, more realistic fuels; it bridges the 1-g Test 1 method, ground-based microgravity tests and actual material flammability in microgravity.",
       "findings": [
         { "text": "Objective: study ignition, flame growth, flame spread and extinction limits of solid fuels in low-velocity forced flows, and give SoFIE investigators preliminary data.", "src": "PSI", "kind": "reported" },
-        { "text": "Helps engineers select the safest materials and improve firefighting methods on future missions.", "src": "PSI", "kind": "reported" }
+        { "text": "Helps engineers select the safest materials and improve firefighting methods on future missions.", "src": "PSI", "kind": "reported" },
+        { "text": "None of the 129 recorded tests started at 26.5% O2 or more (initial O2 ranged from 13.6% to 22.2%): there is no BASS-II solid-material data at lunar-habitat oxygen levels.", "src": "PSI-TABLES", "kind": "measured" }
       ],
-      "habitat": { "o2": null, "pressure": null },
+      "habitat": { "o2": false, "pressure": null },
       "factors": { "realism": 1.0, "safety": 1.0, "modeling": 1.0 },
       "spaceApp": "Material selection and extinguishment methods for missions far from Earth.",
       "earthApp": "Models applicable to wildfires and building fires.",
@@ -63,13 +65,14 @@
     {
       "psiId": "PSI-69", "acronym": "FLEX", "areas": ["suppression"], "fuelPhase": "liquid (droplets)",
       "fuels": ["heptane", "methanol"],
-      "conditions": { "o2": [0.10, 0.50], "pressureAtm": [0.5, 1.0], "flowCmS": null, "suppressants": ["CO2", "He"], "suppressantMoleFraction": [0, 0.70], "dropletMm": [2, 5], "note": "Planned ranges per the fact sheet; the main diluent is N2, with a few tests using He." },
+      "conditions": { "o2": [0.12, 0.34], "pressureAtm": [0.703, 3.053], "flowCmS": null, "suppressants": ["CO2", "He"], "suppressantMoleFraction": [0, 0.70], "dropletMm": [2, 5], "note": "O2 and pressure are MEASURED ranges across the 274 tests in the PSI-69 table (pressures cluster at 0.70, 1.0, 2.0, 2.7 and 3.05 atm). The fact sheet planned O2 0.10–0.50 and 0.5–1.0 atm. The main diluent is N2, with a few tests using He." },
       "sensors": ["resolved droplet burning-rate measurements", "flame radiation", "soot concentration and temperature"],
       "summary": "Burns fuel droplets in mixtures of oxygen and diluents to map flammability limits and the effectiveness of inert suppressants (CO2, He).",
       "findings": [
         { "text": "The flammability limit is lower in reduced gravity; terrestrial standards for inert-gas suppressants do not offer the same margin of safety in low gravity.", "src": "GUIDE p.12", "kind": "reported" },
         { "text": "Demonstrated radiative and diffusive extinction, combustion instabilities, lower flammability limits and explained the cool-flame phenomenon after visible flame extinction.", "src": "GUIDE p.13", "kind": "reported" },
-        { "text": "Pressures of 0.5 to 1.0 atm are tested because one extinguishing strategy is to isolate the habitat and vent the cabin to space.", "src": "FS-FLEX", "kind": "reported" }
+        { "text": "Low pressures are tested because one extinguishing strategy is to isolate the habitat and vent the cabin to space.", "src": "FS-FLEX", "kind": "reported" },
+        { "text": "Of the 274 recorded tests, 186 ended in extinction, 61 in disruption and 27 in completion. At lunar-habitat-like conditions (0.6–0.8 atm and O2 ≥ 26.5%) there are 17 tests and none ended in extinction (15 disruption, 2 completion).", "src": "PSI-TABLES", "kind": "measured" }
       ],
       "habitat": { "o2": true, "pressure": true },
       "factors": { "realism": 0.4, "safety": 1.0, "modeling": 1.0 },

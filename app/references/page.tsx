@@ -11,6 +11,7 @@ const LIBS = [
 ] as const;
 
 const OTHER = [
+  ["NASA PSI experimental tables PSI-69 (FLEX) and PSI-25 (BASS-II), CC0. The unmodified files were obtained from the public copy in another team's repository (github.com/ngu-ming-henn/Nasa-Space-Apps-Sarawak, data/raw/nasa_psi) because the PSI download service was unavailable; their byte sizes (24,776 and 16,590) match NASA's published metadata. FireCompass computes all statistics from the rows itself.", "https://github.com/ngu-ming-henn/Nasa-Space-Apps-Sarawak"],
   ["NASA Space Apps Challenge 2026: Flame in Freefall (challenge statement and resources)", "https://www.spaceappschallenge.org"],
   ["NASA Combustion Science, Glenn Research Center", "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"],
   ["A Researcher's Guide to Combustion Science (NASA, 2015)", "https://www.nasa.gov/wp-content/uploads/2016/05/np-2015-10-034-jsc_combustion_in_reduced_gravity-iss-mini-book-011116-508.pdf"],
@@ -104,8 +105,9 @@ export default function References() {
           </p>
           <p>
             <strong className="text-ink">Data access.</strong> Investigation metadata and file inventories come from the PSI
-            API. Experimental tables and videos are linked to their PSI pages; time-series analysis of those files is the next
-            step of the roadmap.
+            API. The <em>Data Lab</em> uses the experimental tables of FLEX (274 tests) and BASS-II (129 tests); counts and
+            percentages are computed from the recorded rows, with no modeling. Other tables and the videos are linked to their
+            PSI pages and are the next step of the roadmap.
           </p>
           <p className="text-xs text-muted">
             Data generated {new Date(data.generatedAt).toISOString().slice(0, 10)}. FireCompass is an independent project and

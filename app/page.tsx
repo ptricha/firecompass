@@ -60,6 +60,9 @@ export default function Home() {
           <Link href="/simulator" className="rounded-lg bg-accent px-5 py-2.5 font-medium text-black hover:brightness-110">
             Open the simulator
           </Link>
+          <Link href="/lab" className="rounded-lg border border-line-2 px-5 py-2.5 text-ink hover:bg-surface-2">
+            Explore the real data
+          </Link>
           <Link href="/explorer" className="rounded-lg border border-line-2 px-5 py-2.5 text-ink hover:bg-surface-2">
             Explore investigations
           </Link>
