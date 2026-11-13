@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FireCompass
 
-## Getting Started
+**What will burn first in a lunar base?** FireCompass turns decades of NASA microgravity combustion experiments into clear, cited answers for fire safety on the Moon and Mars.
 
-First, run the development server:
+Built for the **NASA Space Apps Challenge 2026**, challenge *Flame in Freefall: SI-Powered Fire Safety Insights from Microgravity Combustion Data*.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## What it does
+
+| Page | Purpose |
+|---|---|
+| **Home** | The story: three findings that change how we think about fire in space, a coverage map, historical incidents and Earth spinoffs. |
+| **Explorer** | 19 NASA PSI investigations with test conditions, findings, sensors, sources and DOIs. Filter, search and compare up to three side by side. |
+| **Simulator** | Pick an environment (Earth, ISS, lunar base, spacesuit): oxygen versus Earth, which experiments covered it, and a plain statement of where there is no data. |
+| **Ranking** | Explainable lunar-habitat relevance score with adjustable weights, plus a coverage matrix by environment. |
+| **Ask** | Question answering grounded only in the verified data, always citing investigation, PSI ID and DOI (Claude-assisted when an API key is set). |
+| **References** | Every source, library and limitation. |
+
+## Principles
+
+- **Verified, never invented.** Each value comes from a cited NASA source (PSI metadata, NASA fact sheets, the 2015 *Researcher's Guide to Combustion Science*). Unverified values show as *Not verified*.
+- **Honest about gaps.** PSI contains no partial-gravity combustion data; Moon and Mars are shown as gaps (LUCI and FM2 are expected to fill them), not extrapolated.
+- **Explainable scoring.** The relevance score is a transparent, user-adjustable sum of five documented factors.
+
+## Data pipeline
+
+```
+scripts/fetch-psi.mjs   -> data/psi/PSI-XX.json   (public PSI API, no key)
+data/curated.json       -> hand-curated facts, each with its source
+scripts/build-data.mjs  -> data/investigations.v2.json (what the app reads)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+cp .env.example .env.local     # optional: add ANTHROPIC_API_KEY
+npm run dev                    # http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Other scripts: `npm run build`, `npm run type-check`, `node scripts/fetch-psi.mjs`, `node scripts/build-data.mjs`.
 
-## Learn More
+See [DEPLOY.md](DEPLOY.md) to publish on Vercel.
 
-To learn more about Next.js, take a look at the following resources:
+## Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Next.js 16 (App Router, TypeScript), Tailwind CSS 4, hand-written SVG charts, Anthropic SDK (optional). Full list in the in-app **References** page.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+FireCompass is an independent project and is not affiliated with or endorsed by NASA.
