@@ -160,6 +160,119 @@ const LABEL_IDS = ["droplet", "fuelVapor", "zone", "oxygenIn", "products", "plum
 type LabelId = (typeof LABEL_IDS)[number];
 const LABEL_SIDE: Record<LabelId, "l" | "r"> = { droplet: "l", fuelVapor: "r", zone: "r", oxygenIn: "l", products: "r", plume: "r", sphere: "l" };
 
+/**
+ * Procedural lunar surface: a height field built from physically shaped craters (parabolic bowl, raised rim, ejecta blanket,
+ * central peaks on big ones), maria and fine regolith roughness; the normal map is derived from that height field, so the
+ * sun's raking light carves real-looking craters. Albedo adds maria, bright young ejecta and ray systems.
+ * Illustrative terrain, not real lunar topography.
+ */
+let moonMapsCache: { albedo: import("three").DataTexture; normal: import("three").DataTexture } | null = null;
+function getMoonMaps(THREE: TH) {
+  if (moonMapsCache) return moonMapsCache;
+  const W = 3072, H = 1536, N = W * H;
+  let seed = 11;
+  const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+  const grid = (gw: number, gh: number) => {
+    const a = new Float32Array(gw * gh);
+    for (let i = 0; i < a.length; i++) a[i] = rnd();
+    return a;
+  };
+  const samp = (a: Float32Array, gw: number, gh: number, x: number, y: number) => {
+    const fx = x * gw, fy = y * (gh - 1);
+    const x0 = Math.floor(fx), y0 = Math.floor(fy);
+    let tx = fx - x0, ty = fy - y0;
+    tx = tx * tx * (3 - 2 * tx);
+    ty = ty * ty * (3 - 2 * ty);
+    const i0 = x0 % gw, i1 = (x0 + 1) % gw, j1 = Math.min(y0 + 1, gh - 1);
+    return (a[y0 * gw + i0] * (1 - tx) + a[y0 * gw + i1] * tx) * (1 - ty) + (a[j1 * gw + i0] * (1 - tx) + a[j1 * gw + i1] * tx) * ty;
+  };
+  const g0 = grid(10, 5), g1 = grid(48, 24), g2 = grid(192, 96), g3 = grid(768, 384);
+  const h = new Float32Array(N), fresh = new Float32Array(N), mare = new Float32Array(N);
+  for (let j = 0; j < H; j++) {
+    const v = j / H;
+    for (let i = 0; i < W; i++) {
+      const u = i / W, k = j * W + i;
+      const m = 0.7 * samp(g0, 10, 5, u, v) + 0.3 * samp(g1, 48, 24, u, v);
+      const mm = Math.min(1, Math.max(0, (m - 0.52) / 0.12));
+      mare[k] = mm * mm * (3 - 2 * mm);
+      h[k] = 11 * (samp(g1, 48, 24, u, v) - 0.5) + 4.5 * (samp(g2, 192, 96, u, v) - 0.5) + 1.5 * (samp(g3, 768, 384, u, v) - 0.5) + (rnd() - 0.5) * 0.55 - 5 * mare[k];
+    }
+  }
+  const hash = Float32Array.from({ length: 96 }, () => Math.pow(rnd(), 3));
+  const stamp = (cx: number, cy: number, r: number, age: number, rays: boolean) => {
+    const depth = (0.3 + 0.12 * rnd()) * r * (0.35 + 0.65 * age);
+    const reach = rays ? 9 : 2.6;
+    const R = Math.ceil(r * reach);
+    const young = age * age * age;
+    for (let dy = -R; dy <= R; dy++) {
+      const y = cy + dy;
+      if (y < 0 || y >= H) continue;
+      for (let dx = -R; dx <= R; dx++) {
+        const d = Math.hypot(dx, dy) / r;
+        if (d > reach) continue;
+        const x = (((cx + dx) % W) + W) % W, k = y * W + x;
+        if (d < 1) {
+          h[k] += -depth * (1 - d * d) * (1 - 0.25 * d * d) + depth * 0.32 * Math.exp(-(((d - 0.97) / 0.1) ** 2));
+          if (r > 30) h[k] += depth * 0.35 * Math.exp(-((d / 0.13) ** 2));
+        } else {
+          h[k] += depth * 0.32 * Math.exp(-(((d - 1) / 0.1) ** 2)) + depth * 0.16 * Math.pow(d, -3);
+        }
+        if (young > 0.25) {
+          let f = d < 1 ? 0.25 * young * d : young * (0.5 * Math.exp(-(((d - 1) / 0.22) ** 2)) + 0.3 * Math.exp(-(d - 1) * 1.5));
+          if (rays && d > 1) {
+            const a = (Math.atan2(dy, dx) + Math.PI) / (Math.PI * 2) * 96, b0 = Math.floor(a) % 96, b1 = (b0 + 1) % 96, t = a - Math.floor(a);
+            f += young * 0.9 * (hash[b0] * (1 - t) + hash[b1] * t) / Math.pow(d, 0.9);
+          }
+          fresh[k] += f;
+        }
+      }
+    }
+  };
+  const big: [number, number, number][] = [];
+  for (let c = 0; c < 6500; c++) {
+    const r = 2 + Math.pow(rnd(), 3.6) * 80;
+    const cx = Math.floor(rnd() * W), cy = Math.floor(rnd() * H);
+    const mk = mare[cy * W + cx];
+    if (mk > 0.5 && rnd() < 0.65) continue; // plains are younger and smoother
+    if (r > 55 && big.length < 8) big.push([cx, cy, r]);
+    stamp(cx, cy, r, rnd(), false);
+  }
+  for (const [cx, cy, r] of big) stamp(cx, cy, Math.max(r, 40), 1, true);
+
+  const alb = new Uint8Array(N * 4), nrm = new Uint8Array(N * 4);
+  const S = 1.25;
+  for (let j = 0; j < H; j++) {
+    const jm = Math.max(0, j - 1), jp = Math.min(H - 1, j + 1);
+    for (let i = 0; i < W; i++) {
+      const k = j * W + i, im = (i - 1 + W) % W, ip = (i + 1) % W;
+      const gx = (h[j * W + ip] - h[j * W + im]) * 0.5, gy = (h[jp * W + i] - h[jm * W + i]) * 0.5;
+      let nx = -gx * S, ny = -gy * S, nz = 1;
+      const inv = 1 / Math.hypot(nx, ny, nz);
+      nx *= inv; ny *= inv; nz *= inv;
+      const o = k * 4;
+      nrm[o] = (nx * 0.5 + 0.5) * 255; nrm[o + 1] = (ny * 0.5 + 0.5) * 255; nrm[o + 2] = (nz * 0.5 + 0.5) * 255; nrm[o + 3] = 255;
+      const m = mare[k];
+      let a = 0.5 + (rnd() - 0.5) * 0.09 - 0.045 * Math.max(-3, Math.min(3, h[k] * 0.12));
+      a *= 1 - 0.42 * m;
+      a += Math.min(0.45, fresh[k] * 0.42);
+      alb[o] = Math.min(255, a * 1.03 * 255); alb[o + 1] = Math.min(255, a * 255); alb[o + 2] = Math.min(255, a * (0.94 + 0.14 * m) * 255); alb[o + 3] = 255;
+    }
+  }
+  const mk = (data: Uint8Array, srgb: boolean) => {
+    const t = new THREE.DataTexture(data, W, H, THREE.RGBAFormat, THREE.UnsignedByteType);
+    t.wrapS = THREE.RepeatWrapping;
+    t.minFilter = THREE.LinearMipmapLinearFilter;
+    t.magFilter = THREE.LinearFilter;
+    t.generateMipmaps = true;
+    t.anisotropy = 8;
+    if (srgb) t.colorSpace = THREE.SRGBColorSpace;
+    t.needsUpdate = true;
+    return t;
+  };
+  moonMapsCache = { albedo: mk(alb, true), normal: mk(nrm, false) };
+  return moonMapsCache;
+}
+
 export default function Flame3D({ params, layers, env, running, speed, aspect, labelText, ariaLabel, reigniteKey, autoRotate, resetKey, cursorAir, zoomReq, onZoom, onStats, onUnsupported, className }: Props) {
   const wrap = useRef<HTMLDivElement>(null);
   const live = useRef({ params, layers, env, running, speed, autoRotate, cursorAir, onStats, onZoom });
@@ -440,6 +553,16 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
         key.intensity = e === "moon" ? 2.2 : e === "iss" ? 0.7 : 0.8;
         key.color.set(e === "moon" ? 0xfff4e0 : 0xdfe9ff);
         controls.maxPolarAngle = e === "earth" || e === "moon" ? Math.PI * 0.515 : Math.PI;
+        // on the Moon you can pull far back and see the whole globe with the chamber standing on it
+        controls.maxDistance = e === "moon" ? 110 : 18;
+        // framing: on the Moon look slightly down so the lunar ground, flag and horizon fill the lower third
+        if (e === "moon") { HOME.set(2.8, 2.7, 13.2); HOME_T.set(0, -0.6, 0); }
+        else { HOME.set(1.4, 1.0, 8.8); HOME_T.set(0, 0.55, 0); }
+        camera.position.copy(HOME);
+        controls.target.copy(HOME_T);
+        controls.update();
+        camera.far = e === "moon" ? 600 : 140;
+        camera.updateProjectionMatrix();
 
         if (e === "earth") {
           g.add(new THREE.Mesh(new THREE.SphereGeometry(60, 24, 16), new THREE.ShaderMaterial({ vertexShader: SKY_VERT, fragmentShader: SKY_FRAG, side: THREE.BackSide, depthWrite: false, fog: false, uniforms: { uTop: { value: new THREE.Color(0x1a3f66) }, uBottom: { value: new THREE.Color(0x0a1420) } } })));
@@ -459,112 +582,14 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
           g.add(earth);
           uniformsToAnimate.push((earth.material as InstanceType<TH["ShaderMaterial"]>).uniforms.uTime);
         } else if (e === "moon") {
-          g.add(stars(1100, 80));
+          g.add(stars(1500, 320));
           // the whole Moon: a full cratered sphere with the chamber standing on its top (curved horizon when you orbit)
-          scene.fog = new THREE.Fog(bg[e], 70, 260);
+          scene.fog = new THREE.Fog(bg[e], 400, 900);
           const RM = 40, yTop = BOX.yMin - 0.15, cy = yTop - RM;
-          const cv = document.createElement("canvas");
-          const hc = document.createElement("canvas");
-          cv.width = hc.width = 4096;
-          cv.height = hc.height = 2048;
-          const W2 = cv.width, H2 = cv.height;
-          const cx2 = cv.getContext("2d")!;
-          const hx = hc.getContext("2d")!;
           let seed = 7;
           const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
-          cx2.fillStyle = "#8a8781";
-          cx2.fillRect(0, 0, W2, H2);
-          hx.fillStyle = "#808080";
-          hx.fillRect(0, 0, W2, H2);
-          // large-scale mottling: lighter highlands and slightly tinted soils
-          for (let i = 0; i < 3200; i++) {
-            const x = rnd() * W2, y = rnd() * H2, r = 25 + rnd() * 170;
-            const warm = rnd() < 0.5;
-            const gr = cx2.createRadialGradient(x, y, 0, x, y, r);
-            gr.addColorStop(0, warm ? "rgba(168,158,140,0.10)" : "rgba(96,98,106,0.10)");
-            gr.addColorStop(1, "rgba(128,128,128,0)");
-            cx2.fillStyle = gr;
-            cx2.fillRect(x - r, y - r, r * 2, r * 2);
-          }
-          // maria: dark basaltic plains made of overlapping irregular blobs, slightly lower than the highlands
-          for (let m = 0; m < 12; m++) {
-            const mx = rnd() * W2, my = H2 * (0.22 + rnd() * 0.56), mr = 160 + rnd() * 260;
-            for (let k = 0; k < 7; k++) {
-              const x = mx + (rnd() - 0.5) * mr * 1.3, y = my + (rnd() - 0.5) * mr * 0.8, r = mr * (0.35 + rnd() * 0.5);
-              const gr = cx2.createRadialGradient(x, y, r * 0.2, x, y, r);
-              gr.addColorStop(0, "rgba(54,56,64,0.62)");
-              gr.addColorStop(1, "rgba(54,56,64,0)");
-              cx2.fillStyle = gr;
-              cx2.fillRect(x - r, y - r, r * 2, r * 2);
-              const gh = hx.createRadialGradient(x, y, r * 0.2, x, y, r);
-              gh.addColorStop(0, "rgba(104,104,104,0.5)");
-              gh.addColorStop(1, "rgba(104,104,104,0)");
-              hx.fillStyle = gh;
-              hx.fillRect(x - r, y - r, r * 2, r * 2);
-            }
-          }
-          // craters: bowl floor, raised bright rim, central peak on the big ones (power-law sizes)
-          const craterList: [number, number, number][] = [];
-          for (let i = 0; i < 5200; i++) {
-            const x = rnd() * W2, y = rnd() * H2, r = 2.5 + Math.pow(rnd(), 3.4) * 95;
-            craterList.push([x, y, r]);
-            const age = rnd();
-            const ga = cx2.createRadialGradient(x, y, r * 0.1, x, y, r * 1.4);
-            ga.addColorStop(0, `rgba(48,48,50,${0.28 + 0.2 * age})`);
-            ga.addColorStop(0.62, "rgba(70,70,72,0.22)");
-            ga.addColorStop(0.86, `rgba(214,212,204,${0.18 + 0.38 * (1 - age)})`);
-            ga.addColorStop(1, "rgba(214,212,204,0)");
-            cx2.fillStyle = ga;
-            cx2.fillRect(x - r * 1.4, y - r * 1.4, r * 2.8, r * 2.8);
-            const gh = hx.createRadialGradient(x, y, 0, x, y, r * 1.4);
-            gh.addColorStop(0, "rgba(54,54,54,0.95)");
-            gh.addColorStop(0.55, "rgba(82,82,82,0.85)");
-            gh.addColorStop(0.8, "rgba(150,150,150,0.8)");
-            gh.addColorStop(0.9, "rgba(226,226,226,0.9)");
-            gh.addColorStop(1, "rgba(128,128,128,0)");
-            hx.fillStyle = gh;
-            hx.fillRect(x - r * 1.4, y - r * 1.4, r * 2.8, r * 2.8);
-            if (r > 30) {
-              const gp = hx.createRadialGradient(x, y, 0, x, y, r * 0.16);
-              gp.addColorStop(0, "rgba(220,220,220,0.9)");
-              gp.addColorStop(1, "rgba(128,128,128,0)");
-              hx.fillStyle = gp;
-              hx.fillRect(x - r * 0.2, y - r * 0.2, r * 0.4, r * 0.4);
-            }
-          }
-          // ray systems from a few young craters (Tycho-like bright streaks)
-          for (const [x, y, r] of craterList.filter((c) => c[2] > 60).slice(0, 7)) {
-            cx2.fillStyle = "rgba(236,234,226,0.5)";
-            cx2.beginPath();
-            cx2.arc(x, y, r * 0.55, 0, Math.PI * 2);
-            cx2.fill();
-            for (let k = 0; k < 46; k++) {
-              const a = rnd() * Math.PI * 2, len = 130 + rnd() * 520;
-              cx2.strokeStyle = `rgba(232,230,222,${0.05 + rnd() * 0.1})`;
-              cx2.lineWidth = 1.5 + rnd() * 5;
-              cx2.beginPath();
-              cx2.moveTo(x + Math.cos(a) * r, y + Math.sin(a) * r);
-              cx2.lineTo(x + Math.cos(a) * (r + len), y + Math.sin(a) * (r + len));
-              cx2.stroke();
-            }
-          }
-          // fine regolith grain in both colour and relief
-          for (let i = 0; i < 260000; i++) {
-            const v = 60 + Math.floor(rnd() * 150), x = rnd() * W2, y = rnd() * H2;
-            cx2.fillStyle = `rgba(${v},${v},${v - 4},0.2)`;
-            cx2.fillRect(x, y, 1, 1);
-            if (i % 2 === 0) {
-              const hv = 90 + Math.floor(rnd() * 90);
-              hx.fillStyle = `rgba(${hv},${hv},${hv},0.35)`;
-              hx.fillRect(x, y, 1 + (i % 3 === 0 ? 1 : 0), 1);
-            }
-          }
-          const moonTex = new THREE.CanvasTexture(cv);
-          moonTex.colorSpace = THREE.SRGBColorSpace;
-          moonTex.anisotropy = 8;
-          const heightTex = new THREE.CanvasTexture(hc);
-          heightTex.anisotropy = 8;
-          const moon = new THREE.Mesh(new THREE.SphereGeometry(RM, 192, 128), new THREE.MeshStandardMaterial({ map: moonTex, bumpMap: heightTex, bumpScale: 4.2, roughness: 0.96, metalness: 0, envMapIntensity: 0.12 }));
+          const maps = getMoonMaps(THREE);
+          const moon = new THREE.Mesh(new THREE.SphereGeometry(RM, 192, 128), new THREE.MeshStandardMaterial({ map: maps.albedo, normalMap: maps.normal, normalScale: new THREE.Vector2(1.15, 1.15), roughness: 0.97, metalness: 0, envMapIntensity: 0.12 }));
           moon.position.y = cy;
           moon.rotation.x = Math.PI / 2; // texture poles point sideways, so the chamber sits on the undistorted equator
           g.add(moon);
@@ -797,8 +822,8 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
         if (dir.length() < 1e-3) dir.set(0.15, 0.1, 1);
         dir.normalize();
         const R = eng.rf, zy = eng.zoneY;
-        const tgt = preset === "chamber" ? new THREE.Vector3(0, 0.55, 0) : preset === "flame" ? new THREE.Vector3(0, zy + 0.05, 0) : new THREE.Vector3(R * 0.95, zy, 0.25);
-        const dist = preset === "chamber" ? HOME_DIST : preset === "flame" ? 3.6 : 0.85;
+        const tgt = preset === "chamber" ? HOME_T.clone() : preset === "flame" ? new THREE.Vector3(0, zy + 0.05, 0) : new THREE.Vector3(R * 0.95, zy, 0.25);
+        const dist = preset === "chamber" ? HOME.distanceTo(HOME_T) : preset === "flame" ? 3.6 : 0.85;
         tween = { t0: performance.now(), dur: 950, p0: camera.position.clone(), p1: tgt.clone().add(dir.multiplyScalar(dist)), q0: controls.target.clone(), q1: tgt };
         dirty = true;
       };
