@@ -6,7 +6,7 @@ The app builds and runs with **no environment variables**. The Anthropic key onl
 
 1. Go to https://vercel.com/new and sign in with GitHub.
 2. Import **`ptricha/firecompass`**.
-3. Set **Production Branch** to `improve/data` (Settings > Git), or merge `improve/data` into `master` first.
+3. Keep the default **Production Branch** (`master`); it already contains the finished project. Every later `git push` to `master` redeploys automatically.
 4. (Optional) Settings > Environment Variables: add `ANTHROPIC_API_KEY`, then redeploy.
 5. Deploy. Copy the public URL into the Space Apps submission form.
 
