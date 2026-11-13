@@ -379,8 +379,12 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
           const m = c as InstanceType<TH["Mesh"]>;
           m.geometry?.dispose?.();
           const mat = m.material as InstanceType<TH["Material"]> | InstanceType<TH["Material"]>[] | undefined;
-          if (Array.isArray(mat)) mat.forEach((x) => x.dispose());
-          else mat?.dispose?.();
+          const free = (x: InstanceType<TH["Material"]>) => {
+            (x as InstanceType<TH["MeshStandardMaterial"]>).map?.dispose?.();
+            x.dispose();
+          };
+          if (Array.isArray(mat)) mat.forEach(free);
+          else if (mat) free(mat);
         });
       };
       const stars = (n: number, radius: number) => {
@@ -433,24 +437,103 @@ export default function Flame3D({ params, layers, env, running, speed, aspect, l
           uniformsToAnimate.push((earth.material as InstanceType<TH["ShaderMaterial"]>).uniforms.uTime);
         } else if (e === "moon") {
           g.add(stars(1100, 80));
-          const N = 110, SZ = 44;
-          const geo = new THREE.PlaneGeometry(SZ, SZ, N, N);
-          geo.rotateX(-Math.PI / 2);
-          const pa = geo.attributes.position as InstanceType<TH["BufferAttribute"]>;
-          const craters: [number, number, number][] = Array.from({ length: 26 }, () => [(Math.random() - 0.5) * SZ, (Math.random() - 0.5) * SZ, 0.6 + Math.random() * 2.2]);
-          for (let i = 0; i < pa.count; i++) {
-            const x = pa.getX(i), z = pa.getZ(i);
-            let h = 0.18 * Math.sin(x * 0.35) * Math.cos(z * 0.3) + 0.08 * Math.sin(x * 1.3 + z * 0.9);
-            for (const [cx, cz, r] of craters) {
-              const d = Math.hypot(x - cx, z - cz) / r;
-              if (d < 1.5) h += (d < 1 ? -0.5 * (1 - d * d) : 0.25 * Math.exp(-(((d - 1) * 4) ** 2))) * Math.min(1, r / 1.4);
-            }
-            pa.setY(i, h);
+          // the whole Moon: a full cratered sphere with the chamber standing on its top (curved horizon when you orbit)
+          scene.fog = new THREE.Fog(bg[e], 70, 260);
+          const RM = 40, yTop = BOX.yMin - 0.15, cy = yTop - RM;
+          const cv = document.createElement("canvas");
+          cv.width = 2048;
+          cv.height = 1024;
+          const cx2 = cv.getContext("2d")!;
+          let seed = 7;
+          const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+          cx2.fillStyle = "#8c8a86";
+          cx2.fillRect(0, 0, cv.width, cv.height);
+          for (let i = 0; i < 9000; i++) {
+            const v = 110 + Math.floor(rnd() * 70);
+            cx2.fillStyle = `rgba(${v},${v - 2},${v - 6},0.16)`;
+            cx2.fillRect(rnd() * cv.width, rnd() * cv.height, 2 + rnd() * 10, 2 + rnd() * 10);
           }
-          geo.computeVertexNormals();
-          const terrain = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: 0x6a6965, roughness: 1, metalness: 0 }));
-          terrain.position.y = BOX.yMin - 0.15;
-          g.add(terrain);
+          // maria: large dark basalt plains
+          for (let i = 0; i < 9; i++) {
+            const x = rnd() * cv.width, y = cv.height * (0.25 + rnd() * 0.5), r = 90 + rnd() * 170;
+            const gr = cx2.createRadialGradient(x, y, 0, x, y, r);
+            gr.addColorStop(0, "rgba(58,58,62,0.7)");
+            gr.addColorStop(1, "rgba(58,58,62,0)");
+            cx2.fillStyle = gr;
+            cx2.fillRect(x - r, y - r, r * 2, r * 2);
+          }
+          // craters: dark floor, bright rim
+          for (let i = 0; i < 1500; i++) {
+            const x = rnd() * cv.width, y = rnd() * cv.height, r = 3 + Math.pow(rnd(), 3) * 46;
+            const gr = cx2.createRadialGradient(x, y, r * 0.15, x, y, r * 1.25);
+            gr.addColorStop(0, "rgba(40,40,42,0.5)");
+            gr.addColorStop(0.7, "rgba(60,60,62,0.35)");
+            gr.addColorStop(0.88, "rgba(210,208,200,0.5)");
+            gr.addColorStop(1, "rgba(210,208,200,0)");
+            cx2.fillStyle = gr;
+            cx2.beginPath();
+            cx2.arc(x, y, r * 1.25, 0, Math.PI * 2);
+            cx2.fill();
+          }
+          const moonTex = new THREE.CanvasTexture(cv);
+          moonTex.colorSpace = THREE.SRGBColorSpace;
+          moonTex.anisotropy = 8;
+          const moon = new THREE.Mesh(new THREE.SphereGeometry(RM, 128, 96), new THREE.MeshStandardMaterial({ map: moonTex, bumpMap: moonTex, bumpScale: 2.2, roughness: 1, metalness: 0, envMapIntensity: 0.15 }));
+          moon.position.y = cy;
+          moon.rotation.x = Math.PI / 2; // texture poles point sideways, so the chamber sits on the undistorted equator
+          g.add(moon);
+
+          // United States flag planted beside the chamber (Apollo style: pole with a horizontal bar holding the flag out)
+          const fc = document.createElement("canvas");
+          fc.width = 760;
+          fc.height = 400;
+          const f2 = fc.getContext("2d")!;
+          const sh = fc.height / 13;
+          for (let i = 0; i < 13; i++) {
+            f2.fillStyle = i % 2 === 0 ? "#b22234" : "#ffffff";
+            f2.fillRect(0, i * sh, fc.width, sh + 1);
+          }
+          f2.fillStyle = "#3c3b6e";
+          f2.fillRect(0, 0, fc.width * 0.4, sh * 7);
+          f2.fillStyle = "#ffffff";
+          for (let r = 0; r < 9; r++) {
+            const n = r % 2 === 0 ? 6 : 5;
+            for (let c = 0; c < n; c++) {
+              const sx = fc.width * 0.4 * ((r % 2 === 0 ? c + 0.5 : c + 1) / 6.2) + 4;
+              const sy = (sh * 7 * (r + 0.7)) / 9.4;
+              f2.beginPath();
+              for (let k = 0; k < 10; k++) {
+                const a = -Math.PI / 2 + (k * Math.PI) / 5, rr = k % 2 === 0 ? 9 : 3.6;
+                f2.lineTo(sx + Math.cos(a) * rr, sy + Math.sin(a) * rr);
+              }
+              f2.closePath();
+              f2.fill();
+            }
+          }
+          const flagTex = new THREE.CanvasTexture(fc);
+          flagTex.colorSpace = THREE.SRGBColorSpace;
+          flagTex.anisotropy = 8;
+          const fx = -5.6, fz = -2.2, fy = cy + Math.sqrt(RM * RM - fx * fx - fz * fz);
+          const flagG = new THREE.Group();
+          flagG.position.set(fx, fy, fz);
+          flagG.rotation.y = 0.35;
+          flagG.scale.setScalar(1.7);
+          const metal = new THREE.MeshStandardMaterial({ color: 0xd8d8d8, roughness: 0.35, metalness: 0.8 });
+          const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, 1.75, 12), metal);
+          pole.position.y = 0.875;
+          const bar = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 1.0, 10), metal);
+          bar.rotation.z = Math.PI / 2;
+          bar.position.set(0.5, 1.7, 0);
+          const cloth = new THREE.PlaneGeometry(0.95, 0.5, 14, 6);
+          const cp = cloth.attributes.position as InstanceType<TH["BufferAttribute"]>;
+          for (let i = 0; i < cp.count; i++) cp.setZ(i, 0.025 * Math.sin(cp.getX(i) * 9) * (0.4 + (cp.getX(i) + 0.475)));
+          cloth.computeVertexNormals();
+          const flag = new THREE.Mesh(cloth, new THREE.MeshStandardMaterial({ map: flagTex, side: THREE.DoubleSide, roughness: 0.9, metalness: 0 }));
+          flag.position.set(0.5, 1.45, 0);
+          const foot = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.08, 0.04, 16), metal);
+          foot.position.y = 0.02;
+          flagG.add(pole, bar, flag, foot);
+          g.add(flagG);
           const earth = new THREE.Mesh(new THREE.SphereGeometry(2.3, 48, 32), earthMat([-0.4, 0.4, 0.8]));
           earth.position.set(16, 9, -34);
           g.add(earth);
