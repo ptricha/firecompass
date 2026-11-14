@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { AREA_COLOR, areaLabel, type Area } from "@/lib/data";
 import { useData, useLang, useT } from "@/lib/i18n";
@@ -25,8 +26,8 @@ const T = {
     s2n: "summed across all investigations",
     s3: "real flame videos",
     s3n: "BASS, BASS-II, CFI, SAME and SPICE",
-    s4: "partial-gravity data sets",
-    s4n: "LUCI has first lunar-g results (NTRS); FM2 goes to the Moon",
+    s4: "partial-gravity data sets in PSI",
+    s4n: "LUCI published first lunar-g results (NTRS), but no downloadable data yet; FM2 flies to the Moon in late 2026",
     fEyebrow: "What the data says",
     fTitle: "Three findings that change how we think about fire in space",
     see: "See",
@@ -73,8 +74,8 @@ const T = {
     s2n: "sumados en todas las investigaciones",
     s3: "vídeos de llamas reales",
     s3n: "BASS, BASS-II, CFI, SAME y SPICE",
-    s4: "conjuntos de datos de gravedad parcial",
-    s4n: "LUCI tiene primeros resultados en g lunar (NTRS); FM2 irá a la Luna",
+    s4: "conjuntos de datos de gravedad parcial en PSI",
+    s4n: "LUCI publicó primeros resultados en g lunar (NTRS), pero aún sin datos descargables; FM2 viaja a la Luna a finales de 2026",
     fEyebrow: "Lo que dicen los datos",
     fTitle: "Tres hallazgos que cambian cómo pensamos el fuego en el espacio",
     see: "Ver",
@@ -126,6 +127,14 @@ export default function Home() {
     <>
       {/* HERO */}
       <section className="mx-auto max-w-6xl px-4 pt-14 sm:pt-20">
+        <Image
+          src="/brand/japax-logo.png"
+          alt="JaPax — Space fire safety"
+          width={1305}
+          height={1334}
+          priority
+          className="mb-8 h-auto w-44 sm:w-56 lg:float-right lg:mb-0 lg:ml-8 lg:w-72"
+        />
         <p className="eyebrow">{t.eyebrow}</p>
         <h1 className="mt-3 max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
           {t.h1a} <span style={{ color: "var(--accent)" }}>{t.h1b}</span>?

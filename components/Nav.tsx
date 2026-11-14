@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLang, useT } from "@/lib/i18n";
@@ -74,7 +75,10 @@ export default function Nav() {
             <option value="es" className="bg-surface text-ink">Español</option>
           </select>
         </div>
-        <Link href="/" className="shrink-0 text-lg font-semibold tracking-tight">JaPax</Link>
+        <Link href="/" className="flex shrink-0 items-center gap-2 text-lg font-semibold tracking-tight">
+          <Image src="/brand/japax-isotipo.png" alt="" width={321} height={584} className="h-7 w-auto" priority />
+          JaPax
+        </Link>
 
         <nav aria-label={t.main} className="ml-auto hidden items-center gap-0.5 text-sm xl:flex">
           {LINKS.map((l, i) => (
