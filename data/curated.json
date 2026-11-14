@@ -1114,8 +1114,8 @@
       "acronym": "SoFIE",
       "name": "Solid Fuel Ignition and Extinction",
       "gravity": "microgravity (ISS)",
-      "note": "Will test whether NASA-STD-6001's 1-g flame test is conservative in low gravity.",
-      "src": "GLENN"
+      "note": "An insert for the ISS Combustion Integrated Rack that burns solid spacecraft materials in practical geometries at oxygen and pressure levels of current and planned NASA Space Exploration Atmospheres. It will test whether the 1-g flame test (NASA-STD-6001) is conservative in low gravity, improve understanding of early fire growth, and compare suppression by diluents, flow reduction and venting. Built to serve five investigations and open to future researchers (NASA NTRS 20200000361).",
+      "src": "NTRS"
     },
     {
       "acronym": "FLARE",
@@ -1153,7 +1153,7 @@
       "pressurePsi": 10.2,
       "gravityG": 0.166,
       "src": "CHALLENGE",
-      "note": "30% O2 or more at 10.2 psi or less (challenge statement). Lunar gravity: no experimental data."
+      "note": "30% O2 or more at 10.2 psi or less (challenge statement). FM2 will test 21% O2 at 14.7 psia and 34% O2 at 8.2 psia, atmospheres of interest to the Human Landing System and Lunar Rover (NASA NTRS 20240015307). Lunar gravity: no data in PSI; LUCI reported first simulated-lunar-gravity burns in 2025."
     },
     {
       "id": "suit",

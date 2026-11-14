@@ -321,7 +321,7 @@
     },
     "SoFIE": {
       "gravity": "microgravedad (ISS)",
-      "note": "Comprobará si el test de llama de 1 g de NASA-STD-6001 es conservador en baja gravedad."
+      "note": "Un módulo para el Combustion Integrated Rack de la ISS que quema materiales sólidos de naves en geometrías prácticas y con niveles de oxígeno y presión de las atmósferas de exploración actuales y previstas de NASA. Comprobará si el test de llama de 1 g (NASA-STD-6001) es conservador en baja gravedad, mejorará la comprensión del crecimiento temprano del fuego y comparará la supresión por diluyentes, reducción de flujo y venteo. Sirve a cinco investigaciones y queda abierto a futuros investigadores (NASA NTRS 20200000361)."
     },
     "FLARE": {
       "gravity": "gravedad normal y microgravedad",
@@ -338,7 +338,7 @@
     },
     "moon-habitat": {
       "name": "Base lunar (hábitat)",
-      "note": "30% de O2 o más a 10.2 psi o menos (enunciado del reto). Gravedad lunar: sin datos experimentales."
+      "note": "30% de O2 o más a 10,2 psi o menos (enunciado del reto). FM2 ensayará 21% de O2 a 14,7 psia y 34% de O2 a 8,2 psia, atmósferas de interés para el Human Landing System y el Lunar Rover (NASA NTRS 20240015307). Gravedad lunar: sin datos en PSI; LUCI comunicó en 2025 las primeras combustiones en gravedad lunar simulada."
     },
     "suit": {
       "name": "Traje espacial"
