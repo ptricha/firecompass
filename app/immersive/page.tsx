@@ -15,6 +15,11 @@ const ENVS: { id: ImmersiveEnv; name: string; gravity: string; air: string; note
     model: "Model: International Space Station (ISS) (B), NASA 3D Resources",
   },
   {
+    id: "isshd", name: "ISS detail", gravity: "≈0 g", air: "21% O₂ · 14.7 psi",
+    note: "The same microgravity environment with a far more detailed station model. It is a large download (about 62 MB), so it only loads when you open this tab.",
+    model: "Model: International Space Station (ISS) (D) (IGOAL), NASA 3D Resources",
+  },
+  {
     id: "moon", name: "Moon", gravity: "0.16 g", air: "≈30% O₂ · ≈10.2 psi (habitat)",
     note: "Partial gravity. No experimental combustion data exists for it yet; LUCI and FM2 are the missions meant to measure it. The terrain here is procedural, not a survey.",
     model: "Model: Apollo Lunar Module, NASA 3D Resources",

@@ -4,7 +4,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import GuideBanner from "@/components/GuideBanner";
+import Mentor from "@/components/Mentor";
+import GuideTour from "@/components/GuideTour";
+import AskWindow from "@/components/AskWindow";
 import { LangProvider } from "@/lib/i18n";
 import { GuideProvider } from "@/lib/guide";
 
@@ -44,12 +46,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <GuideProvider>
             <Suspense fallback={<div className="h-14" />}>
               <Nav />
-              <div className="sticky top-14 z-30 backdrop-blur">
-                <GuideBanner />
-              </div>
             </Suspense>
             <main className="flex-1">{children}</main>
             <Footer />
+            <Mentor />
+            <GuideTour />
+            <AskWindow />
           </GuideProvider>
         </LangProvider>
       </body>

@@ -3,7 +3,7 @@
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
 
 /** The guided tour: one stop per page, in a logical learning order. */
-export const TOUR = ["/", "/learn", "/history", "/simulator", "/lab", "/explorer", "/dashboard", "/ask", "/references"] as const;
+export const TOUR = ["/", "/learn", "/history", "/simulator", "/lab", "/explorer", "/dashboard", "/references"] as const;
 
 interface Ctx {
   on: boolean;

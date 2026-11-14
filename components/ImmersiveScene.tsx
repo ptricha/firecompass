@@ -11,7 +11,7 @@ import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js"
 import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 
-export type ImmersiveEnv = "earth" | "moon" | "mars" | "iss" | "suit";
+export type ImmersiveEnv = "earth" | "moon" | "mars" | "iss" | "isshd" | "suit";
 
 type Built = {
   update: (dt: number, t: number) => void;
@@ -341,7 +341,7 @@ async function buildMars({ scene }: Ctx): Promise<Built> {
   };
 }
 
-async function buildIss({ scene }: Ctx): Promise<Built> {
+async function buildIss({ scene }: Ctx, url = "/models/iss.glb", dropStray = true): Promise<Built> {
   scene.background = new THREE.Color(0x000003);
   scene.add(stars(6000, 1800));
   scene.add(new THREE.AmbientLight(0x1a2440, 0.7));
@@ -354,16 +354,16 @@ async function buildIss({ scene }: Ctx): Promise<Built> {
   sun.shadow.bias = -0.0003;
   scene.add(sun);
 
-  const [earth, iss] = await Promise.all([makeEarth(240, 0.22), gl.loadAsync("/models/iss.glb")]);
+  const [earth, iss] = await Promise.all([makeEarth(240, 0.22), gl.loadAsync(url)]);
   earth.group.position.set(0, -285, -10);
   earth.group.rotation.set(0.15, 0.9, 0);
   scene.add(earth.group);
   const m = iss.scene;
   // this export carries 7 stray truss/cylinder pieces ~40 units above the station; drop them before fitting
   const stray: THREE.Object3D[] = [];
-  m.traverse((o) => { if (/^(bendedtru|pCylinder)/.test(o.name)) stray.push(o); });
+  if (dropStray) m.traverse((o) => { if (/^(bendedtru|pCylinder)/.test(o.name)) stray.push(o); });
   stray.forEach((o) => o.removeFromParent());
-  fitModel(m, 15);
+  fitModel(m, dropStray ? 15 : 23);
   m.position.y -= new THREE.Box3().setFromObject(m).getCenter(new THREE.Vector3()).y;
   shade(m, 0.6);
   scene.add(m);
@@ -580,7 +580,7 @@ async function buildSuit({ scene, renderer }: Ctx): Promise<Built> {
   };
 }
 
-const BUILDERS: Record<ImmersiveEnv, (c: Ctx) => Promise<Built>> = { earth: buildEarth, moon: buildMoon, mars: buildMars, iss: buildIss, suit: buildSuit };
+const BUILDERS: Record<ImmersiveEnv, (c: Ctx) => Promise<Built>> = { earth: buildEarth, moon: buildMoon, mars: buildMars, iss: (c) => buildIss(c), isshd: (c) => buildIss(c, "/models/iss_hd.glb", false), suit: buildSuit };
 
 // ---------- component ----------
 export default function ImmersiveScene({ env }: { env: ImmersiveEnv }) {
@@ -685,7 +685,7 @@ export default function ImmersiveScene({ env }: { env: ImmersiveEnv }) {
   return (
     <div className="relative h-[68vh] min-h-[460px] w-full overflow-hidden rounded-xl border border-white/10 bg-black">
       <div ref={host} className="absolute inset-0" />
-      {state === "loading" && <div className="pointer-events-none absolute inset-0 grid place-items-center text-sm text-white/70">Loading environment…</div>}
+      {state === "loading" && <div className="pointer-events-none absolute inset-0 grid place-items-center text-sm text-white/70">{env === "isshd" ? "Loading the detailed station model (about 62 MB)…" : "Loading environment…"}</div>}
       {state === "error" && <div className="absolute inset-0 grid place-items-center text-sm text-red-300">Could not start the 3D scene (WebGL unavailable?).</div>}
       <div className="pointer-events-none absolute bottom-3 left-3 text-xs text-white/50">Drag to orbit · scroll to zoom</div>
     </div>
