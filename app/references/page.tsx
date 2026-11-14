@@ -9,7 +9,7 @@ const LIBS: [string, string][] = [
   ["Tailwind CSS 4 (MIT)", "https://tailwindcss.com"],
   ["TypeScript (Apache-2.0)", "https://www.typescriptlang.org"],
   ["three.js 0.187 (MIT), WebGL 3D rendering of the flame lab and simulator; its OrbitControls and post-processing add-ons are part of the same package", "https://threejs.org"],
-  ["NASA 3D Resources: International Space Station (ISS) (B), International Space Station (ISS) (D) (IGOAL), Mars 2020 Perseverance Rover, Apollo Lunar Module (3D models used in /immersive; free to use per NASA media guidelines)", "https://science.nasa.gov/3d-resources/"],
+  ["NASA 3D Resources: International Space Station (ISS) (D) (IGOAL), Mars 2020 Perseverance Rover, Apollo Lunar Module (3D models used in /immersive; free to use per NASA media guidelines)", "https://science.nasa.gov/3d-resources/"],
   ["NASA 3D Resources: Extravehicular Mobility Unit (EMU) spacesuit (3D model used in /immersive; free to use per NASA media guidelines)", "https://science.nasa.gov/3d-resources/"],
   ["Earth textures from the three.js examples (earth_atmos, earth_normal, earth_specular, earth_clouds), derived from NASA imagery", "https://github.com/mrdoob/three.js/tree/dev/examples/textures/planets"],
   ["Anthropic TypeScript SDK (MIT)", "https://github.com/anthropics/anthropic-sdk-typescript"],

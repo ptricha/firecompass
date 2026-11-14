@@ -12,7 +12,7 @@ import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 import { useLang } from "@/lib/i18n";
 
-export type ImmersiveEnv = "earth" | "moon" | "mars" | "iss" | "isshd" | "suit";
+export type ImmersiveEnv = "earth" | "moon" | "mars" | "iss" | "suit";
 
 type Built = {
   update: (dt: number, t: number) => void;
@@ -31,7 +31,6 @@ const gl = new GLTFLoader().setDRACOLoader(draco);
 // Loads a GLB and reports download progress (0..1) when the server announces the size.
 // Known sizes are the fallback when the server (gzip/chunked) sends no Content-Length.
 const MODEL_BYTES: Record<string, number> = {
-  "/models/iss.glb": 476992,
   "/models/lm.glb": 716840,
   "/models/emu.glb": 3448904,
   "/models/perseverance.glb": 4987176,
@@ -357,7 +356,7 @@ async function buildMars({ scene, progress }: Ctx): Promise<Built> {
   };
 }
 
-async function buildIss({ scene, progress }: Ctx, url = "/models/iss.glb", dropStray = true): Promise<Built> {
+async function buildIss({ scene, progress }: Ctx): Promise<Built> {
   scene.background = new THREE.Color(0x000003);
   scene.add(stars(6000, 1800));
   scene.add(new THREE.AmbientLight(0x1a2440, 0.7));
@@ -370,16 +369,12 @@ async function buildIss({ scene, progress }: Ctx, url = "/models/iss.glb", dropS
   sun.shadow.bias = -0.0003;
   scene.add(sun);
 
-  const [earth, iss] = await Promise.all([makeEarth(240, 0.22), loadModel(url, progress)]);
+  const [earth, iss] = await Promise.all([makeEarth(240, 0.22), loadModel("/models/iss_hd.glb", progress)]);
   earth.group.position.set(0, -285, -10);
   earth.group.rotation.set(0.15, 0.9, 0);
   scene.add(earth.group);
   const m = iss.scene;
-  // this export carries 7 stray truss/cylinder pieces ~40 units above the station; drop them before fitting
-  const stray: THREE.Object3D[] = [];
-  if (dropStray) m.traverse((o) => { if (/^(bendedtru|pCylinder)/.test(o.name)) stray.push(o); });
-  stray.forEach((o) => o.removeFromParent());
-  fitModel(m, dropStray ? 15 : 23);
+  fitModel(m, 23);
   m.position.y -= new THREE.Box3().setFromObject(m).getCenter(new THREE.Vector3()).y;
   shade(m, 0.6);
   scene.add(m);
@@ -596,7 +591,7 @@ async function buildSuit({ scene, renderer, progress }: Ctx): Promise<Built> {
   };
 }
 
-const BUILDERS: Record<ImmersiveEnv, (c: Ctx) => Promise<Built>> = { earth: buildEarth, moon: buildMoon, mars: buildMars, iss: (c) => buildIss(c), isshd: (c) => buildIss(c, "/models/iss_hd.glb", false), suit: buildSuit };
+const BUILDERS: Record<ImmersiveEnv, (c: Ctx) => Promise<Built>> = { earth: buildEarth, moon: buildMoon, mars: buildMars, iss: buildIss, suit: buildSuit };
 
 // ---------- component ----------
 export default function ImmersiveScene({ env }: { env: ImmersiveEnv }) {
@@ -710,7 +705,7 @@ export default function ImmersiveScene({ env }: { env: ImmersiveEnv }) {
             <p className="mb-2 text-sm text-white/80">
               {lang === "es" ? "Cargando modelo" : "Loading model"}
               {progress > 0 ? ` · ${Math.round(progress * 100)}%` : "…"}
-              {env === "isshd" ? " (~15 MB)" : ""}
+              {env === "iss" ? " (~15 MB)" : ""}
             </p>
             <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/15">
               <div

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { useGuide } from "@/lib/guide";
 import { useT } from "@/lib/i18n";
 import PaxFace from "@/components/PaxFace";
@@ -20,14 +19,12 @@ const T = {
     tour: "Start the guided tour",
     tourSub: "New to the topic? I will point at each part of the page",
     stop: "Stop the tour",
-    film: "Watch the 30-second film",
     sleeping: "Pax is asleep. Click to wake Pax up",
     bubbleAria: "What Pax can do",
     bubbleHi: "Hi, I'm Pax, your guide!",
     bubbleLead: "I can help you:",
     svcAsk: "Ask me anything",
     svcTour: "Take a guided tour",
-    svcFilm: "Watch the 30 s film",
   },
   es: {
     hello: `Hola, soy ${NAME}. Puedo explicarte cualquier cosa de esta web o guiarte paso a paso.`,
@@ -38,14 +35,12 @@ const T = {
     tour: "Empezar el recorrido guiado",
     tourSub: "¿Nuevo en el tema? Te señalo cada parte de la página",
     stop: "Terminar el recorrido",
-    film: "Ver el vídeo de 30 segundos",
     sleeping: "Pax está dormido. Pulsa para despertarlo",
     bubbleAria: "Lo que Pax puede hacer",
     bubbleHi: "¡Hola, soy Pax, tu guía!",
     bubbleLead: "Puedo ayudarte a:",
     svcAsk: "Preguntarme lo que sea",
     svcTour: "Hacer un recorrido guiado",
-    svcFilm: "Ver el vídeo de 30 s",
   },
 };
 
@@ -134,9 +129,6 @@ export default function Mentor() {
                 <span className="block text-sm font-semibold">{on ? t.stop : t.tour}</span>
                 {!on && <span className="block text-xs text-ink-2">{t.tourSub}</span>}
               </button>
-              <Link href="/demo" onClick={() => setOpen(false)} className={item}>
-                <span className="block text-sm font-semibold">{t.film}</span>
-              </Link>
             </div>
           </section>
         )}
@@ -158,7 +150,6 @@ export default function Mentor() {
             <div className="mt-2 space-y-1.5">
               <button onClick={() => openAsk()} className={`${svc} border-accent/50 bg-accent/15`}>{t.svcAsk}</button>
               <button onClick={() => setOn(!on)} className={svc}>{on ? t.stop : t.svcTour}</button>
-              <Link href="/demo" className={svc}>{t.svcFilm}</Link>
             </div>
           </section>
         )}
