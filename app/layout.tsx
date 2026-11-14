@@ -19,9 +19,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://japax.vercel.app"),
   title: "JaPax — Fire in space, explained with NASA data",
   description:
     "An AI-assisted dashboard that summarizes, ranks and interprets NASA's microgravity combustion experiments (PSI) to deliver fire-safety insights for the Moon and Mars.",
+  openGraph: {
+    title: "JaPax — Fire in space, explained with NASA data",
+    description:
+      "An AI-assisted dashboard that summarizes, ranks and interprets NASA's microgravity combustion experiments (PSI) to deliver fire-safety insights for the Moon and Mars.",
+    url: "https://japax.vercel.app",
+    siteName: "JaPax",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
