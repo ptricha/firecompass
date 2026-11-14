@@ -685,7 +685,7 @@ export default function ImmersiveScene({ env }: { env: ImmersiveEnv }) {
   return (
     <div className="relative h-[68vh] min-h-[460px] w-full overflow-hidden rounded-xl border border-white/10 bg-black">
       <div ref={host} className="absolute inset-0" />
-      {state === "loading" && <div className="pointer-events-none absolute inset-0 grid place-items-center text-sm text-white/70">{env === "isshd" ? "Loading the detailed station model (about 62 MB)…" : "Loading environment…"}</div>}
+      {state === "loading" && <div className="pointer-events-none absolute inset-0 grid place-items-center text-sm text-white/70">{env === "isshd" ? "Loading the detailed station model (about 15 MB)…" : "Loading environment…"}</div>}
       {state === "error" && <div className="absolute inset-0 grid place-items-center text-sm text-red-300">Could not start the 3D scene (WebGL unavailable?).</div>}
       <div className="pointer-events-none absolute bottom-3 left-3 text-xs text-white/50">Drag to orbit · scroll to zoom</div>
     </div>

@@ -16,7 +16,7 @@ const ENVS: { id: ImmersiveEnv; name: string; gravity: string; air: string; note
   },
   {
     id: "isshd", name: "ISS detail", gravity: "≈0 g", air: "21% O₂ · 14.7 psi",
-    note: "The same microgravity environment with a far more detailed station model. It is a large download (about 62 MB), so it only loads when you open this tab.",
+    note: "The same microgravity environment with a far more detailed station model. It is a larger download (about 15 MB, optimized from the 62 MB original), so it only loads when you open this tab.",
     model: "Model: International Space Station (ISS) (D) (IGOAL), NASA 3D Resources",
   },
   {
