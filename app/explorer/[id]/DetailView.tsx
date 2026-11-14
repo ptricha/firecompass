@@ -233,6 +233,24 @@ export default function DetailView({ id }: { id: string }) {
         </div>
       </section>
 
+      {(inv.ntrsRelated?.length ?? 0) > 0 && (
+        <section className="mt-10" aria-labelledby="ntrs">
+          <h2 id="ntrs" className="text-xl font-semibold">
+            Related NASA literature (NTRS)
+          </h2>
+          <p className="mt-1 text-xs text-muted">Reports and papers from the NASA Technical Reports Server that mention this investigation by name.</p>
+          <ul className="card mt-3 divide-y divide-line">
+            {inv.ntrsRelated!.map((r) => (
+              <li key={r.id} className="p-3 text-sm">
+                <a className="link" href={r.url} target="_blank" rel="noreferrer">{r.title} ↗</a>
+                <p className="text-xs text-muted">{[r.year, r.authors.join(", ")].filter(Boolean).join(" · ")}</p>
+                {r.abstract && <p className="mt-1 text-xs text-ink-2">{r.abstract.slice(0, 260)}{r.abstract.length > 260 ? "…" : ""}</p>}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       {inv.publications.length > 0 && (
         <section className="mt-10" aria-labelledby="pub">
           <h2 id="pub" className="text-xl font-semibold">

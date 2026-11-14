@@ -26,7 +26,7 @@ const T = {
     nodata: "no data",
     g1: "1 g",
     g1n: "Earth: reference",
-    gravNote: "Between 0 g and 1 g there are no experimental data; FM2 and LUCI are expected to provide the first.",
+    gravNote: "Between 0 g and 1 g PSI holds no data; LUCI reported first lunar-gravity burns in 2025 (NTRS) and FM2 will test on the Moon.",
   },
   es: {
     flexTitle: "Cómo terminaron los 274 ensayos de FLEX con gotas",
@@ -48,7 +48,7 @@ const T = {
     nodata: "sin datos",
     g1: "1 g",
     g1n: "Tierra: referencia",
-    gravNote: "Entre 0 g y 1 g no hay datos experimentales; se espera que FM2 y LUCI aporten los primeros.",
+    gravNote: "Entre 0 g y 1 g PSI no tiene datos; LUCI comunicó en 2025 las primeras combustiones en gravedad lunar (NTRS) y FM2 ensayará en la Luna.",
   },
 };
 

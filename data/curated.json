@@ -32,6 +32,10 @@
     "GLENN": {
       "label": "NASA Glenn: Combustion Science",
       "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+    },
+    "NTRS": {
+      "label": "NASA Technical Reports Server (NTRS)",
+      "url": "https://ntrs.nasa.gov"
     }
   },
   "investigations": [
@@ -1096,15 +1100,15 @@
       "acronym": "FM2",
       "name": "Flammability of Materials on the Moon",
       "gravity": "1/6 g (Moon)",
-      "note": "The first combustion experiment on another planetary body; burns materials such as SIBAL in air.",
-      "src": "GLENN"
+      "note": "A robotic combustion chamber for the lunar surface on CLPS mission CP-21, planned to launch in late 2026. It will test 21% O2 at 14.7 psia and 34% O2 at 8.2 psia on SIBAL fabric and acrylic rods burned upward and downward. SIBAL burns only downward in lunar gravity in air but extinguishes at once in 1 g (NASA NTRS 20240015307).",
+      "src": "NTRS"
     },
     {
       "acronym": "LUCI",
-      "name": "Lunar-g Combustion Investigation",
-      "gravity": "lunar partial gravity",
-      "note": "Will measure combustion in partial gravity. No data yet.",
-      "src": "CHALLENGE"
+      "name": "Lunar Combustion Investigation",
+      "gravity": "lunar gravity (1/6 g) by centrifugal acceleration",
+      "note": "Flew on a spinning Blue Origin New Shepard sounding rocket (11 RPM, 1.22 m effective radius). First-ever extended (>25 s) burns in simulated lunar gravity: a cotton-fiberglass fabric and a 4 mm PMMA rod burned together in air at normal pressure for over 2.5 minutes, with oxygen falling until extinction. Results reported in 2025 (NASA NTRS 20250010653); not in PSI.",
+      "src": "NTRS"
     },
     {
       "acronym": "SoFIE",

@@ -12,7 +12,7 @@ const T = {
       { h: "1. On Earth, hot air rises", p: "Gravity makes hot gas lighter than cold gas, so it floats up and pulls fresh air in underneath. That stream shapes a flame into the familiar yellow teardrop." },
       { h: "2. In microgravity, nothing rises", p: "On the ISS there is no up. Without that flow, oxygen reaches the flame only by slowly drifting in (diffusion), so a flame tends to become a small, dim, blue sphere." },
       { h: "3. Weak flames can still be dangerous", p: "A flame that burns slowly and quietly can be hard to see and may behave differently when oxygen or pressure change. This is why spacecraft fire detection and suppression need their own research." },
-      { h: "4. The Moon is a gap in the data", p: "Lunar gravity is about one sixth of Earth's. NASA has no experimental flame data at partial gravity yet; missions such as LUCI and FM2 are planned to measure it. JaPax shows what exists and marks what is missing." },
+      { h: "4. The Moon is a gap in the data", p: "Lunar gravity is about one sixth of Earth's. The PSI archive has no partial-gravity flame data. LUCI (a spinning sounding rocket) reported the first extended lunar-gravity burns in 2025 (NASA NTRS), and FM2 will burn materials on the Moon. JaPax shows what exists and marks what is missing." },
     ],
     pathH: "Where to go next",
     path: [
@@ -43,7 +43,7 @@ const T = {
       { h: "1. En la Tierra, el aire caliente sube", p: "La gravedad hace que el gas caliente pese menos que el frío, así que flota hacia arriba y atrae aire fresco por debajo. Ese flujo da a la llama su típica forma de gota amarilla." },
       { h: "2. En microgravedad, nada sube", p: "En la ISS no existe el arriba. Sin ese flujo, el oxígeno llega a la llama solo por difusión lenta, y la llama tiende a ser una esfera pequeña, tenue y azul." },
       { h: "3. Una llama débil también es peligrosa", p: "Una llama lenta y silenciosa es difícil de ver y puede comportarse distinto al cambiar el oxígeno o la presión. Por eso detectar y apagar fuegos en una nave requiere investigación propia." },
-      { h: "4. La Luna es un hueco en los datos", p: "La gravedad lunar es aproximadamente un sexto de la terrestre. La NASA aún no tiene datos experimentales de llamas en gravedad parcial; misiones como LUCI y FM2 están planeadas para medirlo. JaPax muestra lo que existe y marca lo que falta." },
+      { h: "4. La Luna es un hueco en los datos", p: "La gravedad lunar es aproximadamente un sexto de la terrestre. El archivo PSI no tiene datos de llamas en gravedad parcial. LUCI (un cohete suborbital giratorio) comunicó en 2025 las primeras combustiones prolongadas en gravedad lunar (NASA NTRS), y FM2 quemará materiales en la Luna. JaPax muestra lo que existe y marca lo que falta." },
     ],
     pathH: "Siguiente paso",
     path: [

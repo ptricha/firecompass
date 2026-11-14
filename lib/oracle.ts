@@ -100,7 +100,7 @@ function facts(topic: Topic, lang: Lang): KeyFact[] {
     case 'gap':
       return [
         { label: L(lang, 'Partial-gravity data sets', 'Conjuntos de datos de gravedad parcial'), value: '0', note: L(lang, 'in PSI today', 'hoy en PSI') },
-        { label: L(lang, 'Lunar gravity', 'Gravedad lunar'), value: '1/6 g', note: L(lang, 'FM2 and LUCI will measure it', 'FM2 y LUCI la medirán') },
+        { label: L(lang, 'Lunar gravity', 'Gravedad lunar'), value: '1/6 g', note: L(lang, 'LUCI: first results 2025 (NTRS); FM2 on the Moon', 'LUCI: primeros resultados 2025 (NTRS); FM2 en la Luna') },
         { label: L(lang, 'Experiments on the way', 'Experimentos en camino'), value: '4', note: 'FM2 · LUCI · SoFIE · FLARE' },
       ]
     case 'incidents':
@@ -162,11 +162,11 @@ function narrative(topic: Topic, lang: Lang): { headline: string; body: string }
       }
     case 'gap':
       return {
-        headline: L(lang, 'There is no partial-gravity fire data yet', 'Todavía no hay datos de fuego en gravedad parcial'),
+        headline: L(lang, 'PSI has no partial-gravity fire data', 'PSI no tiene datos de fuego en gravedad parcial'),
         body: L(
           lang,
-          'NASA’s PSI archive holds combustion data from microgravity and from 1 g, but none from the Moon’s 1/6 g or Mars’s gravity. FM2 will burn materials on the Moon, LUCI will measure partial-gravity combustion, SoFIE will test whether the 1-g flame test is conservative, and FLARE will relate ground limits to microgravity. Until then, microgravity and 1-g results bound what can happen in between, and an electric field in the ACME E-FIELD experiment is used to mimic partial gravity.',
-          'El archivo PSI de NASA contiene datos de combustión en microgravedad y a 1 g, pero ninguno con el 1/6 g de la Luna ni con la gravedad de Marte. FM2 quemará materiales en la Luna, LUCI medirá la combustión en gravedad parcial, SoFIE comprobará si el test de llama de 1 g es conservador y FLARE relacionará los límites de tierra con la microgravedad. Hasta entonces, los resultados de microgravedad y de 1 g acotan lo que puede pasar entre medias, y en el experimento ACME E-FIELD se usa un campo eléctrico para imitar la gravedad parcial.',
+          'NASA’s PSI archive holds combustion data from microgravity and from 1 g, but none from the Moon’s 1/6 g or Mars’s gravity. LUCI, a spinning New Shepard sounding rocket, reported the first extended (>25 s) burns in simulated lunar gravity in 2025 (NASA NTRS 20250010653); FM2 will burn materials on the Moon (planned late 2026), SoFIE will test whether the 1-g flame test is conservative, and FLARE will relate ground limits to microgravity. Until then, microgravity and 1-g results bound what can happen in between, and an electric field in the ACME E-FIELD experiment is used to mimic partial gravity.',
+          'El archivo PSI de NASA contiene datos de combustión en microgravedad y a 1 g, pero ninguno con el 1/6 g de la Luna ni con la gravedad de Marte. LUCI, un cohete suborbital New Shepard giratorio, comunicó en 2025 las primeras combustiones prolongadas (>25 s) en gravedad lunar simulada (NASA NTRS 20250010653); FM2 quemará materiales en la Luna (previsto a finales de 2026), SoFIE comprobará si el test de llama de 1 g es conservador y FLARE relacionará los límites de tierra con la microgravedad. Hasta entonces, los resultados de microgravedad y de 1 g acotan lo que puede pasar entre medias, y en el experimento ACME E-FIELD se usa un campo eléctrico para imitar la gravedad parcial.',
         ),
       }
     case 'incidents':

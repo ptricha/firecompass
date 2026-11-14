@@ -2,7 +2,10 @@
   "investigations": {
     "PSI-20": {
       "fuelPhase": "gas (emula sólidos)",
-      "fuels": ["CH4/N2", "C2H4/N2 en quemadores porosos de 25 y 50 mm"],
+      "fuels": [
+        "CH4/N2",
+        "C2H4/N2 en quemadores porosos de 25 y 50 mm"
+      ],
       "note": "Atmósferas de hábitat consideradas por NASA, según los objetivos de PSI.",
       "summary": "Quemador de gas que emula cómo arden los materiales sólidos en una atmósfera en reposo, ensayado en las atmósferas previstas para naves y bases.",
       "findings": [
@@ -15,9 +18,20 @@
     },
     "PSI-26": {
       "fuelPhase": "sólido",
-      "fuels": ["SIBAL (algodón-fibra de vidrio)", "Nomex", "Ultem", "PMMA (muestras planas y esferas de 1 y 2 cm)", "fibra de vidrio saturada de cera", "velas de parafina y cera japonesa"],
+      "fuels": [
+        "SIBAL (algodón-fibra de vidrio)",
+        "Nomex",
+        "Ultem",
+        "PMMA (muestras planas y esferas de 1 y 2 cm)",
+        "fibra de vidrio saturada de cera",
+        "velas de parafina y cera japonesa"
+      ],
       "note": "41 muestras y 89 puntos de ensayo. El rango de O2 no figura en la ficha.",
-      "sensors": ["radiómetro (salida de la llama)", "anemómetro (flujo real)", "cámaras de vídeo y fotografía"],
+      "sensors": [
+        "radiómetro (salida de la llama)",
+        "anemómetro (flujo real)",
+        "cámaras de vídeo y fotografía"
+      ],
       "summary": "Quema muestras sólidas en un conducto de flujo controlado dentro del Microgravity Science Glovebox y apaga la llama aumentando un flujo de nitrógeno.",
       "findings": [
         "Resultados recientes de BASS indican que NASA-STD-6001 Test 1 NO es conservadora: los materiales pueden arder con menos oxígeno en microgravedad que en la Tierra.",
@@ -30,9 +44,13 @@
     },
     "PSI-25": {
       "fuelPhase": "sólido",
-      "fuels": ["varillas, secciones esféricas, planchas, películas y telas (geometrías más gruesas y realistas)"],
+      "fuels": [
+        "varillas, secciones esféricas, planchas, películas y telas (geometrías más gruesas y realistas)"
+      ],
       "note": "O2 es el rango MEDIDO de O2 inicial (13.6–22.2 % en volumen) en los 129 ensayos de la tabla PSI-25. Variables primarias según PSI: velocidad y dirección del flujo, oxígeno ambiente (por dilución con nitrógeno) y geometría de la muestra. Las unidades del flujo de aire no figuran en la tabla.",
-      "sensors": ["vídeo (296 vídeos en PSI)"],
+      "sensors": [
+        "vídeo (296 vídeos en PSI)"
+      ],
       "summary": "Continuación de BASS con combustibles más gruesos y realistas; tiende un puente entre el método Test 1 de 1 g, las pruebas en tierra y la inflamabilidad real de materiales en microgravedad.",
       "findings": [
         "Objetivo: estudiar ignición, crecimiento de llama, propagación y límites de extinción de combustibles sólidos en flujos forzados de baja velocidad, y dar datos preliminares a los investigadores de SoFIE.",
@@ -45,9 +63,16 @@
     },
     "PSI-69": {
       "fuelPhase": "líquido (gotas)",
-      "fuels": ["heptano", "metanol"],
+      "fuels": [
+        "heptano",
+        "metanol"
+      ],
       "note": "O2 y presión son rangos MEDIDOS en los 274 ensayos de la tabla PSI-69 (las presiones se agrupan en 0.70, 1.0, 2.0, 2.7 y 3.05 atm). La ficha planeaba O2 0.10–0.50 y 0.5–1.0 atm. El diluyente principal es N2, con unos pocos ensayos con He.",
-      "sensors": ["medidas resueltas de la velocidad de quemado de la gota", "radiación de la llama", "concentración y temperatura del hollín"],
+      "sensors": [
+        "medidas resueltas de la velocidad de quemado de la gota",
+        "radiación de la llama",
+        "concentración y temperatura del hollín"
+      ],
       "summary": "Quema gotas de combustible en mezclas de oxígeno y diluyentes para mapear límites de inflamabilidad y la eficacia de supresores inertes (CO2, He).",
       "findings": [
         "El límite de inflamabilidad es menor en gravedad reducida; los estándares terrestres de supresores de gas inerte no ofrecen el mismo margen de seguridad en baja gravedad.",
@@ -61,7 +86,12 @@
     },
     "PSI-68": {
       "fuelPhase": "líquido (gotas)",
-      "fuels": ["combustibles puros", "mezclas de combustibles", "sustitutos de combustibles reales", "pares de gotas"],
+      "fuels": [
+        "combustibles puros",
+        "mezclas de combustibles",
+        "sustitutos de combustibles reales",
+        "pares de gotas"
+      ],
       "note": "30 a 60 ensayos por grupo (puros, mezclas, flujo convectivo, pares de gotas). La guía muestra etanol al 30% de O2 y 2.4 atm en un ejemplo de hollín.",
       "summary": "Sucesor de FLEX: estudia flujos convectivos lentos, interacciones entre gotas y combustibles más complejos.",
       "findings": [
@@ -73,7 +103,10 @@
     },
     "PSI-39": {
       "fuelPhase": "líquido (gotas)",
-      "fuels": ["n-dodecano", "mezclas n-dodecano / iso-dodecano"],
+      "fuels": [
+        "n-dodecano",
+        "mezclas n-dodecano / iso-dodecano"
+      ],
       "note": "Incluye el efecto de la dilución con helio sobre las llamas frías.",
       "summary": "Estudia llamas frías (combustión a baja temperatura) en gotas de combustible en función de la presión, el tamaño de la gota y la dilución con helio.",
       "findings": [
@@ -86,7 +119,11 @@
     },
     "PSI-159": {
       "fuelPhase": "gas",
-      "fuels": ["propano", "n-butano", "n-pentano"],
+      "fuels": [
+        "propano",
+        "n-butano",
+        "n-pentano"
+      ],
       "note": "El enunciado del reto indica que una mezcla O2-N2 de hasta 85% de O2 fluía desde un quemador esférico y creaba una llama de dentro hacia fuera.",
       "summary": "Determina las condiciones en que existen llamas de difusión frías en quemadores esféricos porosos; los ensayos de microgravedad con mayor concentración de oxígeno.",
       "findings": [
@@ -99,19 +136,29 @@
     },
     "PSI-10": {
       "fuelPhase": "gas",
-      "fuels": ["etileno (C2H4)", "metano (CH4)"],
+      "fuels": [
+        "etileno (C2H4)",
+        "metano (CH4)"
+      ],
       "note": "Límites de inicio de hollín en función del caudal, Zst, cantidad de inerte y presión.",
       "summary": "Mide el inicio del hollín y la estructura de llamas de difusión esféricas en microgravedad.",
-      "findings": ["Hipótesis: las llamas de difusión esféricas de microgravedad se extinguen cuando la temperatura máxima baja por primera vez de unos 1130 K."],
+      "findings": [
+        "Hipótesis: las llamas de difusión esféricas de microgravedad se extinguen cuando la temperatura máxima baja por primera vez de unos 1130 K."
+      ],
       "earthApplication": "Ayuda a mejorar la eficiencia y a reducir las emisiones de combustores terrestres.",
       "status": "completado"
     },
     "PSI-21": {
       "fuelPhase": "gas",
-      "fuels": ["metano", "etileno"],
+      "fuels": [
+        "metano",
+        "etileno"
+      ],
       "note": "Llamas de difusión de coflujo débil en función de la velocidad y la dilución del combustible.",
       "summary": "Datos de referencia sobre llamas de difusión en coflujo para probar modelos computacionales en los extremos de dilución del combustible.",
-      "findings": ["Caracteriza la forma de la llama, la altura de despegue, las temperaturas y los límites de extinción, y la tendencia a producir hollín con tiempos de residencia largos."],
+      "findings": [
+        "Caracteriza la forma de la llama, la altura de despegue, las temperaturas y los límites de extinción, y la tendencia a producir hollín con tiempos de residencia largos."
+      ],
       "earthApplication": "Las llamas de difusión son el tipo de llama de la mayoría de los dispositivos de combustión prácticos.",
       "status": "completado"
     },
@@ -128,7 +175,14 @@
     "PSI-98": {
       "fuelPhase": "sólido (material de nave)",
       "note": "Experimento no tripulado a bordo de la nave de carga Cygnus.",
-      "sensors": ["oxígeno", "dióxido de carbono", "calor", "presión", "crecimiento de la llama", "dos cámaras de vídeo"],
+      "sensors": [
+        "oxígeno",
+        "dióxido de carbono",
+        "calor",
+        "presión",
+        "crecimiento de la llama",
+        "dos cámaras de vídeo"
+      ],
       "summary": "Un incendio a gran escala provocado a propósito a bordo de una nave de carga no tripulada para estudiar cómo crece un fuego realista en baja gravedad.",
       "findings": [
         "Determina límites de inflamabilidad en microgravedad de varios materiales de nave y ayuda a validar los criterios de selección de materiales de NASA.",
@@ -142,21 +196,35 @@
       "fuelPhase": "sólido (material de nave)",
       "note": "Mismos objetivos que Saffire-I.",
       "summary": "Segundo vuelo Saffire, en el módulo de carga presurizado de Cygnus.",
-      "findings": ["Mismos objetivos: rapidez de crecimiento de un fuego a gran escala en baja gravedad y límites de inflamabilidad frente al test de selección de NASA en gravedad normal."],
+      "findings": [
+        "Mismos objetivos: rapidez de crecimiento de un fuego a gran escala en baja gravedad y límites de inflamabilidad frente al test de selección de NASA en gravedad normal."
+      ],
       "status": "completado"
     },
     "PSI-100": {
       "fuelPhase": "sólido (material de nave)",
       "note": "Mismos objetivos que Saffire-I.",
       "summary": "Tercer vuelo Saffire, con abundante instrumentación y datos en PSI.",
-      "findings": ["Mismos objetivos que Saffire-I: crecimiento de fuego a gran escala y límites de inflamabilidad."],
+      "findings": [
+        "Mismos objetivos que Saffire-I: crecimiento de fuego a gran escala y límites de inflamabilidad."
+      ],
       "status": "completado"
     },
     "PSI-102": {
       "fuelPhase": "aerosol (humo)",
-      "fuels": ["Teflón", "Kapton", "caucho de silicona", "celulosa", "ftalato de dibutilo en una mecha porosa"],
+      "fuels": [
+        "Teflón",
+        "Kapton",
+        "caucho de silicona",
+        "celulosa",
+        "ftalato de dibutilo en una mecha porosa"
+      ],
       "note": "30 muestras (6 por material) con distintos caudales de aire, temperaturas de calentamiento y tiempos de envejecimiento del humo. Expedición 15 de la ISS.",
-      "sensors": ["contadores de partículas de varios rangos de tamaño", "dispersión de luz", "detectores de ionización y fotoeléctricos evaluados"],
+      "sensors": [
+        "contadores de partículas de varios rangos de tamaño",
+        "dispersión de luz",
+        "detectores de ionización y fotoeléctricos evaluados"
+      ],
       "summary": "Mide el tamaño y la distribución de las partículas del humo de materiales de nave y evalúa los detectores de humo de ionización (transbordador) y fotoeléctricos (ISS).",
       "findings": [
         "Todas las muestras produjeron cantidades significativas de partículas submicrónicas, mejor detectadas por un detector de ionización; un detector de dispersión de luz funcionaría muy bien en la mayoría de los casos.",
@@ -170,7 +238,9 @@
     "PSI-101": {
       "fuelPhase": "aerosol (humo)",
       "note": "Reenvío de SAME.",
-      "sensors": ["equipo comparativo de diagnóstico de hollín"],
+      "sensors": [
+        "equipo comparativo de diagnóstico de hollín"
+      ],
       "summary": "Repite SAME y corrige un problema: las rejillas TEM volvieron contaminadas e inutilizables.",
       "findings": [
         "Cuantifica el tamaño que alcanzan las gotas de humo líquido en baja gravedad y lo relaciona con las condiciones de generación y transporte del humo.",
@@ -181,9 +251,13 @@
     },
     "PSI-47": {
       "fuelPhase": "aerosol (polvo)",
-      "fuels": ["polvo y aerosoles"],
+      "fuels": [
+        "polvo y aerosoles"
+      ],
       "note": "Reduce el riesgo de SAME comprobando un contador de partículas P-Trak modificado.",
-      "sensors": ["TSI P-Trak modificado (condensación de isopropanol y conteo láser)"],
+      "sensors": [
+        "TSI P-Trak modificado (condensación de isopropanol y conteo láser)"
+      ],
       "summary": "Comprueba que un contador de partículas P-Trak modificado funciona en microgravedad; el mismo instrumento de SAME se usó para detectar polvo.",
       "findings": [
         "Se temía que el P-Trak fallara en microgravedad (obstrucción por isopropanol o la dinámica del flujo en la cámara óptica).",
@@ -195,11 +269,20 @@
     },
     "PSI-107": {
       "fuelPhase": "gas",
-      "fuels": ["etileno", "propano", "propileno (mezclas)"],
+      "fuels": [
+        "etileno",
+        "propano",
+        "propileno (mezclas)"
+      ],
       "note": "Su conducto de flujo con ventilador se reutiliza en BASS, BASS-II y SLICE.",
-      "sensors": ["imágenes de cámara", "vídeo (18 vídeos en PSI)"],
+      "sensors": [
+        "imágenes de cámara",
+        "vídeo (18 vídeos en PSI)"
+      ],
       "summary": "Estudia el punto de humo y la longitud luminosa de llamas de chorro en coflujo, con el conducto que reutilizan BASS y SLICE.",
-      "findings": ["Cuantifica la tendencia a producir hollín de distintos combustibles y el efecto del diámetro del quemador y de la velocidad del coflujo."],
+      "findings": [
+        "Cuantifica la tendencia a producir hollín de distintos combustibles y el efecto del diámetro del quemador y de la velocidad del coflujo."
+      ],
       "spaceApplication": "Ayuda a diseñar entornos de nave más seguros.",
       "status": "completado"
     },
@@ -207,7 +290,9 @@
       "fuelPhase": "gas",
       "note": "Usa el hardware de SPICE. Operó en 2012 según la guía.",
       "summary": "Estructura y despegue (lift-off) de llamas de difusión laminares en microgravedad.",
-      "findings": ["Determina los límites de velocidad de despegue para distintos combustibles y diámetros de quemador, y el efecto de la dilución con nitrógeno."],
+      "findings": [
+        "Determina los límites de velocidad de despegue para distintos combustibles y diámetros de quemador, y el efecto de la dilución con nitrógeno."
+      ],
       "earthApplication": "Modelos numéricos que mejoran la eficiencia y reducen las emisiones.",
       "status": "completado"
     },
@@ -215,33 +300,84 @@
       "acronym": "Análisis de datos SPICE",
       "fuelPhase": "gas",
       "note": "Investigación en tierra sobre datos de SPICE; más de 1600 imágenes DSLR.",
-      "sensors": ["más de 1600 imágenes DSLR analizadas"],
+      "sensors": [
+        "más de 1600 imágenes DSLR analizadas"
+      ],
       "summary": "Análisis computacional y experimental de los datos de SPICE para explicar la gran discrepancia de formación de hollín entre 1 g y 0 g.",
-      "findings": ["Hipótesis: en microgravedad las llamas son más largas y difusas, con menor temperatura y mayor concentración de hollín que en gravedad normal."],
+      "findings": [
+        "Hipótesis: en microgravedad las llamas son más largas y difusas, con menor temperatura y mayor concentración de hollín que en gravedad normal."
+      ],
       "status": "análisis en tierra"
     }
   },
   "upcoming": {
-    "FM2": { "gravity": "1/6 g (Luna)", "note": "El primer experimento de combustión en otro cuerpo planetario; quema materiales como SIBAL en aire." },
-    "LUCI": { "gravity": "gravedad parcial lunar", "note": "Medirá la combustión en gravedad parcial. Aún no hay datos." },
-    "SoFIE": { "gravity": "microgravedad (ISS)", "note": "Comprobará si el test de llama de 1 g de NASA-STD-6001 es conservador en baja gravedad." },
-    "FLARE": { "gravity": "gravedad normal y microgravedad", "note": "Un método para estimar límites de inflamabilidad en microgravedad a partir de datos de tierra; un proyecto con JAXA, ESA, CNES y DLR." }
+    "FM2": {
+      "gravity": "1/6 g (Luna)",
+      "note": "Una cámara de combustión robótica para la superficie lunar en la misión CLPS CP-21, prevista para finales de 2026. Ensayará 21% de O2 a 14,7 psia y 34% de O2 a 8,2 psia con tejido SIBAL y varillas de acrílico quemadas hacia arriba y hacia abajo. El SIBAL arde solo hacia abajo en gravedad lunar en aire, pero se apaga de inmediato a 1 g (NASA NTRS 20240015307)."
+    },
+    "LUCI": {
+      "gravity": "gravedad lunar (1/6 g) por aceleración centrífuga",
+      "note": "Voló en un cohete suborbital Blue Origin New Shepard giratorio (11 RPM, radio efectivo 1,22 m). Primeras combustiones prolongadas (>25 s) en gravedad lunar simulada: un tejido de algodón-fibra de vidrio y una varilla de PMMA de 4 mm ardiendo juntos en aire a presión normal durante más de 2,5 minutos, con el oxígeno bajando hasta la extinción. Resultados comunicados en 2025 (NASA NTRS 20250010653); no están en PSI."
+    },
+    "SoFIE": {
+      "gravity": "microgravedad (ISS)",
+      "note": "Comprobará si el test de llama de 1 g de NASA-STD-6001 es conservador en baja gravedad."
+    },
+    "FLARE": {
+      "gravity": "gravedad normal y microgravedad",
+      "note": "Un método para estimar límites de inflamabilidad en microgravedad a partir de datos de tierra; un proyecto con JAXA, ESA, CNES y DLR."
+    }
   },
   "environments": {
-    "earth": { "name": "Tierra" },
-    "iss": { "name": "ISS", "note": "Condiciones de cabina estándar; microgravedad." },
-    "moon-habitat": { "name": "Base lunar (hábitat)", "note": "30% de O2 o más a 10.2 psi o menos (enunciado del reto). Gravedad lunar: sin datos experimentales." },
-    "suit": { "name": "Traje espacial" }
+    "earth": {
+      "name": "Tierra"
+    },
+    "iss": {
+      "name": "ISS",
+      "note": "Condiciones de cabina estándar; microgravedad."
+    },
+    "moon-habitat": {
+      "name": "Base lunar (hábitat)",
+      "note": "30% de O2 o más a 10.2 psi o menos (enunciado del reto). Gravedad lunar: sin datos experimentales."
+    },
+    "suit": {
+      "name": "Traje espacial"
+    }
   },
   "incidents": {
-    "Apollo 1": { "year": 1967, "text": "Un incendio relámpago recorrió el módulo de mando durante una prueba previa al lanzamiento, en una cabina con 100% de oxígeno. Murieron Grissom, White y Chaffee. La escotilla de tres piezas tardaba unos 90 segundos en abrirse.", "lesson": "Una escotilla unificada que se abre en 3 segundos, materiales combustibles muy restringidos y trajes ignífugos." },
-    "Apollo 13": { "year": 1970, "text": "El tanque de oxígeno nº 2 explotó camino de la Luna tras sobrecalentarse sus calentadores y degradar el aislante de teflón; el voltaje de los calentadores se había subido de 28 a 65 V CC sin actualizar los termostatos.", "lesson": "Rediseño del sistema de oxígeno: un tercer tanque, termostatos mejorados, sin ventiladores de agitación y cableado revestido de acero inoxidable." },
-    "Mir": { "year": 1997, "text": "El 24 de febrero ardió un cartucho de generador de oxígeno de combustible sólido en el módulo Kvant-1. La llama duró varios minutos y la tripulación la combatió con extintores de espuma.", "lesson": "Cambios en la preparación de los cartuchos y en el entrenamiento de emergencias; la ISS usa generación de oxígeno redundante y disímil." },
-    "Artemis II": { "year": "Reciente", "text": "Sonó una alarma de humo a unas 80.000 millas de la Tierra, según relató el comandante en el enunciado del reto.", "lesson": "Un recordatorio de por qué importan la detección y la respuesta rápidas lejos de casa." }
+    "Apollo 1": {
+      "year": 1967,
+      "text": "Un incendio relámpago recorrió el módulo de mando durante una prueba previa al lanzamiento, en una cabina con 100% de oxígeno. Murieron Grissom, White y Chaffee. La escotilla de tres piezas tardaba unos 90 segundos en abrirse.",
+      "lesson": "Una escotilla unificada que se abre en 3 segundos, materiales combustibles muy restringidos y trajes ignífugos."
+    },
+    "Apollo 13": {
+      "year": 1970,
+      "text": "El tanque de oxígeno nº 2 explotó camino de la Luna tras sobrecalentarse sus calentadores y degradar el aislante de teflón; el voltaje de los calentadores se había subido de 28 a 65 V CC sin actualizar los termostatos.",
+      "lesson": "Rediseño del sistema de oxígeno: un tercer tanque, termostatos mejorados, sin ventiladores de agitación y cableado revestido de acero inoxidable."
+    },
+    "Mir": {
+      "year": 1997,
+      "text": "El 24 de febrero ardió un cartucho de generador de oxígeno de combustible sólido en el módulo Kvant-1. La llama duró varios minutos y la tripulación la combatió con extintores de espuma.",
+      "lesson": "Cambios en la preparación de los cartuchos y en el entrenamiento de emergencias; la ISS usa generación de oxígeno redundante y disímil."
+    },
+    "Artemis II": {
+      "year": "Reciente",
+      "text": "Sonó una alarma de humo a unas 80.000 millas de la Tierra, según relató el comandante en el enunciado del reto.",
+      "lesson": "Un recordatorio de por qué importan la detección y la respuesta rápidas lejos de casa."
+    }
   },
   "spinoffs": {
-    "Firefighter air tank": { "name": "Depósito de aire para bomberos", "text": "Mochila de 20 lb con 30 minutos de aire a 4.500 psi (13 lb más ligera que los depósitos convencionales), con revestimiento de aluminio envuelto en fibra de vidrio." },
-    "Project FIRES: protective clothing": { "name": "Proyecto FIRES: ropa de protección", "text": "Equipo de protección para bomberos con tejidos ignífugos derivados de materiales de trajes espaciales, probado en 14 cuerpos de bomberos municipales." },
-    "Brunswick Incipient Fire Detector": { "name": "Detector de incendios incipientes Brunswick", "text": "Un detector del transbordador que distingue las partículas de combustión del polvo (menos falsas alarmas) y detecta el fuego antes de la llama y el humo; los sensores pueden conectarse en red para minas." }
+    "Firefighter air tank": {
+      "name": "Depósito de aire para bomberos",
+      "text": "Mochila de 20 lb con 30 minutos de aire a 4.500 psi (13 lb más ligera que los depósitos convencionales), con revestimiento de aluminio envuelto en fibra de vidrio."
+    },
+    "Project FIRES: protective clothing": {
+      "name": "Proyecto FIRES: ropa de protección",
+      "text": "Equipo de protección para bomberos con tejidos ignífugos derivados de materiales de trajes espaciales, probado en 14 cuerpos de bomberos municipales."
+    },
+    "Brunswick Incipient Fire Detector": {
+      "name": "Detector de incendios incipientes Brunswick",
+      "text": "Un detector del transbordador que distingue las partículas de combustión del polvo (menos falsas alarmas) y detecta el fuego antes de la llama y el humo; los sensores pueden conectarse en red para minas."
+    }
   }
 }

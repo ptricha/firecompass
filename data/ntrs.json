@@ -1,0 +1,1084 @@
+{
+ "PSI-10": [
+  {
+   "id": "20010074032",
+   "title": "Effects of Flame Structure and Hydrodynamics on Soot Particle Inception and Flame Extinction in Diffusion Flames",
+   "year": "2001",
+   "authors": [
+    "Axelbaum, R. L.",
+    "Chen, R.",
+    "Sunderland, P. B.",
+    "Urban, D. L."
+   ],
+   "abstract": "This paper summarizes recent studies of the effects of stoichiometric mixture fraction (structure) and hydrodynamics on soot particle inception and flame extinction in diffusion flames. Microgravity experiments are uniquely suited for these studies because, unlike normal gravity experiments, they allow structural and hydrodynamic effects to be independently studied. As part of this recent flight definition program, microgravity studies have been performed in the 2.2 second drop tower. Normal gra",
+   "url": "https://ntrs.nasa.gov/citations/20010074032"
+  },
+  {
+   "id": "20050195844",
+   "title": "Flame Design: A Novel Approach Developed to Produce Clean, Efficient Diffusion Flames",
+   "year": "2000",
+   "authors": [
+    "Axelbaum, Richard L.",
+    "Urban, David L.",
+    "Sunderland, Peter B.",
+    "Chao, Beei-Huan"
+   ],
+   "abstract": "Soot formation and flame extinction are vital concerns in the combustion of fossil fuels. In particular, soot is responsible for pollutant emissions, and extinction can cause inefficient or unstable burning. Normal-gravity experiments have demonstrated that flames can be designed to improve both characteristics by redirecting some or all of the nitrogen from the oxidizer into the fuel. Such nitrogen exchange can produce permanently blue flames, which are soot free under all possible flame condit",
+   "url": "https://ntrs.nasa.gov/citations/20050195844"
+  }
+ ],
+ "PSI-20": [
+  {
+   "id": "20170009141",
+   "title": "Emulation of Condensed Fuel Flames Using a Burning Rate Emulator (BRE) in Microgravity",
+   "year": "2017",
+   "authors": [
+    "Markan, A.",
+    "Quintiere, J. G.",
+    "Sunderland, P. B.",
+    "De Ris, J. L."
+   ],
+   "abstract": "The Burning Rate Emulator (BRE) is a gaseous fuel burner developed to emulate the burning of condensed phase fuels. The current study details several tests at the NASA Glenn 5-s drop facility to test the BRE technique in microgravity conditions. The tests are conducted for two burner diameters, 25 mm and 50 mm respectively, with methane and ethylene as the fuels. The ambient pressure, oxygen content and fuel flow rate are additional parameters. The microgravity results exhibit a nominally hemisp",
+   "url": "https://ntrs.nasa.gov/citations/20170009141"
+  },
+  {
+   "id": "20160010073",
+   "title": "A Burning Rate Emulator (BRE) for Study in Microgravity",
+   "year": "2015",
+   "authors": [
+    "Markan, A.",
+    "Sunderland, P. B.",
+    "Quintiere, J. G.",
+    "DeRis, J."
+   ],
+   "abstract": "A gas-fueled burner, the Burning Rate Emulator (BRE), is used to emulate condensed-phase fuel flames. The design has been validated to easily measure the burning behavior of condensed-phase fuels by igniting a controlled stream of gas fuel and diluent. Four properties, including the heat of combustion, the heat of gasification, the surface temperature, and the laminar smoke point, are assumed to be sufficient to define the steady burning rate of a condensed-phase fuel. The heat of gasification o",
+   "url": "https://ntrs.nasa.gov/citations/20160010073"
+  }
+ ],
+ "PSI-21": [
+  {
+   "id": "19990116925",
+   "title": "The Effects of Buoyancy and Dilution on the Structure and Lift-Off of Coflow Laminar Diffusion Flames",
+   "year": "1999",
+   "authors": [
+    "Walsh, Kevin T.",
+    "Long, Marshall B.",
+    "Smooke, Mitchell D."
+   ],
+   "abstract": "The ability to predict the coupled effects of complex transport phenomena with detailed chemical kinetics in diffusion flames is critical in the modeling of turbulent reacting flows and in understanding the processes by which soot formation and radiative transfer take place. In addition, an understanding of those factors that affect flame extinction in diffusion flames is critical in the suppression of fires and in improving engine efficiency. A goal of this work is to bring to microgravity flam",
+   "url": "https://ntrs.nasa.gov/citations/19990116925"
+  }
+ ],
+ "PSI-22": [],
+ "PSI-25": [
+  {
+   "id": "20210011385",
+   "title": "Burning and Suppression of Solids–II  (BASS-II) Summary Report",
+   "year": "2021",
+   "authors": [
+    "Sandra L. Olson",
+    "Paul V. Ferkul",
+    "Subrata Bhattacharjee",
+    "Fletcher J. Miller"
+   ],
+   "abstract": "The Burning and Suppression of Solids (BASS) experiment hardware is a small flow duct that provides containment for small scale burning of solid samples within the Microgravity Science Glovebox (MSG) aboard the International Space Station (ISS). A video camera with a data overlay and a 35-mm still camera record the combustion events. The controls (ignition, fan speed, etc.) are operated by an astronaut while the principal investigator team monitors the experiment from the ground and communicates",
+   "url": "https://ntrs.nasa.gov/citations/20210011385"
+  },
+  {
+   "id": "20170006615",
+   "title": "Mixed Convection Blowoff Limits as a Function of Oxygen Concentration and Upward Forced Stretch Rate for Burning Pmma Rods of Various Sizes",
+   "year": "2017",
+   "authors": [
+    "Marcum, Jeremy W.",
+    "Ferkul, Paul V.",
+    "Olson, Sandra L."
+   ],
+   "abstract": "Normal gravity flame blowoff limits in an axisymmetric pmma rod geometry in upward axial stagnation flow are compared with microgravity Burning and Suppression of Solids II (BASS-II) results recently obtained aboard the International Space Station. This testing utilized the same BASS-II concurrent rod geometry, but with the addition of normal gravity buoyant flow. Cast polymethylmethacrylate (pmma) rods of diameters ranging from 0.635 cm to 3.81 cm were burned at oxygen concentrations ranging fr",
+   "url": "https://ntrs.nasa.gov/citations/20170006615"
+  },
+  {
+   "id": "20160012691",
+   "title": "Correlation of Normal Gravity Mixed Convection Blowoff Limits with Microgravity Forced Flow Blowoff Limits",
+   "year": "2016",
+   "authors": [
+    "Marcum, Jeremy W.",
+    "Olson, Sandra L.",
+    "Ferkul, Paul V."
+   ],
+   "abstract": "The axisymmetric rod geometry in upward axial stagnation flow provides a simple way to measure normal gravity blowoff limits to compare with microgravity Burning and Suppression of Solids - II (BASS-II) results recently obtained aboard the International Space Station. This testing utilized the same BASS-II concurrent rod geometry, but with the addition of normal gravity buoyant flow. Cast polymethylmethacrylate (PMMA) rods of diameters ranging from 0.635 cm to 3.81 cm were burned at oxygen conce",
+   "url": "https://ntrs.nasa.gov/citations/20160012691"
+  },
+  {
+   "id": "20150019858",
+   "title": "Results from On-Board CSA-CP and CDM Sensor Readings During the Burning and Suppression of Solids II (BASS-II) Experiment in the Microgravity Science Glovebox (MSG)",
+   "year": "2015",
+   "authors": [
+    "Olson, Sandra L.",
+    "Ferkul, Paul V.",
+    "Bhattacharjee, Subrata",
+    "Miller, Fletcher J."
+   ],
+   "abstract": "For the first time on ISS, BASS-II utilized MSG working volume dilution with gaseous nitrogen (N2). We developed a perfectly stirred reactor model to determine the N2 flow time and flow rate to obtain the desired reduced oxygen concentration in the working volume for each test. We calibrated the model with CSA-CP oxygen readings offset using the Mass Constituents Analyzer reading of the ISS ambient atmosphere data for that day. This worked out extremely well for operations, and added a new vital",
+   "url": "https://ntrs.nasa.gov/citations/20150019858"
+  },
+  {
+   "id": "20150008962",
+   "title": "Concurrent Flame Growth, Spread and Extinction over Composite Fabric Samples in Low Speed Purely Forced Flow in Microgravity",
+   "year": "2015",
+   "authors": [
+    "Zhao, Xiaoyang",
+    "T'ien, James S.",
+    "Ferkul, Paul V.",
+    "Olson, Sandra L."
+   ],
+   "abstract": "As a part of the NASA BASS and BASS-II experimental projects aboard the International Space Station, flame growth, spread and extinction over a composite cotton-fiberglass fabric blend (referred to as the SIBAL fabric) were studied in low-speed concurrent forced flows. The tests were conducted in a small flow duct within the Microgravity Science Glovebox. The fuel samples measured 1.2 and 2.2 cm wide and 10 cm long. Ambient oxygen was varied from 21% down to 16% and flow speed from 40 cm/s down ",
+   "url": "https://ntrs.nasa.gov/citations/20150008962"
+  },
+  {
+   "id": "20150008961",
+   "title": "Microgravity Flammability of PMMA Rods in Concurrent Flow",
+   "year": "2015",
+   "authors": [
+    "Olson, Sandra L.",
+    "Ferkul, Paul V."
+   ],
+   "abstract": "Microgravity experiments burning cast PMMA cylindrical rods in axial flow have been conducted aboard the International Space Station in the Microgravity Science Glovebox (MSG) facility using the Burning and Suppression of Solids (BASS) flow duct, as part of the BASS-II experiment. Twenty-four concurrent-flow tests were performed, focusing on finding flammability limits as a function of oxygen and flow speed. The oxygen was varied by using gaseous nitrogen to vitiate the working volume of the MSG",
+   "url": "https://ntrs.nasa.gov/citations/20150008961"
+  },
+  {
+   "id": "20160000593",
+   "title": "Combustion of Solids in Microgravity: Results from the BASS-II Experiment",
+   "year": "2014",
+   "authors": [
+    "Ferkul, Paul V.",
+    "Bhattacharjee, Subrata ",
+    "Fernandez-Pello, Carlos",
+    "Miller, Fletcher "
+   ],
+   "abstract": "The Burning and Suppression of Solids-II (BASS-II) experiment was performed on the International Space Station. Microgravity combustion tests burned thin and thick flat samples, acrylic slabs, spheres, and cylinders. The samples were mounted inside a small wind tunnel which could impose air flow speeds up to 53 cms. The wind tunnel was installed in the Microgravity Science Glovebox which supplied power, imaging, and a level of containment. The effects of air flow speed, fuel thickness, fuel preh",
+   "url": "https://ntrs.nasa.gov/citations/20160000593"
+  }
+ ],
+ "PSI-26": [
+  {
+   "id": "20210011385",
+   "title": "Burning and Suppression of Solids–II  (BASS-II) Summary Report",
+   "year": "2021",
+   "authors": [
+    "Sandra L. Olson",
+    "Paul V. Ferkul",
+    "Subrata Bhattacharjee",
+    "Fletcher J. Miller"
+   ],
+   "abstract": "The Burning and Suppression of Solids (BASS) experiment hardware is a small flow duct that provides containment for small scale burning of solid samples within the Microgravity Science Glovebox (MSG) aboard the International Space Station (ISS). A video camera with a data overlay and a 35-mm still camera record the combustion events. The controls (ignition, fan speed, etc.) are operated by an astronaut while the principal investigator team monitors the experiment from the ground and communicates",
+   "url": "https://ntrs.nasa.gov/citations/20210011385"
+  },
+  {
+   "id": "20170006615",
+   "title": "Mixed Convection Blowoff Limits as a Function of Oxygen Concentration and Upward Forced Stretch Rate for Burning Pmma Rods of Various Sizes",
+   "year": "2017",
+   "authors": [
+    "Marcum, Jeremy W.",
+    "Ferkul, Paul V.",
+    "Olson, Sandra L."
+   ],
+   "abstract": "Normal gravity flame blowoff limits in an axisymmetric pmma rod geometry in upward axial stagnation flow are compared with microgravity Burning and Suppression of Solids II (BASS-II) results recently obtained aboard the International Space Station. This testing utilized the same BASS-II concurrent rod geometry, but with the addition of normal gravity buoyant flow. Cast polymethylmethacrylate (pmma) rods of diameters ranging from 0.635 cm to 3.81 cm were burned at oxygen concentrations ranging fr",
+   "url": "https://ntrs.nasa.gov/citations/20170006615"
+  },
+  {
+   "id": "20160012691",
+   "title": "Correlation of Normal Gravity Mixed Convection Blowoff Limits with Microgravity Forced Flow Blowoff Limits",
+   "year": "2016",
+   "authors": [
+    "Marcum, Jeremy W.",
+    "Olson, Sandra L.",
+    "Ferkul, Paul V."
+   ],
+   "abstract": "The axisymmetric rod geometry in upward axial stagnation flow provides a simple way to measure normal gravity blowoff limits to compare with microgravity Burning and Suppression of Solids - II (BASS-II) results recently obtained aboard the International Space Station. This testing utilized the same BASS-II concurrent rod geometry, but with the addition of normal gravity buoyant flow. Cast polymethylmethacrylate (PMMA) rods of diameters ranging from 0.635 cm to 3.81 cm were burned at oxygen conce",
+   "url": "https://ntrs.nasa.gov/citations/20160012691"
+  },
+  {
+   "id": "20150019858",
+   "title": "Results from On-Board CSA-CP and CDM Sensor Readings During the Burning and Suppression of Solids II (BASS-II) Experiment in the Microgravity Science Glovebox (MSG)",
+   "year": "2015",
+   "authors": [
+    "Olson, Sandra L.",
+    "Ferkul, Paul V.",
+    "Bhattacharjee, Subrata",
+    "Miller, Fletcher J."
+   ],
+   "abstract": "For the first time on ISS, BASS-II utilized MSG working volume dilution with gaseous nitrogen (N2). We developed a perfectly stirred reactor model to determine the N2 flow time and flow rate to obtain the desired reduced oxygen concentration in the working volume for each test. We calibrated the model with CSA-CP oxygen readings offset using the Mass Constituents Analyzer reading of the ISS ambient atmosphere data for that day. This worked out extremely well for operations, and added a new vital",
+   "url": "https://ntrs.nasa.gov/citations/20150019858"
+  },
+  {
+   "id": "20150008961",
+   "title": "Microgravity Flammability of PMMA Rods in Concurrent Flow",
+   "year": "2015",
+   "authors": [
+    "Olson, Sandra L.",
+    "Ferkul, Paul V."
+   ],
+   "abstract": "Microgravity experiments burning cast PMMA cylindrical rods in axial flow have been conducted aboard the International Space Station in the Microgravity Science Glovebox (MSG) facility using the Burning and Suppression of Solids (BASS) flow duct, as part of the BASS-II experiment. Twenty-four concurrent-flow tests were performed, focusing on finding flammability limits as a function of oxygen and flow speed. The oxygen was varied by using gaseous nitrogen to vitiate the working volume of the MSG",
+   "url": "https://ntrs.nasa.gov/citations/20150008961"
+  },
+  {
+   "id": "20160000593",
+   "title": "Combustion of Solids in Microgravity: Results from the BASS-II Experiment",
+   "year": "2014",
+   "authors": [
+    "Ferkul, Paul V.",
+    "Bhattacharjee, Subrata ",
+    "Fernandez-Pello, Carlos",
+    "Miller, Fletcher "
+   ],
+   "abstract": "The Burning and Suppression of Solids-II (BASS-II) experiment was performed on the International Space Station. Microgravity combustion tests burned thin and thick flat samples, acrylic slabs, spheres, and cylinders. The samples were mounted inside a small wind tunnel which could impose air flow speeds up to 53 cms. The wind tunnel was installed in the Microgravity Science Glovebox which supplied power, imaging, and a level of containment. The effects of air flow speed, fuel thickness, fuel preh",
+   "url": "https://ntrs.nasa.gov/citations/20160000593"
+  },
+  {
+   "id": "20140011099",
+   "title": "Thickness and Fuel Preheating Effects on Material Flammability in Microgravity from the BASS Experiment",
+   "year": "2013",
+   "authors": [
+    "Ferkul, Paul V.",
+    "Olson, Sandra L.",
+    "Takahashi, Fumiaki",
+    "Endo, Makoto"
+   ],
+   "abstract": "The Burning and Suppression of Solids (BASS) experiment was performed on the International Space Station. Microgravity combustion tests burning thin and thick flat samples, acrylic spheres, and candles were conducted. The samples were mounted inside a small wind tunnel which could impose air flow speeds up to 40 cms. The wind tunnel was installed in the Microgravity Science Glovebox which supplied power, imaging, and a level of containment. The effects of air flow speed, fuel thickness, fuel pre",
+   "url": "https://ntrs.nasa.gov/citations/20140011099"
+  }
+ ],
+ "PSI-39": [],
+ "PSI-47": [],
+ "PSI-60": [],
+ "PSI-68": [
+  {
+   "id": "20150023456",
+   "title": "Detailed Results from the Flame Extinguishment Experiment (FLEX) March 2009 to December 2011",
+   "year": "2015",
+   "authors": [
+    "Dietrich, Daniel L.",
+    "Ferkul, Paul V.",
+    "Bryg, Victoria M.",
+    "Nayagam, M. Vedha"
+   ],
+   "abstract": "The Flame Extinguishment Experiment (FLEX) program is a continuing set of experiments on droplet combustion, performed employing the Multi-User Droplet Combustion Apparatus (MDCA), inside the chamber of the Combustion Integrated Rack (CIR), which is located in the Destiny module of the International Space Station (ISS). This report describes the experimental hardware, the diagnostic equipment, the experimental procedures, and the methods of data analysis for FLEX. It also presents the results of",
+   "url": "https://ntrs.nasa.gov/citations/20150023456"
+  },
+  {
+   "id": "20090014812",
+   "title": "Multi-User Droplet Combustion Apparatus - Flame Extinguishment Experiment",
+   "year": "2009",
+   "authors": [
+    "Williams, Forman A.",
+    "Nayagam, Vedha",
+    "Choi, Mun Y.",
+    "Dryer, Frederick L."
+   ],
+   "abstract": "Multi-User Droplet Combustion Apparatus Flame Extinguishment Experiment (MDCA-FLEX) will assess the effectiveness of fire suppressants in microgravity and quantify the effect of different possible crew exploration atmospheres on fire suppression. The goal of this research is to provide definition and direction for large scale fire suppression tests and selection of the fire suppressant for next generation crew exploration vehicles.",
+   "url": "https://ntrs.nasa.gov/citations/20090014812"
+  },
+  {
+   "id": "20040142357",
+   "title": "Space Experiment Concepts: Cup-Burner Flame Extinguishment",
+   "year": "2004",
+   "authors": [
+    "Takahashi, Fumiaki"
+   ],
+   "abstract": "Space Fire Suppression Processes & Technology. Space experiment concepts of cup-burner flame extinguishment have been conceived to address to the key issues (i.e., organizing questions) in space fire suppression. Cup-burner flame extinguishment experiment can reveal physical and chemical suppression processes and provide agent effectiveness data useful for technology development of space fire suppression systems in various reduced-gravity platforms.",
+   "url": "https://ntrs.nasa.gov/citations/20040142357"
+  }
+ ],
+ "PSI-69": [
+  {
+   "id": "20150023456",
+   "title": "Detailed Results from the Flame Extinguishment Experiment (FLEX) March 2009 to December 2011",
+   "year": "2015",
+   "authors": [
+    "Dietrich, Daniel L.",
+    "Ferkul, Paul V.",
+    "Bryg, Victoria M.",
+    "Nayagam, M. Vedha"
+   ],
+   "abstract": "The Flame Extinguishment Experiment (FLEX) program is a continuing set of experiments on droplet combustion, performed employing the Multi-User Droplet Combustion Apparatus (MDCA), inside the chamber of the Combustion Integrated Rack (CIR), which is located in the Destiny module of the International Space Station (ISS). This report describes the experimental hardware, the diagnostic equipment, the experimental procedures, and the methods of data analysis for FLEX. It also presents the results of",
+   "url": "https://ntrs.nasa.gov/citations/20150023456"
+  },
+  {
+   "id": "20090014812",
+   "title": "Multi-User Droplet Combustion Apparatus - Flame Extinguishment Experiment",
+   "year": "2009",
+   "authors": [
+    "Williams, Forman A.",
+    "Nayagam, Vedha",
+    "Choi, Mun Y.",
+    "Dryer, Frederick L."
+   ],
+   "abstract": "Multi-User Droplet Combustion Apparatus Flame Extinguishment Experiment (MDCA-FLEX) will assess the effectiveness of fire suppressants in microgravity and quantify the effect of different possible crew exploration atmospheres on fire suppression. The goal of this research is to provide definition and direction for large scale fire suppression tests and selection of the fire suppressant for next generation crew exploration vehicles.",
+   "url": "https://ntrs.nasa.gov/citations/20090014812"
+  },
+  {
+   "id": "20040142357",
+   "title": "Space Experiment Concepts: Cup-Burner Flame Extinguishment",
+   "year": "2004",
+   "authors": [
+    "Takahashi, Fumiaki"
+   ],
+   "abstract": "Space Fire Suppression Processes & Technology. Space experiment concepts of cup-burner flame extinguishment have been conceived to address to the key issues (i.e., organizing questions) in space fire suppression. Cup-burner flame extinguishment experiment can reveal physical and chemical suppression processes and provide agent effectiveness data useful for technology development of space fire suppression systems in various reduced-gravity platforms.",
+   "url": "https://ntrs.nasa.gov/citations/20040142357"
+  }
+ ],
+ "PSI-98": [
+  {
+   "id": "20240007488",
+   "title": "Preliminary Results from the Saffire VI Experiment",
+   "year": "2024",
+   "authors": [
+    "David L. Urban",
+    "Gary A. Ruff",
+    "Paul Ferkul",
+    "John Easton"
+   ],
+   "abstract": "The preliminary results are presented for one test of the last flight of the Spacecraft Fire Experiment (Saffire VI) which was conducted on an orbiting Cygnus spacecraft. These experiments directly address the risks associated with our understanding of spacecraft fire behavior at practical length scales and geometries. The lack of this experimental data has forced spacecraft designers to base their designs and safety precautions on 1-g understanding of flame spread, flame self-extinguishment, fi",
+   "url": "https://ntrs.nasa.gov/citations/20240007488"
+  },
+  {
+   "id": "20240002981",
+   "title": "Preliminary Results from the Saffire VI Experiment",
+   "year": "2024",
+   "authors": [
+    "David L Urban",
+    "Gary A Ruff",
+    "Paul Ferkul",
+    "John Easton"
+   ],
+   "abstract": "Preliminary results are presented for one test of the last flight of the Spacecraft Fire Experiment (Saffire VI) which was conducted on an orbiting Cygnus spacecraft. These experiments directly address the risks associated with our understanding of spacecraft fire behavior at practical length scales and geometries. The lack of this experimental data has forced spacecraft designers to base their designs and safety precautions on 1-g understanding of flame spread, flame self-extinguishment, fire d",
+   "url": "https://ntrs.nasa.gov/citations/20240002981"
+  },
+  {
+   "id": "20200000557",
+   "title": "Buoyancy Effects on Concurrent Flame Spread Over Thick PMMA",
+   "year": "2018",
+   "authors": [
+    "Maria Thomsen",
+    "Carlos Fernandez-Pello",
+    "Gary A. Ruff",
+    "David L. Urban"
+   ],
+   "abstract": "The flammability of combustible materials in a spacecraft is important for fire safety applications because the conditions in spacecraft environments differ from those on earth. Experimental testing in space is difficult and expensive. However, reducing buoyancy by decreasing ambient pressure is a possible approach to simulate on-earth the burning behavior inside spacecraft environments. The objective of this work is to determine that possibility by studying the effect of pressure on concurrent ",
+   "url": "https://ntrs.nasa.gov/citations/20200000557"
+  },
+  {
+   "id": "20170000230",
+   "title": "Operation and Development Status of the Spacecraft Fire Experiments (Saffire)",
+   "year": "2016",
+   "authors": [
+    "Ruff, Gary A.",
+    "Urban, David L."
+   ],
+   "abstract": "Since 2012, a series of Spacecraft Fire Experiments (Saffire) have been under development by the Spacecraft Fire Safety Demonstration (SFS Demo) project, funded by NASA's Advanced Exploration Systems Division. The overall objective of this project is to reduce the uncertainty and risk associated with the design of spacecraft fire safety systems for NASA's exploration missions. The approach to achieving this goal has been to define, develop, and conduct experiments that address gaps in spacecraft",
+   "url": "https://ntrs.nasa.gov/citations/20170000230"
+  },
+  {
+   "id": "20170001636",
+   "title": "The Spacecraft Fire Experiment (Saffire) - Objectives, Development and Status",
+   "year": "2016",
+   "authors": [
+    "Schoren, William",
+    "Ruff, Gary A.",
+    "Urban, David L."
+   ],
+   "abstract": "Since 2012, the Spacecraft Fire Experiment (Saffire) has been under development by the Spacecraft Fire Safety Demonstration (SFS Demo) project that is funded by NASA's Advanced Exploration Systems Division in the Human Exploration and Operations Mission Directorate. The overall objective of this project is to reduce the uncertainty and risk associated with the design of spacecraft fire safety systems for NASA's exploration missions. This is accomplished by defining, developing, and conducting ex",
+   "url": "https://ntrs.nasa.gov/citations/20170001636"
+  },
+  {
+   "id": "20170002628",
+   "title": "Operation and Development Status of the Spacecraft Fire Experiment (Saffire)",
+   "year": "2016",
+   "authors": [
+    "Ruff, Gary A.",
+    "Urban, David L."
+   ],
+   "abstract": null,
+   "url": "https://ntrs.nasa.gov/citations/20170002628"
+  },
+  {
+   "id": "20150022123",
+   "title": "Buoyant Effects on the Flammability of Silicone Samples Planned for the Spacecraft Fire Experiment (Saffire)",
+   "year": "2015",
+   "authors": [
+    "Niehaus, Justin ",
+    "Ferkul, Paul V.",
+    "Gokoglu, Suleyman",
+    "Ruff, Gary"
+   ],
+   "abstract": "Flammability experiments on silicone samples were conducted in anticipation of the Spacecraft Fire Experiment (Saffire). The sample geometry was chosen to match the NASA 6001 Test 1 specification, namely 5 cm wide by 30 cm tall. Four thicknesses of silicone (0.25, 0.36, 0.61 and 1.00 mm) were examined. Tests included traditional upward buoyant flame spread using Test 1 procedures, downward opposed flow flame spread, horizontal and angled flame spread, forced flow upward and downward flame spread",
+   "url": "https://ntrs.nasa.gov/citations/20150022123"
+  },
+  {
+   "id": "20150022421",
+   "title": "Buoyant Effects on the Flammability of Silicone Samples Planned for the Spacecraft Fire Experiment (Saffire)",
+   "year": "2015",
+   "authors": [
+    "Niehaus, Justin E.",
+    "Ferkul, Paul V.",
+    "Gokoglu, Suleyman A.",
+    "Ruff, Gary A."
+   ],
+   "abstract": "Flammability experiments on silicone samples were conducted in anticipation of the Spacecraft Fire Experiment (Saffire). The sample geometry was chosen to match the NASA 6001 Test 1 specification, namely 5 cm wide by 30 cm tall. Four thicknesses of silicone (0.25, 0.36, 0.61 and 1.00 mm) were examined. Tests included traditional upward buoyant flame spread using Test 1 procedures, downward opposed-flow flame spread, horizontal and angled flame spread, and forced-flow upward and downward flame sp",
+   "url": "https://ntrs.nasa.gov/citations/20150022421"
+  },
+  {
+   "id": "20150000894",
+   "title": "Large-Scale Spacecraft Fire Safety Tests",
+   "year": "2014",
+   "authors": [
+    "Urban, David",
+    "Ruff, Gary A.",
+    "Ferkul, Paul V.",
+    "Olson, Sandra"
+   ],
+   "abstract": "An international collaborative program is underway to address open issues in spacecraft fire safety. Because of limited access to long-term low-gravity conditions and the small volume generally allotted for these experiments, there have been relatively few experiments that directly study spacecraft fire safety under low-gravity conditions. Furthermore, none of these experiments have studied sample sizes and environment conditions typical of those expected in a spacecraft fire. The major constrai",
+   "url": "https://ntrs.nasa.gov/citations/20150000894"
+  },
+  {
+   "id": "20140006584",
+   "title": "Unmanned Vehicle Material Flammability Test",
+   "year": "2013",
+   "authors": [
+    "Urban, David",
+    "Ruff, Gary A.",
+    "Fernandez-Pello, A. Carlos",
+    "T’ien, James S."
+   ],
+   "abstract": "Microgravity combustion phenomena have been an active area of research for the past 3 decades however, there have been very few experiments directly studying spacecraft fire safety under low-gravity conditions. Furthermore, none of these experiments have studied sample and environment sizes typical of those expected in a spacecraft fire. All previous experiments have been limited to samples of the order of 10 cm in length and width or smaller. Terrestrial fire safety standards for all other habi",
+   "url": "https://ntrs.nasa.gov/citations/20140006584"
+  }
+ ],
+ "PSI-99": [
+  {
+   "id": "20240007488",
+   "title": "Preliminary Results from the Saffire VI Experiment",
+   "year": "2024",
+   "authors": [
+    "David L. Urban",
+    "Gary A. Ruff",
+    "Paul Ferkul",
+    "John Easton"
+   ],
+   "abstract": "The preliminary results are presented for one test of the last flight of the Spacecraft Fire Experiment (Saffire VI) which was conducted on an orbiting Cygnus spacecraft. These experiments directly address the risks associated with our understanding of spacecraft fire behavior at practical length scales and geometries. The lack of this experimental data has forced spacecraft designers to base their designs and safety precautions on 1-g understanding of flame spread, flame self-extinguishment, fi",
+   "url": "https://ntrs.nasa.gov/citations/20240007488"
+  },
+  {
+   "id": "20240002981",
+   "title": "Preliminary Results from the Saffire VI Experiment",
+   "year": "2024",
+   "authors": [
+    "David L Urban",
+    "Gary A Ruff",
+    "Paul Ferkul",
+    "John Easton"
+   ],
+   "abstract": "Preliminary results are presented for one test of the last flight of the Spacecraft Fire Experiment (Saffire VI) which was conducted on an orbiting Cygnus spacecraft. These experiments directly address the risks associated with our understanding of spacecraft fire behavior at practical length scales and geometries. The lack of this experimental data has forced spacecraft designers to base their designs and safety precautions on 1-g understanding of flame spread, flame self-extinguishment, fire d",
+   "url": "https://ntrs.nasa.gov/citations/20240002981"
+  },
+  {
+   "id": "20200000557",
+   "title": "Buoyancy Effects on Concurrent Flame Spread Over Thick PMMA",
+   "year": "2018",
+   "authors": [
+    "Maria Thomsen",
+    "Carlos Fernandez-Pello",
+    "Gary A. Ruff",
+    "David L. Urban"
+   ],
+   "abstract": "The flammability of combustible materials in a spacecraft is important for fire safety applications because the conditions in spacecraft environments differ from those on earth. Experimental testing in space is difficult and expensive. However, reducing buoyancy by decreasing ambient pressure is a possible approach to simulate on-earth the burning behavior inside spacecraft environments. The objective of this work is to determine that possibility by studying the effect of pressure on concurrent ",
+   "url": "https://ntrs.nasa.gov/citations/20200000557"
+  },
+  {
+   "id": "20170001636",
+   "title": "The Spacecraft Fire Experiment (Saffire) - Objectives, Development and Status",
+   "year": "2016",
+   "authors": [
+    "Schoren, William",
+    "Ruff, Gary A.",
+    "Urban, David L."
+   ],
+   "abstract": "Since 2012, the Spacecraft Fire Experiment (Saffire) has been under development by the Spacecraft Fire Safety Demonstration (SFS Demo) project that is funded by NASA's Advanced Exploration Systems Division in the Human Exploration and Operations Mission Directorate. The overall objective of this project is to reduce the uncertainty and risk associated with the design of spacecraft fire safety systems for NASA's exploration missions. This is accomplished by defining, developing, and conducting ex",
+   "url": "https://ntrs.nasa.gov/citations/20170001636"
+  },
+  {
+   "id": "20170002628",
+   "title": "Operation and Development Status of the Spacecraft Fire Experiment (Saffire)",
+   "year": "2016",
+   "authors": [
+    "Ruff, Gary A.",
+    "Urban, David L."
+   ],
+   "abstract": null,
+   "url": "https://ntrs.nasa.gov/citations/20170002628"
+  },
+  {
+   "id": "20170000230",
+   "title": "Operation and Development Status of the Spacecraft Fire Experiments (Saffire)",
+   "year": "2016",
+   "authors": [
+    "Ruff, Gary A.",
+    "Urban, David L."
+   ],
+   "abstract": "Since 2012, a series of Spacecraft Fire Experiments (Saffire) have been under development by the Spacecraft Fire Safety Demonstration (SFS Demo) project, funded by NASA's Advanced Exploration Systems Division. The overall objective of this project is to reduce the uncertainty and risk associated with the design of spacecraft fire safety systems for NASA's exploration missions. The approach to achieving this goal has been to define, develop, and conduct experiments that address gaps in spacecraft",
+   "url": "https://ntrs.nasa.gov/citations/20170000230"
+  },
+  {
+   "id": "20150022123",
+   "title": "Buoyant Effects on the Flammability of Silicone Samples Planned for the Spacecraft Fire Experiment (Saffire)",
+   "year": "2015",
+   "authors": [
+    "Niehaus, Justin ",
+    "Ferkul, Paul V.",
+    "Gokoglu, Suleyman",
+    "Ruff, Gary"
+   ],
+   "abstract": "Flammability experiments on silicone samples were conducted in anticipation of the Spacecraft Fire Experiment (Saffire). The sample geometry was chosen to match the NASA 6001 Test 1 specification, namely 5 cm wide by 30 cm tall. Four thicknesses of silicone (0.25, 0.36, 0.61 and 1.00 mm) were examined. Tests included traditional upward buoyant flame spread using Test 1 procedures, downward opposed flow flame spread, horizontal and angled flame spread, forced flow upward and downward flame spread",
+   "url": "https://ntrs.nasa.gov/citations/20150022123"
+  },
+  {
+   "id": "20150022421",
+   "title": "Buoyant Effects on the Flammability of Silicone Samples Planned for the Spacecraft Fire Experiment (Saffire)",
+   "year": "2015",
+   "authors": [
+    "Niehaus, Justin E.",
+    "Ferkul, Paul V.",
+    "Gokoglu, Suleyman A.",
+    "Ruff, Gary A."
+   ],
+   "abstract": "Flammability experiments on silicone samples were conducted in anticipation of the Spacecraft Fire Experiment (Saffire). The sample geometry was chosen to match the NASA 6001 Test 1 specification, namely 5 cm wide by 30 cm tall. Four thicknesses of silicone (0.25, 0.36, 0.61 and 1.00 mm) were examined. Tests included traditional upward buoyant flame spread using Test 1 procedures, downward opposed-flow flame spread, horizontal and angled flame spread, and forced-flow upward and downward flame sp",
+   "url": "https://ntrs.nasa.gov/citations/20150022421"
+  },
+  {
+   "id": "20150000894",
+   "title": "Large-Scale Spacecraft Fire Safety Tests",
+   "year": "2014",
+   "authors": [
+    "Urban, David",
+    "Ruff, Gary A.",
+    "Ferkul, Paul V.",
+    "Olson, Sandra"
+   ],
+   "abstract": "An international collaborative program is underway to address open issues in spacecraft fire safety. Because of limited access to long-term low-gravity conditions and the small volume generally allotted for these experiments, there have been relatively few experiments that directly study spacecraft fire safety under low-gravity conditions. Furthermore, none of these experiments have studied sample sizes and environment conditions typical of those expected in a spacecraft fire. The major constrai",
+   "url": "https://ntrs.nasa.gov/citations/20150000894"
+  },
+  {
+   "id": "20140006584",
+   "title": "Unmanned Vehicle Material Flammability Test",
+   "year": "2013",
+   "authors": [
+    "Urban, David",
+    "Ruff, Gary A.",
+    "Fernandez-Pello, A. Carlos",
+    "T’ien, James S."
+   ],
+   "abstract": "Microgravity combustion phenomena have been an active area of research for the past 3 decades however, there have been very few experiments directly studying spacecraft fire safety under low-gravity conditions. Furthermore, none of these experiments have studied sample and environment sizes typical of those expected in a spacecraft fire. All previous experiments have been limited to samples of the order of 10 cm in length and width or smaller. Terrestrial fire safety standards for all other habi",
+   "url": "https://ntrs.nasa.gov/citations/20140006584"
+  }
+ ],
+ "PSI-100": [
+  {
+   "id": "20240007488",
+   "title": "Preliminary Results from the Saffire VI Experiment",
+   "year": "2024",
+   "authors": [
+    "David L. Urban",
+    "Gary A. Ruff",
+    "Paul Ferkul",
+    "John Easton"
+   ],
+   "abstract": "The preliminary results are presented for one test of the last flight of the Spacecraft Fire Experiment (Saffire VI) which was conducted on an orbiting Cygnus spacecraft. These experiments directly address the risks associated with our understanding of spacecraft fire behavior at practical length scales and geometries. The lack of this experimental data has forced spacecraft designers to base their designs and safety precautions on 1-g understanding of flame spread, flame self-extinguishment, fi",
+   "url": "https://ntrs.nasa.gov/citations/20240007488"
+  },
+  {
+   "id": "20240002981",
+   "title": "Preliminary Results from the Saffire VI Experiment",
+   "year": "2024",
+   "authors": [
+    "David L Urban",
+    "Gary A Ruff",
+    "Paul Ferkul",
+    "John Easton"
+   ],
+   "abstract": "Preliminary results are presented for one test of the last flight of the Spacecraft Fire Experiment (Saffire VI) which was conducted on an orbiting Cygnus spacecraft. These experiments directly address the risks associated with our understanding of spacecraft fire behavior at practical length scales and geometries. The lack of this experimental data has forced spacecraft designers to base their designs and safety precautions on 1-g understanding of flame spread, flame self-extinguishment, fire d",
+   "url": "https://ntrs.nasa.gov/citations/20240002981"
+  },
+  {
+   "id": "20200000557",
+   "title": "Buoyancy Effects on Concurrent Flame Spread Over Thick PMMA",
+   "year": "2018",
+   "authors": [
+    "Maria Thomsen",
+    "Carlos Fernandez-Pello",
+    "Gary A. Ruff",
+    "David L. Urban"
+   ],
+   "abstract": "The flammability of combustible materials in a spacecraft is important for fire safety applications because the conditions in spacecraft environments differ from those on earth. Experimental testing in space is difficult and expensive. However, reducing buoyancy by decreasing ambient pressure is a possible approach to simulate on-earth the burning behavior inside spacecraft environments. The objective of this work is to determine that possibility by studying the effect of pressure on concurrent ",
+   "url": "https://ntrs.nasa.gov/citations/20200000557"
+  },
+  {
+   "id": "20170001636",
+   "title": "The Spacecraft Fire Experiment (Saffire) - Objectives, Development and Status",
+   "year": "2016",
+   "authors": [
+    "Schoren, William",
+    "Ruff, Gary A.",
+    "Urban, David L."
+   ],
+   "abstract": "Since 2012, the Spacecraft Fire Experiment (Saffire) has been under development by the Spacecraft Fire Safety Demonstration (SFS Demo) project that is funded by NASA's Advanced Exploration Systems Division in the Human Exploration and Operations Mission Directorate. The overall objective of this project is to reduce the uncertainty and risk associated with the design of spacecraft fire safety systems for NASA's exploration missions. This is accomplished by defining, developing, and conducting ex",
+   "url": "https://ntrs.nasa.gov/citations/20170001636"
+  },
+  {
+   "id": "20170002628",
+   "title": "Operation and Development Status of the Spacecraft Fire Experiment (Saffire)",
+   "year": "2016",
+   "authors": [
+    "Ruff, Gary A.",
+    "Urban, David L."
+   ],
+   "abstract": null,
+   "url": "https://ntrs.nasa.gov/citations/20170002628"
+  },
+  {
+   "id": "20170000230",
+   "title": "Operation and Development Status of the Spacecraft Fire Experiments (Saffire)",
+   "year": "2016",
+   "authors": [
+    "Ruff, Gary A.",
+    "Urban, David L."
+   ],
+   "abstract": "Since 2012, a series of Spacecraft Fire Experiments (Saffire) have been under development by the Spacecraft Fire Safety Demonstration (SFS Demo) project, funded by NASA's Advanced Exploration Systems Division. The overall objective of this project is to reduce the uncertainty and risk associated with the design of spacecraft fire safety systems for NASA's exploration missions. The approach to achieving this goal has been to define, develop, and conduct experiments that address gaps in spacecraft",
+   "url": "https://ntrs.nasa.gov/citations/20170000230"
+  },
+  {
+   "id": "20150022123",
+   "title": "Buoyant Effects on the Flammability of Silicone Samples Planned for the Spacecraft Fire Experiment (Saffire)",
+   "year": "2015",
+   "authors": [
+    "Niehaus, Justin ",
+    "Ferkul, Paul V.",
+    "Gokoglu, Suleyman",
+    "Ruff, Gary"
+   ],
+   "abstract": "Flammability experiments on silicone samples were conducted in anticipation of the Spacecraft Fire Experiment (Saffire). The sample geometry was chosen to match the NASA 6001 Test 1 specification, namely 5 cm wide by 30 cm tall. Four thicknesses of silicone (0.25, 0.36, 0.61 and 1.00 mm) were examined. Tests included traditional upward buoyant flame spread using Test 1 procedures, downward opposed flow flame spread, horizontal and angled flame spread, forced flow upward and downward flame spread",
+   "url": "https://ntrs.nasa.gov/citations/20150022123"
+  },
+  {
+   "id": "20150022421",
+   "title": "Buoyant Effects on the Flammability of Silicone Samples Planned for the Spacecraft Fire Experiment (Saffire)",
+   "year": "2015",
+   "authors": [
+    "Niehaus, Justin E.",
+    "Ferkul, Paul V.",
+    "Gokoglu, Suleyman A.",
+    "Ruff, Gary A."
+   ],
+   "abstract": "Flammability experiments on silicone samples were conducted in anticipation of the Spacecraft Fire Experiment (Saffire). The sample geometry was chosen to match the NASA 6001 Test 1 specification, namely 5 cm wide by 30 cm tall. Four thicknesses of silicone (0.25, 0.36, 0.61 and 1.00 mm) were examined. Tests included traditional upward buoyant flame spread using Test 1 procedures, downward opposed-flow flame spread, horizontal and angled flame spread, and forced-flow upward and downward flame sp",
+   "url": "https://ntrs.nasa.gov/citations/20150022421"
+  },
+  {
+   "id": "20150000894",
+   "title": "Large-Scale Spacecraft Fire Safety Tests",
+   "year": "2014",
+   "authors": [
+    "Urban, David",
+    "Ruff, Gary A.",
+    "Ferkul, Paul V.",
+    "Olson, Sandra"
+   ],
+   "abstract": "An international collaborative program is underway to address open issues in spacecraft fire safety. Because of limited access to long-term low-gravity conditions and the small volume generally allotted for these experiments, there have been relatively few experiments that directly study spacecraft fire safety under low-gravity conditions. Furthermore, none of these experiments have studied sample sizes and environment conditions typical of those expected in a spacecraft fire. The major constrai",
+   "url": "https://ntrs.nasa.gov/citations/20150000894"
+  },
+  {
+   "id": "20140006584",
+   "title": "Unmanned Vehicle Material Flammability Test",
+   "year": "2013",
+   "authors": [
+    "Urban, David",
+    "Ruff, Gary A.",
+    "Fernandez-Pello, A. Carlos",
+    "T’ien, James S."
+   ],
+   "abstract": "Microgravity combustion phenomena have been an active area of research for the past 3 decades however, there have been very few experiments directly studying spacecraft fire safety under low-gravity conditions. Furthermore, none of these experiments have studied sample and environment sizes typical of those expected in a spacecraft fire. All previous experiments have been limited to samples of the order of 10 cm in length and width or smaller. Terrestrial fire safety standards for all other habi",
+   "url": "https://ntrs.nasa.gov/citations/20140006584"
+  }
+ ],
+ "PSI-101": [
+  {
+   "id": "20150010172",
+   "title": "Particle Morphology Results from the Smoke Aerosol Measurement Experiment-Reflight",
+   "year": "2012",
+   "authors": [
+    "Urban, David",
+    "Ruff, Gary",
+    "Greenberg, Paul",
+    "Meyer, Marit"
+   ],
+   "abstract": null,
+   "url": "https://ntrs.nasa.gov/citations/20150010172"
+  }
+ ],
+ "PSI-102": [
+  {
+   "id": "20170007283",
+   "title": "Spacecraft Fire Safety Research at NASA Glenn Research Center",
+   "year": "2016",
+   "authors": [
+    "Meyer, Marit"
+   ],
+   "abstract": "Appropriate design of fire detection systems requires knowledge of both the expected fire signature and the background aerosol levels. Terrestrial fire detection systems have been developed based on extensive study of terrestrial fires. Unfortunately there is no corresponding data set for spacecraft fires and consequently the fire detectors in current spacecraft were developed based upon terrestrial designs. In low gravity, buoyant flow is negligible which causes particles to concentrate at the ",
+   "url": "https://ntrs.nasa.gov/citations/20170007283"
+  },
+  {
+   "id": "20150010172",
+   "title": "Particle Morphology Results from the Smoke Aerosol Measurement Experiment-Reflight",
+   "year": "2012",
+   "authors": [
+    "Urban, David",
+    "Ruff, Gary",
+    "Greenberg, Paul",
+    "Meyer, Marit"
+   ],
+   "abstract": null,
+   "url": "https://ntrs.nasa.gov/citations/20150010172"
+  },
+  {
+   "id": "20130000422",
+   "title": "Particle Morphology and Size Results from the Smoke Aerosol Measurement Experiment-2",
+   "year": "2012",
+   "authors": [
+    "Urban, David L.",
+    "Ruff, Gary A.",
+    "Greenberg, Paul S.",
+    "Fischer, David"
+   ],
+   "abstract": "Results are presented from the Reflight of the Smoke Aerosol Measurement Experiment (SAME-2) which was conducted during Expedition 24 (July-September 2010). The reflight experiment built upon the results of the original flight during Expedition 15 by adding diagnostic measurements and expanding the test matrix. Five different materials representative of those found in spacecraft (Teflon, Kapton, cotton, silicone rubber and Pyrell) were heated to temperatures below the ignition point with conditi",
+   "url": "https://ntrs.nasa.gov/citations/20130000422"
+  },
+  {
+   "id": "20070031686",
+   "title": "Particle and Smoke Detection on ISS for Next Generation Smoke Detectors",
+   "year": "2007",
+   "authors": [
+    "Urban, David L.",
+    "Ruff, Gary",
+    "Yuan, Zeng-guang",
+    "Sheredy, William"
+   ],
+   "abstract": "Rapid fire detection requires the ability to differentiate fire signatures from background conditions and nuisance sources. Proper design of a fire detector requires detailed knowledge of all of these signal sources so that a discriminating detector can be designed. Owing to the absence of microgravity smoke data, all current spacecraft smoke detectors were designed based upon normal-g conditions. The removal of buoyancy reduces the velocities in the high temperature zones in flames, increasing ",
+   "url": "https://ntrs.nasa.gov/citations/20070031686"
+  },
+  {
+   "id": "20050215648",
+   "title": "Fundamental Research Applied To Enable Hardware Performance in Microgravity",
+   "year": "2005",
+   "authors": [
+    "Sheredy, William A."
+   ],
+   "abstract": "NASA sponsors microgravity research to generate knowledge in physical sciences. In some cases, that knowledge must be applied to enable future research. This article describes one such example. The Dust and Aerosol measurement Feasibility Test (DAFT) is a risk-mitigation experiment developed at the NASA Glenn Research Center by NASA and ZIN Technologies, Inc., in support of the Smoke Aerosol Measurement Experiment (SAME). SAME is an investigation that is being designed for operation in the Micro",
+   "url": "https://ntrs.nasa.gov/citations/20050215648"
+  }
+ ],
+ "PSI-106": [
+  {
+   "id": "20150011070",
+   "title": "A Numerical and Experimental Study of Coflow Laminar Diffusion Flames: Effects of Gravity and Inlet Velocity",
+   "year": "2015",
+   "authors": [
+    "Cao, S.",
+    "Bennett, B. A. V.",
+    "Ma, B.",
+    "Giassi, D."
+   ],
+   "abstract": "In this work, the influence of gravity, fuel dilution, and inlet velocity on the structure, stabilization, and sooting behavior of laminar coflow methane-air diffusion flames was investigated both computationally and experimentally. A series of flames measured in the Structure and Liftoff in Combustion Experiment (SLICE) was assessed numerically under microgravity and normal gravity conditions with the fuel stream CH4 mole fraction ranging from 0.4 to 1.0. Computationally, the MC-Smooth vorticit",
+   "url": "https://ntrs.nasa.gov/citations/20150011070"
+  },
+  {
+   "id": "20150002322",
+   "title": "A Computational and Experimental Study of Coflow Laminar Methane/Air Diffusion Flames: Effects of Fuel Dilution, Inlet Velocity, and Gravity",
+   "year": "2014",
+   "authors": [
+    "Cao, S.",
+    "Ma, B.",
+    "Bennett, B. A. V.",
+    "Giassi, D."
+   ],
+   "abstract": "The influences of fuel dilution, inlet velocity, and gravity on the shape and structure of laminar coflow CH4-air diffusion flames were investigated computationally and experimentally. A series of nitrogen-diluted flames measured in the Structure and Liftoff in Combustion Experiment (SLICE) on board the International Space Station was assessed numerically under microgravity (mu g) and normal gravity (1g) conditions with CH4 mole fraction ranging from 0.4 to 1.0 and average inlet velocity ranging",
+   "url": "https://ntrs.nasa.gov/citations/20150002322"
+  },
+  {
+   "id": "20140017780",
+   "title": "An Experimental and Computational Study on Soot Formation in a Coflow Jet Flame Under Microgravity and Normal Gravity",
+   "year": "2014",
+   "authors": [
+    "Ma, Bin",
+    "Cao, Su",
+    "Giassi, Davide",
+    "Stocker, Dennis P."
+   ],
+   "abstract": "Upon the completion of the Structure and Liftoff in Combustion Experiment (SLICE) in March 2012, a comprehensive and unique set of microgravity coflow diffusion flame data was obtained. This data covers a range of conditions from weak flames near extinction to strong, highly sooting flames, and enabled the study of gravitational effects on phenomena such as liftoff, blowout and soot formation. The microgravity experiment was carried out in the Microgravity Science Glovebox (MSG) on board the Int",
+   "url": "https://ntrs.nasa.gov/citations/20140017780"
+  }
+ ],
+ "PSI-107": [],
+ "PSI-159": [],
+ "_topics": {
+  "Partial gravity flammability": [
+   {
+    "id": "20210020446",
+    "title": "Impact of Lunar Gravity on Material Flammability ",
+    "year": "2021",
+    "authors": [
+     "Gary A. Ruff"
+    ],
+    "abstract": null,
+    "url": "https://ntrs.nasa.gov/citations/20210020446"
+   }
+  ],
+  "Spacecraft fire safety": [
+   {
+    "id": "20220009167",
+    "title": "Progress and Challenges in Spacecraft Fire Detection",
+    "year": "2022",
+    "authors": [
+     "Claire Fortenberry"
+    ],
+    "abstract": null,
+    "url": "https://ntrs.nasa.gov/citations/20220009167"
+   },
+   {
+    "id": "20210022143",
+    "title": "Research Questions and Challenges for Improved Spacecraft Fire Detection",
+    "year": "2021",
+    "authors": [
+     "Claire Fortenberry",
+     "Xiaoliang Wang ",
+     "Thomas Cleary ",
+     "John Easton"
+    ],
+    "abstract": "This paper describes challenges and recommendations for research to improve spacecraft fire detection. Because crew safety is critical to every spaceflight mission, effective fire detectors must detect a wide variety of fires to ensure the success of future space exploration. Fire emissions are affected by fuel type, heating conditions, gravity and exploration atmosphere. Advances in sensing technology provide a promising basis for future detectors, which must selectively detect a broad variety ",
+    "url": "https://ntrs.nasa.gov/citations/20210022143"
+   },
+   {
+    "id": "20205007829",
+    "title": "Spacecraft Fire Safety Needs for Exploration",
+    "year": "2020",
+    "authors": [
+     "Gary A. Ruff"
+    ],
+    "abstract": null,
+    "url": "https://ntrs.nasa.gov/citations/20205007829"
+   },
+   {
+    "id": "20160010292",
+    "title": "Spacecraft Fire Safety Demonstration",
+    "year": "2016",
+    "authors": [
+     "Urban, David L.",
+     "Ruff, Gary A."
+    ],
+    "abstract": "A presentation of the Saffire Experiment goals and scientific objectives for the Joint CSA/ESA/JAXA/NASA Increments 47 and 48 Science Symposium. The purpose of the presentation is to inform the ISS Cadre and the other investigators of the Saffire goals and objectives to enable them to best support a successful Saffire outcome.",
+    "url": "https://ntrs.nasa.gov/citations/20160010292"
+   },
+   {
+    "id": "20150001653",
+    "title": "Selected Topics on Spacecraft Fire Safety",
+    "year": "2015",
+    "authors": [
+     "Hirsch, David",
+     "Beeson, Harold"
+    ],
+    "abstract": null,
+    "url": "https://ntrs.nasa.gov/citations/20150001653"
+   },
+   {
+    "id": "20150010719",
+    "title": "Design of a Thermal Precipitator for the Characterization of Smoke Particles from Common Spacecraft Materials",
+    "year": "2015",
+    "authors": [
+     "Meyer, Marit Elisabeth"
+    ],
+    "abstract": "A thermal precipitator (TP) was designed to collect smoke aerosol particles for microscopic analysis in fire characterization research. Information on particle morphology, size and agglomerate structure obtained from these tests supplements additional aerosol data collected. Modeling of the thermal precipitator throughout the design process was performed with the COMSOL Multiphysics finite element software package, including the Eulerian flow field and thermal gradients in the fluid. The COMSOL ",
+    "url": "https://ntrs.nasa.gov/citations/20150010719"
+   },
+   {
+    "id": "20150000894",
+    "title": "Large-Scale Spacecraft Fire Safety Tests",
+    "year": "2014",
+    "authors": [
+     "Urban, David",
+     "Ruff, Gary A.",
+     "Ferkul, Paul V.",
+     "Olson, Sandra"
+    ],
+    "abstract": "An international collaborative program is underway to address open issues in spacecraft fire safety. Because of limited access to long-term low-gravity conditions and the small volume generally allotted for these experiments, there have been relatively few experiments that directly study spacecraft fire safety under low-gravity conditions. Furthermore, none of these experiments have studied sample sizes and environment conditions typical of those expected in a spacecraft fire. The major constrai",
+    "url": "https://ntrs.nasa.gov/citations/20150000894"
+   },
+   {
+    "id": "20140006585",
+    "title": "Evaluation of Low-Gravity Smoke Particulate for Spacecraft Fire Detection",
+    "year": "2013",
+    "authors": [
+     "Urban, David",
+     "Ruff, Gary A.",
+     "Greenberg, Paul",
+     "Meyer, Marit"
+    ],
+    "abstract": "Tests were conducted on the International Space Station to evaluate the smoke particulate size from materials and conditions that are typical of those expected in spacecraft fires. Five different materials representative of those found in spacecraft (Teflon, Kapton, cotton, silicone rubber and Pyrell) were heated to temperatures below the ignition point with conditions controlled to provide repeatable sample surface temperatures and air flow. The air flow past the sample during the heating perio",
+    "url": "https://ntrs.nasa.gov/citations/20140006585"
+   },
+   {
+    "id": "20140006579",
+    "title": "Evaluation of Low-Gravity Smoke Particulate for Spacecraft Fire Detection",
+    "year": "2013",
+    "authors": [
+     "Urban, David",
+     "Ruff, Gary A.",
+     "Mulholland George",
+     "Meyer, Marit"
+    ],
+    "abstract": "Tests were conducted on the International Space Station to evaluate the smoke particulate size from materials and conditions that are typical of those expected in spacecraft fires. Five different materials representative of those found in spacecraft (Teflon, Kapton, cotton, silicone rubber and Pyrell) were heated to temperatures below the ignition point with conditions controlled to provide repeatable sample surface temperatures and air flow. The air flow past the sample during the heating perio",
+    "url": "https://ntrs.nasa.gov/citations/20140006579"
+   },
+   {
+    "id": "20130000677",
+    "title": "Large Scale Experiments on Spacecraft Fire Safety",
+    "year": "2012",
+    "authors": [
+     "Urban, David L.",
+     "Ruff, Gary A.",
+     "Minster, Olivier",
+     "Toth, Balazs"
+    ],
+    "abstract": "Full scale fire testing complemented by computer modelling has provided significant know how about the risk, prevention and suppression of fire in terrestrial systems (cars, ships, planes, buildings, mines, and tunnels). In comparison, no such testing has been carried out for manned spacecraft due to the complexity, cost and risk associated with operating a long duration fire safety experiment of a relevant size in microgravity. Therefore, there is currently a gap in knowledge of fire behaviour ",
+    "url": "https://ntrs.nasa.gov/citations/20130000677"
+   },
+   {
+    "id": "20130001713",
+    "title": "Large Scale Experiments on Spacecraft Fire Safety",
+    "year": "2012",
+    "authors": [
+     "Urban, David",
+     "Ruff, Gary A.",
+     "Minster, Olivier",
+     "Fernandez-Pello, A. Carlos"
+    ],
+    "abstract": "Full scale fire testing complemented by computer modelling has provided significant knowhow about the risk, prevention and suppression of fire in terrestrial systems (cars, ships, planes, buildings, mines, and tunnels). In comparison, no such testing has been carried out for manned spacecraft due to the complexity, cost and risk associated with operating a long duration fire safety experiment of a relevant size in microgravity. Therefore, there is currently a gap in knowledge of fire behaviour i",
+    "url": "https://ntrs.nasa.gov/citations/20130001713"
+   },
+   {
+    "id": "20210005780",
+    "title": "Carbon monoxide monitoring for low-power spacecraft fire detection systems using quantum cascade laser sources at 4.6 μm",
+    "year": "2012",
+    "authors": [
+     "May, Randy D.",
+     "Franz, Kale J.",
+     "Bagheri, Mahmood",
+     "Frez, Clifford"
+    ],
+    "abstract": "UNKNOWN",
+    "url": "https://ntrs.nasa.gov/citations/20210005780"
+   },
+   {
+    "id": "20130010973",
+    "title": "Determination of Survivable Fires",
+    "year": "2012",
+    "authors": [
+     "Dietrich, D. L.",
+     "Niehaus, J. E.",
+     "Ruff, G. A.",
+     "Urban, D. L."
+    ],
+    "abstract": "At NASA, there exists no standardized design or testing protocol for spacecraft fire suppression systems (either handheld or total flooding designs). An extinguisher's efficacy in safely suppressing any reasonable or conceivable fire is the primary benchmark. That concept, however, leads to the question of what a reasonable or conceivable fire is. While there exists the temptation to over-size' the fire extinguisher, weight and volume considerations on spacecraft will always (justifiably) push f",
+    "url": "https://ntrs.nasa.gov/citations/20130010973"
+   },
+   {
+    "id": "20080012612",
+    "title": "Spacecraft Fire Detection: Smoke Properties and Transport in Low-Gravity",
+    "year": "2007",
+    "authors": [
+     "Urban, David L.",
+     "Ruff, Gary A.",
+     "Brooker, John E.",
+     "Cleary, Thomas"
+    ],
+    "abstract": "Results from a recent smoke particle size measurement experiment conducted on the International Space Station (ISS) are presented along with the results from a model of the transport of smoke in the ISS. The experimental results show that, for the materials tested, a substantial portion of the smoke particles are below 500 nm in diameter. The smoke transport model demonstrated that mixing dominates the smoke transport and that consequently detection times are longer than in normal gravity.",
+    "url": "https://ntrs.nasa.gov/citations/20080012612"
+   },
+   {
+    "id": "20040161216",
+    "title": "Spacecraft Fire Suppression: Testing and Evaluation",
+    "year": "2004",
+    "authors": [
+     "Abbud-Madrid, Angel",
+     "McKinnon, J. Thomas",
+     "Delplanque, Jean-Pierre",
+     "Kailasanath, Kazhikathra"
+    ],
+    "abstract": "The objective of this project is the testing and evaluation of the effectiveness of a variety of fire suppressants and fire-response techniques that will be used in the next generation of spacecraft (Crew Exploration Vehicle, CEV) and planetary habitats. From the many lessons learned in the last 40 years of space travel, there is common agreement in the spacecraft fire safety community that a new fire suppression system will be needed for the various types of fire threats anticipated in new spac",
+    "url": "https://ntrs.nasa.gov/citations/20040161216"
+   }
+  ],
+  "Habitat atmospheres": [],
+  "Lunar missions (LUCI, FM2)": [
+   {
+    "id": "20250010653",
+    "title": "Lunar Combustion Investigation: Flammability Results from a Rotating Sounding Rocket",
+    "year": "2025",
+    "authors": [
+     "Paul V Ferkul",
+     "Michael C Johnston",
+     "Nathan Kralik",
+     "Ya-Ting Liao"
+    ],
+    "abstract": "The Lunar Combustion Investigation (LUCI) demonstrates the feasibility of conducting material flammability experiments in partial-g. A spinning Blue Origin New Shepard sounding rocket yields Lunar gravity by using centrifugal acceleration. These are the first-ever, extended-duration (greater than 25 seconds) combustion tests performed in simulated Lunar gravity. A steady vehicle rotation of 11 RPM is established, with an effective radius of rotation of 1.22 m at the experiment location. Two samp",
+    "url": "https://ntrs.nasa.gov/citations/20250010653"
+   },
+   {
+    "id": "20250010975",
+    "title": "Characterizing the Flammability of Nomex Fabric for the Preparation of FM<sup>2</sup>",
+    "year": "2025",
+    "authors": [
+     "Jocelyn Schechter",
+     "Jennifer Zayac",
+     "Paul Ferkul",
+     "Daniel Dietrich"
+    ],
+    "abstract": "The Flammability of Materials on the Moon (FM<sup>2</sup>) experiment will investigate, for the first time, the ignition, burning, and extinction characteristics of spacecraft materials in Lunar gravity on the surface of the Moon. Combustion experiments in drop towers, parabolic flights and space-based facilities (e.g., ISS) show that the gravity level has a significant effect on how materials burn. However, these facilities have significant limitations in providing an environment to simulate ac",
+    "url": "https://ntrs.nasa.gov/citations/20250010975"
+   },
+   {
+    "id": "20240015307",
+    "title": "Flammability of Materials on the Moon",
+    "year": "2024",
+    "authors": [
+     "Jennifer Zayac",
+     "Michael Johnston",
+     "Gary Ruff",
+     "Paul Ferkul"
+    ],
+    "abstract": "Lunar gravity has been found to increase the limits of flammability for some materials compared to Earth gravity, presenting a goldilocks zone of reduced convective heat loss, while generating enough buoyant flow to replenish fresh oxygen into the flame zone. Combined with the elevated oxygen concentrations of planned Space Exploration Atmospheres (Sea), a long duration fire experiment in Lunar gravity is important to help understand and mitigate the increased risk. Flammability of Materials on ",
+    "url": "https://ntrs.nasa.gov/citations/20240015307"
+   },
+   {
+    "id": "20240008623",
+    "title": "Flammability of Materials on the Moon",
+    "year": "2024",
+    "authors": [
+     "Jennifer Zayac",
+     "Michael Johnston",
+     "Gary Ruff",
+     "Paul Ferkul"
+    ],
+    "abstract": "Some materials have recently been found to exhibit increased flammability in Lunar gravity. The reduced buoyancy driven flow on the Moon may present a goldilocks region of decreased convective cooling, while still supplying adequate oxidizer to the flame zone. Combined with the desired elevated oxygen habitat of exploration architectures and the difficulty of rescue, the combination could present increased risk to crew. Flammability of Materials on the Moon will be delivered to the Lunar surface",
+    "url": "https://ntrs.nasa.gov/citations/20240008623"
+   }
+  ]
+ },
+ "_generatedAt": "2026-11-14T10:13:48.897Z"
+}

@@ -160,10 +160,10 @@ export function retrieve(question: string, k = 5, lang: Lang = 'en'): Chunk[] {
 }
 
 export const GAP_NOTE =
-  'Important: PSI currently contains no partial-gravity (Moon or Mars) combustion data. LUCI and FM2 are expected to provide it; microgravity and 1 g results bound the answer.'
+  'Important: PSI currently contains no partial-gravity (Moon or Mars) combustion data. LUCI (spinning sounding rocket) reported the first extended simulated-lunar-gravity burns in 2025 (NASA NTRS 20250010653) and FM2 will test on the Moon (planned late 2026); microgravity and 1 g results bound the answer.'
 
 export const GAP_NOTE_ES =
-  'Importante: PSI no contiene actualmente datos de combustión en gravedad parcial (Luna o Marte). Se espera que LUCI y FM2 los aporten; los resultados de microgravedad y de 1 g acotan la respuesta.'
+  'Importante: PSI no contiene actualmente datos de combustión en gravedad parcial (Luna o Marte). LUCI (cohete suborbital giratorio) comunicó en 2025 las primeras combustiones prolongadas en gravedad lunar simulada (NASA NTRS 20250010653) y FM2 ensayará en la Luna (previsto a finales de 2026); los resultados de microgravedad y de 1 g acotan la respuesta.'
 
 export const gapNote = (lang: Lang) => (lang === 'es' ? GAP_NOTE_ES : GAP_NOTE)
 

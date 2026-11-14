@@ -5,6 +5,7 @@ import { readFile, writeFile } from 'node:fs/promises'
 
 const read = async p => JSON.parse(await readFile(new URL(p, import.meta.url), 'utf8'))
 const curated = await read('../data/curated.json')
+const ntrs = await read('../data/ntrs.json').catch(() => ({})) // literatura NASA NTRS (scripts/fetch-ntrs.mjs)
 const pubNtrs = await read('../data/pubntrs.json').catch(() => ({})) // ids NTRS verificados (scripts/resolve-ntrs.mjs)
 const pubDois = await read('../data/pubdois.json').catch(() => ({})) // DOI verificados en Crossref (scripts/resolve-dois.mjs)
 
@@ -46,6 +47,7 @@ for (const c of curated.investigations) {
         .filter(v => v.url && v.url.startsWith('https://'))
         .map(v => ({ name: v.name, bytes: v.bytes, url: v.url, group: v.group ?? null })),
     },
+    ntrsRelated: ntrs[c.psiId] ?? [],
     publications: (psi.publications ?? []).slice(0, 6).map(p => ({ title: p.title, authors: p.authorList, doi: p.doi || pubDois[p.title] || null, ntrs: pubNtrs[p.title] ?? null })),
   })
 }
@@ -58,6 +60,7 @@ const out = {
   environments: curated.environments,
   incidents: curated.incidents,
   spinoffs: curated.spinoffs,
+  ntrsTopics: ntrs._topics ?? {},
 }
 await writeFile(new URL('../data/investigations.v2.json', import.meta.url), JSON.stringify(out, null, 2))
 console.log(`OK: ${investigations.length} investigaciones, ${investigations.filter(i => i.doi).length} con DOI`)

@@ -52,7 +52,10 @@ export interface Investigation {
     videoUrls?: { name: string; bytes: number; url: string; group: string | null }[]
   }
   publications: { title: string; authors: string; doi: string | null; ntrs?: string | null }[]
+  ntrsRelated?: NtrsDoc[]
 }
+
+export interface NtrsDoc { id: string; title: string; year: string | null; authors: string[]; abstract: string | null; url: string }
 
 export interface Source { label: string; url: string }
 export interface Upcoming { acronym: string; name: string; gravity: string; note: string; src: string }
@@ -77,6 +80,7 @@ export interface DataSet {
   environments: Environment[]
   incidents: Incident[]
   spinoffs: Spinoff[]
+  ntrsTopics?: Record<string, NtrsDoc[]>
 }
 
 export const data = raw as unknown as DataSet

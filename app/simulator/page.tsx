@@ -45,7 +45,7 @@ const T = {
     verdict: {
       earth: "1 g reference. Not a microgravity test condition; useful as the baseline the experiments are compared against.",
       iss: "Microgravity: measured. This is the condition almost every investigation in PSI was run in.",
-      "moon-habitat": "0.166 g: NO experimental data yet. LUCI and FM2 are expected to provide it; microgravity and 1 g results bound the answer.",
+      "moon-habitat": "0.166 g: no data in PSI. LUCI reported first lunar-gravity burns in 2025 (NASA NTRS) and FM2 will test on the Moon; microgravity and 1 g results bound the answer.",
       suit: "100% O₂ at 4.3 psi lies outside every verified test range; no data.",
     } as Record<string, string>,
     flexTitle: "What measured FLEX tests say for this atmosphere",
@@ -110,7 +110,7 @@ const T = {
     verdict: {
       earth: "Referencia de 1 g. No es una condición de ensayo de microgravedad; sirve como base con la que se comparan los experimentos.",
       iss: "Microgravedad: medida. Es la condición en la que se hizo casi toda investigación de PSI.",
-      "moon-habitat": "0.166 g: SIN datos experimentales todavía. Se espera que LUCI y FM2 los aporten; los resultados de microgravedad y 1 g acotan la respuesta.",
+      "moon-habitat": "0.166 g: sin datos en PSI. LUCI comunicó en 2025 las primeras combustiones en gravedad lunar (NASA NTRS) y FM2 ensayará en la Luna; los resultados de microgravedad y 1 g acotan la respuesta.",
       suit: "100% de O₂ a 4.3 psi queda fuera de todos los rangos de ensayo verificados; sin datos.",
     } as Record<string, string>,
     flexTitle: "Qué dicen los ensayos medidos de FLEX para esta atmósfera",

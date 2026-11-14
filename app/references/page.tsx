@@ -109,6 +109,25 @@ export default function References() {
         </ul>
       </Section>
 
+      {Object.keys(data.ntrsTopics ?? {}).length > 0 && (
+        <Section eyebrow="NASA NTRS" title="NASA Technical Reports Server literature">
+          <p className="mt-2 text-sm text-ink-2">Public reports retrieved from the NTRS API (ntrs.nasa.gov). Listed here as references for topics where PSI holds no data, such as lunar and partial gravity.</p>
+          {Object.entries(data.ntrsTopics ?? {}).filter(([, l]) => l.length > 0).map(([topic, list]) => (
+            <div key={topic} className="mt-4">
+              <h3 className="text-sm font-semibold">{topic}</h3>
+              <ul className="card mt-2 divide-y divide-line">
+                {list.map((r) => (
+                  <li key={r.id} className="p-3 text-sm">
+                    <a className="link" href={r.url} target="_blank" rel="noreferrer">{r.title} ↗</a>
+                    <span className="text-xs text-muted"> · {r.year}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </Section>
+      )}
+
       <Section eyebrow={t.docsEyebrow} title={t.docsTitle}>
         <ul className="card mt-4 divide-y divide-line">
           <li className="p-3 text-sm">
