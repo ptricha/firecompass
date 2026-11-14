@@ -248,6 +248,11 @@ export default function DetailView({ id }: { id: string }) {
                     doi:{p.doi} ↗
                   </a>
                 )}
+                {!p.doi && p.ntrs && (
+                  <a className="link text-xs" href={`https://ntrs.nasa.gov/citations/${p.ntrs}`} target="_blank" rel="noreferrer">
+                    NASA NTRS:{p.ntrs} ↗
+                  </a>
+                )}
               </li>
             ))}
           </ul>

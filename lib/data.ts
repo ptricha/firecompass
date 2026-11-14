@@ -51,7 +51,7 @@ export interface Investigation {
     experimentalTable: boolean
     videoUrls?: { name: string; bytes: number; url: string; group: string | null }[]
   }
-  publications: { title: string; authors: string; doi: string | null }[]
+  publications: { title: string; authors: string; doi: string | null; ntrs?: string | null }[]
 }
 
 export interface Source { label: string; url: string }

@@ -5,6 +5,7 @@ import { readFile, writeFile } from 'node:fs/promises'
 
 const read = async p => JSON.parse(await readFile(new URL(p, import.meta.url), 'utf8'))
 const curated = await read('../data/curated.json')
+const pubNtrs = await read('../data/pubntrs.json').catch(() => ({})) // ids NTRS verificados (scripts/resolve-ntrs.mjs)
 const pubDois = await read('../data/pubdois.json').catch(() => ({})) // DOI verificados en Crossref (scripts/resolve-dois.mjs)
 
 const dataFactor = n => (n >= 500 ? 1 : n >= 100 ? 0.7 : n >= 10 ? 0.4 : 0.2)
@@ -45,7 +46,7 @@ for (const c of curated.investigations) {
         .filter(v => v.url && v.url.startsWith('https://'))
         .map(v => ({ name: v.name, bytes: v.bytes, url: v.url, group: v.group ?? null })),
     },
-    publications: (psi.publications ?? []).slice(0, 6).map(p => ({ title: p.title, authors: p.authorList, doi: p.doi || pubDois[p.title] || null })),
+    publications: (psi.publications ?? []).slice(0, 6).map(p => ({ title: p.title, authors: p.authorList, doi: p.doi || pubDois[p.title] || null, ntrs: pubNtrs[p.title] ?? null })),
   })
 }
 
