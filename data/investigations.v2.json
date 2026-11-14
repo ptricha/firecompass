@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T10:09:50.452Z",
+  "generatedAt": "2026-11-14T10:11:16.629Z",
   "sources": {
     "GUIDE": {
       "label": "A Researcher's Guide to Combustion Science (NASA, 2015)",
@@ -4340,8 +4340,8 @@
         "modeling": 0.5,
         "data": 0.2
       },
-      "spaceApplication": null,
-      "earthApplication": null,
+      "spaceApplication": "Not designed for space applications, but PSI notes the findings could aid future space-based combustion devices (e.g. solid waste processing).",
+      "earthApplication": "Electric fields can reduce harmful pollutants and soot and may allow more efficient combustion, cutting fuel use and emissions.",
       "status": "completed",
       "hardware": "Combustion Integrated Rack (CIR), ACME",
       "program": "International Space Station (ISS)",
@@ -4561,8 +4561,8 @@
         "modeling": 1,
         "data": 0.2
       },
-      "spaceApplication": null,
-      "earthApplication": null,
+      "spaceApplication": "A realistic fire on an exploration vehicle, which is too risky to test crewed. Results set microgravity flammability limits for spacecraft materials and help validate NASA's material-selection criteria.",
+      "earthApplication": "Fire safety in small sealed environments such as mines, airplanes or submarines.",
       "status": "completed",
       "hardware": "Cygnus Pressurized Cargo Module, SAFFIRE",
       "program": "Cygnus Spacecraft",
@@ -4667,8 +4667,8 @@
         "modeling": 1,
         "data": 0.4
       },
-      "spaceApplication": null,
-      "earthApplication": null,
+      "spaceApplication": "A realistic fire on an exploration vehicle, which is too risky to test crewed. Results set microgravity flammability limits for spacecraft materials and help validate NASA's material-selection criteria.",
+      "earthApplication": "Fire safety in small sealed environments such as mines, airplanes or submarines.",
       "status": "completed",
       "hardware": "Saffire III enclosure in Cygnus",
       "program": "International Space Station (ISS)",
@@ -4900,7 +4900,7 @@
         "data": 0.7
       },
       "spaceApplication": "Technology for an advanced fire detector on long-duration missions.",
-      "earthApplication": null,
+      "earthApplication": "Smoke detectors developed from SAME/SAME-R can also be useful in submarines or underwater laboratories.",
       "status": "completed",
       "hardware": "Comparitive Soot Diagnostic Hardware; Refer to final report",
       "program": "International Space Station (ISS)",
@@ -5155,7 +5155,7 @@
         "data": 0.7
       },
       "spaceApplication": "Helps design safer spacecraft environments.",
-      "earthApplication": null,
+      "earthApplication": "Insights toward better fuel formulations and combustion processes, and a better understanding of soot generation.",
       "status": "completed",
       "hardware": "Microgravity Science Glovebox (MSG)",
       "program": "International Space Station (ISS)",
@@ -5469,8 +5469,8 @@
         "modeling": 1,
         "data": 0.2
       },
-      "spaceApplication": null,
-      "earthApplication": null,
+      "spaceApplication": "Supports safer fire detection, suppression and cleaner combustion technologies for long-duration missions.",
+      "earthApplication": "Helps reduce pollutant emissions, optimize combustion efficiency and inform cleaner energy and industrial systems.",
       "status": "ground analysis",
       "hardware": "",
       "program": "",

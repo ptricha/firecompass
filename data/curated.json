@@ -621,8 +621,8 @@
         "safety": 0.25,
         "modeling": 0.5
       },
-      "spaceApp": null,
-      "earthApp": null,
+      "spaceApp": "Not designed for space applications, but PSI notes the findings could aid future space-based combustion devices (e.g. solid waste processing).",
+      "earthApp": "Electric fields can reduce harmful pollutants and soot and may allow more efficient combustion, cutting fuel use and emissions.",
       "status": "completed"
     },
     {
@@ -728,8 +728,8 @@
         "safety": 1,
         "modeling": 1
       },
-      "spaceApp": null,
-      "earthApp": null,
+      "spaceApp": "A realistic fire on an exploration vehicle, which is too risky to test crewed. Results set microgravity flammability limits for spacecraft materials and help validate NASA's material-selection criteria.",
+      "earthApp": "Fire safety in small sealed environments such as mines, airplanes or submarines.",
       "status": "completed"
     },
     {
@@ -779,8 +779,8 @@
         "safety": 1,
         "modeling": 1
       },
-      "spaceApp": null,
-      "earthApp": null,
+      "spaceApp": "A realistic fire on an exploration vehicle, which is too risky to test crewed. Results set microgravity flammability limits for spacecraft materials and help validate NASA's material-selection criteria.",
+      "earthApp": "Fire safety in small sealed environments such as mines, airplanes or submarines.",
       "status": "completed"
     },
     {
@@ -894,7 +894,7 @@
         "modeling": 1
       },
       "spaceApp": "Technology for an advanced fire detector on long-duration missions.",
-      "earthApp": null,
+      "earthApp": "Smoke detectors developed from SAME/SAME-R can also be useful in submarines or underwater laboratories.",
       "status": "completed"
     },
     {
@@ -997,7 +997,7 @@
         "modeling": 1
       },
       "spaceApp": "Helps design safer spacecraft environments.",
-      "earthApp": null,
+      "earthApp": "Insights toward better fuel formulations and combustion processes, and a better understanding of soot generation.",
       "status": "completed"
     },
     {
@@ -1086,8 +1086,8 @@
         "safety": 0.25,
         "modeling": 1
       },
-      "spaceApp": null,
-      "earthApp": null,
+      "spaceApp": "Supports safer fire detection, suppression and cleaner combustion technologies for long-duration missions.",
+      "earthApp": "Helps reduce pollutant emissions, optimize combustion efficiency and inform cleaner energy and industrial systems.",
       "status": "ground analysis"
     }
   ],
