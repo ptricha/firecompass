@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T10:02:34.413Z",
+  "generatedAt": "2026-11-14T10:06:24.966Z",
   "sources": {
     "GUIDE": {
       "label": "A Researcher's Guide to Combustion Science (NASA, 2015)",
@@ -68,7 +68,9 @@
         ],
         "note": "Habitat atmospheres considered by NASA, as stated in the PSI objectives."
       },
-      "sensors": [],
+      "sensors": [
+        "heat flux sensor (burner surface)"
+      ],
       "summary": "A gas burner that emulates how solid materials burn in a still atmosphere, tested in the atmospheres planned for spacecraft and bases.",
       "findings": [
         {
@@ -182,7 +184,7 @@
           0,
           500
         ],
-        "note": "41 samples and 89 test points. The O2 range is not given in the fact sheet."
+        "note": "41 samples and 89 test points. The O2 range is not given in the fact sheet. ASSUMED: O2 21% and 1.013 atm are the ISS standard atmosphere, not stated in the PSI metadata for this investigation."
       },
       "sensors": [
         "radiometer (flame output)",
@@ -980,7 +982,10 @@
           1.013,
           1.013
         ],
-        "flowCmS": null,
+        "flowCmS": [
+          null,
+          40
+        ],
         "note": "O2 is the MEASURED initial O2 range (13.6–22.2 % by volume) across the 129 tests in the PSI-25 table. Primary variables per PSI: flow velocity and direction, ambient oxygen (via nitrogen dilution) and sample geometry. Airflow units are not stated in the table."
       },
       "sensors": [
@@ -3004,7 +3009,9 @@
         ],
         "note": "30 to 60 tests per group (pure, mixtures, convective flow, droplet pairs). The guide shows ethanol at 30% O2 and 2.4 atm in a soot example."
       },
-      "sensors": [],
+      "sensors": [
+        "color camera video (near real-time downlink)"
+      ],
       "summary": "Successor to FLEX: studies slow convective flows, droplet-droplet interactions and more complex fuels.",
       "findings": [
         {
@@ -3051,7 +3058,7 @@
         {
           "title": "n-Butanol droplet combustion: Numerical modeling and reduced gravity experiments",
           "authors": "FE Alam, YC Liu, CT Avedisian, FL Dryer, TI Farouk",
-          "doi": null
+          "doi": "10.1016/j.proci.2014.06.043"
         },
         {
           "title": "Droplet Combustion Experiments Aboard the International Space Station",
@@ -3061,12 +3068,12 @@
         {
           "title": "Multistage oscillatory “Cool Flame” behavior for isolated alkane droplet combustion in elevated pressure microgravity condition",
           "authors": "TI Farouk, MC Hicks, FL Dryer",
-          "doi": null
+          "doi": "10.1016/j.proci.2014.06.015"
         },
         {
           "title": "Computational modeling of the effects of support fibers on evaporation of fiber-supported droplets in reduced gravity",
           "authors": "N Ghata, BD Shaw",
-          "doi": null
+          "doi": "10.1016/j.ijheatmasstransfer.2014.04.074"
         },
         {
           "title": "Oxygen Lewis Number Effects on Reduced Gravity Combustion of Methanol and Heptane Droplets",
@@ -3103,7 +3110,12 @@
         "flowCmS": null,
         "note": "Includes the effect of helium dilution on cool flames."
       },
-      "sensors": [],
+      "sensors": [
+        "black-and-white camera (droplet size)",
+        "UV camera (OH* emission and flame size)",
+        "narrow- and wide-band radiometers (flame radiation)",
+        "high-resolution cameras (monitoring)"
+      ],
       "summary": "Studies cool flames (low-temperature combustion) in fuel droplets as a function of pressure, droplet size and helium dilution.",
       "findings": [
         {
@@ -3948,7 +3960,12 @@
         "flowCmS": null,
         "note": "The challenge statement says an O2-N2 mixture of up to 85% O2 flowed from a spherical burner, creating an inside-out flame."
       },
-      "sensors": [],
+      "sensors": [
+        "cameras",
+        "radiometers",
+        "photomultiplier tubes",
+        "thermocouples"
+      ],
       "summary": "Determines the conditions under which cool diffusion flames exist on spherical porous burners; the microgravity tests with the highest oxygen concentration.",
       "findings": [
         {
@@ -4043,7 +4060,12 @@
         ],
         "note": "Soot-inception limits as a function of flow rate, Zst, amount of inert and pressure."
       },
-      "sensors": [],
+      "sensors": [
+        "cameras",
+        "radiometers",
+        "photomultiplier tubes",
+        "thermocouples"
+      ],
       "summary": "Measures soot inception and structure of spherical diffusion flames in microgravity.",
       "findings": [
         {
@@ -4146,9 +4168,11 @@
           1.013
         ],
         "flowCmS": null,
-        "note": "Weak coflow diffusion flames as a function of velocity and fuel dilution."
+        "note": "Weak coflow diffusion flames as a function of velocity and fuel dilution. ASSUMED: O2 21% and 1.013 atm are the ISS standard atmosphere, not stated in the PSI metadata for this investigation."
       },
-      "sensors": [],
+      "sensors": [
+        "thin-filament pyrometry (flame temperature in non-sooting regions)"
+      ],
       "summary": "Benchmark data on coflow diffusion flames to test computational models at the extremes of fuel dilution.",
       "findings": [
         {
@@ -4237,9 +4261,12 @@
           1.013
         ],
         "flowCmS": null,
-        "note": "The challenge statement says the electric field mimics partial gravity through its effect on the ions in the flame."
+        "note": "The challenge statement says the electric field mimics partial gravity through its effect on the ions in the flame. ASSUMED: O2 21% and 1.013 atm are the ISS standard atmosphere, not stated in the PSI metadata for this investigation."
       },
-      "sensors": [],
+      "sensors": [
+        "high-resolution cameras (flame shape, luminosity, soot)",
+        "thermopile detectors (flame radiant emission)"
+      ],
       "summary": "Studies how an electric field changes laminar diffusion flames; the challenge statement cites it as a way to mimic partial gravity.",
       "findings": [
         {
@@ -4336,15 +4363,14 @@
           20,
           20
         ],
-        "note": "Uncrewed experiment aboard the Cygnus cargo vehicle."
+        "note": "Uncrewed experiment aboard the Cygnus cargo vehicle. ASSUMED: O2 21% and 1.013 atm are the ISS standard atmosphere, not stated in the PSI metadata for this investigation."
       },
       "sensors": [
-        "oxygen",
-        "carbon dioxide",
-        "heat",
-        "pressure",
-        "flame growth",
-        "two video cameras"
+        "thermocouples (flow, flame and plume temperature)",
+        "two radiometers (flame radiation)",
+        "solid-state sensors (pressure, CO2 and O2 mole fraction)",
+        "two anemometers (flow velocity)",
+        "two cameras (flame images)"
       ],
       "summary": "A large-scale fire deliberately set aboard an uncrewed cargo vehicle to study how a realistic fire grows in low gravity.",
       "findings": [
@@ -4442,10 +4468,19 @@
           1.013,
           1.013
         ],
-        "flowCmS": null,
-        "note": "Same objectives as Saffire-I."
+        "flowCmS": [
+          20,
+          30
+        ],
+        "note": "Same objectives as Saffire-I. ASSUMED: O2 21% and 1.013 atm are the ISS standard atmosphere, not stated in the PSI metadata for this investigation."
       },
-      "sensors": [],
+      "sensors": [
+        "thermocouples (flow, flame and plume temperature)",
+        "two radiometers (flame radiation)",
+        "solid-state sensors (pressure, CO2 and O2 mole fraction)",
+        "two anemometers (flow velocity)",
+        "two cameras (flame images)"
+      ],
       "summary": "Second Saffire flight, in the Cygnus pressurized cargo module.",
       "findings": [
         {
@@ -4533,10 +4568,19 @@
           1.013,
           1.013
         ],
-        "flowCmS": null,
-        "note": "Same objectives as Saffire-I."
+        "flowCmS": [
+          30,
+          30
+        ],
+        "note": "Same objectives as Saffire-I. ASSUMED: O2 21% and 1.013 atm are the ISS standard atmosphere, not stated in the PSI metadata for this investigation."
       },
-      "sensors": [],
+      "sensors": [
+        "thermocouples (flow, flame and plume temperature)",
+        "two radiometers (flame radiation)",
+        "solid-state sensors (pressure, CO2 and O2 mole fraction)",
+        "two anemometers (flow velocity)",
+        "two cameras (flame images)"
+      ],
       "summary": "Third Saffire flight, with extensive instrumentation and data in PSI.",
       "findings": [
         {
@@ -4620,7 +4664,7 @@
           1.013
         ],
         "flowCmS": null,
-        "note": "30 samples (6 per material) at different airflow rates, heating temperatures and smoke aging times. ISS Expedition 15."
+        "note": "30 samples (6 per material) at different airflow rates, heating temperatures and smoke aging times. ISS Expedition 15. ASSUMED: O2 21% and 1.013 atm are the ISS standard atmosphere, not stated in the PSI metadata for this investigation."
       },
       "sensors": [
         "particle counters across size ranges",
@@ -4700,7 +4744,7 @@
         {
           "title": "Properties of Smoke from Overheated Spacecraft Materials in Low-Gravity",
           "authors": "DL Urban, GA Ruff, W Sheredy, T Cleary, J Yang, G Mulholland, Z Yuan",
-          "doi": null
+          "doi": "10.2514/6.2009-956"
         },
         {
           "title": "Smoke Particle Sizes in Low-Gravity and Implications for Spacecraft Smoke Detector Design",
@@ -4750,7 +4794,7 @@
           1,
           8.1
         ],
-        "note": "Reflight of SAME."
+        "note": "Reflight of SAME. ASSUMED: O2 21% and 1.013 atm are the ISS standard atmosphere, not stated in the PSI metadata for this investigation."
       },
       "sensors": [
         "comparative soot diagnostic hardware"
@@ -4875,7 +4919,7 @@
         {
           "title": "Detection of Smoke from Microgravity Fires",
           "authors": "DL Urban, D Griffin, G Ruff, T Cleary, J Yang, G Mulholland, ZG Yuan",
-          "doi": null
+          "doi": "10.4271/2005-01-2930"
         },
         {
           "title": "Evaluation of spacecraft smoke detector performance in the low-gravity environment",
@@ -4909,7 +4953,7 @@
           1.013
         ],
         "flowCmS": null,
-        "note": "Mitigates the risk of SAME by checking a modified P-Trak particle counter."
+        "note": "Mitigates the risk of SAME by checking a modified P-Trak particle counter. ASSUMED: O2 21% and 1.013 atm are the ISS standard atmosphere, not stated in the PSI metadata for this investigation."
       },
       "sensors": [
         "modified TSI P-Trak (isopropanol condensation and laser counting)"
@@ -5001,7 +5045,7 @@
           0.66,
           85.28
         ],
-        "note": "Its fan-driven flow duct is reused in BASS, BASS-II and SLICE."
+        "note": "Its fan-driven flow duct is reused in BASS, BASS-II and SLICE. ASSUMED: O2 21% and 1.013 atm are the ISS standard atmosphere, not stated in the PSI metadata for this investigation."
       },
       "sensors": [
         "camera images",
@@ -5174,7 +5218,7 @@
         {
           "title": "The Microgravity Science Glovebox (MSG), a Resource for Gravity-Dependent Phenomena Research on the International Space Station (ISS)",
           "authors": "RA Spivey, LB Jeter, C Vonk",
-          "doi": null
+          "doi": "10.2514/6.2007-546"
         },
         {
           "title": "The Microgravity Science Glovebox as a Platform for Exploration Research on the International Space Station",
@@ -5216,9 +5260,12 @@
           1.013
         ],
         "flowCmS": null,
-        "note": "Uses SPICE hardware. Operated in 2012 per the guide."
+        "note": "Uses SPICE hardware. Operated in 2012 per the guide. ASSUMED: O2 21% and 1.013 atm are the ISS standard atmosphere, not stated in the PSI metadata for this investigation."
       },
-      "sensors": [],
+      "sensors": [
+        "integrated flow-rate and temperature sensors",
+        "high-resolution camera (still images with sensor data overlay)"
+      ],
       "summary": "Structure and lift-off of laminar diffusion flames in microgravity.",
       "findings": [
         {
@@ -5302,9 +5349,10 @@
           1.013
         ],
         "flowCmS": null,
-        "note": "Ground investigation on SPICE data; more than 1600 DSLR images."
+        "note": "Ground investigation on SPICE data; more than 1600 DSLR images. ASSUMED: O2 21% and 1.013 atm are the ISS standard atmosphere, not stated in the PSI metadata for this investigation."
       },
       "sensors": [
+        "color-ratio pyrometry (soot temperature fields from DSLR images)",
         "more than 1600 DSLR images analyzed"
       ],
       "summary": "Computational and experimental analysis of SPICE data to explain the large discrepancy in soot formation between 1 g and 0 g.",
