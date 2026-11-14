@@ -1,341 +1,1166 @@
 {
   "_comment": "Hand-curated facts, each with its source. null = not verified (never shown as data). DOIs, file counts and publications are merged from data/psi/ by scripts/build-data.mjs.",
   "sources": {
-    "GUIDE": { "label": "A Researcher's Guide to Combustion Science (NASA, 2015)", "url": "https://www.nasa.gov/wp-content/uploads/2016/05/np-2015-10-034-jsc_combustion_in_reduced_gravity-iss-mini-book-011116-508.pdf" },
-    "FS-BASS": { "label": "NASA fact sheet: BASS", "url": "https://www.nasa.gov/wp-content/uploads/2025/07/burning-and-suppression-of-solids-bass.pdf" },
-    "FS-FLEX": { "label": "NASA fact sheet: FLEX / FLEX-2", "url": "https://www.nasa.gov/wp-content/uploads/2025/07/flame-extinguishment-experiment-flex.pdf" },
-    "FS-SAME": { "label": "NASA fact sheet: SAME", "url": "https://www.nasa.gov/wp-content/uploads/2025/07/smoke-aerosol-measurement-experiment-same.pdf" },
-    "PSI": { "label": "NASA Physical Sciences Informatics (investigation metadata)", "url": "https://psi.nasa.gov" },
-    "PSI-TABLES": { "label": "NASA PSI experimental tables (CC0): PSI-69 FLEX and PSI-25 BASS-II. Values computed by JaPax from the recorded rows.", "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69" },
-    "CHALLENGE": { "label": "Official challenge statement: Flame in Freefall (NASA Space Apps 2026)", "url": "https://www.spaceappschallenge.org" },
-    "GLENN": { "label": "NASA Glenn: Combustion Science", "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/" }
+    "GUIDE": {
+      "label": "A Researcher's Guide to Combustion Science (NASA, 2015)",
+      "url": "https://www.nasa.gov/wp-content/uploads/2016/05/np-2015-10-034-jsc_combustion_in_reduced_gravity-iss-mini-book-011116-508.pdf"
+    },
+    "FS-BASS": {
+      "label": "NASA fact sheet: BASS",
+      "url": "https://www.nasa.gov/wp-content/uploads/2025/07/burning-and-suppression-of-solids-bass.pdf"
+    },
+    "FS-FLEX": {
+      "label": "NASA fact sheet: FLEX / FLEX-2",
+      "url": "https://www.nasa.gov/wp-content/uploads/2025/07/flame-extinguishment-experiment-flex.pdf"
+    },
+    "FS-SAME": {
+      "label": "NASA fact sheet: SAME",
+      "url": "https://www.nasa.gov/wp-content/uploads/2025/07/smoke-aerosol-measurement-experiment-same.pdf"
+    },
+    "PSI": {
+      "label": "NASA Physical Sciences Informatics (investigation metadata)",
+      "url": "https://psi.nasa.gov"
+    },
+    "PSI-TABLES": {
+      "label": "NASA PSI experimental tables (CC0): PSI-69 FLEX and PSI-25 BASS-II. Values computed by JaPax from the recorded rows.",
+      "url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69"
+    },
+    "CHALLENGE": {
+      "label": "Official challenge statement: Flame in Freefall (NASA Space Apps 2026)",
+      "url": "https://www.spaceappschallenge.org"
+    },
+    "GLENN": {
+      "label": "NASA Glenn: Combustion Science",
+      "url": "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/"
+    }
   },
   "investigations": [
     {
-      "psiId": "PSI-20", "acronym": "ACME BRE", "areas": ["prevention"], "fuelPhase": "gas (emulates solids)",
-      "fuels": ["CH4/N2", "C2H4/N2 on 25 mm and 50 mm porous burners"],
-      "conditions": { "o2": [0.21, 0.34], "pressureAtm": [0.558, 1.0], "flowCmS": null, "atmospheres": ["14.7 psia / 21% O2", "10.2 psia / 26.5% O2", "8.2 psia / 34% O2"], "note": "Habitat atmospheres considered by NASA, as stated in the PSI objectives." },
+      "psiId": "PSI-20",
+      "acronym": "ACME BRE",
+      "areas": [
+        "prevention"
+      ],
+      "fuelPhase": "gas (emulates solids)",
+      "fuels": [
+        "CH4/N2",
+        "C2H4/N2 on 25 mm and 50 mm porous burners"
+      ],
+      "conditions": {
+        "o2": [
+          0.21,
+          0.34
+        ],
+        "pressureAtm": [
+          0.558,
+          1
+        ],
+        "flowCmS": null,
+        "atmospheres": [
+          "14.7 psia / 21% O2",
+          "10.2 psia / 26.5% O2",
+          "8.2 psia / 34% O2"
+        ],
+        "note": "Habitat atmospheres considered by NASA, as stated in the PSI objectives."
+      },
       "sensors": null,
       "summary": "A gas burner that emulates how solid materials burn in a still atmosphere, tested in the atmospheres planned for spacecraft and bases.",
       "findings": [
-        { "text": "Quasi-steady burning of condensed-phase materials such as PMMA and Nylon was observed in microgravity with NO air flow, notably in the oxygen-enriched atmospheres being considered for future spacecraft; at 21% O2 such flames self-extinguished in a short time.", "src": "PSI", "kind": "reported" },
-        { "text": "Cutting ventilation is an established step to put out spacecraft fires; these results suggest it may not be enough in oxygen-rich atmospheres.", "src": "PSI", "kind": "reported" },
-        { "text": "The authors suggest NASA may want to make more use of its alternative flammability Test 2 (cone calorimeter), which can measure material properties matching the microgravity flames seen with BRE.", "src": "PSI", "kind": "reported" }
+        {
+          "text": "Quasi-steady burning of condensed-phase materials such as PMMA and Nylon was observed in microgravity with NO air flow, notably in the oxygen-enriched atmospheres being considered for future spacecraft; at 21% O2 such flames self-extinguished in a short time.",
+          "src": "PSI",
+          "kind": "reported"
+        },
+        {
+          "text": "Cutting ventilation is an established step to put out spacecraft fires; these results suggest it may not be enough in oxygen-rich atmospheres.",
+          "src": "PSI",
+          "kind": "reported"
+        },
+        {
+          "text": "The authors suggest NASA may want to make more use of its alternative flammability Test 2 (cone calorimeter), which can measure material properties matching the microgravity flames seen with BRE.",
+          "src": "PSI",
+          "kind": "reported"
+        }
       ],
-      "habitat": { "o2": true, "pressure": true },
-      "factors": { "realism": 0.6, "safety": 1.0, "modeling": 1.0 },
+      "habitat": {
+        "o2": true,
+        "pressure": true
+      },
+      "factors": {
+        "realism": 0.6,
+        "safety": 1,
+        "modeling": 1
+      },
       "spaceApp": "Material selection and fire-response protocols for lunar habitat atmospheres.",
       "earthApp": null,
       "status": "preliminary results"
     },
     {
-      "psiId": "PSI-26", "acronym": "BASS", "areas": ["prevention", "suppression"], "fuelPhase": "solid",
-      "fuels": ["SIBAL (cotton-fiberglass)", "Nomex", "Ultem", "PMMA (flat samples and 1 cm and 2 cm spheres)", "wax-saturated fiberglass", "paraffin and Japan-wax candles"],
-      "conditions": { "o2": null, "pressureAtm": null, "flowCmS": [5, 50], "n2SuppressantCcMin": [0, 500], "note": "41 samples and 89 test points. The O2 range is not given in the fact sheet." },
-      "sensors": ["radiometer (flame output)", "anemometer (actual flow)", "video and still cameras"],
+      "psiId": "PSI-26",
+      "acronym": "BASS",
+      "areas": [
+        "prevention",
+        "suppression"
+      ],
+      "fuelPhase": "solid",
+      "fuels": [
+        "SIBAL (cotton-fiberglass)",
+        "Nomex",
+        "Ultem",
+        "PMMA (flat samples and 1 cm and 2 cm spheres)",
+        "wax-saturated fiberglass",
+        "paraffin and Japan-wax candles"
+      ],
+      "conditions": {
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
+        "flowCmS": [
+          5,
+          50
+        ],
+        "n2SuppressantCcMin": [
+          0,
+          500
+        ],
+        "note": "41 samples and 89 test points. The O2 range is not given in the fact sheet."
+      },
+      "sensors": [
+        "radiometer (flame output)",
+        "anemometer (actual flow)",
+        "video and still cameras"
+      ],
       "summary": "Burns solid samples in a controlled-flow duct inside the Microgravity Science Glovebox and extinguishes the flame by ramping up a nitrogen flow.",
       "findings": [
-        { "text": "Recent BASS results indicate that NASA-STD-6001 Test 1 is NOT conservative: materials can burn at lower oxygen levels in microgravity than on Earth.", "src": "GUIDE p.31", "kind": "reported" },
-        { "text": "Local application of suppressant is not adequate for extinguishment: the local jet entrains air and sustains the flame even when the ambient airflow is turned off.", "src": "GUIDE p.31", "kind": "reported" },
-        { "text": "Hypothesis: with adequate ventilation, materials in microgravity burn as well if not better than in normal gravity under otherwise identical conditions.", "src": "FS-BASS", "kind": "reported" }
+        {
+          "text": "Recent BASS results indicate that NASA-STD-6001 Test 1 is NOT conservative: materials can burn at lower oxygen levels in microgravity than on Earth.",
+          "src": "GUIDE p.31",
+          "kind": "reported"
+        },
+        {
+          "text": "Local application of suppressant is not adequate for extinguishment: the local jet entrains air and sustains the flame even when the ambient airflow is turned off.",
+          "src": "GUIDE p.31",
+          "kind": "reported"
+        },
+        {
+          "text": "Hypothesis: with adequate ventilation, materials in microgravity burn as well if not better than in normal gravity under otherwise identical conditions.",
+          "src": "FS-BASS",
+          "kind": "reported"
+        }
       ],
-      "habitat": { "o2": null, "pressure": null },
-      "factors": { "realism": 1.0, "safety": 1.0, "modeling": 1.0 },
+      "habitat": {
+        "o2": false,
+        "pressure": false
+      },
+      "factors": {
+        "realism": 1,
+        "safety": 1,
+        "modeling": 1
+      },
       "spaceApp": "NASA's spacecraft materials selection relies on a 1-g standard test (NASA-STD-6001 Test 1) that ignores low-gravity effects.",
       "earthApp": "Validates combustion models used for terrestrial problems.",
       "status": "completed"
     },
     {
-      "psiId": "PSI-25", "acronym": "BASS-II", "areas": ["prevention", "suppression"], "fuelPhase": "solid",
-      "fuels": ["rods, spherical sections, slabs, films and fabric sheets (thicker, more realistic geometries)"],
-      "conditions": { "o2": [0.136, 0.222], "pressureAtm": null, "flowCmS": null, "note": "O2 is the MEASURED initial O2 range (13.6–22.2 % by volume) across the 129 tests in the PSI-25 table. Primary variables per PSI: flow velocity and direction, ambient oxygen (via nitrogen dilution) and sample geometry. Airflow units are not stated in the table." },
-      "sensors": ["video (296 videos in PSI)"],
+      "psiId": "PSI-25",
+      "acronym": "BASS-II",
+      "areas": [
+        "prevention",
+        "suppression"
+      ],
+      "fuelPhase": "solid",
+      "fuels": [
+        "rods, spherical sections, slabs, films and fabric sheets (thicker, more realistic geometries)"
+      ],
+      "conditions": {
+        "o2": [
+          0.136,
+          0.222
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
+        "flowCmS": null,
+        "note": "O2 is the MEASURED initial O2 range (13.6–22.2 % by volume) across the 129 tests in the PSI-25 table. Primary variables per PSI: flow velocity and direction, ambient oxygen (via nitrogen dilution) and sample geometry. Airflow units are not stated in the table."
+      },
+      "sensors": [
+        "video (296 videos in PSI)"
+      ],
       "summary": "Follow-up to BASS with thicker, more realistic fuels; it bridges the 1-g Test 1 method, ground-based microgravity tests and actual material flammability in microgravity.",
       "findings": [
-        { "text": "Objective: study ignition, flame growth, flame spread and extinction limits of solid fuels in low-velocity forced flows, and give SoFIE investigators preliminary data.", "src": "PSI", "kind": "reported" },
-        { "text": "Helps engineers select the safest materials and improve firefighting methods on future missions.", "src": "PSI", "kind": "reported" },
-        { "text": "None of the 129 recorded tests started at 26.5% O2 or more (initial O2 ranged from 13.6% to 22.2%): there is no BASS-II solid-material data at lunar-habitat oxygen levels.", "src": "PSI-TABLES", "kind": "measured" }
+        {
+          "text": "Objective: study ignition, flame growth, flame spread and extinction limits of solid fuels in low-velocity forced flows, and give SoFIE investigators preliminary data.",
+          "src": "PSI",
+          "kind": "reported"
+        },
+        {
+          "text": "Helps engineers select the safest materials and improve firefighting methods on future missions.",
+          "src": "PSI",
+          "kind": "reported"
+        },
+        {
+          "text": "None of the 129 recorded tests started at 26.5% O2 or more (initial O2 ranged from 13.6% to 22.2%): there is no BASS-II solid-material data at lunar-habitat oxygen levels.",
+          "src": "PSI-TABLES",
+          "kind": "measured"
+        }
       ],
-      "habitat": { "o2": false, "pressure": null },
-      "factors": { "realism": 1.0, "safety": 1.0, "modeling": 1.0 },
+      "habitat": {
+        "o2": false,
+        "pressure": false
+      },
+      "factors": {
+        "realism": 1,
+        "safety": 1,
+        "modeling": 1
+      },
       "spaceApp": "Material selection and extinguishment methods for missions far from Earth.",
       "earthApp": "Models applicable to wildfires and building fires.",
       "status": "completed"
     },
     {
-      "psiId": "PSI-69", "acronym": "FLEX", "areas": ["suppression"], "fuelPhase": "liquid (droplets)",
-      "fuels": ["heptane", "methanol"],
-      "conditions": { "o2": [0.12, 0.34], "pressureAtm": [0.703, 3.053], "flowCmS": null, "suppressants": ["CO2", "He"], "suppressantMoleFraction": [0, 0.70], "dropletMm": [2, 5], "note": "O2 and pressure are MEASURED ranges across the 274 tests in the PSI-69 table (pressures cluster at 0.70, 1.0, 2.0, 2.7 and 3.05 atm). The fact sheet planned O2 0.10–0.50 and 0.5–1.0 atm. The main diluent is N2, with a few tests using He." },
-      "sensors": ["resolved droplet burning-rate measurements", "flame radiation", "soot concentration and temperature"],
+      "psiId": "PSI-69",
+      "acronym": "FLEX",
+      "areas": [
+        "suppression"
+      ],
+      "fuelPhase": "liquid (droplets)",
+      "fuels": [
+        "heptane",
+        "methanol"
+      ],
+      "conditions": {
+        "o2": [
+          0.12,
+          0.34
+        ],
+        "pressureAtm": [
+          0.703,
+          3.053
+        ],
+        "flowCmS": null,
+        "suppressants": [
+          "CO2",
+          "He"
+        ],
+        "suppressantMoleFraction": [
+          0,
+          0.7
+        ],
+        "dropletMm": [
+          2,
+          5
+        ],
+        "note": "O2 and pressure are MEASURED ranges across the 274 tests in the PSI-69 table (pressures cluster at 0.70, 1.0, 2.0, 2.7 and 3.05 atm). The fact sheet planned O2 0.10–0.50 and 0.5–1.0 atm. The main diluent is N2, with a few tests using He."
+      },
+      "sensors": [
+        "resolved droplet burning-rate measurements",
+        "flame radiation",
+        "soot concentration and temperature"
+      ],
       "summary": "Burns fuel droplets in mixtures of oxygen and diluents to map flammability limits and the effectiveness of inert suppressants (CO2, He).",
       "findings": [
-        { "text": "The flammability limit is lower in reduced gravity; terrestrial standards for inert-gas suppressants do not offer the same margin of safety in low gravity.", "src": "GUIDE p.12", "kind": "reported" },
-        { "text": "Demonstrated radiative and diffusive extinction, combustion instabilities, lower flammability limits and explained the cool-flame phenomenon after visible flame extinction.", "src": "GUIDE p.13", "kind": "reported" },
-        { "text": "Low pressures are tested because one extinguishing strategy is to isolate the habitat and vent the cabin to space.", "src": "FS-FLEX", "kind": "reported" },
-        { "text": "Of the 274 recorded tests, 186 ended in extinction, 61 in disruption and 27 in completion. At lunar-habitat-like conditions (0.6–0.8 atm and O2 ≥ 26.5%) there are 17 tests and none ended in extinction (15 disruption, 2 completion).", "src": "PSI-TABLES", "kind": "measured" }
+        {
+          "text": "The flammability limit is lower in reduced gravity; terrestrial standards for inert-gas suppressants do not offer the same margin of safety in low gravity.",
+          "src": "GUIDE p.12",
+          "kind": "reported"
+        },
+        {
+          "text": "Demonstrated radiative and diffusive extinction, combustion instabilities, lower flammability limits and explained the cool-flame phenomenon after visible flame extinction.",
+          "src": "GUIDE p.13",
+          "kind": "reported"
+        },
+        {
+          "text": "Low pressures are tested because one extinguishing strategy is to isolate the habitat and vent the cabin to space.",
+          "src": "FS-FLEX",
+          "kind": "reported"
+        },
+        {
+          "text": "Of the 274 recorded tests, 186 ended in extinction, 61 in disruption and 27 in completion. At lunar-habitat-like conditions (0.6–0.8 atm and O2 ≥ 26.5%) there are 17 tests and none ended in extinction (15 disruption, 2 completion).",
+          "src": "PSI-TABLES",
+          "kind": "measured"
+        }
       ],
-      "habitat": { "o2": true, "pressure": true },
-      "factors": { "realism": 0.4, "safety": 1.0, "modeling": 1.0 },
+      "habitat": {
+        "o2": true,
+        "pressure": true
+      },
+      "factors": {
+        "realism": 0.4,
+        "safety": 1,
+        "modeling": 1
+      },
       "spaceApp": "Provides the most conservative estimate of the limiting oxygen index (LOI) for steady combustion.",
       "earthApp": "Heptane and methanol models are building blocks for practical fuels such as diesel and jet fuel.",
       "status": "completed"
     },
     {
-      "psiId": "PSI-68", "acronym": "FLEX-2", "areas": ["suppression"], "fuelPhase": "liquid (droplets)",
-      "fuels": ["pure fuels", "fuel mixtures", "real-fuel surrogates", "droplet pairs"],
-      "conditions": { "o2": null, "pressureAtm": null, "flowCmS": null, "dropletMm": [2, 4], "note": "30 to 60 tests per group (pure, mixtures, convective flow, droplet pairs). The guide shows ethanol at 30% O2 and 2.4 atm in a soot example." },
+      "psiId": "PSI-68",
+      "acronym": "FLEX-2",
+      "areas": [
+        "suppression"
+      ],
+      "fuelPhase": "liquid (droplets)",
+      "fuels": [
+        "pure fuels",
+        "fuel mixtures",
+        "real-fuel surrogates",
+        "droplet pairs"
+      ],
+      "conditions": {
+        "o2": [
+          0.12,
+          0.34
+        ],
+        "pressureAtm": [
+          0.7,
+          3
+        ],
+        "flowCmS": null,
+        "dropletMm": [
+          2,
+          4
+        ],
+        "note": "30 to 60 tests per group (pure, mixtures, convective flow, droplet pairs). The guide shows ethanol at 30% O2 and 2.4 atm in a soot example."
+      },
       "sensors": null,
       "summary": "Successor to FLEX: studies slow convective flows, droplet-droplet interactions and more complex fuels.",
       "findings": [
-        { "text": "Four experiment groups: pure fuels, fuel mixtures, convective flow and binary droplet arrays, with 30 to 60 tests each.", "src": "FS-FLEX", "kind": "reported" },
-        { "text": "Includes international variants: FLEX-2J (JAXA, flame spread along droplet arrays) and FLEX-ICE-GA (biofuels, Italian CNR).", "src": "FS-FLEX", "kind": "reported" }
+        {
+          "text": "Four experiment groups: pure fuels, fuel mixtures, convective flow and binary droplet arrays, with 30 to 60 tests each.",
+          "src": "FS-FLEX",
+          "kind": "reported"
+        },
+        {
+          "text": "Includes international variants: FLEX-2J (JAXA, flame spread along droplet arrays) and FLEX-ICE-GA (biofuels, Italian CNR).",
+          "src": "FS-FLEX",
+          "kind": "reported"
+        }
       ],
-      "habitat": { "o2": null, "pressure": null },
-      "factors": { "realism": 0.4, "safety": 0.5, "modeling": 1.0 },
+      "habitat": {
+        "o2": true,
+        "pressure": true
+      },
+      "factors": {
+        "realism": 0.4,
+        "safety": 0.5,
+        "modeling": 1
+      },
       "spaceApp": null,
       "earthApp": "Verifies models of real transportation and industrial fuels.",
       "status": "completed"
     },
     {
-      "psiId": "PSI-39", "acronym": "CFI", "areas": ["fundamental"], "fuelPhase": "liquid (droplets)",
-      "fuels": ["n-dodecane", "n-dodecane / iso-dodecane mixtures"],
-      "conditions": { "o2": null, "pressureAtm": [0.25, 5], "flowCmS": null, "note": "Includes the effect of helium dilution on cool flames." },
+      "psiId": "PSI-39",
+      "acronym": "CFI",
+      "areas": [
+        "fundamental"
+      ],
+      "fuelPhase": "liquid (droplets)",
+      "fuels": [
+        "n-dodecane",
+        "n-dodecane / iso-dodecane mixtures"
+      ],
+      "conditions": {
+        "o2": [
+          0.17,
+          0.21
+        ],
+        "pressureAtm": [
+          0.25,
+          5
+        ],
+        "flowCmS": null,
+        "note": "Includes the effect of helium dilution on cool flames."
+      },
       "sensors": null,
       "summary": "Studies cool flames (low-temperature combustion) in fuel droplets as a function of pressure, droplet size and helium dilution.",
       "findings": [
-        { "text": "A basic understanding of cool flames is important for understanding ignition of practical fuels and fuel additives, and for designing advanced engines.", "src": "PSI", "kind": "reported" },
-        { "text": "Investigates the relationship between droplet size, pressure and flame extinction, and the consequences of soot formation during cool-flame combustion.", "src": "PSI", "kind": "reported" }
+        {
+          "text": "A basic understanding of cool flames is important for understanding ignition of practical fuels and fuel additives, and for designing advanced engines.",
+          "src": "PSI",
+          "kind": "reported"
+        },
+        {
+          "text": "Investigates the relationship between droplet size, pressure and flame extinction, and the consequences of soot formation during cool-flame combustion.",
+          "src": "PSI",
+          "kind": "reported"
+        }
       ],
-      "habitat": { "o2": null, "pressure": true },
-      "factors": { "realism": 0.2, "safety": 0.5, "modeling": 1.0 },
+      "habitat": {
+        "o2": false,
+        "pressure": true
+      },
+      "factors": {
+        "realism": 0.2,
+        "safety": 0.5,
+        "modeling": 1
+      },
       "spaceApp": "Cool flames are a candidate safety concern (persistence after the visible flame goes out); their effect on detection is NOT verified in the sources.",
       "earthApp": "Design of cleaner fuels and engines.",
       "status": "completed"
     },
     {
-      "psiId": "PSI-159", "acronym": "ACME CFI-G", "areas": ["fundamental", "prevention"], "fuelPhase": "gas",
-      "fuels": ["propane", "n-butane", "n-pentane"],
-      "conditions": { "o2": [null, 0.85], "pressureAtm": null, "flowCmS": null, "note": "The challenge statement says an O2-N2 mixture of up to 85% O2 flowed from a spherical burner, creating an inside-out flame." },
+      "psiId": "PSI-159",
+      "acronym": "ACME CFI-G",
+      "areas": [
+        "fundamental",
+        "prevention"
+      ],
+      "fuelPhase": "gas",
+      "fuels": [
+        "propane",
+        "n-butane",
+        "n-pentane"
+      ],
+      "conditions": {
+        "o2": [
+          0.12,
+          0.85
+        ],
+        "pressureAtm": [
+          0.489,
+          3.267
+        ],
+        "flowCmS": null,
+        "note": "The challenge statement says an O2-N2 mixture of up to 85% O2 flowed from a spherical burner, creating an inside-out flame."
+      },
       "sensors": null,
       "summary": "Determines the conditions under which cool diffusion flames exist on spherical porous burners; the microgravity tests with the highest oxygen concentration.",
       "findings": [
-        { "text": "Hypothesis: testing aboard the ISS can demonstrate, for the first time, steady-state cool diffusion flames on spherical porous burners with propane, n-butane and n-pentane.", "src": "PSI", "kind": "reported" },
-        { "text": "Contains the microgravity tests with the highest oxygen concentrations (up to 85%).", "src": "CHALLENGE", "kind": "reported" }
+        {
+          "text": "Hypothesis: testing aboard the ISS can demonstrate, for the first time, steady-state cool diffusion flames on spherical porous burners with propane, n-butane and n-pentane.",
+          "src": "PSI",
+          "kind": "reported"
+        },
+        {
+          "text": "Contains the microgravity tests with the highest oxygen concentrations (up to 85%).",
+          "src": "CHALLENGE",
+          "kind": "reported"
+        }
       ],
-      "habitat": { "o2": true, "pressure": null },
-      "factors": { "realism": 0.2, "safety": 0.5, "modeling": 1.0 },
+      "habitat": {
+        "o2": true,
+        "pressure": true
+      },
+      "factors": {
+        "realism": 0.2,
+        "safety": 0.5,
+        "modeling": 1
+      },
       "spaceApp": "Data at extreme O2 conditions, relevant to habitat and spacesuit atmospheres.",
       "earthApp": "Improves the efficiency of internal combustion engines.",
       "status": "completed"
     },
     {
-      "psiId": "PSI-10", "acronym": "ACME Flame Design", "areas": ["fundamental"], "fuelPhase": "gas",
-      "fuels": ["ethylene (C2H4)", "methane (CH4)"],
-      "conditions": { "o2": null, "pressureAtm": null, "flowCmS": null, "inerts": ["N2", "CO2"], "note": "Soot-inception limits as a function of flow rate, Zst, amount of inert and pressure." },
+      "psiId": "PSI-10",
+      "acronym": "ACME Flame Design",
+      "areas": [
+        "fundamental"
+      ],
+      "fuelPhase": "gas",
+      "fuels": [
+        "ethylene (C2H4)",
+        "methane (CH4)"
+      ],
+      "conditions": {
+        "o2": [
+          0.198,
+          0.85
+        ],
+        "pressureAtm": [
+          0.426,
+          3.018
+        ],
+        "flowCmS": null,
+        "inerts": [
+          "N2",
+          "CO2"
+        ],
+        "note": "Soot-inception limits as a function of flow rate, Zst, amount of inert and pressure."
+      },
       "sensors": null,
       "summary": "Measures soot inception and structure of spherical diffusion flames in microgravity.",
       "findings": [
-        { "text": "Hypothesis: microgravity spherical diffusion flames extinguish when the peak temperature first drops below about 1130 K.", "src": "PSI", "kind": "reported" }
+        {
+          "text": "Hypothesis: microgravity spherical diffusion flames extinguish when the peak temperature first drops below about 1130 K.",
+          "src": "PSI",
+          "kind": "reported"
+        }
       ],
-      "habitat": { "o2": null, "pressure": null },
-      "factors": { "realism": 0.1, "safety": 0.25, "modeling": 1.0 },
+      "habitat": {
+        "o2": true,
+        "pressure": true
+      },
+      "factors": {
+        "realism": 0.1,
+        "safety": 0.25,
+        "modeling": 1
+      },
       "spaceApp": null,
       "earthApp": "Helps improve efficiency and reduce emissions in terrestrial combustors.",
       "status": "completed"
     },
     {
-      "psiId": "PSI-21", "acronym": "ACME CLD Flame", "areas": ["fundamental"], "fuelPhase": "gas",
-      "fuels": ["methane", "ethylene"],
-      "conditions": { "o2": null, "pressureAtm": null, "flowCmS": null, "note": "Weak coflow diffusion flames as a function of velocity and fuel dilution." },
+      "psiId": "PSI-21",
+      "acronym": "ACME CLD Flame",
+      "areas": [
+        "fundamental"
+      ],
+      "fuelPhase": "gas",
+      "fuels": [
+        "methane",
+        "ethylene"
+      ],
+      "conditions": {
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
+        "flowCmS": null,
+        "note": "Weak coflow diffusion flames as a function of velocity and fuel dilution."
+      },
       "sensors": null,
       "summary": "Benchmark data on coflow diffusion flames to test computational models at the extremes of fuel dilution.",
       "findings": [
-        { "text": "Characterizes flame shape, lift-off height, temperatures and extinction limits, and the sooting tendency with long residence times.", "src": "PSI", "kind": "reported" }
+        {
+          "text": "Characterizes flame shape, lift-off height, temperatures and extinction limits, and the sooting tendency with long residence times.",
+          "src": "PSI",
+          "kind": "reported"
+        }
       ],
-      "habitat": { "o2": null, "pressure": null },
-      "factors": { "realism": 0.1, "safety": 0.25, "modeling": 1.0 },
+      "habitat": {
+        "o2": false,
+        "pressure": false
+      },
+      "factors": {
+        "realism": 0.1,
+        "safety": 0.25,
+        "modeling": 1
+      },
       "spaceApp": null,
       "earthApp": "Diffusion flames are the flame type in most practical combustion devices.",
       "status": "completed"
     },
     {
-      "psiId": "PSI-22", "acronym": "ACME E-FIELD", "areas": ["fundamental"], "fuelPhase": "gas",
+      "psiId": "PSI-22",
+      "acronym": "ACME E-FIELD",
+      "areas": [
+        "fundamental"
+      ],
+      "fuelPhase": "gas",
       "fuels": [],
-      "conditions": { "o2": null, "pressureAtm": null, "flowCmS": null, "note": "The challenge statement says the electric field mimics partial gravity through its effect on the ions in the flame." },
+      "conditions": {
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
+        "flowCmS": null,
+        "note": "The challenge statement says the electric field mimics partial gravity through its effect on the ions in the flame."
+      },
       "sensors": null,
       "summary": "Studies how an electric field changes laminar diffusion flames; the challenge statement cites it as a way to mimic partial gravity.",
       "findings": [
-        { "text": "Per the challenge statement, the electric field acts on the ions naturally present in flames and mimics partial gravity.", "src": "CHALLENGE", "kind": "reported" },
-        { "text": "PSI clarifies it is not conducted for space applications, although findings could aid future space combustion devices (e.g., solid waste processing).", "src": "PSI", "kind": "reported" }
+        {
+          "text": "Per the challenge statement, the electric field acts on the ions naturally present in flames and mimics partial gravity.",
+          "src": "CHALLENGE",
+          "kind": "reported"
+        },
+        {
+          "text": "PSI clarifies it is not conducted for space applications, although findings could aid future space combustion devices (e.g., solid waste processing).",
+          "src": "PSI",
+          "kind": "reported"
+        }
       ],
-      "habitat": { "o2": null, "pressure": null },
-      "factors": { "realism": 0.1, "safety": 0.25, "modeling": 0.5 },
+      "habitat": {
+        "o2": false,
+        "pressure": false
+      },
+      "factors": {
+        "realism": 0.1,
+        "safety": 0.25,
+        "modeling": 0.5
+      },
       "spaceApp": null,
       "earthApp": null,
       "status": "completed"
     },
     {
-      "psiId": "PSI-98", "acronym": "Saffire-I", "areas": ["prevention"], "fuelPhase": "solid (spacecraft material)",
+      "psiId": "PSI-98",
+      "acronym": "Saffire-I",
+      "areas": [
+        "prevention"
+      ],
+      "fuelPhase": "solid (spacecraft material)",
       "fuels": [],
-      "conditions": { "o2": null, "pressureAtm": null, "flowCmS": null, "note": "Uncrewed experiment aboard the Cygnus cargo vehicle." },
-      "sensors": ["oxygen", "carbon dioxide", "heat", "pressure", "flame growth", "two video cameras"],
+      "conditions": {
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
+        "flowCmS": [
+          20,
+          20
+        ],
+        "note": "Uncrewed experiment aboard the Cygnus cargo vehicle."
+      },
+      "sensors": [
+        "oxygen",
+        "carbon dioxide",
+        "heat",
+        "pressure",
+        "flame growth",
+        "two video cameras"
+      ],
       "summary": "A large-scale fire deliberately set aboard an uncrewed cargo vehicle to study how a realistic fire grows in low gravity.",
       "findings": [
-        { "text": "Determines microgravity flammability limits of several spacecraft materials and helps validate NASA's material selection criteria.", "src": "PSI", "kind": "reported" },
-        { "text": "Hypothesis: using terrestrial fires and standards to design spacecraft fire safety carries an inherent risk because of the uncertainty.", "src": "PSI", "kind": "reported" }
+        {
+          "text": "Determines microgravity flammability limits of several spacecraft materials and helps validate NASA's material selection criteria.",
+          "src": "PSI",
+          "kind": "reported"
+        },
+        {
+          "text": "Hypothesis: using terrestrial fires and standards to design spacecraft fire safety carries an inherent risk because of the uncertainty.",
+          "src": "PSI",
+          "kind": "reported"
+        }
       ],
-      "habitat": { "o2": null, "pressure": null },
-      "factors": { "realism": 1.0, "safety": 1.0, "modeling": 1.0 },
+      "habitat": {
+        "o2": false,
+        "pressure": false
+      },
+      "factors": {
+        "realism": 1,
+        "safety": 1,
+        "modeling": 1
+      },
       "spaceApp": "A realistic fire on an exploration vehicle with no risk to a crew.",
       "earthApp": "Benefits fire safety in mines, aircraft and submarines.",
       "status": "completed"
     },
     {
-      "psiId": "PSI-99", "acronym": "Saffire-II", "areas": ["prevention"], "fuelPhase": "solid (spacecraft material)",
+      "psiId": "PSI-99",
+      "acronym": "Saffire-II",
+      "areas": [
+        "prevention"
+      ],
+      "fuelPhase": "solid (spacecraft material)",
       "fuels": [],
-      "conditions": { "o2": null, "pressureAtm": null, "flowCmS": null, "note": "Same objectives as Saffire-I." },
+      "conditions": {
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
+        "flowCmS": null,
+        "note": "Same objectives as Saffire-I."
+      },
       "sensors": null,
       "summary": "Second Saffire flight, in the Cygnus pressurized cargo module.",
       "findings": [
-        { "text": "Same objectives: how fast a large-scale fire grows in low gravity and low-g flammability limits compared with NASA's normal-gravity screening test.", "src": "PSI", "kind": "reported" }
+        {
+          "text": "Same objectives: how fast a large-scale fire grows in low gravity and low-g flammability limits compared with NASA's normal-gravity screening test.",
+          "src": "PSI",
+          "kind": "reported"
+        }
       ],
-      "habitat": { "o2": null, "pressure": null },
-      "factors": { "realism": 1.0, "safety": 1.0, "modeling": 1.0 },
+      "habitat": {
+        "o2": false,
+        "pressure": false
+      },
+      "factors": {
+        "realism": 1,
+        "safety": 1,
+        "modeling": 1
+      },
       "spaceApp": null,
       "earthApp": null,
       "status": "completed"
     },
     {
-      "psiId": "PSI-100", "acronym": "Saffire-III", "areas": ["prevention"], "fuelPhase": "solid (spacecraft material)",
+      "psiId": "PSI-100",
+      "acronym": "Saffire-III",
+      "areas": [
+        "prevention"
+      ],
+      "fuelPhase": "solid (spacecraft material)",
       "fuels": [],
-      "conditions": { "o2": null, "pressureAtm": null, "flowCmS": null, "note": "Same objectives as Saffire-I." },
+      "conditions": {
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
+        "flowCmS": null,
+        "note": "Same objectives as Saffire-I."
+      },
       "sensors": null,
       "summary": "Third Saffire flight, with extensive instrumentation and data in PSI.",
       "findings": [
-        { "text": "Same objectives as Saffire-I: large-scale fire growth and flammability limits.", "src": "PSI", "kind": "reported" }
+        {
+          "text": "Same objectives as Saffire-I: large-scale fire growth and flammability limits.",
+          "src": "PSI",
+          "kind": "reported"
+        }
       ],
-      "habitat": { "o2": null, "pressure": null },
-      "factors": { "realism": 1.0, "safety": 1.0, "modeling": 1.0 },
+      "habitat": {
+        "o2": false,
+        "pressure": false
+      },
+      "factors": {
+        "realism": 1,
+        "safety": 1,
+        "modeling": 1
+      },
       "spaceApp": null,
       "earthApp": null,
       "status": "completed"
     },
     {
-      "psiId": "PSI-102", "acronym": "SAME", "areas": ["detection"], "fuelPhase": "aerosol (smoke)",
-      "fuels": ["Teflon", "Kapton", "silicone rubber", "cellulose", "dibutyl phthalate on a porous wick"],
-      "conditions": { "o2": null, "pressureAtm": null, "flowCmS": null, "note": "30 samples (6 per material) at different airflow rates, heating temperatures and smoke aging times. ISS Expedition 15." },
-      "sensors": ["particle counters across size ranges", "light scattering", "ionization and photoelectric detectors evaluated"],
+      "psiId": "PSI-102",
+      "acronym": "SAME",
+      "areas": [
+        "detection"
+      ],
+      "fuelPhase": "aerosol (smoke)",
+      "fuels": [
+        "Teflon",
+        "Kapton",
+        "silicone rubber",
+        "cellulose",
+        "dibutyl phthalate on a porous wick"
+      ],
+      "conditions": {
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
+        "flowCmS": null,
+        "note": "30 samples (6 per material) at different airflow rates, heating temperatures and smoke aging times. ISS Expedition 15."
+      },
+      "sensors": [
+        "particle counters across size ranges",
+        "light scattering",
+        "ionization and photoelectric detectors evaluated"
+      ],
       "summary": "Measures the size and distribution of smoke particles from spacecraft materials and evaluates ionization (Shuttle) and photoelectric (ISS) smoke detectors.",
       "findings": [
-        { "text": "All samples produced significant numbers of sub-micron particles, better detected by an ionization detector; a light-scattering detector would perform very well for most cases.", "src": "FS-SAME", "kind": "reported" },
-        { "text": "Arithmetic mean diameters are 100 to 200 nm; for silicone rubber (227 nm) almost half the particle mass is in particles larger than 1000 nm.", "src": "FS-SAME", "kind": "reported" },
-        { "text": "The detection target is the early phase (pre-fire heating products), not soot; detectors that measure a wider size spectrum may be more reliable.", "src": "FS-SAME", "kind": "reported" }
+        {
+          "text": "All samples produced significant numbers of sub-micron particles, better detected by an ionization detector; a light-scattering detector would perform very well for most cases.",
+          "src": "FS-SAME",
+          "kind": "reported"
+        },
+        {
+          "text": "Arithmetic mean diameters are 100 to 200 nm; for silicone rubber (227 nm) almost half the particle mass is in particles larger than 1000 nm.",
+          "src": "FS-SAME",
+          "kind": "reported"
+        },
+        {
+          "text": "The detection target is the early phase (pre-fire heating products), not soot; detectors that measure a wider size spectrum may be more reliable.",
+          "src": "FS-SAME",
+          "kind": "reported"
+        }
       ],
-      "habitat": { "o2": null, "pressure": null },
-      "factors": { "realism": 0.6, "safety": 1.0, "modeling": 1.0 },
+      "habitat": {
+        "o2": false,
+        "pressure": false
+      },
+      "factors": {
+        "realism": 0.6,
+        "safety": 1,
+        "modeling": 1
+      },
       "spaceApp": "A low-gravity smoke baseline against which future detection technology can be evaluated.",
       "earthApp": "Smoke detectors useful in submarines and underwater laboratories.",
       "status": "completed"
     },
     {
-      "psiId": "PSI-101", "acronym": "SAME-R", "areas": ["detection"], "fuelPhase": "aerosol (smoke)",
+      "psiId": "PSI-101",
+      "acronym": "SAME-R",
+      "areas": [
+        "detection"
+      ],
+      "fuelPhase": "aerosol (smoke)",
       "fuels": [],
-      "conditions": { "o2": null, "pressureAtm": null, "flowCmS": null, "note": "Reflight of SAME." },
-      "sensors": ["comparative soot diagnostic hardware"],
+      "conditions": {
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
+        "flowCmS": [
+          1,
+          8.1
+        ],
+        "note": "Reflight of SAME."
+      },
+      "sensors": [
+        "comparative soot diagnostic hardware"
+      ],
       "summary": "Repeats SAME and fixes a problem: the TEM grids came back contaminated and unusable.",
       "findings": [
-        { "text": "Quantifies the size liquid smoke droplets reach in low gravity and relates it to smoke generation and transport conditions.", "src": "PSI", "kind": "reported" },
-        { "text": "Hypothesis: without buoyancy-driven flows, particle growth by nucleation, condensation and coagulation yields larger particles than in 1 g.", "src": "PSI", "kind": "reported" }
+        {
+          "text": "Quantifies the size liquid smoke droplets reach in low gravity and relates it to smoke generation and transport conditions.",
+          "src": "PSI",
+          "kind": "reported"
+        },
+        {
+          "text": "Hypothesis: without buoyancy-driven flows, particle growth by nucleation, condensation and coagulation yields larger particles than in 1 g.",
+          "src": "PSI",
+          "kind": "reported"
+        }
       ],
-      "habitat": { "o2": null, "pressure": null },
-      "factors": { "realism": 0.6, "safety": 1.0, "modeling": 1.0 },
+      "habitat": {
+        "o2": false,
+        "pressure": false
+      },
+      "factors": {
+        "realism": 0.6,
+        "safety": 1,
+        "modeling": 1
+      },
       "spaceApp": "Technology for an advanced fire detector on long-duration missions.",
       "earthApp": null,
       "status": "completed"
     },
     {
-      "psiId": "PSI-47", "acronym": "DAFT / DAFT-2", "areas": ["detection"], "fuelPhase": "aerosol (dust)",
-      "fuels": ["dust and aerosols"],
-      "conditions": { "o2": null, "pressureAtm": null, "flowCmS": null, "note": "Mitigates the risk of SAME by checking a modified P-Trak particle counter." },
-      "sensors": ["modified TSI P-Trak (isopropanol condensation and laser counting)"],
+      "psiId": "PSI-47",
+      "acronym": "DAFT / DAFT-2",
+      "areas": [
+        "detection"
+      ],
+      "fuelPhase": "aerosol (dust)",
+      "fuels": [
+        "dust and aerosols"
+      ],
+      "conditions": {
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
+        "flowCmS": null,
+        "note": "Mitigates the risk of SAME by checking a modified P-Trak particle counter."
+      },
+      "sensors": [
+        "modified TSI P-Trak (isopropanol condensation and laser counting)"
+      ],
       "summary": "Checks that a modified P-Trak particle counter works in microgravity; the same instrument used in SAME was used to detect dust.",
       "findings": [
-        { "text": "There were concerns the P-Trak would fail in microgravity (isopropanol clogging, or the optics-chamber airflow dynamics).", "src": "PSI", "kind": "reported" },
-        { "text": "Contributes to detection systems with higher reliability and sensitivity for extended missions.", "src": "PSI", "kind": "reported" }
+        {
+          "text": "There were concerns the P-Trak would fail in microgravity (isopropanol clogging, or the optics-chamber airflow dynamics).",
+          "src": "PSI",
+          "kind": "reported"
+        },
+        {
+          "text": "Contributes to detection systems with higher reliability and sensitivity for extended missions.",
+          "src": "PSI",
+          "kind": "reported"
+        }
       ],
-      "habitat": { "o2": null, "pressure": null },
-      "factors": { "realism": 0.3, "safety": 0.5, "modeling": 0.5 },
+      "habitat": {
+        "o2": false,
+        "pressure": false
+      },
+      "factors": {
+        "realism": 0.3,
+        "safety": 0.5,
+        "modeling": 0.5
+      },
       "spaceApp": "Telling smoke from dust reduces false alarms.",
       "earthApp": "A Shuttle-derived detector (Brunswick Incipient Fire Detector, 1978) already separated smoke from dust in mines.",
       "status": "completed"
     },
     {
-      "psiId": "PSI-107", "acronym": "SPICE", "areas": ["fundamental"], "fuelPhase": "gas",
-      "fuels": ["ethylene", "propane", "propylene (mixtures)"],
-      "conditions": { "o2": null, "pressureAtm": null, "flowCmS": null, "note": "Its fan-driven flow duct is reused in BASS, BASS-II and SLICE." },
-      "sensors": ["camera images", "video (18 videos in PSI)"],
+      "psiId": "PSI-107",
+      "acronym": "SPICE",
+      "areas": [
+        "fundamental"
+      ],
+      "fuelPhase": "gas",
+      "fuels": [
+        "ethylene",
+        "propane",
+        "propylene (mixtures)"
+      ],
+      "conditions": {
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
+        "flowCmS": [
+          0.66,
+          85.28
+        ],
+        "note": "Its fan-driven flow duct is reused in BASS, BASS-II and SLICE."
+      },
+      "sensors": [
+        "camera images",
+        "video (18 videos in PSI)"
+      ],
       "summary": "Studies the smoke point and luminous length of jet flames in coflow, using the duct that BASS and SLICE reuse.",
       "findings": [
-        { "text": "Quantifies the sooting propensity of different fuels and the effect of burner diameter and coflow velocity.", "src": "PSI", "kind": "reported" }
+        {
+          "text": "Quantifies the sooting propensity of different fuels and the effect of burner diameter and coflow velocity.",
+          "src": "PSI",
+          "kind": "reported"
+        }
       ],
-      "habitat": { "o2": null, "pressure": null },
-      "factors": { "realism": 0.1, "safety": 0.5, "modeling": 1.0 },
+      "habitat": {
+        "o2": false,
+        "pressure": false
+      },
+      "factors": {
+        "realism": 0.1,
+        "safety": 0.5,
+        "modeling": 1
+      },
       "spaceApp": "Helps design safer spacecraft environments.",
       "earthApp": null,
       "status": "completed"
     },
     {
-      "psiId": "PSI-106", "acronym": "SLICE", "areas": ["fundamental"], "fuelPhase": "gas",
+      "psiId": "PSI-106",
+      "acronym": "SLICE",
+      "areas": [
+        "fundamental"
+      ],
+      "fuelPhase": "gas",
       "fuels": [],
-      "conditions": { "o2": null, "pressureAtm": null, "flowCmS": null, "note": "Uses SPICE hardware. Operated in 2012 per the guide." },
+      "conditions": {
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
+        "flowCmS": null,
+        "note": "Uses SPICE hardware. Operated in 2012 per the guide."
+      },
       "sensors": null,
       "summary": "Structure and lift-off of laminar diffusion flames in microgravity.",
       "findings": [
-        { "text": "Determines lift-off velocity limits for different fuels and burner diameters, and the effect of nitrogen dilution.", "src": "PSI", "kind": "reported" }
+        {
+          "text": "Determines lift-off velocity limits for different fuels and burner diameters, and the effect of nitrogen dilution.",
+          "src": "PSI",
+          "kind": "reported"
+        }
       ],
-      "habitat": { "o2": null, "pressure": null },
-      "factors": { "realism": 0.1, "safety": 0.25, "modeling": 1.0 },
+      "habitat": {
+        "o2": false,
+        "pressure": false
+      },
+      "factors": {
+        "realism": 0.1,
+        "safety": 0.25,
+        "modeling": 1
+      },
       "spaceApp": null,
       "earthApp": "Numerical models that improve efficiency and cut emissions.",
       "status": "completed"
     },
     {
-      "psiId": "PSI-60", "acronym": "SPICE data analysis", "areas": ["fundamental"], "fuelPhase": "gas",
+      "psiId": "PSI-60",
+      "acronym": "SPICE data analysis",
+      "areas": [
+        "fundamental"
+      ],
+      "fuelPhase": "gas",
       "fuels": [],
-      "conditions": { "o2": null, "pressureAtm": null, "flowCmS": null, "note": "Ground investigation on SPICE data; more than 1600 DSLR images." },
-      "sensors": ["more than 1600 DSLR images analyzed"],
+      "conditions": {
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
+        "flowCmS": null,
+        "note": "Ground investigation on SPICE data; more than 1600 DSLR images."
+      },
+      "sensors": [
+        "more than 1600 DSLR images analyzed"
+      ],
       "summary": "Computational and experimental analysis of SPICE data to explain the large discrepancy in soot formation between 1 g and 0 g.",
       "findings": [
-        { "text": "Hypothesis: in microgravity flames are longer and more diffuse, with lower temperatures and higher soot concentration than in normal gravity.", "src": "PSI", "kind": "reported" }
+        {
+          "text": "Hypothesis: in microgravity flames are longer and more diffuse, with lower temperatures and higher soot concentration than in normal gravity.",
+          "src": "PSI",
+          "kind": "reported"
+        }
       ],
-      "habitat": { "o2": null, "pressure": null },
-      "factors": { "realism": 0.1, "safety": 0.25, "modeling": 1.0 },
+      "habitat": {
+        "o2": false,
+        "pressure": false
+      },
+      "factors": {
+        "realism": 0.1,
+        "safety": 0.25,
+        "modeling": 1
+      },
       "spaceApp": null,
       "earthApp": null,
       "status": "ground analysis"
     }
   ],
   "upcoming": [
-    { "acronym": "FM2", "name": "Flammability of Materials on the Moon", "gravity": "1/6 g (Moon)", "note": "The first combustion experiment on another planetary body; burns materials such as SIBAL in air.", "src": "GLENN" },
-    { "acronym": "LUCI", "name": "Lunar-g Combustion Investigation", "gravity": "lunar partial gravity", "note": "Will measure combustion in partial gravity. No data yet.", "src": "CHALLENGE" },
-    { "acronym": "SoFIE", "name": "Solid Fuel Ignition and Extinction", "gravity": "microgravity (ISS)", "note": "Will test whether NASA-STD-6001's 1-g flame test is conservative in low gravity.", "src": "GLENN" },
-    { "acronym": "FLARE", "name": "Flammability Limits at Reduced-g Experiment", "gravity": "normal gravity and microgravity", "note": "A method to estimate microgravity flammability limits from ground data; a project with JAXA, ESA, CNES and DLR.", "src": "GLENN" }
+    {
+      "acronym": "FM2",
+      "name": "Flammability of Materials on the Moon",
+      "gravity": "1/6 g (Moon)",
+      "note": "The first combustion experiment on another planetary body; burns materials such as SIBAL in air.",
+      "src": "GLENN"
+    },
+    {
+      "acronym": "LUCI",
+      "name": "Lunar-g Combustion Investigation",
+      "gravity": "lunar partial gravity",
+      "note": "Will measure combustion in partial gravity. No data yet.",
+      "src": "CHALLENGE"
+    },
+    {
+      "acronym": "SoFIE",
+      "name": "Solid Fuel Ignition and Extinction",
+      "gravity": "microgravity (ISS)",
+      "note": "Will test whether NASA-STD-6001's 1-g flame test is conservative in low gravity.",
+      "src": "GLENN"
+    },
+    {
+      "acronym": "FLARE",
+      "name": "Flammability Limits at Reduced-g Experiment",
+      "gravity": "normal gravity and microgravity",
+      "note": "A method to estimate microgravity flammability limits from ground data; a project with JAXA, ESA, CNES and DLR.",
+      "src": "GLENN"
+    }
   ],
   "environments": [
-    { "id": "earth", "name": "Earth", "o2": 0.21, "pressureAtm": 1.0, "pressurePsi": 14.7, "gravityG": 1.0, "src": "CHALLENGE" },
-    { "id": "iss", "name": "ISS", "o2": 0.21, "pressureAtm": 1.0, "pressurePsi": 14.7, "gravityG": 0, "src": "CHALLENGE", "note": "Standard cabin conditions; microgravity." },
-    { "id": "moon-habitat", "name": "Lunar base (habitat)", "o2": 0.30, "pressureAtm": 0.694, "pressurePsi": 10.2, "gravityG": 0.166, "src": "CHALLENGE", "note": "30% O2 or more at 10.2 psi or less (challenge statement). Lunar gravity: no experimental data." },
-    { "id": "suit", "name": "Spacesuit", "o2": 1.0, "pressureAtm": 0.293, "pressurePsi": 4.3, "gravityG": null, "src": "CHALLENGE" }
+    {
+      "id": "earth",
+      "name": "Earth",
+      "o2": 0.21,
+      "pressureAtm": 1,
+      "pressurePsi": 14.7,
+      "gravityG": 1,
+      "src": "CHALLENGE"
+    },
+    {
+      "id": "iss",
+      "name": "ISS",
+      "o2": 0.21,
+      "pressureAtm": 1,
+      "pressurePsi": 14.7,
+      "gravityG": 0,
+      "src": "CHALLENGE",
+      "note": "Standard cabin conditions; microgravity."
+    },
+    {
+      "id": "moon-habitat",
+      "name": "Lunar base (habitat)",
+      "o2": 0.3,
+      "pressureAtm": 0.694,
+      "pressurePsi": 10.2,
+      "gravityG": 0.166,
+      "src": "CHALLENGE",
+      "note": "30% O2 or more at 10.2 psi or less (challenge statement). Lunar gravity: no experimental data."
+    },
+    {
+      "id": "suit",
+      "name": "Spacesuit",
+      "o2": 1,
+      "pressureAtm": 0.293,
+      "pressurePsi": 4.3,
+      "gravityG": null,
+      "src": "CHALLENGE"
+    }
   ],
   "incidents": [
-    { "year": 1967, "name": "Apollo 1", "text": "A flash fire swept the Command Module during a pre-launch test in a 100% oxygen cabin. Grissom, White and Chaffee died. The three-piece hatch took about 90 seconds to open.", "lesson": "A unified hatch that opens in 3 seconds, tightly restricted combustible materials and fire-resistant spacesuits.", "src": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1" },
-    { "year": 1970, "name": "Apollo 13", "text": "Oxygen tank no. 2 exploded en route to the Moon after its heaters overheated and degraded the Teflon insulation; heater voltage had been raised from 28 to 65 V DC without upgrading the thermostats.", "lesson": "Oxygen system redesign: a third tank, upgraded thermostats, no stirring fans and stainless-steel-sheathed wiring.", "src": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-13" },
-    { "year": 1997, "name": "Mir", "text": "On 24 February a solid-fuel oxygen generator canister caught fire in the Kvant-1 module. The flame burned for several minutes and the crew fought it with foam extinguishers.", "lesson": "Changes to canister preparation and emergency training; the ISS uses dissimilar, redundant oxygen generation.", "src": "https://www.nasa.gov/history/25-years-ago-fire-aboard-space-station-mir/" },
-    { "year": "Recent", "name": "Artemis II", "text": "A smoke alarm sounded about 80,000 miles from Earth, as recounted by the commander in the challenge statement.", "lesson": "A reminder of why fast detection and response matter far from home.", "src": "https://www.spaceappschallenge.org" }
+    {
+      "year": 1967,
+      "name": "Apollo 1",
+      "text": "A flash fire swept the Command Module during a pre-launch test in a 100% oxygen cabin. Grissom, White and Chaffee died. The three-piece hatch took about 90 seconds to open.",
+      "lesson": "A unified hatch that opens in 3 seconds, tightly restricted combustible materials and fire-resistant spacesuits.",
+      "src": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1"
+    },
+    {
+      "year": 1970,
+      "name": "Apollo 13",
+      "text": "Oxygen tank no. 2 exploded en route to the Moon after its heaters overheated and degraded the Teflon insulation; heater voltage had been raised from 28 to 65 V DC without upgrading the thermostats.",
+      "lesson": "Oxygen system redesign: a third tank, upgraded thermostats, no stirring fans and stainless-steel-sheathed wiring.",
+      "src": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-13"
+    },
+    {
+      "year": 1997,
+      "name": "Mir",
+      "text": "On 24 February a solid-fuel oxygen generator canister caught fire in the Kvant-1 module. The flame burned for several minutes and the crew fought it with foam extinguishers.",
+      "lesson": "Changes to canister preparation and emergency training; the ISS uses dissimilar, redundant oxygen generation.",
+      "src": "https://www.nasa.gov/history/25-years-ago-fire-aboard-space-station-mir/"
+    },
+    {
+      "year": "Recent",
+      "name": "Artemis II",
+      "text": "A smoke alarm sounded about 80,000 miles from Earth, as recounted by the commander in the challenge statement.",
+      "lesson": "A reminder of why fast detection and response matter far from home.",
+      "src": "https://www.spaceappschallenge.org"
+    }
   ],
   "spinoffs": [
-    { "name": "Firefighter air tank", "year": 1976, "text": "A 20 lb backpack with a 30-minute air supply at 4,500 psi (13 lb lighter than conventional tanks), with an aluminum liner wrapped in glass fibers.", "src": "https://spinoff.nasa.gov/node/9582" },
-    { "name": "Project FIRES: protective clothing", "year": 1982, "text": "Firefighter protective gear using fire-resistant fabrics derived from spacesuit materials, field-tested in 14 municipal fire departments.", "src": "https://spinoff.nasa.gov/node/9918" },
-    { "name": "Brunswick Incipient Fire Detector", "year": 1978, "text": "A Space Shuttle detector that tells combustion particles from dust (fewer false alarms) and senses fire before flame and smoke; sensors can be networked for mines.", "src": "http://hdl.handle.net/hdl:2060/20070018916" }
+    {
+      "name": "Firefighter air tank",
+      "year": 1976,
+      "text": "A 20 lb backpack with a 30-minute air supply at 4,500 psi (13 lb lighter than conventional tanks), with an aluminum liner wrapped in glass fibers.",
+      "src": "https://spinoff.nasa.gov/node/9582"
+    },
+    {
+      "name": "Project FIRES: protective clothing",
+      "year": 1982,
+      "text": "Firefighter protective gear using fire-resistant fabrics derived from spacesuit materials, field-tested in 14 municipal fire departments.",
+      "src": "https://spinoff.nasa.gov/node/9918"
+    },
+    {
+      "name": "Brunswick Incipient Fire Detector",
+      "year": 1978,
+      "text": "A Space Shuttle detector that tells combustion particles from dust (fewer false alarms) and senses fire before flame and smoke; sensors can be networked for mines.",
+      "src": "http://hdl.handle.net/hdl:2060/20070018916"
+    }
   ]
 }

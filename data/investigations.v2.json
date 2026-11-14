@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T09:35:41.382Z",
+  "generatedAt": "2026-11-14T10:02:34.413Z",
   "sources": {
     "GUIDE": {
       "label": "A Researcher's Guide to Combustion Science (NASA, 2015)",
@@ -166,8 +166,14 @@
         "paraffin and Japan-wax candles"
       ],
       "conditions": {
-        "o2": null,
-        "pressureAtm": null,
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
         "flowCmS": [
           5,
           50
@@ -202,8 +208,8 @@
         }
       ],
       "habitat": {
-        "o2": null,
-        "pressure": null
+        "o2": false,
+        "pressure": false
       },
       "factors": {
         "realism": 1,
@@ -970,7 +976,10 @@
           0.136,
           0.222
         ],
-        "pressureAtm": null,
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
         "flowCmS": null,
         "note": "O2 is the MEASURED initial O2 range (13.6–22.2 % by volume) across the 129 tests in the PSI-25 table. Primary variables per PSI: flow velocity and direction, ambient oxygen (via nitrogen dilution) and sample geometry. Airflow units are not stated in the table."
       },
@@ -997,7 +1006,7 @@
       ],
       "habitat": {
         "o2": false,
-        "pressure": null
+        "pressure": false
       },
       "factors": {
         "realism": 1,
@@ -2980,8 +2989,14 @@
         "droplet pairs"
       ],
       "conditions": {
-        "o2": null,
-        "pressureAtm": null,
+        "o2": [
+          0.12,
+          0.34
+        ],
+        "pressureAtm": [
+          0.7,
+          3
+        ],
         "flowCmS": null,
         "dropletMm": [
           2,
@@ -3004,8 +3019,8 @@
         }
       ],
       "habitat": {
-        "o2": null,
-        "pressure": null
+        "o2": true,
+        "pressure": true
       },
       "factors": {
         "realism": 0.4,
@@ -3077,7 +3092,10 @@
         "n-dodecane / iso-dodecane mixtures"
       ],
       "conditions": {
-        "o2": null,
+        "o2": [
+          0.17,
+          0.21
+        ],
         "pressureAtm": [
           0.25,
           5
@@ -3100,7 +3118,7 @@
         }
       ],
       "habitat": {
-        "o2": null,
+        "o2": false,
         "pressure": true
       },
       "factors": {
@@ -3920,10 +3938,13 @@
       ],
       "conditions": {
         "o2": [
-          null,
+          0.12,
           0.85
         ],
-        "pressureAtm": null,
+        "pressureAtm": [
+          0.489,
+          3.267
+        ],
         "flowCmS": null,
         "note": "The challenge statement says an O2-N2 mixture of up to 85% O2 flowed from a spherical burner, creating an inside-out flame."
       },
@@ -3943,7 +3964,7 @@
       ],
       "habitat": {
         "o2": true,
-        "pressure": null
+        "pressure": true
       },
       "factors": {
         "realism": 0.2,
@@ -4007,8 +4028,14 @@
         "methane (CH4)"
       ],
       "conditions": {
-        "o2": null,
-        "pressureAtm": null,
+        "o2": [
+          0.198,
+          0.85
+        ],
+        "pressureAtm": [
+          0.426,
+          3.018
+        ],
         "flowCmS": null,
         "inerts": [
           "N2",
@@ -4026,8 +4053,8 @@
         }
       ],
       "habitat": {
-        "o2": null,
-        "pressure": null
+        "o2": true,
+        "pressure": true
       },
       "factors": {
         "realism": 0.1,
@@ -4110,8 +4137,14 @@
         "ethylene"
       ],
       "conditions": {
-        "o2": null,
-        "pressureAtm": null,
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
         "flowCmS": null,
         "note": "Weak coflow diffusion flames as a function of velocity and fuel dilution."
       },
@@ -4125,8 +4158,8 @@
         }
       ],
       "habitat": {
-        "o2": null,
-        "pressure": null
+        "o2": false,
+        "pressure": false
       },
       "factors": {
         "realism": 0.1,
@@ -4195,8 +4228,14 @@
       "fuelPhase": "gas",
       "fuels": [],
       "conditions": {
-        "o2": null,
-        "pressureAtm": null,
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
         "flowCmS": null,
         "note": "The challenge statement says the electric field mimics partial gravity through its effect on the ions in the flame."
       },
@@ -4215,8 +4254,8 @@
         }
       ],
       "habitat": {
-        "o2": null,
-        "pressure": null
+        "o2": false,
+        "pressure": false
       },
       "factors": {
         "realism": 0.1,
@@ -4285,9 +4324,18 @@
       "fuelPhase": "solid (spacecraft material)",
       "fuels": [],
       "conditions": {
-        "o2": null,
-        "pressureAtm": null,
-        "flowCmS": null,
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
+        "flowCmS": [
+          20,
+          20
+        ],
         "note": "Uncrewed experiment aboard the Cygnus cargo vehicle."
       },
       "sensors": [
@@ -4312,8 +4360,8 @@
         }
       ],
       "habitat": {
-        "o2": null,
-        "pressure": null
+        "o2": false,
+        "pressure": false
       },
       "factors": {
         "realism": 1,
@@ -4386,8 +4434,14 @@
       "fuelPhase": "solid (spacecraft material)",
       "fuels": [],
       "conditions": {
-        "o2": null,
-        "pressureAtm": null,
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
         "flowCmS": null,
         "note": "Same objectives as Saffire-I."
       },
@@ -4401,8 +4455,8 @@
         }
       ],
       "habitat": {
-        "o2": null,
-        "pressure": null
+        "o2": false,
+        "pressure": false
       },
       "factors": {
         "realism": 1,
@@ -4471,8 +4525,14 @@
       "fuelPhase": "solid (spacecraft material)",
       "fuels": [],
       "conditions": {
-        "o2": null,
-        "pressureAtm": null,
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
         "flowCmS": null,
         "note": "Same objectives as Saffire-I."
       },
@@ -4486,8 +4546,8 @@
         }
       ],
       "habitat": {
-        "o2": null,
-        "pressure": null
+        "o2": false,
+        "pressure": false
       },
       "factors": {
         "realism": 1,
@@ -4551,8 +4611,14 @@
         "dibutyl phthalate on a porous wick"
       ],
       "conditions": {
-        "o2": null,
-        "pressureAtm": null,
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
         "flowCmS": null,
         "note": "30 samples (6 per material) at different airflow rates, heating temperatures and smoke aging times. ISS Expedition 15."
       },
@@ -4580,8 +4646,8 @@
         }
       ],
       "habitat": {
-        "o2": null,
-        "pressure": null
+        "o2": false,
+        "pressure": false
       },
       "factors": {
         "realism": 0.6,
@@ -4672,9 +4738,18 @@
       "fuelPhase": "aerosol (smoke)",
       "fuels": [],
       "conditions": {
-        "o2": null,
-        "pressureAtm": null,
-        "flowCmS": null,
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
+        "flowCmS": [
+          1,
+          8.1
+        ],
         "note": "Reflight of SAME."
       },
       "sensors": [
@@ -4694,8 +4769,8 @@
         }
       ],
       "habitat": {
-        "o2": null,
-        "pressure": null
+        "o2": false,
+        "pressure": false
       },
       "factors": {
         "realism": 0.6,
@@ -4825,8 +4900,14 @@
         "dust and aerosols"
       ],
       "conditions": {
-        "o2": null,
-        "pressureAtm": null,
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
         "flowCmS": null,
         "note": "Mitigates the risk of SAME by checking a modified P-Trak particle counter."
       },
@@ -4847,8 +4928,8 @@
         }
       ],
       "habitat": {
-        "o2": null,
-        "pressure": null
+        "o2": false,
+        "pressure": false
       },
       "factors": {
         "realism": 0.3,
@@ -4908,9 +4989,18 @@
         "propylene (mixtures)"
       ],
       "conditions": {
-        "o2": null,
-        "pressureAtm": null,
-        "flowCmS": null,
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
+        "flowCmS": [
+          0.66,
+          85.28
+        ],
         "note": "Its fan-driven flow duct is reused in BASS, BASS-II and SLICE."
       },
       "sensors": [
@@ -4926,8 +5016,8 @@
         }
       ],
       "habitat": {
-        "o2": null,
-        "pressure": null
+        "o2": false,
+        "pressure": false
       },
       "factors": {
         "realism": 0.1,
@@ -5117,8 +5207,14 @@
       "fuelPhase": "gas",
       "fuels": [],
       "conditions": {
-        "o2": null,
-        "pressureAtm": null,
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
         "flowCmS": null,
         "note": "Uses SPICE hardware. Operated in 2012 per the guide."
       },
@@ -5132,8 +5228,8 @@
         }
       ],
       "habitat": {
-        "o2": null,
-        "pressure": null
+        "o2": false,
+        "pressure": false
       },
       "factors": {
         "realism": 0.1,
@@ -5197,8 +5293,14 @@
       "fuelPhase": "gas",
       "fuels": [],
       "conditions": {
-        "o2": null,
-        "pressureAtm": null,
+        "o2": [
+          0.21,
+          0.21
+        ],
+        "pressureAtm": [
+          1.013,
+          1.013
+        ],
         "flowCmS": null,
         "note": "Ground investigation on SPICE data; more than 1600 DSLR images."
       },
@@ -5214,8 +5316,8 @@
         }
       ],
       "habitat": {
-        "o2": null,
-        "pressure": null
+        "o2": false,
+        "pressure": false
       },
       "factors": {
         "realism": 0.1,
