@@ -35,7 +35,15 @@ for (const c of curated.investigations) {
     status: c.status,
     hardware: psi.hardware,
     program: psi.flightProgram,
-    files: { total: totalFiles, byType: psi.fileCountByType, videos: (psi.videos ?? []).length, experimentalTable: (psi.experimentalTable ?? []).length > 0 },
+    files: {
+      total: totalFiles,
+      byType: psi.fileCountByType,
+      videos: (psi.videos ?? []).length,
+      experimentalTable: (psi.experimentalTable ?? []).length > 0,
+      videoUrls: (psi.videos ?? [])
+        .filter(v => v.url && v.url.startsWith('https://'))
+        .map(v => ({ name: v.name, bytes: v.bytes, url: v.url, group: v.group ?? null })),
+    },
     publications: (psi.publications ?? []).slice(0, 6).map(p => ({ title: p.title, authors: p.authorList, doi: p.doi || null })),
   })
 }
