@@ -41,6 +41,10 @@ const T = {
     table: "with an experimental table (CSV)",
     openPsi: "Open in PSI ↗",
     pubs: "Publications",
+    videosTitle: "Videos from the ISS experiment",
+    videosNote: (n: number) => `${n} recorded video files hosted on NASA PSI. These are real microgravity flame experiments conducted aboard the International Space Station.`,
+    moreVideos: (n: number) => `View ${n} more videos on PSI ↗`,
+    mbLabel: "MB",
   },
   es: {
     back: "← Volver al explorador",
@@ -74,6 +78,10 @@ const T = {
     table: "con tabla experimental (CSV)",
     openPsi: "Abrir en PSI ↗",
     pubs: "Publicaciones",
+    videosTitle: "Vídeos del experimento en la ISS",
+    videosNote: (n: number) => `${n} archivos de vídeo alojados en NASA PSI. Son experimentos reales de llamas en microgravedad realizados a bordo de la Estación Espacial Internacional.`,
+    moreVideos: (n: number) => `Ver ${n} vídeos más en PSI ↗`,
+    mbLabel: "MB",
   },
 };
 
@@ -243,6 +251,39 @@ export default function DetailView({ id }: { id: string }) {
               </li>
             ))}
           </ul>
+        </section>
+      )}
+
+      {inv.files.videoUrls && inv.files.videoUrls.length > 0 && (
+        <section className="mt-10 pb-10" aria-labelledby="vids">
+          <h2 id="vids" className="text-xl font-semibold">
+            {t.videosTitle}
+          </h2>
+          <p className="mt-2 text-sm text-ink-2">{t.videosNote(inv.files.videoUrls.length)}</p>
+          <div className="mt-4 grid gap-2 sm:grid-cols-2 md:grid-cols-3">
+            {inv.files.videoUrls.slice(0, 9).map((v, i) => (
+              <a
+                key={i}
+                href={v.url}
+                target="_blank"
+                rel="noreferrer"
+                className="card flex items-center gap-3 p-3 transition-colors hover:bg-surface-2"
+              >
+                <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-surface-2 text-base" style={{ color: "var(--accent)" }}>
+                  ▶
+                </span>
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-medium">{v.name}</p>
+                  <p className="text-xs text-muted">{(v.bytes / 1_000_000).toFixed(1)} {t.mbLabel}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+          {inv.files.videoUrls.length > 9 && (
+            <a href={inv.psiUrl} target="_blank" rel="noreferrer" className="mt-4 inline-block link text-sm">
+              {t.moreVideos(inv.files.videoUrls.length - 9)}
+            </a>
+          )}
         </section>
       )}
     </div>

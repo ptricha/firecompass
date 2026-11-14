@@ -44,7 +44,13 @@ export interface Investigation {
   status: string
   hardware: string | null
   program: string | null
-  files: { total: number; byType: Record<string, number>; videos: number; experimentalTable: boolean }
+  files: {
+    total: number
+    byType: Record<string, number>
+    videos: number
+    experimentalTable: boolean
+    videoUrls?: { name: string; bytes: number; url: string; group: string | null }[]
+  }
   publications: { title: string; authors: string; doi: string | null }[]
 }
 

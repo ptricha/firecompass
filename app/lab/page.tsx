@@ -8,6 +8,10 @@ import FlameLab from "@/components/FlameLab";
 
 type FlexRow = (typeof lab.flex.rows)[number];
 const ROWS: FlexRow[] = lab.flex.rows;
+type CfigInvRow = (typeof lab.cfigInverse.rows)[number];
+const CFIG_INV: CfigInvRow[] = lab.cfigInverse.rows;
+const CFIG_NORM_COUNT = lab.cfigNormal.rows.length;
+const CFIG_COOL_FLAMES = lab.cfigNormal.rows.filter((r) => r.coolFlame).length;
 const OUTCOME = {
   Extinction: { color: "var(--a-detection)", shape: "circle" },
   Completion: { color: "var(--a-prevention)", shape: "diamond" },
@@ -88,6 +92,19 @@ const T = {
     thO2i: "Initial O₂ %",
     thO2f: "Final O₂ %",
     thAir: "Air (as recorded)",
+    cfigH: "ACME CFI-G: flames tested up to 85% O₂",
+    cfigP: (n: number, i: number) => `PSI-159, ${n} normal + ${i} inverse tests. The only dataset here that reaches spacesuit-level oxygen. FLEX stops at 33%; CFI-G continues to 85%.`,
+    cfigRange: "O₂ coverage by dataset",
+    cfigFlex: "FLEX (PSI-69)",
+    cfigCfig: "CFI-G Inverse (PSI-159)",
+    cfigEarth: "Earth",
+    cfigLunar: "Lunar",
+    cfigSuit: "Suit",
+    cfigBinsH: "CFI-G Inverse: tests by O₂ level",
+    cfigBinsA: "Histogram of CFI-G Inverse oxygen levels",
+    cfigLunarMark: "Lunar ≥ 30%",
+    cfigCoolH: "Cool flames detected",
+    cfigCoolP: (n: number) => `${n} of 179 normal tests produced a cool flame — a reaction below 800 K, invisible to the eye, still capable of re-igniting a full flame. All appeared at O₂ ≥ 30%.`,
     methodH: "Method and limits",
     m1: "Source.",
     m1t: "PSI experimental tables, public domain (CC0), files verified byte-for-byte against NASA's published sizes (24,776 and 16,590 bytes).",
@@ -179,6 +196,19 @@ const T = {
     thO2i: "O₂ inicial %",
     thO2f: "O₂ final %",
     thAir: "Aire (tal como se registró)",
+    cfigH: "ACME CFI-G: llamas ensayadas hasta el 85% de O₂",
+    cfigP: (n: number, i: number) => `PSI-159, ${n} ensayos normales + ${i} inversos. El único dataset aquí que alcanza el nivel de oxígeno de un traje espacial. FLEX se detiene en el 33%; CFI-G llega hasta el 85%.`,
+    cfigRange: "Cobertura de O₂ por dataset",
+    cfigFlex: "FLEX (PSI-69)",
+    cfigCfig: "CFI-G Inverso (PSI-159)",
+    cfigEarth: "Tierra",
+    cfigLunar: "Luna",
+    cfigSuit: "Traje",
+    cfigBinsH: "CFI-G Inverso: ensayos por nivel de O₂",
+    cfigBinsA: "Histograma de niveles de oxígeno de CFI-G Inverso",
+    cfigLunarMark: "Lunar ≥ 30%",
+    cfigCoolH: "Llamas frías detectadas",
+    cfigCoolP: (n: number) => `${n} de 179 ensayos normales produjeron una llama fría — una reacción por debajo de 800 K, invisible al ojo humano, capaz de reiniciar una llama completa. Todas aparecieron con O₂ ≥ 30%.`,
     methodH: "Método y límites",
     m1: "Fuente.",
     m1t: "Tablas experimentales de PSI, dominio público (CC0), archivos verificados byte a byte contra los tamaños publicados por NASA (24 776 y 16 590 bytes).",
@@ -378,6 +408,45 @@ function Finder() {
   );
 }
 
+/* ---------- CFI-G O2 histogram ---------- */
+const CFIG_BINS = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
+function CfigHistogram() {
+  const t = useT(T);
+  const data = CFIG_BINS.slice(0, -1).map((lo, i) => {
+    const hi = CFIG_BINS[i + 1];
+    return { lo, hi, n: CFIG_INV.filter((r) => r.o2 != null && r.o2 >= lo - 1e-9 && r.o2 < hi - 1e-9).length };
+  });
+  const maxN = Math.max(...data.map((d) => d.n), 1);
+  const W = 720, H = 240, m = { l: 44, r: 20, t: 24, b: 40 };
+  const bw = (W - m.l - m.r) / data.length;
+  const yH = H - m.t - m.b;
+  const barH = (n: number) => (n / maxN) * yH;
+  const lx = (pct: number) => m.l + pct * (W - m.l - m.r);
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} className="mt-3 h-auto w-full" role="img" aria-label={t.cfigBinsA}>
+      {data.map((d, i) => {
+        const x = m.l + i * bw + 2;
+        const h = barH(d.n);
+        const isLunar = d.lo >= 0.2 && d.lo < 0.4;
+        const isHigh = d.lo >= 0.4;
+        return (
+          <g key={d.lo}>
+            <rect x={x} y={H - m.b - h} width={bw - 4} height={h} rx="3"
+              fill={isHigh ? "var(--accent)" : isLunar ? "var(--a-prevention)" : "var(--a-fundamental)"} fillOpacity="0.8" />
+            {d.n > 0 && <text x={x + (bw - 4) / 2} y={H - m.b - h - 5} textAnchor="middle" fontSize="10" fill="var(--ink-2)">{d.n}</text>}
+            <text x={x + (bw - 4) / 2} y={H - m.b + 14} textAnchor="middle" fontSize="10" fill="var(--muted)">{Math.round(d.lo * 100)}%</text>
+            <title>{`${Math.round(d.lo * 100)}–${Math.round(d.hi * 100)}% O₂: ${d.n} tests`}</title>
+          </g>
+        );
+      })}
+      {/* 30% lunar line */}
+      <line x1={lx(0.3)} x2={lx(0.3)} y1={m.t} y2={H - m.b} stroke="var(--a-prevention)" strokeDasharray="4 3" />
+      <text x={lx(0.3) + 4} y={m.t + 12} fontSize="10" fill="var(--a-prevention)">{t.cfigLunarMark}</text>
+      <line x1={m.l} x2={W - m.r} y1={H - m.b} y2={H - m.b} stroke="var(--line-2)" />
+    </svg>
+  );
+}
+
 /* ---------- page ---------- */
 export default function Lab() {
   const t = useT(T);
@@ -545,6 +614,58 @@ export default function Lab() {
             </table>
           </div>
         </details>
+      </section>
+
+      {/* CFI-G */}
+      <section className="mt-12" aria-labelledby="cfig">
+        <h2 id="cfig" className="text-xl font-semibold">{t.cfigH}</h2>
+        <p className="mt-2 max-w-3xl text-sm text-ink-2">{t.cfigP(CFIG_NORM_COUNT, CFIG_INV.length)}</p>
+
+        {/* O2 coverage range comparison */}
+        <div className="card mt-4 p-4 sm:p-5">
+          <h3 className="text-sm font-semibold">{t.cfigRange}</h3>
+          <div className="mt-3 space-y-3">
+            {/* Reference bar: 0–100% O2 */}
+            {(
+              [
+                { label: t.cfigFlex, min: 0.11, max: 0.33, color: "var(--a-prevention)" },
+                { label: t.cfigCfig, min: 0.12, max: 0.85, color: "var(--accent)" },
+              ] as const
+            ).map(({ label, min, max, color }) => (
+              <div key={label} className="grid grid-cols-[10rem_1fr] items-center gap-3 text-sm">
+                <span className="text-ink-2 text-xs">{label}</span>
+                <div className="relative h-5 rounded bg-surface-2">
+                  <div
+                    className="absolute h-5 rounded"
+                    style={{ left: `${min * 100}%`, width: `${(max - min) * 100}%`, background: color, opacity: 0.75 }}
+                  />
+                  <span className="absolute right-1 top-0.5 text-xs tabular-nums text-ink-2">{Math.round(min * 100)}–{Math.round(max * 100)}%</span>
+                </div>
+              </div>
+            ))}
+            {/* Tick marks */}
+            <div className="ml-[10rem] grid grid-cols-5 pl-3 text-xs text-muted">
+              <span>0%</span>
+              <span className="text-center">{t.cfigEarth} 21%</span>
+              <span className="text-center">{t.cfigLunar} 30%</span>
+              <span className="text-center">60%</span>
+              <span className="text-right">{t.cfigSuit} ~100%</span>
+            </div>
+          </div>
+
+          {/* CFI-G Inverse O2 histogram */}
+          <h3 className="mt-6 text-sm font-semibold">{t.cfigBinsH}</h3>
+          <CfigHistogram />
+        </div>
+
+        {/* Cool flames callout */}
+        <div className="card mt-4 flex gap-3 p-4">
+          <span className="text-2xl leading-none">🔵</span>
+          <div>
+            <p className="text-sm font-semibold">{t.cfigCoolH}</p>
+            <p className="mt-1 text-sm text-ink-2">{t.cfigCoolP(CFIG_COOL_FLAMES)}</p>
+          </div>
+        </div>
       </section>
 
       {/* Method */}
