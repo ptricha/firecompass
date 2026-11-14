@@ -42,7 +42,7 @@ const T = {
     openPsi: "Open in PSI ↗",
     pubs: "Publications",
     videosTitle: "Videos from the ISS experiment",
-    videosNote: (n: number) => `${n} recorded video files hosted on NASA PSI. These are real microgravity flame experiments conducted aboard the International Space Station.`,
+    videosNote: (n: number) => `${n} recorded video files from this experiment, hosted on NASA PSI. Click any card to open the PSI archive and view the files directly.`,
     moreVideos: (n: number) => `View ${n} more videos on PSI ↗`,
     mbLabel: "MB",
   },
@@ -79,7 +79,7 @@ const T = {
     openPsi: "Abrir en PSI ↗",
     pubs: "Publicaciones",
     videosTitle: "Vídeos del experimento en la ISS",
-    videosNote: (n: number) => `${n} archivos de vídeo alojados en NASA PSI. Son experimentos reales de llamas en microgravedad realizados a bordo de la Estación Espacial Internacional.`,
+    videosNote: (n: number) => `${n} archivos de vídeo de este experimento, alojados en NASA PSI. Haz clic en cualquier tarjeta para abrir el archivo PSI y ver los vídeos directamente.`,
     moreVideos: (n: number) => `Ver ${n} vídeos más en PSI ↗`,
     mbLabel: "MB",
   },
@@ -287,7 +287,7 @@ export default function DetailView({ id }: { id: string }) {
             {inv.files.videoUrls.slice(0, 9).map((v, i) => (
               <a
                 key={i}
-                href={v.url}
+                href={inv.psiUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="card flex items-center gap-3 p-3 transition-colors hover:bg-surface-2"

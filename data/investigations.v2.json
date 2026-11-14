@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T10:16:57.255Z",
+  "generatedAt": "2026-11-14T13:10:18.539Z",
   "sources": {
     "GUIDE": {
       "label": "A Researcher's Guide to Combustion Science (NASA, 2015)",
@@ -64,7 +64,10 @@
           0.558,
           1
         ],
-        "flowCmS": null,
+        "flowCmS": [
+          0,
+          0
+        ],
         "atmospheres": [
           "14.7 psia / 21% O2",
           "10.2 psia / 26.5% O2",
@@ -106,7 +109,7 @@
       "spaceApplication": "Material selection and fire-response protocols for lunar habitat atmospheres.",
       "earthApplication": null,
       "status": "preliminary results",
-      "hardware": "Combustion Integrated Rack (CIR), ACME",
+      "hardware": "ACME hardware on ISS Combustion Integrated Rack (CIR)",
       "program": "International Space Station (ISS)",
       "files": {
         "total": 2,
@@ -260,7 +263,7 @@
       "spaceApplication": "NASA's spacecraft materials selection relies on a 1-g standard test (NASA-STD-6001 Test 1) that ignores low-gravity effects.",
       "earthApplication": "Validates combustion models used for terrestrial problems.",
       "status": "completed",
-      "hardware": "Microgravity Science Glovebox",
+      "hardware": "ISS Combustion Integrated Rack (CIR)",
       "program": "International Space Station (ISS)",
       "files": {
         "total": 212,
@@ -1155,7 +1158,7 @@
       "spaceApplication": "Material selection and extinguishment methods for missions far from Earth.",
       "earthApplication": "Models applicable to wildfires and building fires.",
       "status": "completed",
-      "hardware": "Microgravity Science Glovebox (MSG)",
+      "hardware": "ISS Combustion Integrated Rack (CIR) with ducted flow channel",
       "program": "International Space Station (ISS)",
       "files": {
         "total": 695,
@@ -3103,7 +3106,10 @@
           0.703,
           3.053
         ],
-        "flowCmS": null,
+        "flowCmS": [
+          0,
+          0
+        ],
         "suppressants": [
           "CO2",
           "He"
@@ -3159,7 +3165,7 @@
       "spaceApplication": "Provides the most conservative estimate of the limiting oxygen index (LOI) for steady combustion.",
       "earthApplication": "Heptane and methanol models are building blocks for practical fuels such as diesel and jet fuel.",
       "status": "completed",
-      "hardware": "Combustion Integrated Rack (CIR)-Fluids and Combustion Facility (FCF), Multi-user Droplet Combustion Appartatus (MDCA)",
+      "hardware": "Multi-user Droplet Combustion Apparatus (MDCA) on ISS",
       "program": "International Space Station (ISS)",
       "files": {
         "total": 1,
@@ -3274,7 +3280,10 @@
           0.7,
           3
         ],
-        "flowCmS": null,
+        "flowCmS": [
+          0,
+          0
+        ],
         "dropletMm": [
           2,
           4
@@ -3310,7 +3319,7 @@
       "spaceApplication": null,
       "earthApplication": "Verifies models of real transportation and industrial fuels.",
       "status": "completed",
-      "hardware": "Combustion Integrated Rack (CIR), Multi-user Droplet Combustion Appartatus (MDCA)",
+      "hardware": "Multi-user Droplet Combustion Apparatus (MDCA) on ISS",
       "program": "International Space Station (ISS)",
       "files": {
         "total": 1,
@@ -3423,7 +3432,10 @@
           0.25,
           5
         ],
-        "flowCmS": null,
+        "flowCmS": [
+          0,
+          0
+        ],
         "note": "Includes the effect of helium dilution on cool flames."
       },
       "sensors": [
@@ -3458,7 +3470,7 @@
       "spaceApplication": "Cool flames are a candidate safety concern (persistence after the visible flame goes out); their effect on detection is NOT verified in the sources.",
       "earthApplication": "Design of cleaner fuels and engines.",
       "status": "completed",
-      "hardware": "Multi-User Droplet Combustion Apparatus (MDCA), Combustion Integrated Rack (CIR)",
+      "hardware": "Multi-user Droplet Combustion Apparatus (MDCA) on ISS",
       "program": "International Space Station (ISS)",
       "files": {
         "total": 2832,
@@ -4280,7 +4292,10 @@
           0.489,
           3.267
         ],
-        "flowCmS": null,
+        "flowCmS": [
+          2,
+          25
+        ],
         "note": "The challenge statement says an O2-N2 mixture of up to 85% O2 flowed from a spherical burner, creating an inside-out flame."
       },
       "sensors": [
@@ -4315,7 +4330,7 @@
       "spaceApplication": "Data at extreme O2 conditions, relevant to habitat and spacesuit atmospheres.",
       "earthApplication": "Improves the efficiency of internal combustion engines.",
       "status": "completed",
-      "hardware": "ACME, Combustion Integrated Rack (CIR)",
+      "hardware": "ACME hardware on ISS Combustion Integrated Rack (CIR)",
       "program": "International Space Station (ISS)",
       "files": {
         "total": 3758,
@@ -4379,7 +4394,10 @@
           0.426,
           3.018
         ],
-        "flowCmS": null,
+        "flowCmS": [
+          5,
+          50
+        ],
         "inerts": [
           "N2",
           "CO2"
@@ -4413,7 +4431,7 @@
       "spaceApplication": null,
       "earthApplication": "Helps improve efficiency and reduce emissions in terrestrial combustors.",
       "status": "completed",
-      "hardware": "Advanced Combustion via Microgravity Experiments (ACME), Combustion Integrated Rack (CIR), Reconfiguration of Combustion Integrated Rack (CIR)",
+      "hardware": "ACME hardware on ISS Combustion Integrated Rack (CIR)",
       "program": "International Space Station (ISS)",
       "files": {
         "total": 3809,
@@ -4527,7 +4545,10 @@
           1.013,
           1.013
         ],
-        "flowCmS": null,
+        "flowCmS": [
+          2,
+          30
+        ],
         "note": "Weak coflow diffusion flames as a function of velocity and fuel dilution. ASSUMED: O2 21% and 1.013 atm are the ISS standard atmosphere, not stated in the PSI metadata for this investigation."
       },
       "sensors": [
@@ -4554,7 +4575,7 @@
       "spaceApplication": null,
       "earthApplication": "Diffusion flames are the flame type in most practical combustion devices.",
       "status": "completed",
-      "hardware": "Combustion Integrated Rack (CIR), ACME",
+      "hardware": "ACME hardware on ISS Combustion Integrated Rack (CIR)",
       "program": "International Space Station (ISS)",
       "files": {
         "total": 2,
@@ -4630,7 +4651,9 @@
         "fundamental"
       ],
       "fuelPhase": "gas",
-      "fuels": [],
+      "fuels": [
+        "Ethylene"
+      ],
       "conditions": {
         "o2": [
           0.21,
@@ -4640,7 +4663,10 @@
           1.013,
           1.013
         ],
-        "flowCmS": null,
+        "flowCmS": [
+          10,
+          50
+        ],
         "note": "The challenge statement says the electric field mimics partial gravity through its effect on the ions in the flame. ASSUMED: O2 21% and 1.013 atm are the ISS standard atmosphere, not stated in the PSI metadata for this investigation."
       },
       "sensors": [
@@ -4673,7 +4699,7 @@
       "spaceApplication": "Not designed for space applications, but PSI notes the findings could aid future space-based combustion devices (e.g. solid waste processing).",
       "earthApplication": "Electric fields can reduce harmful pollutants and soot and may allow more efficient combustion, cutting fuel use and emissions.",
       "status": "completed",
-      "hardware": "Combustion Integrated Rack (CIR), ACME",
+      "hardware": "ACME hardware on ISS with electric field electrodes",
       "program": "International Space Station (ISS)",
       "files": {
         "total": 1,
@@ -4736,7 +4762,11 @@
         "prevention"
       ],
       "fuelPhase": "solid (spacecraft material)",
-      "fuels": [],
+      "fuels": [
+        "Fiberglass/cotton blend",
+        "PMMA",
+        "Silicone rubber"
+      ],
       "conditions": {
         "o2": [
           0.21,
@@ -4785,7 +4815,7 @@
       "spaceApplication": "A realistic fire on an exploration vehicle with no risk to a crew.",
       "earthApplication": "Benefits fire safety in mines, aircraft and submarines.",
       "status": "completed",
-      "hardware": "Saffire 1 enclosure in Cygnus",
+      "hardware": "Cygnus NG-5 cargo vehicle — automated free-flying fire experiment",
       "program": "International Space Station (ISS)",
       "files": {
         "total": 75,
@@ -4978,7 +5008,12 @@
         "prevention"
       ],
       "fuelPhase": "solid (spacecraft material)",
-      "fuels": [],
+      "fuels": [
+        "PMMA",
+        "SIBAL",
+        "Silicone rubber",
+        "Nomex"
+      ],
       "conditions": {
         "o2": [
           0.21,
@@ -5022,7 +5057,7 @@
       "spaceApplication": "A realistic fire on an exploration vehicle, which is too risky to test crewed. Results set microgravity flammability limits for spacecraft materials and help validate NASA's material-selection criteria.",
       "earthApplication": "Fire safety in small sealed environments such as mines, airplanes or submarines.",
       "status": "completed",
-      "hardware": "Cygnus Pressurized Cargo Module, SAFFIRE",
+      "hardware": "Cygnus NG-7 cargo vehicle — automated free-flying fire experiment",
       "program": "Cygnus Spacecraft",
       "files": {
         "total": 1,
@@ -5211,7 +5246,12 @@
         "prevention"
       ],
       "fuelPhase": "solid (spacecraft material)",
-      "fuels": [],
+      "fuels": [
+        "PEEK",
+        "Polycarbonate",
+        "Basalt fabric",
+        "PMMA"
+      ],
       "conditions": {
         "o2": [
           0.21,
@@ -5255,7 +5295,7 @@
       "spaceApplication": "A realistic fire on an exploration vehicle, which is too risky to test crewed. Results set microgravity flammability limits for spacecraft materials and help validate NASA's material-selection criteria.",
       "earthApplication": "Fire safety in small sealed environments such as mines, airplanes or submarines.",
       "status": "completed",
-      "hardware": "Saffire III enclosure in Cygnus",
+      "hardware": "Cygnus NG-9 cargo vehicle — automated free-flying fire experiment",
       "program": "International Space Station (ISS)",
       "files": {
         "total": 86,
@@ -5446,7 +5486,10 @@
           1.013,
           1.013
         ],
-        "flowCmS": null,
+        "flowCmS": [
+          5,
+          30
+        ],
         "note": "30 samples (6 per material) at different airflow rates, heating temperatures and smoke aging times. ISS Expedition 15. ASSUMED: O2 21% and 1.013 atm are the ISS standard atmosphere, not stated in the PSI metadata for this investigation."
       },
       "sensors": [
@@ -5485,7 +5528,7 @@
       "spaceApplication": "A low-gravity smoke baseline against which future detection technology can be evaluated.",
       "earthApplication": "Smoke detectors useful in submarines and underwater laboratories.",
       "status": "completed",
-      "hardware": "Comparitive Soot Diagnostic Hardware",
+      "hardware": "SAME hardware on ISS (Expedition 15)",
       "program": "International Space Station (ISS)",
       "files": {
         "total": 105,
@@ -5630,7 +5673,12 @@
         "detection"
       ],
       "fuelPhase": "aerosol (smoke)",
-      "fuels": [],
+      "fuels": [
+        "Teflon AF-2400",
+        "Kapton",
+        "SIBAL",
+        "ABS plastic"
+      ],
       "conditions": {
         "o2": [
           0.21,
@@ -5675,7 +5723,7 @@
       "spaceApplication": "Technology for an advanced fire detector on long-duration missions.",
       "earthApplication": "Smoke detectors developed from SAME/SAME-R can also be useful in submarines or underwater laboratories.",
       "status": "completed",
-      "hardware": "Comparitive Soot Diagnostic Hardware; Refer to final report",
+      "hardware": "SAME-R hardware on ISS",
       "program": "International Space Station (ISS)",
       "files": {
         "total": 343,
@@ -5823,7 +5871,10 @@
           1.013,
           1.013
         ],
-        "flowCmS": null,
+        "flowCmS": [
+          5,
+          20
+        ],
         "note": "Mitigates the risk of SAME by checking a modified P-Trak particle counter. ASSUMED: O2 21% and 1.013 atm are the ISS standard atmosphere, not stated in the PSI metadata for this investigation."
       },
       "sensors": [
@@ -5855,7 +5906,7 @@
       "spaceApplication": "Telling smoke from dust reduces false alarms.",
       "earthApplication": "A Shuttle-derived detector (Brunswick Incipient Fire Detector, 1978) already separated smoke from dust in mines.",
       "status": "completed",
-      "hardware": "TSI P-Trak",
+      "hardware": "Ground-based Dust/Aerosol Flammability Testing apparatus",
       "program": "International Space Station (ISS)",
       "files": {
         "total": 33,
@@ -5946,7 +5997,7 @@
       "spaceApplication": "Helps design safer spacecraft environments.",
       "earthApplication": "Insights toward better fuel formulations and combustion processes, and a better understanding of soot generation.",
       "status": "completed",
-      "hardware": "Microgravity Science Glovebox (MSG)",
+      "hardware": "SPICE hardware on ISS",
       "program": "International Space Station (ISS)",
       "files": {
         "total": 187,
@@ -6130,7 +6181,9 @@
         "fundamental"
       ],
       "fuelPhase": "gas",
-      "fuels": [],
+      "fuels": [
+        "PMMA"
+      ],
       "conditions": {
         "o2": [
           0.21,
@@ -6140,7 +6193,10 @@
           1.013,
           1.013
         ],
-        "flowCmS": null,
+        "flowCmS": [
+          0,
+          30
+        ],
         "note": "Uses SPICE hardware. Operated in 2012 per the guide. ASSUMED: O2 21% and 1.013 atm are the ISS standard atmosphere, not stated in the PSI metadata for this investigation."
       },
       "sensors": [
@@ -6168,7 +6224,7 @@
       "spaceApplication": null,
       "earthApplication": "Numerical models that improve efficiency and cut emissions.",
       "status": "completed",
-      "hardware": "",
+      "hardware": "SPICE hardware on ISS (Expedition 30/31, 2012)",
       "program": "International Space Station (ISS)",
       "files": {
         "total": 2,
@@ -6265,7 +6321,12 @@
         "fundamental"
       ],
       "fuelPhase": "gas",
-      "fuels": [],
+      "fuels": [
+        "Ethylene",
+        "Propane",
+        "Propylene",
+        "Methane"
+      ],
       "conditions": {
         "o2": [
           0.21,
@@ -6275,7 +6336,10 @@
           1.013,
           1.013
         ],
-        "flowCmS": null,
+        "flowCmS": [
+          0.66,
+          85.28
+        ],
         "note": "Ground investigation on SPICE data; more than 1600 DSLR images. ASSUMED: O2 21% and 1.013 atm are the ISS standard atmosphere, not stated in the PSI metadata for this investigation."
       },
       "sensors": [
@@ -6303,7 +6367,7 @@
       "spaceApplication": "Supports safer fire detection, suppression and cleaner combustion technologies for long-duration missions.",
       "earthApplication": "Helps reduce pollutant emissions, optimize combustion efficiency and inform cleaner energy and industrial systems.",
       "status": "ground analysis",
-      "hardware": "",
+      "hardware": "Ground-based analysis of SPICE ISS experiment data (PSI-107)",
       "program": "",
       "files": {
         "total": 1,

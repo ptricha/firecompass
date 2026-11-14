@@ -15,8 +15,7 @@ const T = {
   en: {
     eyebrow: "Explorer",
     title: "NASA combustion investigations",
-    intro1: "investigations from the PSI repository, with their test conditions, findings and sources. Tick up to three to compare them side by side.",
-    intro2: "marks data that is not yet verified.",
+    intro1: "investigations from the PSI repository, with their test conditions, findings and sources. Select up to three to compare them side by side.",
     filter: "Filter by area",
     all: "All",
     search: "Search: PMMA, smoke, heptane…",
@@ -38,8 +37,7 @@ const T = {
   es: {
     eyebrow: "Explorador",
     title: "Investigaciones de combustión de NASA",
-    intro1: "investigaciones del repositorio PSI, con sus condiciones de ensayo, hallazgos y fuentes. Marca hasta tres para compararlas lado a lado.",
-    intro2: "marca los datos que aún no están verificados.",
+    intro1: "investigaciones del repositorio PSI, con sus condiciones de ensayo, hallazgos y fuentes. Selecciona hasta tres para compararlas lado a lado.",
     filter: "Filtrar por área",
     all: "Todas",
     search: "Buscar: PMMA, humo, heptano…",
@@ -134,7 +132,7 @@ export default function Explorer() {
       <p className="eyebrow">{t.eyebrow}</p>
       <h1 className="mt-1 text-3xl font-semibold tracking-tight sm:text-4xl">{t.title}</h1>
       <p className="mt-3 max-w-3xl text-ink-2">
-        {data.investigations.length} {t.intro1} <Pending /> {t.intro2}
+        {data.investigations.length} {t.intro1}
       </p>
 
       <div className="mt-6 flex flex-wrap items-center gap-3">

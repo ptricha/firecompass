@@ -36,7 +36,7 @@ for (const c of curated.investigations) {
     spaceApplication: c.spaceApp,
     earthApplication: c.earthApp,
     status: c.status,
-    hardware: psi.hardware,
+    hardware: c.hardware ?? psi.hardware ?? null,
     program: psi.flightProgram,
     files: {
       total: totalFiles,
