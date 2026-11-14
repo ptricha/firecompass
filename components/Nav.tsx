@@ -11,12 +11,12 @@ const T = {
   en: {
     ignition: "Home", spark: "Basics", chronicles: "History", worlds: "Simulator", lab: "Data Lab", vault: "Experiments", radar: "Ranking", proof: "Sources",
     main: "Main", language: "Language", guide: "Guide mode", guideOn: "Guide on", menu: "Menu",
-    hints: ["Start here", "New to this? Basics", "Real fires & history", "Simulate fire anywhere", "Five places in 3D", "Play with the conditions", "Every NASA experiment", "Rank what matters", "Sources & licences"],
+    hints: ["Start here", "New to this? Basics", "Real fires & history", "Simulate fire anywhere", "Play with the conditions", "Every NASA experiment", "Rank what matters", "Sources & licences"],
   },
   es: {
     ignition: "Inicio", spark: "Lo básico", chronicles: "Historia", worlds: "Simulador", lab: "Laboratorio", vault: "Experimentos", radar: "Ranking", proof: "Fuentes",
     main: "Principal", language: "Idioma", guide: "Modo guía", guideOn: "Guía activa", menu: "Menú",
-    hints: ["Empieza aquí", "¿Nuevo? Lo básico", "Incendios reales e historia", "Simula fuego en cualquier lugar", "Cinco lugares en 3D", "Juega con las condiciones", "Cada experimento NASA", "Prioriza lo importante", "Fuentes y licencias"],
+    hints: ["Empieza aquí", "¿Nuevo? Lo básico", "Incendios reales e historia", "Simula fuego en cualquier lugar", "Juega con las condiciones", "Cada experimento NASA", "Prioriza lo importante", "Fuentes y licencias"],
   },
 };
 
@@ -34,7 +34,6 @@ export default function Nav() {
     { href: "/learn", label: t.spark },
     { href: "/history", label: t.chronicles },
     { href: "/simulator", label: t.worlds },
-    { href: "/immersive", label: "Immersive" },
     { href: "/lab", label: t.lab },
     { href: "/explorer", label: t.vault },
     { href: "/dashboard", label: t.radar },

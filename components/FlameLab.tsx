@@ -2,6 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import FlameView from "@/components/FlameView";
+import EnvironmentStage from "@/components/EnvironmentStage";
+import type { ImmersiveEnv } from "@/components/ImmersiveScene";
 import { ALL_LAYERS, type EnvId, type Fuel, type LabelText, type Layers, type SimParams, type SimStats } from "@/lib/flameEngine";
 import { flexVerdict } from "@/lib/flexVerdict";
 import { useData, useLang, useT } from "@/lib/i18n";
@@ -147,6 +149,7 @@ const LAYER_KEYS: (keyof Layers)[] = ["flame", "o2", "n2", "co2", "he", "fuel", 
 const MOL_KEYS: (keyof Layers)[] = ["o2", "n2", "co2", "he", "fuel", "products", "soot"];
 
 const PRESET_ENV: Record<string, EnvId> = { earth: "earth", iss: "iss", moon: "moon", suit: "suit" };
+const SCENE_FOR: Record<EnvId, ImmersiveEnv> = { earth: "earth", iss: "iss", moon: "moon", suit: "suit", none: "earth" };
 
 interface State {
   o2: number;
@@ -170,6 +173,12 @@ export default function FlameLab() {
 
   const [st, setSt] = useState<State>(() => ({ o2: 0.21, pressureAtm: 1, gravityG: 0, flowCmS: 0, co2: 0, he: 0, fuel: "methanol" }));
   const [envBg, setEnvBg] = useState<EnvId>("iss");
+  const [showEnv, setShowEnv] = useState(true);
+
+  // two WebGL views at once is heavy: start with the 3D environment hidden on small screens
+  useEffect(() => {
+    if (window.innerWidth < 768) setShowEnv(false);
+  }, []);
   const [layers, setLayers] = useState<Layers>({ ...ALL_LAYERS, flow: true });
   const [running, setRunning] = useState(true);
   const [speed, setSpeed] = useState(1);
@@ -250,6 +259,16 @@ export default function FlameLab() {
               </label>
             </div>
           </div>
+
+          <label className="mt-3 flex cursor-pointer items-center gap-1.5 text-sm text-ink-2">
+            <input type="checkbox" checked={showEnv} onChange={(e) => setShowEnv(e.target.checked)} />
+            {lang === "es" ? "Ver el entorno en 3D" : "Show the environment in 3D"}
+          </label>
+          {showEnv && envBg !== "none" && (
+            <div className="mt-2">
+              <EnvironmentStage env={SCENE_FOR[envBg]} className="h-[34vh] min-h-[260px]" />
+            </div>
+          )}
 
           <div className="mt-3">
             <FlameView

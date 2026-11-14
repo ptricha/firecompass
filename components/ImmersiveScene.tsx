@@ -594,7 +594,7 @@ async function buildSuit({ scene, renderer, progress }: Ctx): Promise<Built> {
 const BUILDERS: Record<ImmersiveEnv, (c: Ctx) => Promise<Built>> = { earth: buildEarth, moon: buildMoon, mars: buildMars, iss: buildIss, suit: buildSuit };
 
 // ---------- component ----------
-export default function ImmersiveScene({ env }: { env: ImmersiveEnv }) {
+export default function ImmersiveScene({ env, className = "h-[68vh] min-h-[460px]" }: { env: ImmersiveEnv; className?: string }) {
   const host = useRef<HTMLDivElement>(null);
   const [state, setState] = useState<"loading" | "ready" | "error">("loading");
   const [progress, setProgress] = useState(0);
@@ -697,7 +697,7 @@ export default function ImmersiveScene({ env }: { env: ImmersiveEnv }) {
   }, [env]);
 
   return (
-    <div className="relative h-[68vh] min-h-[460px] w-full overflow-hidden rounded-xl border border-white/10 bg-black">
+    <div className={`relative w-full overflow-hidden rounded-xl border border-white/10 bg-black ${className}`}>
       <div ref={host} className="absolute inset-0" />
       {state === "loading" && (
         <div role="status" aria-live="polite" className="pointer-events-none absolute inset-0 grid place-items-center">

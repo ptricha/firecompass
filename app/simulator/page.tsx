@@ -8,15 +8,20 @@ import { ALL_LAYERS, type EnvId, type Fuel, type LabelText, type Layers, type Si
 import { flexVerdict } from "@/lib/flexVerdict";
 import CoverageMap from "@/components/CoverageMap";
 import FlameView from "@/components/FlameView";
+import EnvironmentStage from "@/components/EnvironmentStage";
+import type { ImmersiveEnv } from "@/components/ImmersiveScene";
 import { Pending, SourceTag } from "@/components/ui";
 
 const T = {
   en: {
     eyebrow: "Simulator",
     title: "Pick an environment and watch the fire behave",
-    intro: "Each environment runs the same burning droplet under its own atmosphere and gravity. The readouts below are computed from the data; the animation shows what that atmosphere does to the flame, molecule by molecule.",
+    intro: "Step into each place in 3D, then watch the same burning droplet under its own atmosphere and gravity. The readouts below are computed from the data; the animation shows what that atmosphere does to the flame, molecule by molecule.",
     envGroup: "Environment",
-    envNames: { earth: "Earth", iss: "ISS", "moon-habitat": "Lunar base", suit: "Spacesuit" } as Record<string, string>,
+    envNames: { earth: "Earth", iss: "ISS", "moon-habitat": "Lunar base", suit: "Spacesuit", mars: "Mars" } as Record<string, string>,
+    marsTitle: "Mars: explore it, but no flame is computed yet",
+    marsBody: "Mars has 0.38 g and thin CO₂ air outside (about 0.13% O₂ ambient). Like the Moon, partial gravity has no experimental combustion data, and this site has no verified habitat atmosphere for Mars, so it does not compute a flame here rather than invent one. The 3D scene is a visualization with procedural terrain. To see how fire behaves in partial gravity, pick the Lunar base.",
+    marsLink: "Browse the NASA investigations relevant to Mars",
     stageTitle: "The environment, animated",
     compare: "Compare with Earth",
     molecules: "Show molecules",
@@ -79,9 +84,12 @@ const T = {
   es: {
     eyebrow: "Simulador",
     title: "Elige un entorno y mira cómo se comporta el fuego",
-    intro: "Cada entorno ejecuta la misma gota ardiendo con su propia atmósfera y gravedad. Los indicadores de abajo se calculan a partir de los datos; la animación muestra qué hace esa atmósfera con la llama, molécula a molécula.",
+    intro: "Entra en cada lugar en 3D y mira después la misma gota ardiendo con su propia atmósfera y gravedad. Los indicadores de abajo se calculan a partir de los datos; la animación muestra qué hace esa atmósfera con la llama, molécula a molécula.",
     envGroup: "Entorno",
-    envNames: { earth: "Tierra", iss: "ISS", "moon-habitat": "Base lunar", suit: "Traje espacial" } as Record<string, string>,
+    envNames: { earth: "Tierra", iss: "ISS", "moon-habitat": "Base lunar", suit: "Traje espacial", mars: "Marte" } as Record<string, string>,
+    marsTitle: "Marte: explóralo, pero aún no se calcula ninguna llama",
+    marsBody: "Marte tiene 0,38 g y un aire fino de CO₂ en el exterior (alrededor de un 0,13 % de O₂ ambiente). Como en la Luna, no hay datos experimentales de combustión en gravedad parcial, y esta web no tiene una atmósfera de hábitat verificada para Marte, así que no calcula una llama en vez de inventarla. La escena 3D es una visualización con terreno procedural. Para ver cómo se comporta el fuego en gravedad parcial, elige la base lunar.",
+    marsLink: "Ver las investigaciones de NASA relevantes para Marte",
     stageTitle: "El entorno, animado",
     compare: "Comparar con la Tierra",
     molecules: "Mostrar moléculas",
@@ -145,6 +153,7 @@ const T = {
 
 const VERDICT_TONE: Record<string, string> = { earth: "var(--muted)", iss: "var(--a-suppression)", "moon-habitat": "var(--crit)", suit: "var(--crit)" };
 const ENGINE_ENV: Record<string, EnvId> = { earth: "earth", iss: "iss", "moon-habitat": "moon", suit: "suit" };
+const SCENE_ENV: Record<string, ImmersiveEnv> = { earth: "earth", iss: "iss", "moon-habitat": "moon", suit: "suit", mars: "mars" };
 
 type Tx = (typeof T)["en"];
 
@@ -230,7 +239,10 @@ export default function Simulator() {
   }, []);
 
   const earth = data.environments.find((e) => e.id === "earth")!;
-  const env = data.environments.find((e) => e.id === envId)!;
+  // Mars has no verified habitat atmosphere in the data: it is shown in 3D only, and the computed
+  // sections fall back to a harmless reference object that is never rendered for Mars.
+  const isMars = envId === "mars";
+  const env = (data.environments.find((e) => e.id === envId) ?? data.environments.find((e) => e.id === "moon-habitat"))!;
   const o2Ratio = (env.o2 / earth.o2 - 1) * 100;
   const ppO2Psi = env.o2 * env.pressurePsi;
   const ppO2Earth = earth.o2 * earth.pressurePsi;
@@ -260,7 +272,7 @@ export default function Simulator() {
       <p className="mt-3 max-w-3xl text-ink-2">{t.intro}</p>
 
       <div role="radiogroup" aria-label={t.envGroup} className="mt-6 flex flex-wrap gap-2">
-        {data.environments.map((e) => (
+        {[...data.environments.map((e) => ({ id: e.id, name: t.envNames[e.id] ?? e.name })), { id: "mars", name: t.envNames.mars }].map((e) => (
           <button
             key={e.id}
             role="radio"
@@ -268,11 +280,24 @@ export default function Simulator() {
             onClick={() => setEnvId(e.id)}
             className={`rounded-full border px-4 py-1.5 text-sm transition-colors ${envId === e.id ? "border-accent bg-accent/15 text-ink" : "border-line-2 text-ink-2 hover:text-ink"}`}
           >
-            {t.envNames[e.id] ?? e.name}
+            {e.name}
           </button>
         ))}
       </div>
 
+      {/* ---------- the real place, in 3D ---------- */}
+      <div className="mt-5">
+        <EnvironmentStage env={SCENE_ENV[envId]} />
+      </div>
+
+      {isMars ? (
+        <section className="card mt-6 p-5" aria-live="polite">
+          <h2 className="text-xl font-semibold">{t.marsTitle}</h2>
+          <p className="mt-2 max-w-3xl text-sm text-ink-2">{t.marsBody}</p>
+          <p className="mt-3 text-sm"><Link href="/explorer" className="link">{t.marsLink} →</Link></p>
+        </section>
+      ) : (
+      <>
       {/* ---------- animated stage ---------- */}
       <section className="mt-5" aria-labelledby="stage">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
@@ -392,6 +417,9 @@ export default function Simulator() {
           </>
         )}
       </section>
+
+      </>
+      )}
 
       <section className="mt-12" aria-labelledby="map">
         <h2 id="map" className="text-xl font-semibold">{t.mapTitle}</h2>
