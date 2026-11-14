@@ -10,6 +10,7 @@ import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
 import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+import { useLang } from "@/lib/i18n";
 
 export type ImmersiveEnv = "earth" | "moon" | "mars" | "iss" | "isshd" | "suit";
 
@@ -21,12 +22,27 @@ type Built = {
   shadows?: boolean;
 };
 
-type Ctx = { scene: THREE.Scene; renderer: THREE.WebGLRenderer };
+type Ctx = { scene: THREE.Scene; renderer: THREE.WebGLRenderer; progress: (fraction: number) => void };
 
 // ---------- helpers ----------
 const tl = new THREE.TextureLoader();
 const draco = new DRACOLoader().setDecoderPath("/draco/");
 const gl = new GLTFLoader().setDRACOLoader(draco);
+// Loads a GLB and reports download progress (0..1) when the server announces the size.
+// Known sizes are the fallback when the server (gzip/chunked) sends no Content-Length.
+const MODEL_BYTES: Record<string, number> = {
+  "/models/iss.glb": 476992,
+  "/models/lm.glb": 716840,
+  "/models/emu.glb": 3448904,
+  "/models/perseverance.glb": 4987176,
+  "/models/iss_hd.glb": 15411000,
+};
+const loadModel = (url: string, progress: Ctx["progress"]) =>
+  gl.loadAsync(url, (e) => {
+    const total = e.lengthComputable && e.total ? e.total : MODEL_BYTES[url];
+    if (total) progress(e.loaded / total);
+  });
+
 const tex = async (url: string, srgb = true) => {
   const t = await tl.loadAsync(url);
   if (srgb) t.colorSpace = THREE.SRGBColorSpace;
@@ -244,7 +260,7 @@ async function buildEarth({ scene }: Ctx): Promise<Built> {
   };
 }
 
-async function buildMoon({ scene }: Ctx): Promise<Built> {
+async function buildMoon({ scene, progress }: Ctx): Promise<Built> {
   scene.background = new THREE.Color(0x000000);
   scene.add(stars(6000, 900));
   const sunDir = new THREE.Vector3(0.85, 0.2, 0.45).normalize();
@@ -263,7 +279,7 @@ async function buildMoon({ scene }: Ctx): Promise<Built> {
   scene.add(terr);
   scene.add(makeRidge(165, 16, 0x6b6966, 3));
 
-  const [earth, lm] = await Promise.all([makeEarth(26), gl.loadAsync("/models/lm.glb")]);
+  const [earth, lm] = await Promise.all([makeEarth(26), loadModel("/models/lm.glb", progress)]);
   earth.group.position.set(-260, 150, -430);
   earth.group.rotation.set(0.2, 2.2, 0.1);
   scene.add(earth.group);
@@ -281,7 +297,7 @@ async function buildMoon({ scene }: Ctx): Promise<Built> {
   };
 }
 
-async function buildMars({ scene }: Ctx): Promise<Built> {
+async function buildMars({ scene, progress }: Ctx): Promise<Built> {
   const horizon = new THREE.Color(0xd9a074), zenith = new THREE.Color(0x7d6a68);
   scene.background = horizon.clone();
   scene.fog = new THREE.FogExp2(0xc78e62, 0.0085);
@@ -311,7 +327,7 @@ async function buildMars({ scene }: Ctx): Promise<Built> {
   scene.add(terr);
   scene.add(makeRidge(185, 22, 0x8f5535, 11, 1.8));
 
-  const rover = (await gl.loadAsync("/models/perseverance.glb")).scene;
+  const rover = (await loadModel("/models/perseverance.glb", progress)).scene;
   const box = fitModel(rover, 4.2);
   rover.position.y += H(0, 0) - box.min.y;
   rover.rotation.y = 0.6;
@@ -341,7 +357,7 @@ async function buildMars({ scene }: Ctx): Promise<Built> {
   };
 }
 
-async function buildIss({ scene }: Ctx, url = "/models/iss.glb", dropStray = true): Promise<Built> {
+async function buildIss({ scene, progress }: Ctx, url = "/models/iss.glb", dropStray = true): Promise<Built> {
   scene.background = new THREE.Color(0x000003);
   scene.add(stars(6000, 1800));
   scene.add(new THREE.AmbientLight(0x1a2440, 0.7));
@@ -354,7 +370,7 @@ async function buildIss({ scene }: Ctx, url = "/models/iss.glb", dropStray = tru
   sun.shadow.bias = -0.0003;
   scene.add(sun);
 
-  const [earth, iss] = await Promise.all([makeEarth(240, 0.22), gl.loadAsync(url)]);
+  const [earth, iss] = await Promise.all([makeEarth(240, 0.22), loadModel(url, progress)]);
   earth.group.position.set(0, -285, -10);
   earth.group.rotation.set(0.15, 0.9, 0);
   scene.add(earth.group);
@@ -517,7 +533,7 @@ function makeSokolSuit() {
   return g;
 }
 
-async function buildSuit({ scene, renderer }: Ctx): Promise<Built> {
+async function buildSuit({ scene, renderer, progress }: Ctx): Promise<Built> {
   scene.background = new THREE.Color(0x06080e);
   scene.fog = new THREE.Fog(0x06080e, 14, 34);
   const pm = new THREE.PMREMGenerator(renderer);
@@ -547,7 +563,7 @@ async function buildSuit({ scene, renderer }: Ctx): Promise<Built> {
 
   let suit: THREE.Object3D;
   try {
-    suit = (await gl.loadAsync("/models/emu.glb")).scene;
+    suit = (await loadModel("/models/emu.glb", progress)).scene;
     const box = fitModel(suit, 3.1, "y");
     suit.position.y += 0.18 - box.min.y;
     shade(suit, 1.0);
@@ -586,11 +602,14 @@ const BUILDERS: Record<ImmersiveEnv, (c: Ctx) => Promise<Built>> = { earth: buil
 export default function ImmersiveScene({ env }: { env: ImmersiveEnv }) {
   const host = useRef<HTMLDivElement>(null);
   const [state, setState] = useState<"loading" | "ready" | "error">("loading");
+  const [progress, setProgress] = useState(0);
+  const { lang } = useLang();
 
   useEffect(() => {
     const el = host.current;
     if (!el) return;
     setState("loading");
+    setProgress(0);
     let disposed = false;
     let raf = 0;
 
@@ -638,7 +657,7 @@ export default function ImmersiveScene({ env }: { env: ImmersiveEnv }) {
       composer.render();
     };
 
-    BUILDERS[env]({ scene, renderer })
+    BUILDERS[env]({ scene, renderer, progress: (f) => { if (!disposed) setProgress(Math.min(0.99, Math.max(0, f))); } })
       .then((b) => {
         if (disposed) return;
         built = b;
@@ -685,7 +704,23 @@ export default function ImmersiveScene({ env }: { env: ImmersiveEnv }) {
   return (
     <div className="relative h-[68vh] min-h-[460px] w-full overflow-hidden rounded-xl border border-white/10 bg-black">
       <div ref={host} className="absolute inset-0" />
-      {state === "loading" && <div className="pointer-events-none absolute inset-0 grid place-items-center text-sm text-white/70">{env === "isshd" ? "Loading the detailed station model (about 15 MB)…" : "Loading environment…"}</div>}
+      {state === "loading" && (
+        <div role="status" aria-live="polite" className="pointer-events-none absolute inset-0 grid place-items-center">
+          <div className="w-64 max-w-[80%] text-center">
+            <p className="mb-2 text-sm text-white/80">
+              {lang === "es" ? "Cargando modelo" : "Loading model"}
+              {progress > 0 ? ` · ${Math.round(progress * 100)}%` : "…"}
+              {env === "isshd" ? " (~15 MB)" : ""}
+            </p>
+            <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/15">
+              <div
+                className={`h-full rounded-full bg-sky-400 ${progress > 0 ? "transition-[width] duration-200" : "w-2/5 animate-pulse"}`}
+                style={progress > 0 ? { width: `${progress * 100}%` } : undefined}
+              />
+            </div>
+          </div>
+        </div>
+      )}
       {state === "error" && <div className="absolute inset-0 grid place-items-center text-sm text-red-300">Could not start the 3D scene (WebGL unavailable?).</div>}
       <div className="pointer-events-none absolute bottom-3 left-3 text-xs text-white/50">Drag to orbit · scroll to zoom</div>
     </div>
